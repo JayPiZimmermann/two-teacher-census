@@ -622,12 +622,14 @@
     // paragraph.  "besides the exact fit" was on every entry -- constant text
     // carries no information, so it is stated once at the foot of the legend.
     function describeType(key) {
+      // The paper's compact census label: collided (co) or separated (sep)
+      // spurious-minimum families, same-sign (+) or opposite-sign (±) student
+      // masses, a repeat carrying a multiplier; exact fits are not counted.
       var n = typeCounts(key), bits = [];
-      if (n.cp) bits.push(n.cp + " collapsed (positive)");
-      if (n.cm) bits.push(n.cm + " collapsed (mixed)");
-      if (n.sp) bits.push(n.sp + " separated (positive)");
-      if (n.sm) bits.push(n.sm + " separated (mixed)");
-      return bits.length ? bits.join(" + ") : "no trap at all";
+      [[n.cp, "co", "+"], [n.cm, "co", "±"], [n.sp, "sep", "+"], [n.sm, "sep", "±"]].forEach(function (t) {
+        if (t[0]) bits.push((t[0] > 1 ? t[0] + "×" : "") + t[1] + "<sup>" + t[2] + "</sup>");
+      });
+      return bits.length ? bits.join(", ") : "none";
     }
 
     function renderMapLegend(model, built, selectedId) {
@@ -636,28 +638,19 @@
       if (!built) { box.innerHTML = "<span>loading the region map…</span>"; return; }
       var order = built.keys.map(function (k, i) { return i; })
         .sort(function (a, b) { return typeCounts(built.keys[a]).all - typeCounts(built.keys[b]).all; });
-      box.innerHTML = order.map(function (i) {
+      box.innerHTML = "<span class=\"lx-row\">" + order.map(function (i) {
         var key = built.keys[i], sel = i === selectedId;
         return "<span class=\"lx-legend-pick" + (sel ? " lx-here" : "") +
           (i === pickedCensus ? " lx-picked" : "") + "\" data-census=\"" + i +
-          "\" tabindex=\"0\" role=\"button\">" +
+          "\" tabindex=\"0\" role=\"button\" title=\"" + (sel ? "the current teacher's census; " : "") + "click to highlight every region with this census\">" +
           "<svg width=\"15\" height=\"11\" aria-hidden=\"true\"><rect x=\"0.5\" y=\"0.5\" width=\"14\" height=\"10\" fill=\"" +
-          typeColour(built, i) + "\" stroke=\"var(--ink)\" stroke-opacity=\"0.35\"/></svg>" +
-          describeType(key) + (sel ? " — the current teacher" : "") + "</span>";
-      }).join("") +
-        "<span><svg width=\"15\" height=\"11\" aria-hidden=\"true\"><circle cx=\"7.5\" cy=\"5.5\" r=\"2.6\" fill=\"var(--ink)\" fill-opacity=\"0.62\"/></svg>" +
-        "a dot marks one example per region — click anywhere in a region to load it</span>" +
-        "<span><svg width=\"15\" height=\"11\" aria-hidden=\"true\"><line x1=\"7.5\" y1=\"0\" x2=\"7.5\" y2=\"11\" stroke=\"var(--ink)\" stroke-opacity=\"0.6\" stroke-width=\"1.6\"/></svg>" +
-        "a line or curve is a piece of its own — click to land on it</span>" +
-        (foldWallStrata(model).length
-          ? "<span><svg width=\"15\" height=\"11\" aria-hidden=\"true\"><rect x=\"0\" y=\"0\" width=\"15\" height=\"11\" fill=\"var(--ink)\" fill-opacity=\"0.10\"/><line x1=\"0.5\" y1=\"5.5\" x2=\"14.5\" y2=\"5.5\" stroke=\"var(--ink)\" stroke-opacity=\"0.6\" stroke-width=\"1.6\" stroke-dasharray=\"3,2\"/></svg>" +
-            "a dashed line in a faint band: a boundary certified only to lie somewhere in the band, not pinned to a curve</span>"
-          : "") +
-        "<span><svg width=\"15\" height=\"11\" aria-hidden=\"true\"><circle cx=\"7.5\" cy=\"5.5\" r=\"3.4\" fill=\"var(--paper)\" stroke=\"var(--ink)\" stroke-width=\"1.6\"/></svg>" +
-        "a ring: two strata crossing, one single teacher</span>" +
-        "<span><svg width=\"15\" height=\"11\" aria-hidden=\"true\"><rect x=\"0\" y=\"0.5\" width=\"7\" height=\"10\" fill=\"var(--lx-c2)\"/><rect x=\"7\" y=\"0.5\" width=\"8\" height=\"10\" fill=\"var(--lx-c6)\"/></svg>" +
-        "a colour change alone: the boundary joins one region</span>" +
-        "<span>every region also has the exact fit as its global minimum</span>";
+          typeColour(built, i) + "\" stroke=\"var(--ink)\" stroke-opacity=\"0.35\"/></svg><span class=\"lx-lab\">" +
+          describeType(key) + "</span></span>";
+      }).join("") + "</span>" +
+        "<span class=\"lx-row lx-note\">" +
+        "<span><svg width=\"15\" height=\"11\" aria-hidden=\"true\"><circle cx=\"7.5\" cy=\"5.5\" r=\"2.6\" fill=\"var(--ink)\" fill-opacity=\"0.62\"/></svg>teacher from each census</span>" +
+        "<span><svg width=\"15\" height=\"11\" aria-hidden=\"true\"><line x1=\"7.5\" y1=\"0\" x2=\"7.5\" y2=\"11\" stroke=\"var(--ink)\" stroke-opacity=\"0.6\" stroke-width=\"1.6\"/></svg>one-dimensional census</span>" +
+        "<span><svg width=\"15\" height=\"11\" aria-hidden=\"true\"><circle cx=\"7.5\" cy=\"5.5\" r=\"3.4\" fill=\"var(--paper)\" stroke=\"var(--ink)\" stroke-width=\"1.6\"/></svg>one-dimensional census crossing</span></span>";
 
       // Clicking a legend entry picks that census: every region carrying it
       // lifts at once, and one example teacher is loaded.  That is the only way
@@ -846,28 +839,20 @@
         hitTarget(svgEl("circle", {cx: sx2, cy: sy2, r: 11 * ms, fill: "transparent"}),
           rep, "example teacher on " + st.name);
       });
-      // The separated stratum's fold walls: certified only as a per-beta
-      // BRACKET (interval certificates are plot-data evidence, section 1c),
-      // so drawn as that evidence rather than as a smoothed curve -- a faint
-      // band between the bracket's own lo/hi and a DASHED line through the
-      // bracket midpoints, the dash alone marking "location certified only
-      // to within this band" (colour still means only "boundary").
+      // The separated stratum's fold walls, drawn through the midpoints of
+      // their certified per-beta brackets as one-dimensional strata like the
+      // others; the bracket widths are documented in certificates/.
       foldWallStrata(model).forEach(function (st) {
         var rows = st.rows.filter(function (r) { return r[0] <= F.half + 1e-6; });
         if (rows.length < 2) return;
         rows = rows.slice().sort(function (a, b) { return a[0] - b[0]; });
-        var top = rows.map(function (r) { return F.X(r[0]).toFixed(2) + "," + F.Y(r[2]).toFixed(2); });
-        var bot = rows.slice().reverse().map(function (r) { return F.X(r[0]).toFixed(2) + "," + F.Y(r[1]).toFixed(2); });
-        var band = "M" + top.join(" L") + " L" + bot.join(" L") + " Z";
-        svg.appendChild(svgEl("path", {d: band, fill: "var(--ink)", "fill-opacity": 0.10,
-          stroke: "none", "pointer-events": "none"}));
         var mids = rows.map(function (r) { return {beta: r[0], y: (r[1] + r[2]) / 2}; });
         var dLine = mids.map(function (q, k) {
           return (k ? "L" : "M") + F.X(q.beta).toFixed(2) + "," + F.Y(q.y).toFixed(2);
         }).join(" ");
         svg.appendChild(svgEl("path", {d: dLine, fill: "none",
           stroke: "var(--ink)", "stroke-opacity": 0.6, "stroke-width": 1.6,
-          "stroke-dasharray": "5,3", "vector-effect": "non-scaling-stroke", "pointer-events": "none"}));
+          "vector-effect": "non-scaling-stroke", "pointer-events": "none"}));
         var mp = mids[Math.floor(mids.length / 2)];
         var m2 = massesAt(mp.y), rep2 = [mp.beta, m2.s0, m2.s1];
         var sx3 = F.X(mp.beta), sy3 = F.Y(mp.y);
@@ -877,9 +862,9 @@
           "pointer-events": "none"}));
         hitTarget(svgEl("path", {d: dLine, fill: "none",
           stroke: "transparent", "stroke-width": 18 * ms, "pointer-events": "stroke"}),
-          rep2, st.name + ", a certified bracket -- its exact location is not pinned down");
+          rep2, st.name + ", a one-dimensional census");
         hitTarget(svgEl("circle", {cx: sx3, cy: sy3, r: 11 * ms, fill: "transparent"}),
-          rep2, "example teacher near " + st.name);
+          rep2, "teacher on " + st.name);
       });
       pointStrata(model).forEach(function (pt) {
         var cx = F.X(pt.beta), cy = F.Y(pt.y);
@@ -1002,7 +987,8 @@
     // direction is an unoriented line, so an angle past pi names the same line
     // as the angle pi below it, and readTeacher folds the gap either way.
     function applyRegimeToControls() {
-      document.getElementById("ex-trap-row").hidden =
+      var trapRowEl = document.getElementById("ex-trap-row");
+      if (trapRowEl) trapRowEl.hidden =
         document.getElementById("ex-regime").value !== "noncentered";
     }
 
@@ -2068,6 +2054,7 @@
                                       : css("--positive", "#c82d43");
       var paper = css("--paper", "#fff"), muted = css("--muted", "#666");
       var dead = Math.abs(mass) < 1e-9;
+      var cf = markScale.canvas;           // marks keep their screen size under zoom
       var r = Math.min(RAY, RAY*Math.abs(mass)/MASS_FULL);
       var ends = model === "centered" ? [1, -1] : [1];   // an unoriented line is drawn both ways
       ends.forEach(function (sign) {
@@ -2075,10 +2062,10 @@
         if (dead) {
           // A unit of mass zero has no direction to speak of: its angle is free
           // (the angular force carries a factor c), so it sits at the origin.
-          circle(canvas, 0, 0, 5, paper, muted);
+          circle(canvas, 0, 0, 5*cf, paper, muted);
           return;
         }
-        var head = kind === "teacher" ? 14 : 10, tipX = r*cx, tipY = r*cy;
+        var head = (kind === "teacher" ? 14 : 10)*cf, tipX = r*cx, tipY = r*cy;
         if (r > head) {
           line(canvas, 0, 0, tipX - head*0.8*cx, tipY - head*0.8*cy, colour, LINE,
                mass < 0 ? "6 4" : null);
@@ -2158,16 +2145,16 @@
     // marker where the pinned sum of the two masses sits.
     function drawLine(model, angle, mu, frame) {
       var colour = css("--positive", "#c82d43"), paper = css("--paper", "#fff");
-      var a = frame ? frame.phi + frame.sigma*angle : angle;
+      var a = frame ? frame.phi + frame.sigma*angle : angle, cf = markScale.canvas;
       var ends = model === "centered" ? [1, -1] : [1];
       ends.forEach(function (sign) {
         var cx = sign*Math.cos(a), cy = -sign*Math.sin(a);
         line(canvas, 0, 0, RAY*cx, RAY*cy, colour, LINE);
         if (Math.abs(mu) < 1e-9) return;
         var r = Math.min(RAY, RAY*Math.abs(mu)/MASS_FULL);
-        circle(canvas, r*cx, r*cy, 6, mu < 0 ? paper : colour, colour);
+        circle(canvas, r*cx, r*cy, 6*cf, mu < 0 ? paper : colour, colour);
       });
-      if (Math.abs(mu) < 1e-9) circle(canvas, 0, 0, 6, paper, colour);
+      if (Math.abs(mu) < 1e-9) circle(canvas, 0, 0, 6*cf, paper, colour);
     }
 
     function drawFigure(model, T, chosen) {
@@ -2352,16 +2339,31 @@
       // returns early when its own canvas is not.
       var momentNote = document.getElementById("ex-moment-note");
       if (momentNote) momentNote.textContent = matchedText;
+      // The left legend: two lines, teacher and student generators.  The marks
+      // for a zero mass and for a free split appear only while the picture
+      // shows one.
+      var sw = function (col, dash) {
+        return "<svg width=\"22\" height=\"8\" aria-hidden=\"true\"><line x1=\"1\" y1=\"4\" x2=\"21\" y2=\"4\" stroke=\"" + col + "\" stroke-width=\"1.5\"" + (dash ? " stroke-dasharray=\"6 4\"" : "") + "/></svg>";
+      };
+      var ring = "<svg width=\"10\" height=\"10\" aria-hidden=\"true\"><circle cx=\"5\" cy=\"5\" r=\"4\" fill=\"none\" stroke=\"var(--muted)\" stroke-width=\"1.5\"/></svg>";
+      var teacherDead = Math.abs(T.s0) < 1e-9 || Math.abs(T.s1) < 1e-9;
+      var studentDead = !!(chosen && chosen.c && chosen.c.some(function (c) { return Math.abs(c) < 1e-9; }));
+      var studentSplit = !!(chosen && chosen.split);
       document.getElementById("ex-legend").innerHTML =
-        "<span><svg width=\"22\" height=\"8\" aria-hidden=\"true\"><line x1=\"1\" y1=\"4\" x2=\"21\" y2=\"4\" stroke=\"var(--negative)\" stroke-width=\"1.5\"/></svg>teacher atoms, draggable</span>" +
-        "<span><svg width=\"22\" height=\"8\" aria-hidden=\"true\"><line x1=\"1\" y1=\"4\" x2=\"21\" y2=\"4\" stroke=\"var(--positive)\" stroke-width=\"1.5\"/></svg>the family's students</span>" +
-        "<span><svg width=\"22\" height=\"8\" aria-hidden=\"true\"><line x1=\"1\" y1=\"4\" x2=\"21\" y2=\"4\" stroke=\"var(--ink)\" stroke-width=\"1.5\" stroke-dasharray=\"6 4\"/></svg>a dashed shaft with a hollow head: a negative mass</span>" +
-        "<span><svg width=\"10\" height=\"10\" aria-hidden=\"true\"><circle cx=\"5\" cy=\"5\" r=\"4\" fill=\"none\" stroke=\"var(--muted)\" stroke-width=\"1.5\"/></svg>a ring at the origin: a unit of mass zero</span>" +
-        "<span><svg width=\"34\" height=\"10\" aria-hidden=\"true\"><line x1=\"1\" y1=\"5\" x2=\"33\" y2=\"5\" stroke=\"var(--positive)\" stroke-width=\"1.5\"/><circle cx=\"14\" cy=\"5\" r=\"4\" fill=\"var(--positive)\" stroke=\"var(--positive)\" stroke-width=\"1.5\"/></svg>a line with a dot: any split summing to the dot is critical</span>" +
-        "<span><svg width=\"22\" height=\"8\" aria-hidden=\"true\"><line x1=\"1\" y1=\"4\" x2=\"21\" y2=\"4\" stroke=\"var(--rule)\" stroke-width=\"1.5\" stroke-dasharray=\"3 4\"/></svg>the circle of mass one, a fixed scale</span>";
+        "<span class=\"lx-row\"><b>teacher generators</b>" +
+        "<span>" + sw("var(--negative)") + "positive mass</span>" +
+        "<span>" + sw("var(--negative)", true) + "negative mass</span>" +
+        (teacherDead ? "<span>" + ring + "zero mass generator</span>" : "") +
+        "<span>" + sw("var(--rule)", true) + "unit circle</span></span>" +
+        "<span class=\"lx-row\"><b>student generators</b>" +
+        "<span>" + sw("var(--positive)") + "positive mass</span>" +
+        "<span>" + sw("var(--positive)", true) + "negative mass</span>" +
+        (studentDead ? "<span>" + ring + "zero mass generator</span>" : "") +
+        (studentSplit ? "<span><svg width=\"34\" height=\"10\" aria-hidden=\"true\"><line x1=\"1\" y1=\"5\" x2=\"33\" y2=\"5\" stroke=\"var(--positive)\" stroke-width=\"1.5\"/><circle cx=\"14\" cy=\"5\" r=\"4\" fill=\"var(--positive)\"/></svg>arbitrary generator decomposition with masses summing up to the dot</span>" : "") +
+        "</span>";
 
       var trapNote = document.getElementById("ex-trap-note");
-      trapNote.textContent = trapArmed
+      if (trapNote) trapNote.textContent = trapArmed
         ? "Loaded the example trap: β₂ = π + 3/40 − q with q = " + TRAP.q.toFixed(6)
           + ", the theorem-certified root. Every mass is scaled by one positive factor, which "
           + "multiplies the loss by its square and leaves the critical points and their types "
@@ -2414,7 +2416,8 @@
         canvas.classList.remove("dragging");
       });
     });
-    document.getElementById("ex-trap").addEventListener("click", function () {
+    var trapButton = document.getElementById("ex-trap");
+    if (trapButton) trapButton.addEventListener("click", function () {
       // Prefer a teacher that is ALREADY a region's example, so the button and
       // the map agree: the loaded teacher lands on a dot the reader can see and
       // click again, instead of at a hand-picked point sitting somewhere in a

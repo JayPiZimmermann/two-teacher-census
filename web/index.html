@@ -32,49 +32,50 @@
 
   /* ---- top bar ---- */
   .bar {
-    position: sticky; top: 0; z-index: 20; height: 46px;
-    display: flex; align-items: center; gap: 1.4rem; padding: 0 1rem;
+    position: sticky; top: 0; z-index: 20;
+    padding: .7rem 2rem .6rem;
     background: var(--bar); backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--rule);
     font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
   }
-  .bar .brand { font-weight: 650; letter-spacing: .01em; white-space: nowrap; }
-  .bar .brand small { font-weight: 400; color: var(--muted); margin-left: .6rem; }
+  .bar-top { display: flex; align-items: center; gap: 1.6rem; max-width: calc(var(--page) - 4rem); margin: 0 auto; }
+  .bar .brand { font-weight: 650; font-size: 1.25rem; letter-spacing: .01em; white-space: nowrap; }
+  .bar .bar-model { font-size: .88rem; color: var(--muted); white-space: nowrap; display: inline-flex; align-items: center; gap: .45rem; }
+  .bar .bar-model select { height: 1.8rem; font: inherit; font-size: .88rem; color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 5px; padding: 0 .4rem; }
   .bar nav { display: flex; gap: .2rem; margin-left: auto; overflow-x: auto; }
-  .bar nav a { color: var(--muted); font-size: .86rem; padding: .3rem .6rem; border-radius: 5px; white-space: nowrap; }
+  .bar nav a { color: var(--muted); font-size: .88rem; padding: .3rem .6rem; border-radius: 5px; white-space: nowrap; }
   .bar nav a:hover { color: var(--ink); background: var(--control-bg); text-decoration: none; }
-  @media (max-width: 760px) { .bar .brand small { display: none; } }
+  .bar-sub { margin: .3rem auto 0; max-width: calc(var(--page) - 4rem); font-size: .95rem; color: var(--muted); }
+  @media (max-width: 760px) { .bar { padding-inline: 1rem; } .bar-top { flex-wrap: wrap; gap: .6rem 1rem; } .bar nav { margin-left: 0; } }
 
   /* ---- explorer: one viewport ---- */
-  #explorer { padding: .6rem .9rem 1.2rem; }
+  :root { --page: 1240px; }
+  #explorer { padding: .9rem 2rem 1.2rem; max-width: var(--page); margin: 0 auto; }
+  @media (max-width: 760px) { #explorer { padding-inline: 1rem; } }
   #interactive-landscape .landscape-explorer-layout {
     display: grid;
     grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-    grid-template-rows: auto auto auto;
-    gap: .6rem 1rem; align-items: start;
+    gap: .5rem 1rem; align-items: start;
   }
-  #interactive-landscape .lx-top { grid-column: 1 / -1; }
-  #interactive-landscape .lx-model {
-    display: flex; align-items: center; justify-content: center; gap: .8rem; flex-wrap: wrap; margin-bottom: .5rem;
-  }
+  #interactive-landscape .lx-top { margin-top: .35rem; }
+  #interactive-landscape .lx-model { display: flex; justify-content: center; margin-top: .25rem; }
+  #interactive-landscape .lx-model:empty, #interactive-landscape .lx-model > [hidden] { display: none; }
   #interactive-landscape .lx-model button, #interactive-landscape .lx-model select {
     height: 1.9rem; padding-block: 0; font: inherit; font-size: .88rem; color: var(--ink);
     background: var(--paper); border: 1px solid var(--rule); border-radius: 5px; padding-inline: .5rem;
   }
   #interactive-landscape .lx-model button { cursor: pointer; }
   #interactive-landscape .lx-model button:hover { border-color: var(--accent); }
-  #interactive-landscape .lx-sliders {
-    display: grid; grid-template-columns: repeat(2, max-content); justify-content: center; gap: .1rem 2rem;
-  }
   .controls { display: block; margin: 0; }
   .ctrl-group {
-    border: 1px solid var(--rule); border-radius: 6px; padding: .5rem .8rem .35rem;
-    background: var(--control-bg); width: 100%;
+    border: 1px solid var(--rule); border-radius: 6px; padding: .35rem .7rem .3rem;
+    background: var(--control-bg); width: 100%; max-width: 100%; overflow: hidden;
   }
-  .ctrl-row { display: flex; align-items: center; gap: .6rem; margin: .18rem 0; font-size: .86rem; }
-  .ctrl-row label { width: 6.5em; flex: 0 0 auto; }
-  .ctrl-row input[type="range"] { width: 15rem; flex: 0 0 auto; accent-color: var(--accent); }
-  .ctrl-row .val { width: 6.2em; flex: 0 0 auto; text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+  #interactive-landscape .lx-sliders { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .05rem 1rem; }
+  .ctrl-row { display: flex; align-items: center; gap: .45rem; margin: .1rem 0; font-size: .78rem; }
+  .ctrl-row label { width: 5.2em; flex: 0 0 auto; }
+  .ctrl-row input[type="range"] { flex: 1 1 2rem; width: 2rem; min-width: 1.5rem; max-width: 9rem; accent-color: var(--accent); }
+  .ctrl-row .val { width: 4.6em; flex: 0 0 auto; text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
   @media (max-width: 760px) {
     #interactive-landscape .lx-sliders { grid-template-columns: 1fr; }
     .ctrl-row input[type="range"] { width: auto; flex: 1 1 auto; }
@@ -82,17 +83,27 @@
 
   /* Both panels fill their grid cell; the drawings scale with the viewport
      but keep their aspect, so the two line up at any window size. */
-  #interactive-landscape .lx-left, #interactive-landscape .lx-right { min-width: 0; min-height: 0; display: flex; flex-direction: column; gap: .3rem; }
+  #interactive-landscape .lx-left { grid-column: 1; min-width: 0; }
+  #interactive-landscape .lx-right { grid-column: 2; min-width: 0; }
+  #interactive-landscape .lx-under { display: flex; flex-direction: column; gap: .3rem; }
+  #interactive-landscape .lx-box {
+    border: 1px solid var(--rule); border-radius: 6px; background: var(--paper);
+    padding: .5rem .7rem .4rem; display: flex; flex-direction: column; gap: .45rem; min-width: 0;
+  }
+  #interactive-landscape .lx-box .legend { border-bottom: 1px solid var(--rule); padding-bottom: .4rem; min-height: 3.3rem; }
+  #interactive-landscape .lx-hint { margin: 0; text-align: center; font-size: .76rem; color: var(--muted); }
   #interactive-landscape .lx-view {
-    height: clamp(260px, 46vh, 560px); background: var(--paper); position: relative;
+    height: clamp(200px, 30vh, 360px); background: var(--paper); position: relative;
     overflow: hidden; display: flex; align-items: center; justify-content: center;
   }
   #interactive-landscape .lx-view > svg { width: 100%; height: 100%; max-height: 100%; }
-  #interactive-landscape svg.canvas { border: 1px solid var(--rule); border-radius: 6px; background: var(--paper); cursor: grab; touch-action: none; }
+  /* Zoom is done on the viewBox; strokes keep their screen width. */
+  #ex-canvas *, #ex-map * { vector-effect: non-scaling-stroke; }
+  #interactive-landscape svg.canvas { background: var(--paper); cursor: grab; touch-action: none; }
   #interactive-landscape svg.canvas.dragging { cursor: grabbing; }
   #interactive-landscape svg.lx-zoomable { touch-action: none; cursor: grab; }
   #interactive-landscape svg.lx-zoomable:active { cursor: grabbing; }
-  #interactive-landscape svg.lx-mapcanvas { border: 1px solid var(--rule); border-radius: 6px; background: var(--paper); display: block; }
+  #interactive-landscape svg.lx-mapcanvas { background: var(--paper); display: block; }
   #interactive-landscape .lx-subtitle { margin: 0; text-align: center; font-size: .82rem; color: var(--muted); }
   #interactive-landscape .lx-moment { margin: .2rem 0 0; font-size: .78rem; line-height: 1.4; }
   #interactive-landscape .lx-piece { cursor: pointer; }
@@ -117,8 +128,14 @@
       --lx-l8:  #308e7c; --lx-l9:  #44915b; --lx-l10: #7f9040; --lx-l11: #877661;
     }
   }
-  .legend { display: grid; grid-template-columns: 1fr; gap: .05rem; margin: .3rem 0 0; font-size: .78rem; line-height: 1.45; color: var(--muted); }
-  .legend span { display: inline-flex; align-items: baseline; gap: .4em; }
+  .legend { display: flex; flex-direction: column; gap: .15rem; margin: 0; font-size: .78rem; line-height: 1.45; color: var(--muted); }
+  .legend .lx-row { display: flex; flex-wrap: wrap; align-items: center; gap: .1rem .9rem; }
+  .legend .lx-row > b { color: var(--ink); font-weight: 600; margin-right: .1rem; }
+  .legend .lx-note { font-size: .74rem; }
+  .legend span { display: inline-flex; align-items: center; gap: .4em; }
+  .legend .lx-note > span { display: inline; }
+  .legend .lx-lab { display: inline; }
+  .legend sup { font-size: .75em; line-height: 0; }
   .legend span svg { flex: 0 0 auto; align-self: center; }
   .legend .sw { display: inline-block; width: .85em; height: .85em; vertical-align: -.1em; margin-right: .25em; }
   #interactive-landscape .legend span.lx-here { color: var(--ink); font-weight: 600; }
@@ -146,14 +163,33 @@
   .label-max { color: var(--positive); font-weight: 700; }
   .small { font-size: .85em; color: var(--muted); }
   @media (max-width: 1000px) {
-    #interactive-landscape .landscape-explorer-layout { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto auto auto; }
+    #interactive-landscape .landscape-explorer-layout { grid-template-columns: minmax(0, 1fr); }
+    #interactive-landscape .lx-left, #interactive-landscape .lx-right { grid-column: 1; }
     #interactive-landscape .lx-view { height: min(70vw, 420px); }
     #interactive-landscape .lx-bottom { grid-column: 1; }
     table.critlist th, table.critlist td { white-space: normal; }
   }
 
+  /* ---- primer and tutorial ---- */
+  .primer {
+    max-width: var(--page); margin: 0 auto; padding: 1rem 2rem 0;
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .7rem;
+  }
+  .primer .card { border: 1px solid var(--rule); border-radius: 6px; background: var(--control-bg); padding: .6rem .8rem .5rem; font-size: .86rem; line-height: 1.5; }
+  .primer h3 { margin: 0 0 .3rem; font-size: .9rem; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .primer p { margin: 0; }
+  .primer .katex-display { margin: .35rem 0; }
+  .primer .katex { font-size: .98em; }
+  @media (max-width: 1100px) { .primer { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 640px) { .primer { grid-template-columns: 1fr; padding-inline: 1rem; } }
+  .tutorial { max-width: var(--page); margin: 0 auto; padding: 0 2rem 1rem; }
+  .tutorial h2 { font-size: 1.2rem; margin: .4rem 0 .5rem; }
+  .tutorial ol { margin: 0; padding-left: 1.3rem; font-size: .92rem; line-height: 1.55; }
+  .tutorial li { margin: .3rem 0; }
+  @media (max-width: 640px) { .tutorial { padding-inline: 1rem; } }
+
   /* ---- prose sections ---- */
-  .prose { max-width: 58rem; margin: 0 auto; padding: 3rem 1.2rem 4rem; }
+  .prose { max-width: var(--page); margin: 0 auto; padding: 2.5rem 2rem 4rem; }
   .prose h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 .3rem; }
   .prose h2 { font-size: 1.35rem; margin: 2.6rem 0 .8rem; padding-bottom: .3rem; border-bottom: 1px solid var(--rule); }
   .prose h3 { font-size: 1.05rem; margin: 1.6rem 0 .5rem; }
@@ -188,31 +224,69 @@
 <body>
 
 <header class="bar">
-  <div class="brand">The two-teacher census<small>every critical point of a planar two-student ReLU landscape</small></div>
-  <nav aria-label="Page">
-    <a href="#explorer">Explorer</a>
-    <a href="#theorems">Theorems</a>
-    <a href="#lean">Lean</a>
-    <a href="#certificates">Certificates</a>
-    <a href="https://arxiv.org/abs/2610.01728">Paper</a>
-    <a href="https://github.com/JayPiZimmermann/two-teacher-census">GitHub</a>
-  </nav>
+  <div class="bar-top">
+    <span class="brand">The two-teacher census</span>
+    <label class="bar-model" for="ex-regime">network type
+      <select id="ex-regime" aria-label="network type">
+        <option value="noncentered">plain network</option>
+        <option value="centered">skip network</option>
+      </select>
+    </label>
+    <nav aria-label="Page">
+      <a href="#primer">Primer</a>
+      <a href="#explorer">Explorer</a>
+      <a href="#tutorial">How to read</a>
+      <a href="#theorems">Theorems</a>
+      <a href="#lean">Lean</a>
+      <a href="#certificates">Certificates</a>
+      <a href="https://arxiv.org/abs/2610.01728">Paper</a>
+      <a href="https://github.com/JayPiZimmermann/two-teacher-census">GitHub</a>
+    </nav>
+  </div>
+  <p class="bar-sub">Explore every critical point of the Gaussian population loss landscape with a two hidden neuron student and teacher network.</p>
 </header>
+
+<section class="primer" id="primer" aria-label="Primer">
+  <div class="card">
+    <h3>1 · Two network types</h3>
+    <p>Input \(x\in\mathbb R^2\), standard Gaussian. Teacher and student are shallow networks with <em>two hidden neurons</em>, \(f_{s,\beta}(x)=\sum_{i=0}^{1}s_i\,\sigma(\langle w_i,x\rangle)\), \(w_i=(\cos\beta_i,\sin\beta_i)\): a neuron is a <em>generator</em> with direction \(\beta_i\) and signed <em>mass</em> \(s_i\). <b>Plain network:</b> \(\sigma=\mathrm{ReLU}\). <b>Skip network:</b> the same plus a learned linear skip \(\langle b,x\rangle\); at the optimal \(b\) this equals the centered feature \(\sigma_C(z)=\tfrac12\lvert z\rvert\), whose directions are unoriented lines (<a href="https://arxiv.org/abs/2610.01728">paper</a>, Lemma on skip–centering equivalence).</p>
+  </div>
+  <div class="card">
+    <h3>2 · Population loss</h3>
+    <p>For a fixed teacher \((s,\beta)\) the student \((c,\theta)\in\mathbb R^2\times\mathbb R^2\) is scored by
+    \[\mathscr L(c,\theta)=\tfrac12\,\mathbb E_{x\sim\mathcal N(0,I_2)}\bigl(f_{c,\theta}(x)-f_{s,\beta}(x)\bigr)^2 ,\]
+    which the Gaussian pair moments turn into the explicit kernel form \(2\pi\mathscr L=\tfrac{\kappa}{2}(c_0^2+c_1^2)+c_0c_1\Phi(\theta_0-\theta_1)-\sum_i c_iP(\theta_i)+\mathrm{const}\) with \(\Phi_C(t)=(\tfrac\pi2-t)\cos t+\sin t\), \(\Phi_R(t)=(\pi-t)\cos t+\sin t\) on \([0,\pi]\) and \(P(t)=\sum_j s_j\Phi(t-\beta_j)\). Zero loss is attainable: the student can copy the teacher.</p>
+  </div>
+  <div class="card">
+    <h3>3 · Critical points and their types</h3>
+    <p>\((c,\theta)\) is <b>critical</b> if \(\nabla\mathscr L(c,\theta)=0\); a <b>local minimum</b> if \(\mathscr L\ge\mathscr L(c,\theta)\) on a neighbourhood; <b>global</b> if \(\mathscr L(c,\theta)=0\) (the exact fit); a <b>spurious minimum</b> if local but not global; a <b>saddle</b> if critical but neither a local minimum nor a local maximum. A minimum is <em>collided</em> (co) if \(\theta_0\equiv\theta_1\), <em>separated</em> (sep) otherwise, and has <em>same-sign</em> (+) or <em>opposite-sign</em> (±) masses \(c_0c_1\gtrless0\).</p>
+  </div>
+  <div class="card">
+    <h3>4 · The census</h3>
+    <p>For a teacher \((s,\beta)\) let \(\mathsf M(s,\beta)\) be the multiset of types of its spurious minima, e.g. \(\{\mathrm{co}^{\pm}\}\) or \(\{2\times\mathrm{co}^{+},\mathrm{sep}^{\pm}\}\). A <b>census</b> is a set of teachers with the same \(\mathsf M\). Rotation, reflection, swapping and scaling the teacher do not change \(\mathsf M\), so a teacher is a point of the plane with coordinates <em>gap</em> \(\widehat\beta=\beta_1-\beta_0\) and <em>mass ratio</em> \(y\) (folded so that \(y=\pm1\) means \(\lvert s_0\rvert=\lvert s_1\rvert\)). The map colours this plane by census; the table lists every critical point of the chosen teacher with its proved type.</p>
+  </div>
+</section>
 
 <main id="explorer">
 <section id="interactive-landscape" aria-label="The exact two-student classification">
 <div class="landscape-explorer-layout">
-  <div class="lx-top">
-    <div class="controls teacher-row landscape-controls">
+  <div class="lx-box lx-left">
+    <p class="legend" id="ex-legend"></p>
+    <div class="lx-view" id="ex-canvas-view">
+      <svg class="canvas" id="ex-canvas" width="380" height="380" viewBox="-255 -255 510 510" role="img" aria-label="The teacher atoms in blue and the selected critical family's students in red, each drawn as an arrow whose length is the size of its mass on a fixed scale, dashed with a hollow head when the mass is negative; in the centered model each arrow is drawn both ways, because a centered direction is an unoriented line. The teacher atoms can be dragged."></svg>
+    </div>
+    <p class="lx-hint">drag the teacher generators, scroll to zoom, double-click to reset</p>
+  </div>
+  <div class="lx-box lx-right">
+    <p class="legend" id="ex-map-legend"></p>
+    <div class="lx-view" id="ex-map-view">
+      <svg class="lx-mapcanvas" id="ex-map" width="620" height="330" viewBox="0 0 620 330" role="img" aria-label="A map of the teacher gap against the teacher mass ratio, shaded by which census of critical families occurs. The gap axis covers half a period, because reflecting the gap leaves the census unchanged. Each region carries a dot marking one example teacher in it; clicking the region loads that example. The regions of the current teacher's census are outlined. Degenerate strata that are single lines are drawn as thick lines, and a ring marks the current teacher. The vertical axis is compressed so that a mass ratio of plus or minus infinity is the top and bottom edge."></svg>
+    </div>
+    <p class="lx-hint">the teacher gap against the teacher mass ratio — click a region to load a teacher from it</p>
+  </div>
+  <div class="lx-under lx-left">
+    <div class="controls teacher-row landscape-controls lx-top">
       <div class="ctrl-group teacher-params lx-controls">
-        <div class="lx-model">
-          <label for="ex-regime">loss model</label>
-          <select id="ex-regime" aria-label="loss model">
-            <option value="centered">centered (abs)</option>
-            <option value="noncentered">plain-ReLU</option>
-          </select>
-          <span id="ex-trap-row" hidden><button type="button" id="ex-trap">load example positive-weight trap</button></span>
-        </div>
         <div class="lx-sliders">
           <div class="ctrl-row"><label for="t-beta0">angle β₀</label><input type="range" id="t-beta0" min="0" max="2" step="0.01" value="0.00"><output class="val" id="t-beta0-val" for="t-beta0"></output></div>
           <div class="ctrl-row"><label for="t-beta1">angle β₁</label><input type="range" id="t-beta1" min="0" max="2" step="0.01" value="0.31"><output class="val" id="t-beta1-val" for="t-beta1"></output></div>
@@ -221,21 +295,6 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="lx-left">
-    <div class="lx-view" id="ex-canvas-view">
-      <svg class="canvas" id="ex-canvas" width="380" height="380" viewBox="-255 -255 510 510" role="img" aria-label="The teacher atoms in blue and the selected critical family's students in red, each drawn as an arrow whose length is the size of its mass on a fixed scale, dashed with a hollow head when the mass is negative; in the centered model each arrow is drawn both ways, because a centered direction is an unoriented line. The teacher atoms can be dragged."></svg>
-    </div>
-    <p class="lx-subtitle">The teacher and the selected family — drag a teacher, scroll to zoom, double-click to reset</p>
-    <p class="legend" id="ex-legend"></p>
-    <p class="small lx-moment" id="ex-moment-note" aria-live="polite"></p>
-  </div>
-  <div class="lx-right">
-    <div class="lx-view" id="ex-map-view">
-      <svg class="lx-mapcanvas" id="ex-map" width="620" height="330" viewBox="0 0 620 330" role="img" aria-label="A map of the teacher gap against the teacher mass ratio, shaded by which census of critical families occurs. The gap axis covers half a period, because reflecting the gap leaves the census unchanged. Each region carries a dot marking one example teacher in it; clicking the region loads that example. The regions of the current teacher's census are outlined. Degenerate strata that are single lines are drawn as thick lines, and a ring marks the current teacher. The vertical axis is compressed so that a mass ratio of plus or minus infinity is the top and bottom edge."></svg>
-    </div>
-    <p class="lx-subtitle">Where the census changes: the gap against the teacher mass ratio — click a region to load a teacher from it</p>
-    <p class="legend" id="ex-map-legend"></p>
   </div>
   <div class="lx-bottom">
     <div class="lx-tablecol">
@@ -250,16 +309,24 @@
           <tbody id="ex-crit-body"></tbody>
         </table>
       </div>
-      <p class="small" id="ex-trap-note" aria-live="polite"></p>
     </div>
   </div>
 </div>
 </section>
 </main>
 
+<section class="tutorial" id="tutorial" aria-label="How to read the map">
+  <h2>How to read the map</h2>
+  <ol>
+    <li><b>Choose the network type</b> in the header. The skip network's census has five regions and only collided spurious minima; the plain network's has many more, including separated ones. The map's gap axis spans half a period because reflecting the gap leaves the census unchanged.</li>
+    <li><b>Pick a teacher.</b> Drag a blue generator in the left plot (its length is the mass, its direction the angle), use the sliders, or click a region of the map to load a teacher from it. Thick lines and rings are one-dimensional and zero-dimensional censuses: degenerate teachers (equal masses, a zero mass, right angles) whose landscape is special.</li>
+    <li><b>Read the table.</b> Every row is one family of critical points of the loaded teacher — the exact fit, collided pairs, separated pairs, dead students — with the angles and masses computed from the row's closed form and the type taken from the classification theorem. Click a row to draw its students in red. A row with "split free" is a whole line of critical points: only the sum of the masses is fixed, and the type may differ along the line.</li>
+  </ol>
+</section>
+
 <article class="prose" id="theorems">
-  <h1>What the explorer shows</h1>
-  <p class="lede">A planar teacher network with two ReLU neurons, a student network with two, and the Gaussian population loss between them. Every row of the table above is a <em>family</em> of critical points of that loss, with its exact type — global minimum, spurious local minimum, or saddle — read off a theorem, not a numerical Hessian. The map colours each teacher by its <em>census</em>: which minima it has. Below are the statements; the proofs are Lean code.</p>
+  <h1>The theorems behind the map</h1>
+  <p class="lede">Every row of the table and every colour of the map is read off the two classification theorems below (statements only; the proofs are Lean code, linked under each theorem). The notation is the one of the <a href="#primer">primer</a>, made precise here.</p>
 
   <h2 id="setting">Setting</h2>
   <p>Directions on the unit circle are written as angles. The teacher has directions \(\beta_0,\beta_1\) and signed masses \(s_0,s_1\); the student has directions \(\theta_0,\theta_1\) and signed masses \(c_0,c_1\). Two activations are compared, the <strong>plain</strong> ReLU \(\sigma_R(z)=\max(z,0)\) and the <strong>centered</strong> feature \(\sigma_C(z)=\tfrac12\lvert z\rvert\), the latter being what a learned linear skip connection turns the ReLU into (see the <a href="https://arxiv.org/abs/2610.01728">paper</a>). For \(q\in\{C,R\}\) the population loss over a standard Gaussian input is a kernel sum,
@@ -415,9 +482,9 @@
     else if (/^centered$/i.test(m)) sel.value = "centered";
   })();
 </script>
-<script src="explorer.js" defer></script>
+<script src="explorer.js?v=6" defer></script>
 <script defer src="vendor/katex/katex.min.js"></script>
 <script defer src="vendor/katex/contrib/auto-render.min.js"
-  onload="renderMathInElement(document.getElementById('theorems'), {delimiters: [{left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}], throwOnError: false});"></script>
+  onload="['primer','theorems'].forEach(function (id) { renderMathInElement(document.getElementById(id), {delimiters: [{left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}], throwOnError: false}); });"></script>
 </body>
 </html>
