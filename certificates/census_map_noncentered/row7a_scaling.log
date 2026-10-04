@@ -1,0 +1,17 @@
+=== teacher width 0.0002 ===
+nodes 831  map 264 safe 152 undecided 0
+wall clock 15.8 s ; row7a_scale0.0002.json (0.2 KB)
+COMPLETE: every leaf discharged
+=== teacher width 0.0005 ===
+nodes 1109  map 326 safe 229 undecided 0
+wall clock 21.3 s ; row7a_scale0.0005.json (0.3 KB)
+COMPLETE: every leaf discharged
+=== teacher width 0.001 ===
+nodes 2909  map 895 safe 560 undecided 0
+wall clock 59.4 s ; row7a_scale0.001.json (0.7 KB)
+COMPLETE: every leaf discharged
+=== teacher width 0.002 ===
+nodes 12233  map 3734 safe 2383 undecided 0
+wall clock 237.3 s ; row7a_scale0.002.json (3.0 KB)
+COMPLETE: every leaf discharged
+EXIT 0

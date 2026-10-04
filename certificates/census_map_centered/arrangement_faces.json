@@ -1,0 +1,1230 @@
+{
+ "object": "planar arrangement of the certified census boundary of the CENTERED two-student census map",
+ "domain": {
+  "beta": "[0, pi]  (closed; beta = 0 and beta = pi are the same stratum of the kernel, so the map is a cylinder and may be closed to a torus without changing the face count)",
+  "y": "R / 2Z  -- a CIRCLE; y = -1 and y = +1 are ONE line (s0 = 0)",
+  "note": "psi = (y+1)pi/2, (s0,s1) = (sin psi, cos psi); the map's representative always has s0 >= 0"
+ },
+ "topology": {
+  "displayed_square_with_y_seam_identified": {
+   "space": "closed annulus (equivalently, a cylinder with boundary)",
+   "vertices": 14,
+   "edges": 24,
+   "faces": 10,
+   "euler_characteristic": 0
+  },
+  "after_identifying_beta_0_with_beta_pi": {
+   "space": "torus",
+   "vertices": 11,
+   "edges": 21,
+   "faces": 10,
+   "euler_characteristic": 0
+  },
+  "note": "beta = 0 and beta = pi are duplicate drawings of one centered projective stratum; y = -1 and y = 1 are likewise one mass-coordinate seam"
+ },
+ "precision": "mpmath.iv, 200 bits, directed rounding (mp.prec 220)",
+ "strata_1d": [
+  "beta = 0        (degenerate column, all three determinants vanish)",
+  "beta = pi/2     (degenerate column, common zero set on the kink lattice)",
+  "beta = pi       (degenerate column, = beta 0 by pi-periodicity)",
+  "y = 0           (s1 = 0; image of the Wwgt root t = 0)",
+  "y = +-1         (s0 = 0; image of the Wwgt root t = beta)",
+  "torque lens     (image of Wtau = 0; closed curve, beta in [beta1*, beta2*])",
+  "potential curve (image of Wpot = 0; two branches over beta in (0,pi))"
+ ],
+ "vertices": [
+  {
+   "id": "0D-1",
+   "beta": "1.420925475551033713494856535",
+   "y": "-0.5",
+   "what": "torque lens left endpoint (double root of Wtau)"
+  },
+  {
+   "id": "0D-2",
+   "beta": "1.720667178038759524968",
+   "y": "-0.5",
+   "what": "torque lens right endpoint (double root of Wtau)"
+  },
+  {
+   "id": "0D-3",
+   "beta": "pi/2",
+   "y": "-c",
+   "what": "torque lens upper branch meets beta = pi/2"
+  },
+  {
+   "id": "0D-4",
+   "beta": "pi/2",
+   "y": "c-1",
+   "what": "torque lens lower branch meets beta = pi/2"
+  },
+  {
+   "id": "0D-5",
+   "beta": "pi/2",
+   "y": "c",
+   "what": "potential lower branch meets beta = pi/2"
+  },
+  {
+   "id": "0D-6",
+   "beta": "pi/2",
+   "y": "1-c",
+   "what": "potential upper branch meets beta = pi/2"
+  },
+  {
+   "id": "0D-7",
+   "beta": "0",
+   "y": "0.5",
+   "what": "potential curve endpoint on beta = 0"
+  },
+  {
+   "id": "0D-8",
+   "beta": "pi",
+   "y": "0.5",
+   "what": "potential curve endpoint on beta = pi"
+  },
+  {
+   "id": "0D-9",
+   "beta": "0",
+   "y": "0",
+   "what": "beta = 0 meets y = 0"
+  },
+  {
+   "id": "0D-10",
+   "beta": "0",
+   "y": "1",
+   "what": "beta = 0 meets the y = +-1 seam"
+  },
+  {
+   "id": "0D-11",
+   "beta": "pi/2",
+   "y": "0",
+   "what": "beta = pi/2 meets y = 0"
+  },
+  {
+   "id": "0D-12",
+   "beta": "pi/2",
+   "y": "1",
+   "what": "beta = pi/2 meets the y = +-1 seam"
+  },
+  {
+   "id": "0D-13",
+   "beta": "pi",
+   "y": "0",
+   "what": "beta = pi meets y = 0"
+  },
+  {
+   "id": "0D-14",
+   "beta": "pi",
+   "y": "1",
+   "what": "beta = pi meets the y = +-1 seam"
+  }
+ ],
+ "faces": [
+  {
+   "id": "F1",
+   "name": "lower, left of beta=pi/2, outside the torque lens",
+   "region": "0 < beta < pi/2,  -1 < y < 0,  outside the torque lens",
+   "interior_point": {
+    "beta": "0.75",
+    "y": "-0.25"
+   },
+   "certified": true,
+   "torque_root_count": 2,
+   "roots": [
+    {
+     "piece": "B",
+     "t": [
+      "0.16094121669847824676058092325861634621599049785207890350621100247",
+      "0.16094121669847824676058092325861634629713764549460051651561542592"
+     ],
+     "t_mid": "0.1609412166984782467605809",
+     "sgn_Wtau": 1,
+     "sgn_Wpot": -1,
+     "sgn_Wwgt": -1,
+     "Wtau": "0.730537955641",
+     "Wpot": "-1.15638494682",
+     "Wwgt": "-0.212923495592"
+    },
+    {
+     "piece": "A",
+     "t": [
+      "1.7692692378773455435382700800966034937419591335772005578822763389",
+      "1.7692692378773455435382700800966034938701542973802534514875324517"
+     ],
+     "t_mid": "1.76926923787734554353827",
+     "sgn_Wtau": 1,
+     "sgn_Wpot": 1,
+     "sgn_Wwgt": 1,
+     "Wtau": "0.551639373241",
+     "Wpot": "0.700868075185",
+     "Wwgt": "0.626253724213"
+    }
+   ],
+   "curve_branch_y_enclosures_at_this_beta": {
+    "torque": [],
+    "potential": [
+     [
+      "0.4048931626456907164459",
+      "0.4048931626456907164459"
+     ],
+     [
+      "0.5951068373543092835541",
+      "0.5951068373543092835541"
+     ]
+    ]
+   },
+   "position_relative_to_curves": {
+    "torque": "absent",
+    "potential": "below"
+   },
+   "census": "coincident:trap@mixed | fit:global",
+   "extra_witnesses": [
+    {
+     "beta": "0.4",
+     "y": "-0.5",
+     "certified": true,
+     "torque_root_count": 2,
+     "position_relative_to_curves": {
+      "torque": "absent",
+      "potential": "below"
+     },
+     "census": "coincident:trap@mixed | fit:global"
+    },
+    {
+     "beta": "1.5",
+     "y": "-0.9",
+     "certified": true,
+     "torque_root_count": 2,
+     "position_relative_to_curves": {
+      "torque": "below",
+      "potential": "below"
+     },
+     "census": "coincident:trap@mixed | fit:global"
+    },
+    {
+     "beta": "0.25",
+     "y": "-0.1",
+     "certified": true,
+     "torque_root_count": 2,
+     "position_relative_to_curves": {
+      "torque": "absent",
+      "potential": "below"
+     },
+     "census": "coincident:trap@mixed | fit:global"
+    },
+    {
+     "beta": "1.5",
+     "y": "-0.1",
+     "certified": true,
+     "torque_root_count": 2,
+     "position_relative_to_curves": {
+      "torque": "above",
+      "potential": "below"
+     },
+     "census": "coincident:trap@mixed | fit:global"
+    }
+   ],
+   "census_constant_on_witnesses": true
+  },
+  {
+   "id": "F2",
+   "name": "lower, left of beta=pi/2, INSIDE the torque lens",
+   "region": "beta1* < beta < pi/2,  inside the torque lens",
+   "interior_point": {
+    "beta": "1.5",
+    "y": "-0.5"
+   },
+   "certified": true,
+   "torque_root_count": 4,
+   "roots": [
+    {
+     "piece": "B",
+     "t": [
+      "0.15971601075012473755797637386561319861055671771691769717250666352",
+      "0.15971601075012473755797637386561319870403853353611134410041014939"
+     ],
+     "t_mid": "0.1597160107501247375579764",
+     "sgn_Wtau": 1,
+     "sgn_Wpot": -1,
+     "sgn_Wwgt": -1,
+     "Wtau": "0.0702868483173",
+     "Wpot": "-0.578626377374",
+     "Wwgt": "-0.254169764528"
+    },
+    {
+     "piece": "B",
+     "t": [
+      "0.74999999999999999999999999999999999999828909271856993138680231704",
+      "0.75000000000000000000000000000000000000171090728143006861479450868"
+     ],
+     "t_mid": "0.75",
+     "sgn_Wtau": -1,
+     "sgn_Wpot": -1,
+     "sgn_Wwgt": -1,
+     "Wtau": "-0.0907165255015",
+     "Wpot": "-1.4347544575",
+     "Wwgt": "-0.762735491498"
+    },
+    {
+     "piece": "B",
+     "t": [
+      "1.3402839892498752624420236261343868013078562465952200520879119846",
+      "1.3402839892498752624420236261343868013737537955835776730377980366"
+     ],
+     "t_mid": "1.340283989249875262442024",
+     "sgn_Wtau": 1,
+     "sgn_Wpot": -1,
+     "sgn_Wwgt": -1,
+     "Wtau": "0.0702868483173",
+     "Wpot": "-0.578626377374",
+     "Wwgt": "-0.254169764528"
+    },
+    {
+     "piece": "A",
+     "t": [
+      "2.3207963267948966192313216916397514420924299812668648132154713778",
+      "2.3207963267948966192313216916397514421047394181082410077498498295"
+     ],
+     "t_mid": "2.320796326794896619231322",
+     "sgn_Wtau": 1,
+     "sgn_Wpot": 1,
+     "sgn_Wwgt": 1,
+     "Wtau": "0.241961971286",
+     "Wpot": "1.36414383122",
+     "Wwgt": "0.803052901251"
+    }
+   ],
+   "curve_branch_y_enclosures_at_this_beta": {
+    "torque": [
+     [
+      "-0.5273664690133109691825",
+      "-0.5273664690133109691825"
+     ],
+     [
+      "-0.4726335309866890308175",
+      "-0.4726335309866890308175"
+     ]
+    ],
+    "potential": [
+     [
+      "0.3612657102295734689588",
+      "0.3612657102295734689588"
+     ],
+     [
+      "0.6387342897704265310412",
+      "0.6387342897704265310412"
+     ]
+    ]
+   },
+   "position_relative_to_curves": {
+    "torque": "inside",
+    "potential": "below"
+   },
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "extra_witnesses": [
+    {
+     "beta": "1.55",
+     "y": "-0.45",
+     "certified": true,
+     "torque_root_count": 4,
+     "position_relative_to_curves": {
+      "torque": "inside",
+      "potential": "below"
+     },
+     "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+    },
+    {
+     "beta": "1.45",
+     "y": "-0.5",
+     "certified": true,
+     "torque_root_count": 4,
+     "position_relative_to_curves": {
+      "torque": "inside",
+      "potential": "below"
+     },
+     "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+    }
+   ],
+   "census_constant_on_witnesses": true
+  },
+  {
+   "id": "F3",
+   "name": "lower, right of beta=pi/2, INSIDE the torque lens",
+   "region": "pi/2 < beta < beta2*,  inside the torque lens",
+   "interior_point": {
+    "beta": "1.65",
+    "y": "-0.5"
+   },
+   "certified": true,
+   "torque_root_count": 4,
+   "roots": [
+    {
+     "piece": "B",
+     "t": [
+      "0.82499999999999995559107901499373838304875598466414509021689241777",
+      "0.82499999999999995559107901499373838306071056807022990977405371731"
+     ],
+     "t_mid": "0.824999999999999955591079",
+     "sgn_Wtau": -1,
+     "sgn_Wpot": -1,
+     "sgn_Wwgt": -1,
+     "Wtau": "-0.250335943277",
+     "Wpot": "-1.3592728468",
+     "Wwgt": "-0.80480439504"
+    },
+    {
+     "piece": "A",
+     "t": [
+      "1.8354388671113445693559193089455388001509636994752451444616409636",
+      "1.8354388671113445693559193089455388001795722840904479529226005742"
+     ],
+     "t_mid": "1.835438867111344569355919",
+     "sgn_Wtau": -1,
+     "sgn_Wpot": 1,
+     "sgn_Wwgt": 1,
+     "Wtau": "-0.0718428537168",
+     "Wpot": "0.659107466177",
+     "Wwgt": "0.29363230623"
+    },
+    {
+     "piece": "A",
+     "t": [
+      "2.3957963267948965748224007066334898251514219752798651277999815962",
+      "2.3957963267948965748224007066334898251552139768296156931769169087"
+     ],
+     "t_mid": "2.395796326794896574822401",
+     "sgn_Wtau": 1,
+     "sgn_Wpot": 1,
+     "sgn_Wwgt": 1,
+     "Wtau": "0.081234006743",
+     "Wpot": "1.43821652673",
+     "Wwgt": "0.759725266734"
+    },
+    {
+     "piece": "A",
+     "t": [
+      "2.9561537864784485802888821043214408501355311665523627785386412378",
+      "2.9561537864784485802888821043214408501471254714162612704393914688"
+     ],
+     "t_mid": "2.956153786478448580288882",
+     "sgn_Wtau": -1,
+     "sgn_Wpot": 1,
+     "sgn_Wwgt": 1,
+     "Wtau": "-0.0718428537168",
+     "Wpot": "0.659107466177",
+     "Wwgt": "0.29363230623"
+    }
+   ],
+   "curve_branch_y_enclosures_at_this_beta": {
+    "torque": [
+     [
+      "-0.5224444615566152021795",
+      "-0.5224444615566152021795"
+     ],
+     [
+      "-0.4775555384433847978205",
+      "-0.4775555384433847978205"
+     ]
+    ],
+    "potential": [
+     [
+      "0.3613555368367837248972",
+      "0.3613555368367837248972"
+     ],
+     [
+      "0.6386444631632162751028",
+      "0.6386444631632162751028"
+     ]
+    ]
+   },
+   "position_relative_to_curves": {
+    "torque": "inside",
+    "potential": "below"
+   },
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "extra_witnesses": [
+    {
+     "beta": "1.6",
+     "y": "-0.55",
+     "certified": true,
+     "torque_root_count": 4,
+     "position_relative_to_curves": {
+      "torque": "inside",
+      "potential": "below"
+     },
+     "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+    },
+    {
+     "beta": "1.7",
+     "y": "-0.5",
+     "certified": true,
+     "torque_root_count": 4,
+     "position_relative_to_curves": {
+      "torque": "inside",
+      "potential": "below"
+     },
+     "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+    }
+   ],
+   "census_constant_on_witnesses": true
+  },
+  {
+   "id": "F4",
+   "name": "lower, right of beta=pi/2, outside the torque lens",
+   "region": "pi/2 < beta < pi,  -1 < y < 0,  outside the torque lens",
+   "interior_point": {
+    "beta": "2.5",
+    "y": "-0.5"
+   },
+   "certified": true,
+   "torque_root_count": 2,
+   "roots": [
+    {
+     "piece": "B",
+     "t": [
+      "1.249999999999999999999999999999999999921141124438728982467436611",
+      "1.2500000000000000000000000000000000000788588755612710173830056628"
+     ],
+     "t_mid": "1.25",
+     "sgn_Wtau": -1,
+     "sgn_Wpot": -1,
+     "sgn_Wwgt": -1,
+     "Wtau": "-0.51621131801",
+     "Wpot": "-0.639389193786",
+     "Wwgt": "-0.577800255898"
+    },
+    {
+     "piece": "A",
+     "t": [
+      "2.8207963267948966192313216916397514420985846996875529104874622822",
+      "2.8207963267948966192313216916397514420985846996875529104874797067"
+     ],
+     "t_mid": "2.820796326794896619231322",
+     "sgn_Wtau": -1,
+     "sgn_Wpot": 1,
+     "sgn_Wwgt": 1,
+     "Wtau": "-0.686542244596",
+     "Wpot": "1.18368320573",
+     "Wwgt": "0.248570480566"
+    }
+   ],
+   "curve_branch_y_enclosures_at_this_beta": {
+    "torque": [],
+    "potential": [
+     [
+      "0.4163733612374601619235",
+      "0.4163733612374601619235"
+     ],
+     [
+      "0.5836266387625398380765",
+      "0.5836266387625398380765"
+     ]
+    ]
+   },
+   "position_relative_to_curves": {
+    "torque": "absent",
+    "potential": "below"
+   },
+   "census": "coincident:trap@mixed | fit:global",
+   "extra_witnesses": [
+    {
+     "beta": "1.65",
+     "y": "-0.9",
+     "certified": true,
+     "torque_root_count": 2,
+     "position_relative_to_curves": {
+      "torque": "below",
+      "potential": "below"
+     },
+     "census": "coincident:trap@mixed | fit:global"
+    },
+    {
+     "beta": "2.9",
+     "y": "-0.1",
+     "certified": true,
+     "torque_root_count": 2,
+     "position_relative_to_curves": {
+      "torque": "absent",
+      "potential": "below"
+     },
+     "census": "coincident:trap@mixed | fit:global"
+    },
+    {
+     "beta": "1.8",
+     "y": "-0.2",
+     "certified": true,
+     "torque_root_count": 2,
+     "position_relative_to_curves": {
+      "torque": "absent",
+      "potential": "below"
+     },
+     "census": "coincident:trap@mixed | fit:global"
+    }
+   ],
+   "census_constant_on_witnesses": true
+  },
+  {
+   "id": "F5",
+   "name": "upper, left of beta=pi/2, BELOW the potential curve",
+   "region": "0 < beta < pi/2,  0 < y < y_lower(beta)",
+   "interior_point": {
+    "beta": "0.4",
+    "y": "0.2"
+   },
+   "certified": true,
+   "torque_root_count": 2,
+   "roots": [
+    {
+     "piece": "A",
+     "t": [
+      "1.4156416243592737866536822457348400724410535111117397015442077062",
+      "1.4156416243592737866536822457348400724795777843645002220560238497"
+     ],
+     "t_mid": "1.415641624359273786653682",
+     "sgn_Wtau": 1,
+     "sgn_Wpot": 1,
+     "sgn_Wwgt": 1,
+     "Wtau": "0.369386726063",
+     "Wpot": "0.302301735198",
+     "Wwgt": "0.335844230631"
+    },
+    {
+     "piece": "A",
+     "t": [
+      "3.0249851413953746577892099621585728469026147779885357307905996644",
+      "3.0249851413953746577892099621585728469729003298184085639462769327"
+     ],
+     "t_mid": "3.02498514139537465778921",
+     "sgn_Wtau": 1,
+     "sgn_Wpot": -1,
+     "sgn_Wwgt": 1,
+     "Wtau": "0.619960616705",
+     "Wpot": "-0.573987907413",
+     "Wwgt": "0.022986354646"
+    }
+   ],
+   "curve_branch_y_enclosures_at_this_beta": {
+    "torque": [],
+    "potential": [
+     [
+      "0.4454066135815652689448",
+      "0.4454066135815652689448"
+     ],
+     [
+      "0.5545933864184347310552",
+      "0.5545933864184347310552"
+     ]
+    ]
+   },
+   "position_relative_to_curves": {
+    "torque": "absent",
+    "potential": "below"
+   },
+   "census": "coincident:trap@positive | fit:global",
+   "extra_witnesses": [
+    {
+     "beta": "1.5",
+     "y": "0.05",
+     "certified": true,
+     "torque_root_count": 2,
+     "position_relative_to_curves": {
+      "torque": "above",
+      "potential": "below"
+     },
+     "census": "coincident:trap@positive | fit:global"
+    },
+    {
+     "beta": "0.05",
+     "y": "0.2",
+     "certified": true,
+     "torque_root_count": 2,
+     "position_relative_to_curves": {
+      "torque": "absent",
+      "potential": "below"
+     },
+     "census": "coincident:trap@positive | fit:global"
+    },
+    {
+     "beta": "1.2",
+     "y": "0.3",
+     "certified": true,
+     "torque_root_count": 2,
+     "position_relative_to_curves": {
+      "torque": "absent",
+      "potential": "below"
+     },
+     "census": "coincident:trap@positive | fit:global"
+    }
+   ],
+   "census_constant_on_witnesses": true
+  },
+  {
+   "id": "F6",
+   "name": "upper, left of beta=pi/2, INSIDE the potential lens",
+   "region": "0 < beta < pi/2,  y_lower(beta) < y < y_upper(beta)",
+   "interior_point": {
+    "beta": "0.4",
+    "y": "0.5"
+   },
+   "certified": true,
+   "torque_root_count": 2,
+   "roots": [
+    {
+     "piece": "A",
+     "t": [
+      "0.91468640844607126173409878102666383015687122532708303908203380952",
+      "0.91468640844607126173409878102666383031618160052915259517783101675"
+     ],
+     "t_mid": "0.9146864084460712617340988",
+     "sgn_Wtau": 1,
+     "sgn_Wpot": -1,
+     "sgn_Wwgt": 1,
+     "Wtau": "0.425859078098",
+     "Wpot": "-0.113815702521",
+     "Wwgt": "0.156021687788"
+    },
+    {
+     "piece": "A",
+     "t": [
+      "2.6269062451437219989330050947559698623914717234301803760163914447",
+      "2.626906245143721998933005094755969862469909410469106026764787353"
+     ],
+     "t_mid": "2.626906245143721998933005",
+     "sgn_Wtau": 1,
+     "sgn_Wpot": -1,
+     "sgn_Wwgt": 1,
+     "Wtau": "0.425859078098",
+     "Wpot": "-0.113815702521",
+     "Wwgt": "0.156021687788"
+    }
+   ],
+   "curve_branch_y_enclosures_at_this_beta": {
+    "torque": [],
+    "potential": [
+     [
+      "0.4454066135815652689448",
+      "0.4454066135815652689448"
+     ],
+     [
+      "0.5545933864184347310552",
+      "0.5545933864184347310552"
+     ]
+    ]
+   },
+   "position_relative_to_curves": {
+    "torque": "absent",
+    "potential": "inside"
+   },
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global",
+   "extra_witnesses": [
+    {
+     "beta": "1.5",
+     "y": "0.5",
+     "certified": true,
+     "torque_root_count": 2,
+     "position_relative_to_curves": {
+      "torque": "above",
+      "potential": "inside"
+     },
+     "census": "coincident:trap@positive | coincident:trap@positive | fit:global"
+    },
+    {
+     "beta": "0.05",
+     "y": "0.5",
+     "certified": true,
+     "torque_root_count": 2,
+     "position_relative_to_curves": {
+      "torque": "absent",
+      "potential": "inside"
+     },
+     "census": "coincident:trap@positive | coincident:trap@positive | fit:global"
+    }
+   ],
+   "census_constant_on_witnesses": true
+  },
+  {
+   "id": "F7",
+   "name": "upper, left of beta=pi/2, ABOVE the potential curve",
+   "region": "0 < beta < pi/2,  y_upper(beta) < y < 1",
+   "interior_point": {
+    "beta": "0.4",
+    "y": "0.8"
+   },
+   "certified": true,
+   "torque_root_count": 2,
+   "roots": [
+    {
+     "piece": "A",
+     "t": [
+      "0.51660751219441856071827901666615106081058169477171429595719777842",
+      "0.51660751219441856071827901666615106083349850923335746050206993601"
+     ],
+     "t_mid": "0.516607512194418560718279",
+     "sgn_Wtau": 1,
+     "sgn_Wpot": -1,
+     "sgn_Wwgt": 1,
+     "Wtau": "0.619960616705",
+     "Wpot": "-0.573987907413",
+     "Wwgt": "0.022986354646"
+    },
+    {
+     "piece": "A",
+     "t": [
+      "2.1259510292305194159253441662628345331049604603679323748031534895",
+      "2.1259510292305194159253441662628345331507212404053474762022605384"
+     ],
+     "t_mid": "2.125951029230519415925344",
+     "sgn_Wtau": 1,
+     "sgn_Wpot": 1,
+     "sgn_Wwgt": 1,
+     "Wtau": "0.369386726063",
+     "Wpot": "0.302301735198",
+     "Wwgt": "0.335844230631"
+    }
+   ],
+   "curve_branch_y_enclosures_at_this_beta": {
+    "torque": [],
+    "potential": [
+     [
+      "0.4454066135815652689448",
+      "0.4454066135815652689448"
+     ],
+     [
+      "0.5545933864184347310552",
+      "0.5545933864184347310552"
+     ]
+    ]
+   },
+   "position_relative_to_curves": {
+    "torque": "absent",
+    "potential": "above"
+   },
+   "census": "coincident:trap@positive | fit:global",
+   "extra_witnesses": [
+    {
+     "beta": "1.5",
+     "y": "0.95",
+     "certified": true,
+     "torque_root_count": 2,
+     "position_relative_to_curves": {
+      "torque": "above",
+      "potential": "above"
+     },
+     "census": "coincident:trap@positive | fit:global"
+    },
+    {
+     "beta": "0.05",
+     "y": "0.8",
+     "certified": true,
+     "torque_root_count": 2,
+     "position_relative_to_curves": {
+      "torque": "absent",
+      "potential": "above"
+     },
+     "census": "coincident:trap@positive | fit:global"
+    },
+    {
+     "beta": "1.2",
+     "y": "0.7",
+     "certified": true,
+     "torque_root_count": 2,
+     "position_relative_to_curves": {
+      "torque": "absent",
+      "potential": "above"
+     },
+     "census": "coincident:trap@positive | fit:global"
+    }
+   ],
+   "census_constant_on_witnesses": true
+  },
+  {
+   "id": "F8",
+   "name": "upper, right of beta=pi/2, BELOW the potential curve",
+   "region": "pi/2 < beta < pi,  0 < y < y_lower(beta)",
+   "interior_point": {
+    "beta": "2.5",
+    "y": "0.2"
+   },
+   "certified": true,
+   "torque_root_count": 2,
+   "roots": [
+    {
+     "piece": "B",
+     "t": [
+      "0.12574770067657013848640922283791281953602028458565456738090279863",
+      "0.12574770067657013848640922283791281969047258018605667666002073599"
+     ],
+     "t_mid": "0.1257477006765701384864092",
+     "sgn_Wtau": -1,
+     "sgn_Wpot": 1,
+     "sgn_Wwgt": -1,
+     "Wtau": "-0.750707498733",
+     "Wpot": "0.638984258291",
+     "Wwgt": "-0.0558616202211"
+    },
+    {
+     "piece": "B",
+     "t": [
+      "1.7558898459422325873474833599126128508380478876656324540624358822",
+      "1.7558898459422325873474833599126128510032618165601106716257577907"
+     ],
+     "t_mid": "1.755889845942232587347483",
+     "sgn_Wtau": -1,
+     "sgn_Wpot": -1,
+     "sgn_Wwgt": -1,
+     "Wtau": "-0.51871392091",
+     "Wpot": "-0.335564384836",
+     "Wwgt": "-0.427139152873"
+    }
+   ],
+   "curve_branch_y_enclosures_at_this_beta": {
+    "torque": [],
+    "potential": [
+     [
+      "0.4163733612374601619235",
+      "0.4163733612374601619235"
+     ],
+     [
+      "0.5836266387625398380765",
+      "0.5836266387625398380765"
+     ]
+    ]
+   },
+   "position_relative_to_curves": {
+    "torque": "absent",
+    "potential": "below"
+   },
+   "census": "coincident:trap@positive | fit:global",
+   "extra_witnesses": [
+    {
+     "beta": "1.65",
+     "y": "0.05",
+     "certified": true,
+     "torque_root_count": 2,
+     "position_relative_to_curves": {
+      "torque": "above",
+      "potential": "below"
+     },
+     "census": "coincident:trap@positive | fit:global"
+    },
+    {
+     "beta": "3.1",
+     "y": "0.2",
+     "certified": true,
+     "torque_root_count": 2,
+     "position_relative_to_curves": {
+      "torque": "absent",
+      "potential": "below"
+     },
+     "census": "coincident:trap@positive | fit:global"
+    }
+   ],
+   "census_constant_on_witnesses": true
+  },
+  {
+   "id": "F9",
+   "name": "upper, right of beta=pi/2, INSIDE the potential lens",
+   "region": "pi/2 < beta < pi,  y_lower(beta) < y < y_upper(beta)",
+   "interior_point": {
+    "beta": "2.5",
+    "y": "0.5"
+   },
+   "certified": true,
+   "torque_root_count": 2,
+   "roots": [
+    {
+     "piece": "B",
+     "t": [
+      "0.40068809352359668250928861225737074317609121210867386645772074728",
+      "0.40068809352359668250928861225737074318668899268034287735840030722"
+     ],
+     "t_mid": "0.4006880935235966825092886",
+     "sgn_Wtau": -1,
+     "sgn_Wpot": 1,
+     "sgn_Wwgt": -1,
+     "Wtau": "-0.586216324989",
+     "Wpot": "0.153998477844",
+     "Wwgt": "-0.216108923572"
+    },
+    {
+     "piece": "B",
+     "t": [
+      "2.0993119064764033174907113877426292567053109816060085871411148498",
+      "2.0993119064764033174907113877426292569494567353819193057167520142"
+     ],
+     "t_mid": "2.099311906476403317490711",
+     "sgn_Wtau": -1,
+     "sgn_Wpot": 1,
+     "sgn_Wwgt": -1,
+     "Wtau": "-0.586216324989",
+     "Wpot": "0.153998477844",
+     "Wwgt": "-0.216108923572"
+    }
+   ],
+   "curve_branch_y_enclosures_at_this_beta": {
+    "torque": [],
+    "potential": [
+     [
+      "0.4163733612374601619235",
+      "0.4163733612374601619235"
+     ],
+     [
+      "0.5836266387625398380765",
+      "0.5836266387625398380765"
+     ]
+    ]
+   },
+   "position_relative_to_curves": {
+    "torque": "absent",
+    "potential": "inside"
+   },
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global",
+   "extra_witnesses": [
+    {
+     "beta": "1.65",
+     "y": "0.5",
+     "certified": true,
+     "torque_root_count": 2,
+     "position_relative_to_curves": {
+      "torque": "above",
+      "potential": "inside"
+     },
+     "census": "coincident:trap@positive | coincident:trap@positive | fit:global"
+    },
+    {
+     "beta": "3.1",
+     "y": "0.5",
+     "certified": true,
+     "torque_root_count": 2,
+     "position_relative_to_curves": {
+      "torque": "absent",
+      "potential": "inside"
+     },
+     "census": "coincident:trap@positive | coincident:trap@positive | fit:global"
+    }
+   ],
+   "census_constant_on_witnesses": true
+  },
+  {
+   "id": "F10",
+   "name": "upper, right of beta=pi/2, ABOVE the potential curve",
+   "region": "pi/2 < beta < pi,  y_upper(beta) < y < 1",
+   "interior_point": {
+    "beta": "2.5",
+    "y": "0.8"
+   },
+   "certified": true,
+   "torque_root_count": 2,
+   "roots": [
+    {
+     "piece": "B",
+     "t": [
+      "0.74411015405776747091988502469915208208063107645273580585054683634",
+      "0.74411015405776747091988502469915208210743662973102971533363510599"
+     ],
+     "t_mid": "0.744110154057767470919885",
+     "sgn_Wtau": -1,
+     "sgn_Wpot": -1,
+     "sgn_Wwgt": -1,
+     "Wtau": "-0.51871392091",
+     "Wpot": "-0.335564384836",
+     "Wwgt": "-0.427139152873"
+    },
+    {
+     "piece": "B",
+     "t": [
+      "2.3742522993234299014656673879271583027584511877738228476638662251",
+      "2.3742522993234299014656673879271583029207804413872712569436181151"
+     ],
+     "t_mid": "2.374252299323429901465667",
+     "sgn_Wtau": -1,
+     "sgn_Wpot": 1,
+     "sgn_Wwgt": -1,
+     "Wtau": "-0.750707498733",
+     "Wpot": "0.638984258291",
+     "Wwgt": "-0.0558616202211"
+    }
+   ],
+   "curve_branch_y_enclosures_at_this_beta": {
+    "torque": [],
+    "potential": [
+     [
+      "0.4163733612374601619235",
+      "0.4163733612374601619235"
+     ],
+     [
+      "0.5836266387625398380765",
+      "0.5836266387625398380765"
+     ]
+    ]
+   },
+   "position_relative_to_curves": {
+    "torque": "absent",
+    "potential": "above"
+   },
+   "census": "coincident:trap@positive | fit:global",
+   "extra_witnesses": [
+    {
+     "beta": "1.65",
+     "y": "0.95",
+     "certified": true,
+     "torque_root_count": 2,
+     "position_relative_to_curves": {
+      "torque": "above",
+      "potential": "above"
+     },
+     "census": "coincident:trap@positive | fit:global"
+    },
+    {
+     "beta": "3.1",
+     "y": "0.8",
+     "certified": true,
+     "torque_root_count": 2,
+     "position_relative_to_curves": {
+      "torque": "absent",
+      "potential": "above"
+     },
+     "census": "coincident:trap@positive | fit:global"
+    }
+   ],
+   "census_constant_on_witnesses": true
+  }
+ ],
+ "face_count": 10,
+ "census_values": [
+  {
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "faces": [
+    "F2",
+    "F3"
+   ]
+  },
+  {
+   "census": "coincident:trap@mixed | fit:global",
+   "faces": [
+    "F1",
+    "F4"
+   ]
+  },
+  {
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global",
+   "faces": [
+    "F6",
+    "F9"
+   ]
+  },
+  {
+   "census": "coincident:trap@positive | fit:global",
+   "faces": [
+    "F5",
+    "F7",
+    "F8",
+    "F10"
+   ]
+  }
+ ],
+ "distinct_census_values": 4,
+ "visual_face_pairs": {
+  "count": 5,
+  "claim_scope": "explicit non-topological presentation pairs only; no connectivity, adjacency, or path-exclusion claim",
+  "connectivity_checked": false,
+  "pairs": [
+   {
+    "id": "VP1",
+    "faces": [
+     "F1",
+     "F4"
+    ],
+    "column_witness_cases": [
+     "lower_open_below_c_minus_1",
+     "lower_open_above_minus_c"
+    ],
+    "column_witness_intervals": [
+     "(-1,c-1)",
+     "(-c,0)"
+    ],
+    "face_signatures": [
+     "coincident:trap@mixed | fit:global",
+     "coincident:trap@mixed | fit:global"
+    ],
+    "shared_signature": "coincident:trap@mixed | fit:global",
+    "face_signature_agreement": true
+   },
+   {
+    "id": "VP2",
+    "faces": [
+     "F2",
+     "F3"
+    ],
+    "column_witness_cases": [
+     "lower_open_middle"
+    ],
+    "column_witness_intervals": [
+     "(c-1,-c)"
+    ],
+    "face_signatures": [
+     "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+     "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+    ],
+    "shared_signature": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+    "face_signature_agreement": true
+   },
+   {
+    "id": "VP3",
+    "faces": [
+     "F5",
+     "F8"
+    ],
+    "column_witness_cases": [
+     "upper_open_below_c"
+    ],
+    "column_witness_intervals": [
+     "(0,c)"
+    ],
+    "face_signatures": [
+     "coincident:trap@positive | fit:global",
+     "coincident:trap@positive | fit:global"
+    ],
+    "shared_signature": "coincident:trap@positive | fit:global",
+    "face_signature_agreement": true
+   },
+   {
+    "id": "VP4",
+    "faces": [
+     "F6",
+     "F9"
+    ],
+    "column_witness_cases": [
+     "upper_open_middle"
+    ],
+    "column_witness_intervals": [
+     "(c,1-c)"
+    ],
+    "face_signatures": [
+     "coincident:trap@positive | coincident:trap@positive | fit:global",
+     "coincident:trap@positive | coincident:trap@positive | fit:global"
+    ],
+    "shared_signature": "coincident:trap@positive | coincident:trap@positive | fit:global",
+    "face_signature_agreement": true
+   },
+   {
+    "id": "VP5",
+    "faces": [
+     "F7",
+     "F10"
+    ],
+    "column_witness_cases": [
+     "upper_open_above_1_minus_c"
+    ],
+    "column_witness_intervals": [
+     "(1-c,1)"
+    ],
+    "face_signatures": [
+     "coincident:trap@positive | fit:global",
+     "coincident:trap@positive | fit:global"
+    ],
+    "shared_signature": "coincident:trap@positive | fit:global",
+    "face_signature_agreement": true
+   }
+  ]
+ }
+}

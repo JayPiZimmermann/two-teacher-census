@@ -1,0 +1,436 @@
+{
+ "proven_bounds": {
+  "positive_masses": {
+   "bound": null,
+   "lean_theorem": null
+  },
+  "mixed_signs": {
+   "bound": null,
+   "lean_theorem": null
+  }
+ },
+ "witnesses": [
+  {
+   "face": "F1",
+   "beta": 0.75,
+   "y": 0.4,
+   "sector": "mixed_signs",
+   "n_certified_faces0": 4,
+   "n_locator": 4,
+   "n_locator_2N": 4,
+   "proven_bound": null,
+   "closed": false
+  },
+  {
+   "face": "F1",
+   "beta": 1.5,
+   "y": 0.6,
+   "sector": "mixed_signs",
+   "n_certified_faces0": 4,
+   "n_locator": 4,
+   "n_locator_2N": 4,
+   "proven_bound": null,
+   "closed": false
+  },
+  {
+   "face": "F1",
+   "beta": 2.6,
+   "y": 0.2,
+   "sector": "mixed_signs",
+   "n_certified_faces0": 4,
+   "n_locator": 4,
+   "n_locator_2N": 4,
+   "proven_bound": null,
+   "closed": false
+  },
+  {
+   "face": "F1",
+   "beta": 0.5,
+   "y": 0.8,
+   "sector": "mixed_signs",
+   "n_certified_faces0": 4,
+   "n_locator": 4,
+   "n_locator_2N": 4,
+   "proven_bound": null,
+   "closed": false
+  },
+  {
+   "face": "F2",
+   "beta": 0.75,
+   "y": -0.02,
+   "sector": "positive_masses",
+   "n_certified_faces0": 3,
+   "n_locator": 3,
+   "n_locator_2N": 3,
+   "proven_bound": null,
+   "closed": false
+  },
+  {
+   "face": "F2",
+   "beta": 0.3,
+   "y": -0.02,
+   "sector": "positive_masses",
+   "n_certified_faces0": 3,
+   "n_locator": 3,
+   "n_locator_2N": 3,
+   "proven_bound": null,
+   "closed": false
+  },
+  {
+   "face": "F2",
+   "beta": 1.5,
+   "y": -0.04,
+   "sector": "positive_masses",
+   "n_certified_faces0": 3,
+   "n_locator": 3,
+   "n_locator_2N": 3,
+   "proven_bound": null,
+   "closed": false
+  },
+  {
+   "face": "F2",
+   "beta": 2.2,
+   "y": -0.06,
+   "sector": "positive_masses",
+   "n_certified_faces0": 3,
+   "n_locator": 3,
+   "n_locator_2N": 3,
+   "proven_bound": null,
+   "closed": false
+  },
+  {
+   "face": "F3",
+   "beta": 3.1,
+   "y": -0.06,
+   "sector": "positive_masses",
+   "n_certified_faces0": 3,
+   "n_locator": 3,
+   "n_locator_2N": 3,
+   "proven_bound": null,
+   "closed": false
+  },
+  {
+   "face": "F3",
+   "beta": 3.1,
+   "y": -0.1,
+   "sector": "positive_masses",
+   "n_certified_faces0": 3,
+   "n_locator": 3,
+   "n_locator_2N": 3,
+   "proven_bound": null,
+   "closed": false
+  },
+  {
+   "face": "F3",
+   "beta": 3.13,
+   "y": -0.08,
+   "sector": "positive_masses",
+   "n_certified_faces0": 3,
+   "n_locator": 3,
+   "n_locator_2N": 3,
+   "proven_bound": null,
+   "closed": false
+  },
+  {
+   "face": "F3",
+   "beta": 3.05,
+   "y": -0.09,
+   "sector": "positive_masses",
+   "n_certified_faces0": 3,
+   "n_locator": 3,
+   "n_locator_2N": 3,
+   "proven_bound": null,
+   "closed": false
+  },
+  {
+   "face": "F4",
+   "beta": 0.75,
+   "y": -0.4,
+   "sector": "positive_masses",
+   "n_certified_faces0": 1,
+   "n_locator": 1,
+   "n_locator_2N": 1,
+   "proven_bound": null,
+   "closed": false
+  },
+  {
+   "face": "F4",
+   "beta": 0.3,
+   "y": -0.5,
+   "sector": "positive_masses",
+   "n_certified_faces0": 1,
+   "n_locator": 1,
+   "n_locator_2N": 1,
+   "proven_bound": null,
+   "closed": false
+  },
+  {
+   "face": "F4",
+   "beta": 1.5,
+   "y": -0.6,
+   "sector": "positive_masses",
+   "n_certified_faces0": 1,
+   "n_locator": 1,
+   "n_locator_2N": 1,
+   "proven_bound": null,
+   "closed": false
+  },
+  {
+   "face": "F4",
+   "beta": 2.0,
+   "y": -0.3,
+   "sector": "positive_masses",
+   "n_certified_faces0": 1,
+   "n_locator": 1,
+   "n_locator_2N": 1,
+   "proven_bound": null,
+   "closed": false
+  },
+  {
+   "face": "F5",
+   "beta": 2.6,
+   "y": -0.5,
+   "sector": "positive_masses",
+   "n_certified_faces0": 3,
+   "n_locator": 3,
+   "n_locator_2N": 3,
+   "proven_bound": null,
+   "closed": false
+  },
+  {
+   "face": "F5",
+   "beta": 2.8,
+   "y": -0.5,
+   "sector": "positive_masses",
+   "n_certified_faces0": 3,
+   "n_locator": 3,
+   "n_locator_2N": 3,
+   "proven_bound": null,
+   "closed": false
+  },
+  {
+   "face": "F5",
+   "beta": 3.0,
+   "y": -0.4,
+   "sector": "positive_masses",
+   "n_certified_faces0": 1,
+   "n_locator": 1,
+   "n_locator_2N": 1,
+   "proven_bound": null,
+   "closed": false
+  },
+  {
+   "face": "F5",
+   "beta": 2.4,
+   "y": -0.5,
+   "sector": "positive_masses",
+   "n_certified_faces0": 3,
+   "n_locator": 3,
+   "n_locator_2N": 3,
+   "proven_bound": null,
+   "closed": false
+  },
+  {
+   "face": "F6",
+   "beta": 0.75,
+   "y": -0.98,
+   "sector": "positive_masses",
+   "n_certified_faces0": 3,
+   "n_locator": 3,
+   "n_locator_2N": 3,
+   "proven_bound": null,
+   "closed": false
+  },
+  {
+   "face": "F6",
+   "beta": 0.3,
+   "y": -0.98,
+   "sector": "positive_masses",
+   "n_certified_faces0": 3,
+   "n_locator": 3,
+   "n_locator_2N": 3,
+   "proven_bound": null,
+   "closed": false
+  },
+  {
+   "face": "F6",
+   "beta": 1.5,
+   "y": -0.96,
+   "sector": "positive_masses",
+   "n_certified_faces0": 3,
+   "n_locator": 3,
+   "n_locator_2N": 3,
+   "proven_bound": null,
+   "closed": false
+  },
+  {
+   "face": "F6",
+   "beta": 2.2,
+   "y": -0.94,
+   "sector": "positive_masses",
+   "n_certified_faces0": 3,
+   "n_locator": 3,
+   "n_locator_2N": 3,
+   "proven_bound": null,
+   "closed": false
+  },
+  {
+   "face": "F7",
+   "beta": 3.1,
+   "y": -0.94,
+   "sector": "positive_masses",
+   "n_certified_faces0": 3,
+   "n_locator": 3,
+   "n_locator_2N": 3,
+   "proven_bound": null,
+   "closed": false
+  },
+  {
+   "face": "F7",
+   "beta": 3.1,
+   "y": -0.9,
+   "sector": "positive_masses",
+   "n_certified_faces0": 3,
+   "n_locator": 3,
+   "n_locator_2N": 3,
+   "proven_bound": null,
+   "closed": false
+  },
+  {
+   "face": "F7",
+   "beta": 3.13,
+   "y": -0.92,
+   "sector": "positive_masses",
+   "n_certified_faces0": 3,
+   "n_locator": 3,
+   "n_locator_2N": 3,
+   "proven_bound": null,
+   "closed": false
+  },
+  {
+   "face": "F7",
+   "beta": 3.05,
+   "y": -0.91,
+   "sector": "positive_masses",
+   "n_certified_faces0": 3,
+   "n_locator": 3,
+   "n_locator_2N": 3,
+   "proven_bound": null,
+   "closed": false
+  },
+  {
+   "face": "collar",
+   "beta": 0.15,
+   "y": 0.004,
+   "sector": "mixed_signs",
+   "n_certified_faces0": 1,
+   "n_locator": 3,
+   "n_locator_2N": 3,
+   "proven_bound": null,
+   "closed": false
+  },
+  {
+   "face": "collar",
+   "beta": 0.15,
+   "y": 0.996,
+   "sector": "mixed_signs",
+   "n_certified_faces0": 1,
+   "n_locator": 3,
+   "n_locator_2N": 3,
+   "proven_bound": null,
+   "closed": false
+  }
+ ],
+ "per_face": {
+  "F1": {
+   "witness_counts": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "scan_max": 4,
+   "needed_tight_bound": 4,
+   "status": "open"
+  },
+  "F2": {
+   "witness_counts": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "scan_max": 3,
+   "needed_tight_bound": 3,
+   "status": "open"
+  },
+  "F3": {
+   "witness_counts": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "scan_max": 3,
+   "needed_tight_bound": 3,
+   "status": "open"
+  },
+  "F4": {
+   "witness_counts": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "scan_max": 1,
+   "needed_tight_bound": 1,
+   "status": "open"
+  },
+  "F5": {
+   "witness_counts": [
+    3,
+    3,
+    1,
+    3
+   ],
+   "scan_max": 3,
+   "needed_tight_bound": 3,
+   "status": "open"
+  },
+  "F6": {
+   "witness_counts": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "scan_max": 3,
+   "needed_tight_bound": 3,
+   "status": "open"
+  },
+  "F7": {
+   "witness_counts": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "scan_max": 3,
+   "needed_tight_bound": 3,
+   "status": "open"
+  },
+  "collar": {
+   "witness_counts": [
+    3,
+    3
+   ],
+   "scan_max": 4,
+   "needed_tight_bound": 4,
+   "status": "open"
+  }
+ },
+ "sign_law": "PROVED (2026-08-08): SeparatedCount/SignLawJ.lean, separatedNumJ_neg_of_offset_lt_gap / separatedNumJ_pos_of_gap_lt_offset / separatedNumJ_eq_zero_iff_lattice, axiom-clean",
+ "sign_law_geometry": "BOTH sectors now covered in Lean: positive masses -> STRADDLE (LatticeStraddleJ.lean, 2026-08-08), mixed signs -> SAME SIDE (MixedSameSideJ.lean, 2026-08-08: separatedNumJ_products_nonneg_of_separatedPairCritical / separatedNumJ_no_opposite_open_sides / separatedPairCritical_student0/1_offsets_same_side / separatedNumJ_products_nonneg_nonvacuous, axiom-clean).  These license the ORDER-ONLY box exclusion measured in face_bb_signlaw.py.  They do NOT bound the family count: the straddle/same-side condition is IMPLIED by the load equation s0*num(D,a)+s1*num(D,b)=0, so it localises the 2-D search WITHOUT removing a single zero of the 1-D load (measured: sign changes of L_D inside the admissible arcs = sign changes of L_D over the whole period, at all 30 face witnesses).",
+ "route_B_measurement": "sign-law-pruned branch-and-bound (face_bb_signlaw.py, best-first by area) at F4 witness (beta=0.30, y=-0.50): live undecided area 19.61 -> 0.076 (0.39%) in 30000 steps WITH the prefilter, versus 1.74 (8.8%) in 40000 steps with the same ordering and the prefilter OFF, versus 18.68 (95%) after 400000 LIFO steps in the pre-sign-law face_bb.py.  Order-only exclusion measured over the 28+2 witnesses: 50-91% of the (theta1, D) torus for the positive faces F2-F7, 5-49% for the mixed faces F1/collar.",
+ "blocking_lemma": "branch cap = all-line crossing bound of the load curve: for every teacher, every D, every (alpha,gamma) != 0, alpha*(s0*W(t,D)+s1*W(t-beta,D)) + gamma*(s0*h(t)+s1*h(t-beta)) has <= 4 sign changes per period (measured tight; the student load is one line); plus the D-profile crossing bound.  Refuted routes with slack numbers recorded in branch_cap_scan.py (Sturm slack 6, per-arc disconjugacy slack 20, per-arc ratio monotonicity and winding bookkeeping refuted)"
+}

@@ -1,0 +1,743 @@
+{
+ "object": "shipped-classifier census at the certified face representatives, and the shipped mosaic's centered finite-grid flood-fill output",
+ "sources_sha256": {
+  "website/widgets.js": "953d26c87366cb95d574957a6aa5300a1b07256c1b454ec61356cbd85fc2e723",
+  "website/precompute_census_map.js": "99498b2faa1941e6618af09ea1a6ca544ebda8fcd89a4bf7464c956578163890",
+  "website/census-map.js": "a16c85c2c1324c2b457c68ca1bfa156c93428110ee24cf96fa4eb5927456cad3",
+  "certificates/census_map_centered/build_arrangement.py": "7891ae6e4727103b76f758cf2fe599d500413fd84d05b9e8ce274b501a1fccd7",
+  "certificates/census_map_centered/check_map.js": "d458bcda21bb0c35e95cce653ee0423fc5cef23cb3f1a7a0a7900d16d8c73ed4",
+  "certificates/census_map_centered/arrangement_faces.json": "b8ee3ae3e658f4507b558b518313e97fd78adc8ccc49172cdae60d2200f6a619"
+ },
+ "faces": {
+  "F1": {
+   "beta": 0.75,
+   "y": -0.25,
+   "certified": "coincident:trap@mixed | fit:global",
+   "shipped": "coincident:trap@mixed | fit:global",
+   "agree": true
+  },
+  "F2": {
+   "beta": 1.5,
+   "y": -0.5,
+   "certified": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "agree": true
+  },
+  "F3": {
+   "beta": 1.65,
+   "y": -0.5,
+   "certified": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "agree": true
+  },
+  "F4": {
+   "beta": 2.5,
+   "y": -0.5,
+   "certified": "coincident:trap@mixed | fit:global",
+   "shipped": "coincident:trap@mixed | fit:global",
+   "agree": true
+  },
+  "F5": {
+   "beta": 0.4,
+   "y": 0.2,
+   "certified": "coincident:trap@positive | fit:global",
+   "shipped": "coincident:trap@positive | fit:global",
+   "agree": true
+  },
+  "F6": {
+   "beta": 0.4,
+   "y": 0.5,
+   "certified": "coincident:trap@positive | coincident:trap@positive | fit:global",
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global",
+   "agree": true
+  },
+  "F7": {
+   "beta": 0.4,
+   "y": 0.8,
+   "certified": "coincident:trap@positive | fit:global",
+   "shipped": "coincident:trap@positive | fit:global",
+   "agree": true
+  },
+  "F8": {
+   "beta": 2.5,
+   "y": 0.2,
+   "certified": "coincident:trap@positive | fit:global",
+   "shipped": "coincident:trap@positive | fit:global",
+   "agree": true
+  },
+  "F9": {
+   "beta": 2.5,
+   "y": 0.5,
+   "certified": "coincident:trap@positive | coincident:trap@positive | fit:global",
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global",
+   "agree": true
+  },
+  "F10": {
+   "beta": 2.5,
+   "y": 0.8,
+   "certified": "coincident:trap@positive | fit:global",
+   "shipped": "coincident:trap@positive | fit:global",
+   "agree": true
+  }
+ },
+ "orthogonal_column": {
+  "beta": "pi/2",
+  "exact_common_torque_roots": [
+   "0",
+   "pi/2"
+  ],
+  "threshold_constant": {
+   "symbol": "c",
+   "formula": "(2/pi) atan(2/pi)",
+   "value": 0.3609070732281084
+  },
+  "exact_root_data": {
+   "0": {
+    "P": "(pi/2) s0 + s1",
+    "W": "s1",
+    "tau": "(pi/2) s0 - s1"
+   },
+   "pi/2": {
+    "P": "s0 + (pi/2) s1",
+    "W": "s0",
+    "tau": "-s0 + (pi/2) s1"
+   }
+  },
+  "interval_census": [
+   {
+    "y": "(-1,c-1)",
+    "traps": 1,
+    "split": "opposite-sign",
+    "roots": [
+     "pi/2"
+    ]
+   },
+   {
+    "y": "c-1",
+    "traps": 1,
+    "note": "the t=0 candidate has tau=0"
+   },
+   {
+    "y": "(c-1,-c)",
+    "traps": 2,
+    "split": "opposite-sign",
+    "roots": [
+     "0",
+     "pi/2"
+    ]
+   },
+   {
+    "y": "-c",
+    "traps": 1,
+    "note": "the t=pi/2 candidate has tau=0"
+   },
+   {
+    "y": "(-c,0)",
+    "traps": 1,
+    "split": "opposite-sign",
+    "roots": [
+     "0"
+    ]
+   },
+   {
+    "y": "(0,c)",
+    "traps": 1,
+    "split": "same-sign",
+    "roots": [
+     "0"
+    ]
+   },
+   {
+    "y": "c",
+    "traps": 1,
+    "note": "the t=pi/2 candidate has zero pinned total mass"
+   },
+   {
+    "y": "(c,1-c)",
+    "traps": 2,
+    "split": "same-sign",
+    "roots": [
+     "0",
+     "pi/2"
+    ]
+   },
+   {
+    "y": "1-c",
+    "traps": 1,
+    "note": "the t=0 candidate has zero pinned total mass"
+   },
+   {
+    "y": "(1-c,1)",
+    "traps": 1,
+    "split": "same-sign",
+    "roots": [
+     "pi/2"
+    ]
+   }
+  ],
+  "cases": [
+   {
+    "id": "lower_open_below_c_minus_1",
+    "teacher_masses": [
+     1,
+     2
+    ],
+    "y": -0.7048327646991335,
+    "expected_signature": "coincident:trap@mixed | fit:global",
+    "shipped_signature": "coincident:trap@mixed | fit:global",
+    "expected_trapped_roots": [
+     "pi/2:opposite-sign"
+    ],
+    "expected_non_strict_candidate": null,
+    "shipped_roots": [
+     {
+      "t": "0",
+      "total_student_mass": 2.2732395447351625,
+      "same_sign_split": "topological saddle",
+      "opposite_sign_split": "topological saddle"
+     },
+     {
+      "t": "pi/2",
+      "total_student_mass": 2.6366197723675815,
+      "same_sign_split": "topological saddle",
+      "opposite_sign_split": "spurious local minimum"
+     }
+    ],
+    "root_set_correct": true,
+    "non_strict_candidate_correct": true,
+    "agrees": true
+   },
+   {
+    "id": "lower_threshold_c_minus_1",
+    "teacher_masses": [
+     1,
+     1.5707963267948966
+    ],
+    "y": -0.6390929267718917,
+    "expected_signature": "coincident:trap@mixed | fit:global",
+    "shipped_signature": "coincident:trap@mixed | fit:global",
+    "expected_trapped_roots": [
+     "pi/2:opposite-sign"
+    ],
+    "expected_non_strict_candidate": {
+     "t": "0",
+     "probe_weights": [
+      1,
+      -1
+     ],
+     "type": "flat boundary (cell coefficient decides)"
+    },
+    "shipped_roots": [
+     {
+      "t": "0",
+      "total_student_mass": 2,
+      "same_sign_split": "flat boundary (cell coefficient decides)",
+      "opposite_sign_split": "flat boundary (cell coefficient decides)"
+     },
+     {
+      "t": "pi/2",
+      "total_student_mass": 2.207416099162478,
+      "same_sign_split": "topological saddle",
+      "opposite_sign_split": "spurious local minimum"
+     }
+    ],
+    "root_set_correct": true,
+    "non_strict_candidate_correct": true,
+    "agrees": true
+   },
+   {
+    "id": "lower_open_middle",
+    "teacher_masses": [
+     1,
+     1
+    ],
+    "y": -0.5,
+    "expected_signature": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+    "shipped_signature": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+    "expected_trapped_roots": [
+     "0:opposite-sign",
+     "pi/2:opposite-sign"
+    ],
+    "expected_non_strict_candidate": null,
+    "shipped_roots": [
+     {
+      "t": "0",
+      "total_student_mass": 1.6366197723675813,
+      "same_sign_split": "topological saddle",
+      "opposite_sign_split": "spurious local minimum"
+     },
+     {
+      "t": "pi/2",
+      "total_student_mass": 1.6366197723675813,
+      "same_sign_split": "topological saddle",
+      "opposite_sign_split": "spurious local minimum"
+     }
+    ],
+    "root_set_correct": true,
+    "non_strict_candidate_correct": true,
+    "agrees": true
+   },
+   {
+    "id": "lower_threshold_minus_c",
+    "teacher_masses": [
+     1.5707963267948966,
+     1
+    ],
+    "y": -0.36090707322810833,
+    "expected_signature": "coincident:trap@mixed | fit:global",
+    "shipped_signature": "coincident:trap@mixed | fit:global",
+    "expected_trapped_roots": [
+     "0:opposite-sign"
+    ],
+    "expected_non_strict_candidate": {
+     "t": "pi/2",
+     "probe_weights": [
+      1,
+      -1
+     ],
+     "type": "flat boundary (cell coefficient decides)"
+    },
+    "shipped_roots": [
+     {
+      "t": "0",
+      "total_student_mass": 2.207416099162478,
+      "same_sign_split": "topological saddle",
+      "opposite_sign_split": "spurious local minimum"
+     },
+     {
+      "t": "pi/2",
+      "total_student_mass": 2,
+      "same_sign_split": "flat boundary (cell coefficient decides)",
+      "opposite_sign_split": "flat boundary (cell coefficient decides)"
+     }
+    ],
+    "root_set_correct": true,
+    "non_strict_candidate_correct": true,
+    "agrees": true
+   },
+   {
+    "id": "lower_open_above_minus_c",
+    "teacher_masses": [
+     2,
+     1
+    ],
+    "y": -0.2951672353008665,
+    "expected_signature": "coincident:trap@mixed | fit:global",
+    "shipped_signature": "coincident:trap@mixed | fit:global",
+    "expected_trapped_roots": [
+     "0:opposite-sign"
+    ],
+    "expected_non_strict_candidate": null,
+    "shipped_roots": [
+     {
+      "t": "0",
+      "total_student_mass": 2.6366197723675815,
+      "same_sign_split": "topological saddle",
+      "opposite_sign_split": "spurious local minimum"
+     },
+     {
+      "t": "pi/2",
+      "total_student_mass": 2.2732395447351625,
+      "same_sign_split": "topological saddle",
+      "opposite_sign_split": "topological saddle"
+     }
+    ],
+    "root_set_correct": true,
+    "non_strict_candidate_correct": true,
+    "agrees": true
+   },
+   {
+    "id": "upper_open_below_c",
+    "teacher_masses": [
+     2,
+     -1
+    ],
+    "y": 0.2951672353008665,
+    "expected_signature": "coincident:trap@positive | fit:global",
+    "shipped_signature": "coincident:trap@positive | fit:global",
+    "expected_trapped_roots": [
+     "0:same-sign"
+    ],
+    "expected_non_strict_candidate": null,
+    "shipped_roots": [
+     {
+      "t": "0",
+      "total_student_mass": 1.3633802276324187,
+      "same_sign_split": "spurious local minimum",
+      "opposite_sign_split": "topological saddle"
+     },
+     {
+      "t": "pi/2",
+      "total_student_mass": 0.2732395447351627,
+      "same_sign_split": "topological saddle",
+      "opposite_sign_split": "topological saddle"
+     }
+    ],
+    "root_set_correct": true,
+    "non_strict_candidate_correct": true,
+    "agrees": true
+   },
+   {
+    "id": "upper_threshold_c",
+    "teacher_masses": [
+     1.5707963267948966,
+     -1
+    ],
+    "y": 0.36090707322810855,
+    "expected_signature": "coincident:trap@positive | fit:global",
+    "shipped_signature": "coincident:trap@positive | fit:global",
+    "expected_trapped_roots": [
+     "0:same-sign"
+    ],
+    "expected_non_strict_candidate": {
+     "t": "pi/2",
+     "total_mass": 0,
+     "probe_weights": [
+      1,
+      1
+     ],
+     "type": "topological saddle"
+    },
+    "shipped_roots": [
+     {
+      "t": "0",
+      "total_student_mass": 0.9341765544273152,
+      "same_sign_split": "spurious local minimum",
+      "opposite_sign_split": "topological saddle"
+     },
+     {
+      "t": "pi/2",
+      "total_student_mass": 0,
+      "same_sign_split": "topological saddle",
+      "opposite_sign_split": "topological saddle"
+     }
+    ],
+    "root_set_correct": true,
+    "non_strict_candidate_correct": true,
+    "agrees": true
+   },
+   {
+    "id": "upper_open_middle",
+    "teacher_masses": [
+     1,
+     -1
+    ],
+    "y": 0.5,
+    "expected_signature": "coincident:trap@positive | coincident:trap@positive | fit:global",
+    "shipped_signature": "coincident:trap@positive | coincident:trap@positive | fit:global",
+    "expected_trapped_roots": [
+     "0:same-sign",
+     "pi/2:same-sign"
+    ],
+    "expected_non_strict_candidate": null,
+    "shipped_roots": [
+     {
+      "t": "0",
+      "total_student_mass": 0.3633802276324186,
+      "same_sign_split": "spurious local minimum",
+      "opposite_sign_split": "topological saddle"
+     },
+     {
+      "t": "pi/2",
+      "total_student_mass": -0.3633802276324186,
+      "same_sign_split": "spurious local minimum",
+      "opposite_sign_split": "topological saddle"
+     }
+    ],
+    "root_set_correct": true,
+    "non_strict_candidate_correct": true,
+    "agrees": true
+   },
+   {
+    "id": "upper_threshold_1_minus_c",
+    "teacher_masses": [
+     1,
+     -1.5707963267948966
+    ],
+    "y": 0.6390929267718917,
+    "expected_signature": "coincident:trap@positive | fit:global",
+    "shipped_signature": "coincident:trap@positive | fit:global",
+    "expected_trapped_roots": [
+     "pi/2:same-sign"
+    ],
+    "expected_non_strict_candidate": {
+     "t": "0",
+     "total_mass": 0,
+     "probe_weights": [
+      1,
+      1
+     ],
+     "type": "topological saddle"
+    },
+    "shipped_roots": [
+     {
+      "t": "0",
+      "total_student_mass": 0,
+      "same_sign_split": "topological saddle",
+      "opposite_sign_split": "topological saddle"
+     },
+     {
+      "t": "pi/2",
+      "total_student_mass": -0.9341765544273152,
+      "same_sign_split": "spurious local minimum",
+      "opposite_sign_split": "topological saddle"
+     }
+    ],
+    "root_set_correct": true,
+    "non_strict_candidate_correct": true,
+    "agrees": true
+   },
+   {
+    "id": "upper_open_above_1_minus_c",
+    "teacher_masses": [
+     1,
+     -2
+    ],
+    "y": 0.7048327646991335,
+    "expected_signature": "coincident:trap@positive | fit:global",
+    "shipped_signature": "coincident:trap@positive | fit:global",
+    "expected_trapped_roots": [
+     "pi/2:same-sign"
+    ],
+    "expected_non_strict_candidate": null,
+    "shipped_roots": [
+     {
+      "t": "0",
+      "total_student_mass": -0.2732395447351627,
+      "same_sign_split": "topological saddle",
+      "opposite_sign_split": "topological saddle"
+     },
+     {
+      "t": "pi/2",
+      "total_student_mass": -1.3633802276324187,
+      "same_sign_split": "spurious local minimum",
+      "opposite_sign_split": "topological saddle"
+     }
+    ],
+    "root_set_correct": true,
+    "non_strict_candidate_correct": true,
+    "agrees": true
+   }
+  ],
+  "cases_disagreeing": 0,
+  "visual_face_pairs": {
+   "count": 5,
+   "claim_scope": "explicit non-topological presentation pairs only; no connectivity, adjacency, or path-exclusion claim",
+   "connectivity_checked": false,
+   "exact_pair_labels_agree": true,
+   "pairs": [
+    {
+     "id": "VP1",
+     "faces": [
+      "F1",
+      "F4"
+     ],
+     "column_witness_cases": [
+      "lower_open_below_c_minus_1",
+      "lower_open_above_minus_c"
+     ],
+     "column_witness_intervals": [
+      "(-1,c-1)",
+      "(-c,0)"
+     ],
+     "face_signatures": [
+      "coincident:trap@mixed | fit:global",
+      "coincident:trap@mixed | fit:global"
+     ],
+     "column_witness_signatures": [
+      "coincident:trap@mixed | fit:global",
+      "coincident:trap@mixed | fit:global"
+     ],
+     "face_signature_agreement": true,
+     "local_column_witness_agreement": true,
+     "check_passed": true
+    },
+    {
+     "id": "VP2",
+     "faces": [
+      "F2",
+      "F3"
+     ],
+     "column_witness_cases": [
+      "lower_open_middle"
+     ],
+     "column_witness_intervals": [
+      "(c-1,-c)"
+     ],
+     "face_signatures": [
+      "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+      "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+     ],
+     "column_witness_signatures": [
+      "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+     ],
+     "face_signature_agreement": true,
+     "local_column_witness_agreement": true,
+     "check_passed": true
+    },
+    {
+     "id": "VP3",
+     "faces": [
+      "F5",
+      "F8"
+     ],
+     "column_witness_cases": [
+      "upper_open_below_c"
+     ],
+     "column_witness_intervals": [
+      "(0,c)"
+     ],
+     "face_signatures": [
+      "coincident:trap@positive | fit:global",
+      "coincident:trap@positive | fit:global"
+     ],
+     "column_witness_signatures": [
+      "coincident:trap@positive | fit:global"
+     ],
+     "face_signature_agreement": true,
+     "local_column_witness_agreement": true,
+     "check_passed": true
+    },
+    {
+     "id": "VP4",
+     "faces": [
+      "F6",
+      "F9"
+     ],
+     "column_witness_cases": [
+      "upper_open_middle"
+     ],
+     "column_witness_intervals": [
+      "(c,1-c)"
+     ],
+     "face_signatures": [
+      "coincident:trap@positive | coincident:trap@positive | fit:global",
+      "coincident:trap@positive | coincident:trap@positive | fit:global"
+     ],
+     "column_witness_signatures": [
+      "coincident:trap@positive | coincident:trap@positive | fit:global"
+     ],
+     "face_signature_agreement": true,
+     "local_column_witness_agreement": true,
+     "check_passed": true
+    },
+    {
+     "id": "VP5",
+     "faces": [
+      "F7",
+      "F10"
+     ],
+     "column_witness_cases": [
+      "upper_open_above_1_minus_c"
+     ],
+     "column_witness_intervals": [
+      "(1-c,1)"
+     ],
+     "face_signatures": [
+      "coincident:trap@positive | fit:global",
+      "coincident:trap@positive | fit:global"
+     ],
+     "column_witness_signatures": [
+      "coincident:trap@positive | fit:global"
+     ],
+     "face_signature_agreement": true,
+     "local_column_witness_agreement": true,
+     "check_passed": true
+    }
+   ]
+  }
+ },
+ "beta_seam": {
+  "identification": "beta = 0 ~ beta = pi",
+  "cases": [
+   {
+    "teacher_masses": [
+     1,
+     2
+    ],
+    "beta_0": "fit:global",
+    "beta_pi": "fit:global",
+    "agrees": true
+   },
+   {
+    "teacher_masses": [
+     1,
+     -1
+    ],
+    "beta_0": "coincident:global | dead:global",
+    "beta_pi": "coincident:global | dead:global",
+    "agrees": true
+   },
+   {
+    "teacher_masses": [
+     0,
+     1
+    ],
+    "beta_0": "fit:global",
+    "beta_pi": "fit:global",
+    "agrees": true
+   }
+  ],
+  "mass_coordinate_boundaries_at_beta_pi_over_2": [
+   {
+    "teacher_masses": [
+     1,
+     0
+    ],
+    "signature": "fit:global",
+    "trap_free": true
+   },
+   {
+    "teacher_masses": [
+     0,
+     1
+    ],
+    "signature": "fit:global",
+    "trap_free": true
+   },
+   {
+    "teacher_masses": [
+     0,
+     -1
+    ],
+    "signature": "fit:global",
+    "trap_free": true
+   }
+  ]
+ },
+ "mosaic": {
+  "depth": 8,
+  "keys": 4,
+  "algorithm_scope": "finite-grid 4-neighbour flood fill with the source generator's presentation separator; not a topology certificate",
+  "flood_fill_groups": 5,
+  "large_flood_fill_groups": 5,
+  "flood_fill_group_representatives": [
+   {
+    "cells": 9375346,
+    "beta": 0.392443,
+    "shipped": "coincident:trap@mixed | fit:global"
+   },
+   {
+    "cells": 61838,
+    "beta": 1.570541,
+    "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+   },
+   {
+    "cells": 3881308,
+    "beta": 0.185867,
+    "shipped": "coincident:trap@positive | fit:global"
+   },
+   {
+    "cells": 1674568,
+    "beta": 1.534748,
+    "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global"
+   },
+   {
+    "cells": 3881308,
+    "beta": 0.185867,
+    "shipped": "coincident:trap@positive | fit:global"
+   }
+  ]
+ },
+ "faces_disagreeing": 0
+}

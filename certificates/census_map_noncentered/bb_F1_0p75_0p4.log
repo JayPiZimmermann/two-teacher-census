@@ -1,0 +1,147 @@
+beta=0.75 y=0.4 budget=4000000 prefilter=1
+  step       1  live_area  19.92770  heap    253  undec     0  sols    0       0s
+  step    5001  live_area   2.17470  heap   2679  undec     0  sols    1      34s
+  step   10001  live_area   1.36298  heap   5131  undec     0  sols    2      62s
+  step   15001  live_area   0.94720  heap   7187  undec     0  sols    2      86s
+  step   20001  live_area   0.81617  heap  10433  undec     0  sols    2     107s
+  step   25001  live_area   0.68031  heap  12023  undec     0  sols    2     131s
+  step   30001  live_area   0.54781  heap  13469  undec     0  sols    2     154s
+  step   35001  live_area   0.49828  heap  16627  undec     0  sols    2     173s
+  step   40001  live_area   0.46725  heap  19971  undec     0  sols    2     191s
+  step   45001  live_area   0.43741  heap  23353  undec     0  sols    2     209s
+  step   50001  live_area   0.39810  heap  24191  undec     0  sols    2     227s
+  step   55001  live_area   0.36526  heap  25687  undec     0  sols    2     254s
+  step   60001  live_area   0.32936  heap  26855  undec     0  sols    2     274s
+  step   65001  live_area   0.29398  heap  28055  undec     0  sols    2     298s
+  step   70001  live_area   0.26836  heap  30217  undec     0  sols    2     315s
+  step   75001  live_area   0.26306  heap  34087  undec     0  sols    2     331s
+  step   80001  live_area   0.25508  heap  37383  undec     0  sols    2     353s
+  step   85001  live_area   0.25021  heap  41343  undec     0  sols    2     363s
+  step   90001  live_area   0.24203  heap  44597  undec     0  sols    2     384s
+  step   95001  live_area   0.23666  heap  48421  undec     0  sols    2     398s
+  step  100001  live_area   0.22782  heap  50241  undec     0  sols    2     414s
+  step  105001  live_area   0.21615  heap  50261  undec     0  sols    2     430s
+  step  110001  live_area   0.20634  heap  51073  undec     0  sols    2     458s
+  step  115001  live_area   0.19726  heap  52201  undec     0  sols    2     486s
+  step  120001  live_area   0.18580  heap  52307  undec     0  sols    2     505s
+  step  125001  live_area   0.17407  heap  52299  undec     0  sols    2     520s
+  step  130001  live_area   0.16422  heap  53095  undec     0  sols    2     544s
+  step  135001  live_area   0.15369  heap  53599  undec     0  sols    2     567s
+  step  140001  live_area   0.14287  heap  53913  undec     0  sols    2     588s
+  step  145001  live_area   0.13295  heap  54537  undec     0  sols    2     610s
+  step  150001  live_area   0.12704  heap  56917  undec     0  sols    2     622s
+  step  155001  live_area   0.12698  heap  61871  undec     0  sols    2     628s
+  step  160001  live_area   0.12479  heap  64997  undec     0  sols    2     651s
+  step  165001  live_area   0.12229  heap  67861  undec     0  sols    2     679s
+  step  170001  live_area   0.11994  heap  70859  undec     0  sols    2     693s
+  step  175001  live_area   0.11956  heap  75533  undec     0  sols    2     700s
+  step  180001  live_area   0.11831  heap  79465  undec     0  sols    2     710s
+  step  185001  live_area   0.11596  heap  82459  undec     0  sols    2     735s
+  step  190001  live_area   0.11485  heap  86509  undec     0  sols    2     745s
+  step  195001  live_area   0.11318  heap  90039  undec     0  sols    2     761s
+  step  200001  live_area   0.11151  heap  93565  undec     0  sols    2     778s
+  step  205001  live_area   0.11039  heap  94873  undec     0  sols    4     793s
+  step  210001  live_area   0.10833  heap  93113  undec     0  sols    4     812s
+  step  215001  live_area   0.10628  heap  91363  undec     0  sols    4     831s
+  step  220001  live_area   0.10426  heap  89643  undec     0  sols    4     850s
+  step  225001  live_area   0.10220  heap  87883  undec     0  sols    4     869s
+  step  230001  live_area   0.10020  heap  86177  undec     0  sols    4     887s
+  step  235001  live_area   0.09814  heap  84417  undec     0  sols    4     906s
+  step  240001  live_area   0.09611  heap  82683  undec     0  sols    4     925s
+  step  245001  live_area   0.09407  heap  80941  undec     0  sols    4     944s
+  step  250001  live_area   0.09202  heap  79191  undec     0  sols    4     964s
+  step  255001  live_area   0.08992  heap  77399  undec     0  sols    4     989s
+  step  260001  live_area   0.08802  heap  75781  undec     0  sols    4    1023s
+  step  265001  live_area   0.08666  heap  74621  undec     0  sols    4    1060s
+  step  270001  live_area   0.08542  heap  73563  undec     0  sols    4    1097s
+  step  275001  live_area   0.08433  heap  72633  undec     0  sols    4    1139s
+  step  280001  live_area   0.08373  heap  72115  undec     0  sols    4    1180s
+  step  285001  live_area   0.08272  heap  71261  undec     0  sols    4    1221s
+  step  290001  live_area   0.08180  heap  70465  undec     0  sols    4    1261s
+  step  295001  live_area   0.08063  heap  69469  undec     0  sols    4    1296s
+  step  300001  live_area   0.07908  heap  68151  undec     0  sols    4    1326s
+  step  305001  live_area   0.07749  heap  66789  undec     0  sols    4    1358s
+  step  310001  live_area   0.07564  heap  65215  undec     0  sols    4    1388s
+  step  315001  live_area   0.07363  heap  63499  undec     0  sols    4    1417s
+  step  320001  live_area   0.07151  heap  61685  undec     0  sols    4    1444s
+  step  325001  live_area   0.06947  heap  59945  undec     0  sols    4    1467s
+  step  330001  live_area   0.06743  heap  58199  undec     0  sols    4    1489s
+  step  335001  live_area   0.06546  heap  56521  undec     0  sols    4    1511s
+  step  340001  live_area   0.06337  heap  54739  undec     0  sols    4    1534s
+  step  345001  live_area   0.06137  heap  53027  undec     0  sols    4    1554s
+  step  350001  live_area   0.05931  heap  51267  undec     0  sols    4    1575s
+  step  355001  live_area   0.05725  heap  49509  undec     0  sols    4    1598s
+  step  360001  live_area   0.05524  heap  47797  undec     0  sols    4    1618s
+  step  365001  live_area   0.05318  heap  46037  undec     0  sols    4    1639s
+  step  370001  live_area   0.05118  heap  44331  undec     0  sols    4    1661s
+  step  375001  live_area   0.04912  heap  42571  undec     0  sols    4    1683s
+  step  380001  live_area   0.04708  heap  40829  undec     0  sols    4    1705s
+  step  385001  live_area   0.04504  heap  39087  undec     0  sols    4    1730s
+  step  390001  live_area   0.04297  heap  37321  undec     0  sols    4    1754s
+  step  395001  live_area   0.04111  heap  35729  undec     0  sols    4    1782s
+  step  400001  live_area   0.03952  heap  34367  undec     0  sols    4    1817s
+  step  405001  live_area   0.03830  heap  33327  undec     0  sols    4    1855s
+  step  410001  live_area   0.03722  heap  32407  undec     0  sols    5    1891s
+  step  415001  live_area   0.03537  heap  30829  undec     0  sols    5    1922s
+  step  420001  live_area   0.03339  heap  29135  undec     0  sols    5    1945s
+  step  425001  live_area   0.03137  heap  27411  undec     0  sols    5    1964s
+  step  430001  live_area   0.02931  heap  25651  undec     0  sols    5    1982s
+  step  435001  live_area   0.02725  heap  23891  undec     0  sols    5    2001s
+  step  440001  live_area   0.02525  heap  22181  undec     0  sols    5    2022s
+  step  445001  live_area   0.02318  heap  20421  undec     0  sols    5    2045s
+  step  450001  live_area   0.02118  heap  18697  undec     0  sols    5    2064s
+  step  455001  live_area   0.01923  heap  16977  undec     0  sols    5    2088s
+  step  460001  live_area   0.01741  heap  15377  undec     0  sols    5    2118s
+  step  465001  live_area   0.01538  heap  13581  undec     0  sols    5    2140s
+  step  470001  live_area   0.01342  heap  11857  undec     0  sols    5    2163s
+  step  475001  live_area   0.01142  heap  10097  undec     0  sols    5    2186s
+  step  480001  live_area   0.00951  heap   8411  undec     0  sols    5    2209s
+  step  485001  live_area   0.00802  heap   7091  undec     0  sols    5    2243s
+  step  490001  live_area   0.00729  heap   6451  undec     0  sols    5    2281s
+  step  495001  live_area   0.00576  heap   5093  undec     0  sols    5    2309s
+  step  500001  live_area   0.00379  heap   3355  undec     0  sols    5    2330s
+  step  505001  live_area   0.00179  heap   1595  undec     0  sols    5    2351s
+wrote ivcert_C_F1_0p75_0p4.json  (254893 leaves)
+{
+ "beta": 0.75,
+ "y": 0.4,
+ "budget": 4000000,
+ "beta_hi": null,
+ "y_hi": null,
+ "order": "hybrid",
+ "n_root_cells": 253,
+ "cell": 0.35,
+ "minw": 1e-08,
+ "delta": 0.02,
+ "seam": 0.137,
+ "atom_eps": 0.001,
+ "dmax_pad": 0.05,
+ "parametrized": false,
+ "prefilter": true,
+ "positive_teacher": false,
+ "total_area": 19.927704361394063,
+ "steps": 509533,
+ "complete": true,
+ "n_sols": 6,
+ "n_undecided": 0,
+ "undecided_area": 0,
+ "undecided_reasons": {
+  "budget": 0,
+  "minwidth": 0,
+  "massDet_zero": 0
+ },
+ "certified_via_inflation": 2,
+ "excluded_plain_form": 68,
+ "excluded_centered_form": 254434,
+ "prefilter_kills": 254,
+ "prefilter_area": 2.6431066197992106,
+ "seconds": 2370.0962789058685
+}
+CERTIFIED DEDUP: 6 raw boxes -> 5 classes (1 merges); disjointness certified: True; exact-fit classes: 1; SEPARATED FAMILIES: 4
+   th1=1.850500977 th0=3.676564069 D=1.826063093  w=7.25e-47  schur=saddle             exact_fit=False  (1 raw boxes)
+   th1=2.109107388 th0=2.689677207 D=0.580569819  w=2.22e-45  schur=spurious           exact_fit=False  (1 raw boxes)
+   th1=3.332819253 th0=5.757744689 D=2.424925436  w=5.20e-47  schur=saddle             exact_fit=False  (1 raw boxes)
+   th1=4.569887794 th0=5.642882296 D=1.072994502  w=1.83e-45  schur=spurious           exact_fit=False  (1 raw boxes)
+   th1=6.283185307 th0=7.033185307 D=0.750000000  w=1.92e-45  schur=spurious           exact_fit=True  (2 raw boxes)
+UNDECIDED BOXES: 0 area 0
+EXIT 0

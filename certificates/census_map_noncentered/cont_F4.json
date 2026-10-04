@@ -1,0 +1,51 @@
+{
+ "NOT_CLAIMED": "This certifies fold-freeness ALONG THE TRACKED SHEETS at the grid teachers only.  It is NOT the `hfold` hypothesis of censusAngleMapJ_zeroCount_eq_witness, which quantifies over ALL zeros at ALL teachers of the face; continuation cannot exclude a zero that is not a continuation of a seeded family, nor the birth of a new pair, and the count bootstrap is circular until degenerate zeros are excluded independently.",
+ "bits_b64": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABERERERERERGIiIiIiIiIiIiIiIiIiIiIiIiIiIiMREREREREREREREREREREREREREREYiIiIiIiIiIiIiIiIiIiIiIiIiIiIxERERERERERERERERERERERERERERiIiIiIiIiIiIiIiIiIiIiIiIiIiIjERERERERERERERERERERERERERERGIiIiIiIiIiIiIiIiIiIiIiIiIiIiMREREREREREREREREREREREREREREYiIiIiIiIiIiIiIiIiIiIiIiIiIiIxERERERERERERERERERERERERERERiIiIiIiIiIiIiIiIiIiIiIiIiIiIjERERERERERERERERERERERERERERGIiIiIiIiIiIiIiIiIiIiIiIiIiIiMREREREREREREREREREREREREREREYiIiIiIiIiIiIiIiIiIiIiIiIiIiIxERERERERERERERERERERERERERERiIiIiIiIiIiIiIiIiIiIiIiIiIiIiA==",
+ "emit": {
+  "certified_steps": 1479,
+  "disjoint": true,
+  "families_completed": 2,
+  "max_step_displacement": 0.1621718155017574,
+  "ms_per_step": 82.99819983043245,
+  "parameter_splits": 17,
+  "seconds": 122.7543375492096,
+  "undecided": 0,
+  "verdicts": {
+   "CERT_SADDLE": 731,
+   "CERT_SPURIOUS": 748
+  },
+  "worst_separation": 1.5406240827413842
+ },
+ "n_nodes": 5933,
+ "object": "certified mass-carrying continuation of the census map's tracked zero families over a teacher rectangle",
+ "spec": {
+  "b0": 0.1,
+  "b1": 2.2,
+  "delta": 0.02,
+  "face": "F4",
+  "maxjump": 0.35,
+  "min_split": 64,
+  "nb": 42,
+  "newton_iters": 40,
+  "newton_tol_exp": 40,
+  "ny": 16,
+  "prec": 160,
+  "r0": 0.001,
+  "refine": 80,
+  "rmin": 1e-11,
+  "seeds": [
+   [
+    3.176223,
+    3.120344
+   ],
+   [
+    0.0,
+    0.1
+   ]
+  ],
+  "trust": 0.08,
+  "y0": -0.1,
+  "y1": -0.9
+ },
+ "tag": "F4"
+}

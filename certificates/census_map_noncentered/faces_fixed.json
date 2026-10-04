@@ -1,0 +1,760 @@
+{
+ "object": "per-face witness table under the FIXED sep_res Jacobian",
+ "supersedes": "faces_0.json",
+ "pocket_radius_used": 0.024,
+ "n_witnesses": 28,
+ "n_replaced": 2,
+ "witnesses": [
+  {
+   "face": "F1",
+   "beta": 0.75,
+   "y": 0.4,
+   "is_rep": true,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "n_separated": 4,
+   "sep_D": [
+    1.826063,
+    0.58057,
+    2.424925,
+    1.072995
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "dist_to_pi": 2.391593,
+   "status": "unchanged_by_jacobian_fix"
+  },
+  {
+   "face": "F1",
+   "beta": 1.5,
+   "y": 0.6,
+   "is_rep": false,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "n_separated": 4,
+   "sep_D": [
+    1.939238,
+    0.828028,
+    1.590552,
+    0.595478
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "dist_to_pi": 1.641593,
+   "status": "unchanged_by_jacobian_fix"
+  },
+  {
+   "face": "F1",
+   "beta": 2.6,
+   "y": 0.2,
+   "is_rep": false,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "n_separated": 4,
+   "sep_D": [
+    0.359871,
+    0.180969,
+    0.733461,
+    0.418025
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "dist_to_pi": 0.541593,
+   "status": "unchanged_by_jacobian_fix"
+  },
+  {
+   "face": "F1",
+   "beta": 0.5,
+   "y": 0.8,
+   "is_rep": false,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "n_separated": 4,
+   "sep_D": [
+    2.850743,
+    1.489167,
+    0.663731,
+    0.093991
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "dist_to_pi": 2.641593,
+   "status": "unchanged_by_jacobian_fix"
+  },
+  {
+   "face": "F2",
+   "beta": 0.75,
+   "y": -0.02,
+   "is_rep": true,
+   "census": "coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 2,
+   "n_separated": 3,
+   "sep_D": [
+    2.883071,
+    1.45296,
+    0.201876
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "dist_to_pi": 2.391593,
+   "status": "unchanged_by_jacobian_fix"
+  },
+  {
+   "face": "F2",
+   "beta": 0.3,
+   "y": -0.02,
+   "is_rep": false,
+   "census": "coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 2,
+   "n_separated": 3,
+   "sep_D": [
+    3.052799,
+    1.604524,
+    0.198471
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "dist_to_pi": 2.841593,
+   "status": "unchanged_by_jacobian_fix"
+  },
+  {
+   "face": "F2",
+   "beta": 1.5,
+   "y": -0.04,
+   "is_rep": false,
+   "census": "coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 2,
+   "n_separated": 3,
+   "sep_D": [
+    2.421368,
+    1.100385,
+    0.358138
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "dist_to_pi": 1.641593,
+   "status": "unchanged_by_jacobian_fix"
+  },
+  {
+   "face": "F2",
+   "beta": 2.2,
+   "y": -0.06,
+   "is_rep": false,
+   "census": "coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 2,
+   "n_separated": 3,
+   "sep_D": [
+    1.548465,
+    0.72263,
+    0.35938
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "dist_to_pi": 0.941593,
+   "status": "unchanged_by_jacobian_fix"
+  },
+  {
+   "face": "F3",
+   "beta": 3.1,
+   "y": -0.06,
+   "is_rep": true,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 4,
+   "n_separated": 3,
+   "sep_D": [
+    0.063285,
+    0.040934,
+    0.015795
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "dist_to_pi": 0.041593,
+   "status": "unchanged_by_jacobian_fix"
+  },
+  {
+   "face": "F3",
+   "beta": 3.1,
+   "y": -0.1,
+   "is_rep": false,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 4,
+   "n_separated": 3,
+   "sep_D": [
+    0.066293,
+    0.039602,
+    0.027052
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "dist_to_pi": 0.041593,
+   "status": "unchanged_by_jacobian_fix"
+  },
+  {
+   "face": "F3",
+   "beta": 3.08,
+   "y": -0.08,
+   "is_rep": false,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 4,
+   "n_separated": 3,
+   "sep_D": [
+    0.096149,
+    0.059675,
+    0.03151
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "dist_to_pi": 0.061593,
+   "status": "replacement",
+   "replaces": {
+    "beta": 3.13,
+    "y": -0.08
+   }
+  },
+  {
+   "face": "F3",
+   "beta": 3.05,
+   "y": -0.09,
+   "is_rep": false,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 4,
+   "n_separated": 3,
+   "sep_D": [
+    0.145231,
+    0.08711,
+    0.053368
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "dist_to_pi": 0.091593,
+   "status": "unchanged_by_jacobian_fix"
+  },
+  {
+   "face": "F4",
+   "beta": 0.75,
+   "y": -0.4,
+   "is_rep": true,
+   "census": "coincident:trap@mixed | fit:global",
+   "n_torque_roots": 2,
+   "n_separated": 1,
+   "sep_D": [
+    3.097423
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "dist_to_pi": 2.391593,
+   "status": "unchanged_by_jacobian_fix"
+  },
+  {
+   "face": "F4",
+   "beta": 0.3,
+   "y": -0.5,
+   "is_rep": false,
+   "census": "coincident:trap@mixed | fit:global",
+   "n_torque_roots": 2,
+   "n_separated": 1,
+   "sep_D": [
+    3.141593
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "dist_to_pi": 2.841593,
+   "status": "unchanged_by_jacobian_fix"
+  },
+  {
+   "face": "F4",
+   "beta": 1.5,
+   "y": -0.6,
+   "is_rep": false,
+   "census": "coincident:trap@mixed | fit:global",
+   "n_torque_roots": 2,
+   "n_separated": 1,
+   "sep_D": [
+    2.958235
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "dist_to_pi": 1.641593,
+   "status": "unchanged_by_jacobian_fix"
+  },
+  {
+   "face": "F4",
+   "beta": 2.0,
+   "y": -0.3,
+   "is_rep": false,
+   "census": "coincident:trap@mixed | fit:global",
+   "n_torque_roots": 2,
+   "n_separated": 1,
+   "sep_D": [
+    2.266438
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "dist_to_pi": 1.141593,
+   "status": "unchanged_by_jacobian_fix"
+  },
+  {
+   "face": "F5",
+   "beta": 2.6,
+   "y": -0.5,
+   "is_rep": true,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "n_separated": 3,
+   "sep_D": [
+    3.141593,
+    1.883569,
+    1.883569
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "saddle"
+   ],
+   "certified": true,
+   "dist_to_pi": 0.541593,
+   "status": "unchanged_by_jacobian_fix"
+  },
+  {
+   "face": "F5",
+   "beta": 2.8,
+   "y": -0.5,
+   "is_rep": false,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "n_separated": 3,
+   "sep_D": [
+    3.141593,
+    1.380242,
+    1.380242
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "saddle"
+   ],
+   "certified": true,
+   "dist_to_pi": 0.341593,
+   "status": "unchanged_by_jacobian_fix"
+  },
+  {
+   "face": "F5",
+   "beta": 3.0,
+   "y": -0.4,
+   "is_rep": false,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "n_separated": 1,
+   "sep_D": [
+    0.414341
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "dist_to_pi": 0.141593,
+   "status": "unchanged_by_jacobian_fix"
+  },
+  {
+   "face": "F5",
+   "beta": 2.4,
+   "y": -0.5,
+   "is_rep": false,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "n_separated": 3,
+   "sep_D": [
+    3.141593,
+    2.416568,
+    2.416568
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "saddle"
+   ],
+   "certified": true,
+   "dist_to_pi": 0.741593,
+   "status": "unchanged_by_jacobian_fix"
+  },
+  {
+   "face": "F6",
+   "beta": 0.75,
+   "y": -0.98,
+   "is_rep": true,
+   "census": "coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 2,
+   "n_separated": 3,
+   "sep_D": [
+    0.201876,
+    1.45296,
+    2.883071
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "dist_to_pi": 2.391593,
+   "status": "unchanged_by_jacobian_fix"
+  },
+  {
+   "face": "F6",
+   "beta": 0.3,
+   "y": -0.98,
+   "is_rep": false,
+   "census": "coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 2,
+   "n_separated": 3,
+   "sep_D": [
+    0.198471,
+    1.604524,
+    3.052799
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "dist_to_pi": 2.841593,
+   "status": "unchanged_by_jacobian_fix"
+  },
+  {
+   "face": "F6",
+   "beta": 1.5,
+   "y": -0.96,
+   "is_rep": false,
+   "census": "coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 2,
+   "n_separated": 3,
+   "sep_D": [
+    0.358138,
+    1.100385,
+    2.421368
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "dist_to_pi": 1.641593,
+   "status": "unchanged_by_jacobian_fix"
+  },
+  {
+   "face": "F6",
+   "beta": 2.2,
+   "y": -0.94,
+   "is_rep": false,
+   "census": "coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 2,
+   "n_separated": 3,
+   "sep_D": [
+    0.35938,
+    0.72263,
+    1.548465
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "dist_to_pi": 0.941593,
+   "status": "unchanged_by_jacobian_fix"
+  },
+  {
+   "face": "F7",
+   "beta": 3.1,
+   "y": -0.94,
+   "is_rep": true,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 4,
+   "n_separated": 3,
+   "sep_D": [
+    0.015795,
+    0.040934,
+    0.063285
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "dist_to_pi": 0.041593,
+   "status": "unchanged_by_jacobian_fix"
+  },
+  {
+   "face": "F7",
+   "beta": 3.1,
+   "y": -0.9,
+   "is_rep": false,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 4,
+   "n_separated": 3,
+   "sep_D": [
+    0.027052,
+    0.039602,
+    0.066293
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "dist_to_pi": 0.041593,
+   "status": "unchanged_by_jacobian_fix"
+  },
+  {
+   "face": "F7",
+   "beta": 3.08,
+   "y": -0.92,
+   "is_rep": false,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 4,
+   "n_separated": 3,
+   "sep_D": [
+    0.03151,
+    0.059675,
+    0.096149
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "dist_to_pi": 0.061593,
+   "status": "replacement",
+   "replaces": {
+    "beta": 3.13,
+    "y": -0.92
+   }
+  },
+  {
+   "face": "F7",
+   "beta": 3.05,
+   "y": -0.91,
+   "is_rep": false,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 4,
+   "n_separated": 3,
+   "sep_D": [
+    0.053368,
+    0.08711,
+    0.145231
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "dist_to_pi": 0.091593,
+   "status": "unchanged_by_jacobian_fix"
+  }
+ ],
+ "superseded": [
+  {
+   "face": "F3",
+   "beta": 3.13,
+   "y": -0.08,
+   "is_rep": false,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "n_separated": 1,
+   "sep_D": [
+    0.017975
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": false,
+   "dist_to_pi": 0.011593,
+   "status": "superseded_by_jacobian_fix",
+   "pre_fix": {
+    "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+    "n_separated": 3,
+    "sep_D": [
+     0.017975,
+     0.011375,
+     0.005898
+    ],
+    "sep_schur": [
+     "saddle",
+     "spurious",
+     "saddle"
+    ],
+    "certified": true
+   },
+   "replaced_by": {
+    "beta": 3.08,
+    "y": -0.08
+   },
+   "reason": "inside the antipodal pocket |beta - pi| <= 0.024 where the Jacobian fix changes verdicts"
+  },
+  {
+   "face": "F7",
+   "beta": 3.13,
+   "y": -0.92,
+   "is_rep": false,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 4,
+   "n_separated": 2,
+   "sep_D": [
+    0.011375,
+    0.017975
+   ],
+   "sep_schur": [
+    "spurious",
+    "saddle"
+   ],
+   "certified": false,
+   "dist_to_pi": 0.011593,
+   "status": "superseded_by_jacobian_fix",
+   "pre_fix": {
+    "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+    "n_separated": 3,
+    "sep_D": [
+     0.005898,
+     0.011375,
+     0.017975
+    ],
+    "sep_schur": [
+     "saddle",
+     "spurious",
+     "saddle"
+    ],
+    "certified": true
+   },
+   "replaced_by": {
+    "beta": 3.08,
+    "y": -0.92
+   },
+   "reason": "inside the antipodal pocket |beta - pi| <= 0.024 where the Jacobian fix changes verdicts"
+  }
+ ],
+ "per_face": {
+  "F1": {
+   "n_witnesses": 4,
+   "all_certified": true,
+   "census": [
+    "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+   ],
+   "min_dist_to_pi": 0.541593
+  },
+  "F2": {
+   "n_witnesses": 4,
+   "all_certified": true,
+   "census": [
+    "coincident:trap@mixed | fit:global | separate:trap@positive"
+   ],
+   "min_dist_to_pi": 0.941593
+  },
+  "F3": {
+   "n_witnesses": 4,
+   "all_certified": true,
+   "census": [
+    "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive"
+   ],
+   "min_dist_to_pi": 0.041593
+  },
+  "F4": {
+   "n_witnesses": 4,
+   "all_certified": true,
+   "census": [
+    "coincident:trap@mixed | fit:global"
+   ],
+   "min_dist_to_pi": 1.141593
+  },
+  "F5": {
+   "n_witnesses": 4,
+   "all_certified": true,
+   "census": [
+    "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+   ],
+   "min_dist_to_pi": 0.141593
+  },
+  "F6": {
+   "n_witnesses": 4,
+   "all_certified": true,
+   "census": [
+    "coincident:trap@mixed | fit:global | separate:trap@positive"
+   ],
+   "min_dist_to_pi": 0.941593
+  },
+  "F7": {
+   "n_witnesses": 4,
+   "all_certified": true,
+   "census": [
+    "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive"
+   ],
+   "min_dist_to_pi": 0.041593
+  }
+ },
+ "seconds": 197.12332105636597
+}

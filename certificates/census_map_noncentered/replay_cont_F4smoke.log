@@ -1,0 +1,14 @@
+certificate : cont_F4smoke.json
+rectangle   : beta=[0.1,0.5] step 0.05 ; y=[-0.1,-0.2] step -0.05 (regenerated from the spec)
+grid        : 9 x 3 = 27 teachers, 2 tracked families
+nodes       : 231 claimed, 231 consumed
+leaves      : 57 re-derived and matching, 0 FAILED, 0 undecided
+splits      : 3 parameter bisections replayed
+verdicts    : {'CERT_SADDLE': 27, 'CERT_SPURIOUS': 30}
+disjoint    : YES, worst separation 2.824 (families 0,1 at grid teacher (8, 0))
+family 0    : unordered gap in [3.018921, 3.127078] over the grid; above the certificate's own gap floor delta = 0.02
+family 1    : unordered gap in [0.100000, 0.500000] over the grid; above the certificate's own gap floor delta = 0.02
+replay      : 5.8 s (100.9 ms per re-derived step)
+VALID AND COMPLETE: at every one of the 27 grid teachers, each of the 2 tracked families has exactly one zero of the census angle map in its certified enclosure, the enclosures are pairwise disjoint, and `separatedAngleJacDetJ` is nonzero there.
+NOT the schema's `hfold`: fold-freeness is certified ALONG THE TRACKED SHEETS at the grid teachers only.  Zeros that are not continuations of a seeded family, and births between grid teachers, are NOT excluded here.
+EXIT 0

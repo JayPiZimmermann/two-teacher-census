@@ -1,0 +1,25 @@
+# fly.io configuration: a single tiny static machine in Frankfurt that stops
+# when nobody is looking and starts on the first request, like the extremal
+# cograph viewer.  Nothing here computes; the page is entirely precomputed.
+app = 'two-teacher-census'
+primary_region = 'fra'
+
+[build]
+  dockerfile = 'deploy/Dockerfile'
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+  [http_service.concurrency]
+    type = 'requests'
+    soft_limit = 200
+    hard_limit = 250
+
+[[vm]]
+  size = 'shared-cpu-1x'
+  memory = '256mb'

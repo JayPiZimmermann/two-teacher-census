@@ -1,0 +1,135 @@
+{
+  "a_widgets_mirror": {
+    "samples": 25000,
+    "nan_samples_skipped_Dsep": 0,
+    "max_abs_deviation": {
+      "phiJ": 8.881784197001252e-16,
+      "HJ": 4.440892098500626e-16,
+      "dHJ": 8.881784197001252e-16,
+      "slopeAtom": 8.881784197001252e-16,
+      "Wtau": 2.6645352591003757e-15,
+      "Wpot": 2.6645352591003757e-15,
+      "Wwgt": 1.3322676295501878e-15,
+      "Dsep": 1.7763568394002505e-14,
+      "y": 4.440892098500626e-16
+    },
+    "argmax_t_beta_t1": {
+      "phiJ": [
+        -0.3887899756430375,
+        5.942397860231147,
+        2.178286516370016
+      ],
+      "HJ": [
+        -5.478948106208049,
+        3.115735190465198,
+        1.0267850945986554
+      ],
+      "dHJ": [
+        6.678898680962668,
+        0.4540792726891771,
+        1.7489475479080758
+      ],
+      "slopeAtom": [
+        -0.3887899756430375,
+        5.942397860231147,
+        2.178286516370016
+      ],
+      "Wtau": [
+        6.121265011669731,
+        0.6985629312029242,
+        3.326659522781581
+      ],
+      "Wpot": [
+        0.833084693221716,
+        1.4933893619917464,
+        4.8238897480648655
+      ],
+      "Wwgt": [
+        5.376229365334449,
+        4.545433153220474,
+        0.38506131018512607
+      ],
+      "Dsep": [
+        1.8707839704835507,
+        0.8924536157885937,
+        5.406322141011373
+      ],
+      "y": [
+        1.170985525689142,
+        5.286680429458865,
+        2.3664818009215995
+      ]
+    },
+    "note": "reference values produced by node evaluating the literal source lines 4/225/231/232/233/294 (atoms), 240/241 (Pot,Trq) and 393-398 (ratioCoord) of website/widgets.js; kernelOf(\"noncentered\") is line 238."
+  },
+  "a2_libm": {
+    "arguments": 6000,
+    "max_abs_sin_cos_difference_node_vs_glibc": 1.1102230246251565e-16,
+    "max_abs_deviation_when_fed_nodes_own_sin_cos": {
+      "phiJ": 0.0,
+      "HJ": 0.0,
+      "dHJ": 0.0,
+      "slopeAtom": 0.0,
+      "Wtau": 0.0,
+      "Wpot": 0.0,
+      "Wwgt": 0.0
+    },
+    "statement": "V8's Math.sin/Math.cos (fdlibm port) and glibc's differ by up to max_abs_sin_cos_difference_node_vs_glibc; feeding node's OWN sin/cos into the Python formulas reproduces every kernel quantity to max_abs_deviation_when_fed_nodes_own_sin_cos, so the reimplementation is formula-identical to the widget."
+  },
+  "b_hprime_eq_slopeAtom": {
+    "method": "central difference, mpmath prec=300, step 1e-25, kink lattice (t in pi*Z) avoided by 1e-3",
+    "samples": 799,
+    "max_abs_error": "5.4026845e-51",
+    "argmax_t": "14.4475"
+  },
+  "c_reduction_identity": {
+    "grid_points": 7144,
+    "statement": "on every sample the interval enclosure of (folded mirror - reduced form E*(F,G,N)) contains 0",
+    "max_enclosure_radius": {
+      "Wtau": 1.766091735856992e-57,
+      "Wpot": 1.9689620339152652e-57,
+      "Wwgt": 4.132082144499798e-58
+    }
+  },
+  "d_linear_identity": {
+    "statement": "Wtau(beta,t) + Wpot(beta,t) = 2*Wwgt(beta,t) identically",
+    "interval_max_residual_radius": 7.455172302877648e-58,
+    "sympy_symbolic_on_reduced_forms": true
+  },
+  "c_reduction_symbolic": {
+    "quadrants_(e_t,e_u)_in_(+,+),(+,-),(-,+),(-,-)": [
+      [
+        true,
+        true,
+        true
+      ],
+      [
+        true,
+        true,
+        true
+      ],
+      [
+        true,
+        true,
+        true
+      ],
+      [
+        true,
+        true,
+        true
+      ]
+    ],
+    "F_eq_pq_fhat": true,
+    "G_eq_pq_ghat": true
+  },
+  "e_separated_det": {
+    "statement": "Dsep := a0*b1 - a1*b0 equals H(D)^2 * separatedDet, i.e. the division form of widgets.js separatedScan; compared against the float mirror of the division form",
+    "samples": 3036,
+    "max_abs_difference_interval_vs_float_division_form": 4.0625970279500145e-14
+  },
+  "e2_separated_gradient": {
+    "method": "central difference of Dsep vs the analytic interval gradient, mpmath.iv prec=260, step 1e-20",
+    "samples": 175,
+    "max_abs_error": 3.335464206057884e-39
+  }
+}

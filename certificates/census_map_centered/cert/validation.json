@@ -1,0 +1,90 @@
+{
+  "a_widgets_mirror": {
+    "samples": 25000,
+    "max_abs_deviation": {
+      "phiC": 4.440892098500626e-16,
+      "HC": 1.1102230246251565e-16,
+      "dHC": 4.440892098500626e-16,
+      "slopeAtom": 4.440892098500626e-16,
+      "Wtau": 3.3306690738754696e-16,
+      "Wpot": 4.440892098500626e-16,
+      "Wwgt": 2.220446049250313e-16
+    },
+    "argmax": {
+      "phiC": [
+        -2.9243025037234145,
+        2.3422751924611376
+      ],
+      "HC": [
+        7.0873068878130905,
+        1.6603347077780592
+      ],
+      "dHC": [
+        3.394358568580124,
+        0.0373287324947874
+      ],
+      "slopeAtom": [
+        6.914607980407677,
+        1.4158379312925917
+      ],
+      "Wtau": [
+        4.11250045605567,
+        1.0341275886402073
+      ],
+      "Wpot": [
+        8.809368723889703,
+        1.8089195661517334
+      ],
+      "Wwgt": [
+        7.0873068878130905,
+        1.6603347077780592
+      ]
+    },
+    "note": "reference values produced by ref_widgets.js: node evaluating the literal function sources of website/widgets.js (PI, mod, phiC, HC, dHC, slopeAtom), extracted by identifier with a guard that asserts each extracted function still contains the expected expression"
+  },
+  "a2_libm": {
+    "arguments": 6000,
+    "max_abs_sin_cos_difference_node_vs_glibc": 1.1102230246251565e-16,
+    "max_abs_deviation_when_fed_nodes_own_sin_cos": {
+      "phiC": 0.0,
+      "HC": 0.0,
+      "dHC": 0.0,
+      "slopeAtom": 0.0,
+      "Wtau": 0.0,
+      "Wpot": 0.0,
+      "Wwgt": 0.0
+    },
+    "statement": "V8's Math.sin/Math.cos and glibc's differ by up to max_abs_sin_cos_difference_node_vs_glibc; feeding node's OWN sin/cos into the Python formulas reproduces every kernel quantity to max_abs_deviation_when_fed_nodes_own_sin_cos, so the reimplementation is formula-identical to the widget."
+  },
+  "b_hprime_eq_slopeAtom": {
+    "method": "central difference, mpmath prec=300, step 1e-25, kink lattice avoided by 1e-3",
+    "max_abs_error": "4.9998537e-51",
+    "argmax_t": "11.0015"
+  },
+  "c_reduction_identity": {
+    "grid_points": 5782,
+    "statement": "on every sample the interval enclosure of (folded mirror - reduced form) contains 0",
+    "max_enclosure_radius": {
+      "Wtau": 6.254130354250447e-59,
+      "Wpot": 7.8409992501050386e-59,
+      "Wwgt": 3.0492774861519594e-59
+    }
+  },
+  "d_linear_identity": {
+    "statement": "Wtau(beta,t) + Wpot(beta,t) = 2*Wwgt(beta,t) identically",
+    "interval_max_residual_radius": 1.0221302593886925e-58,
+    "sympy_symbolic": true
+  },
+  "c_reduction_symbolic": {
+    "pieceA_Wtau_Wpot_Wwgt": [
+      true,
+      true,
+      true
+    ],
+    "pieceB_Wtau_Wpot_Wwgt": [
+      true,
+      true,
+      true
+    ]
+  }
+}

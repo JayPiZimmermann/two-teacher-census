@@ -1,0 +1,4473 @@
+{
+ "n_points": 156,
+ "n_match": 137,
+ "n_mismatch": 19,
+ "distinct_certified": [
+  "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+  "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+  "coincident:trap@positive | coincident:trap@positive | fit:global",
+  "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed",
+  "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+ ],
+ "distinct_shipped": [
+  "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+  "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+  "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+ ],
+ "mismatch_causes": {
+  "separate_1_vs_2": 9,
+  "separate_0_vs_1": 4,
+  "separate_0_vs_2": 6
+ },
+ "mismatches": [
+  {
+   "beta": 3.129,
+   "y": 0.4,
+   "cert": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed",
+   "ship": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "cause": "separate_1_vs_2",
+   "n_torque_roots": 2,
+   "certified": false,
+   "sep_D": [
+    0.011365,
+    0.013717,
+    0.009214
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "spurious"
+   ]
+  },
+  {
+   "beta": 3.131,
+   "y": 0.8,
+   "cert": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed",
+   "ship": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "cause": "separate_1_vs_2",
+   "n_torque_roots": 2,
+   "certified": false,
+   "sep_D": [
+    0.013226,
+    0.009095,
+    0.006596
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ]
+  },
+  {
+   "beta": 3.133,
+   "y": 0.4,
+   "cert": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed",
+   "ship": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "cause": "separate_1_vs_2",
+   "n_torque_roots": 2,
+   "certified": false,
+   "sep_D": [
+    0.00775,
+    0.009354,
+    0.006292
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "spurious"
+   ]
+  },
+  {
+   "beta": 3.1347916667,
+   "y": -0.9166666667,
+   "cert": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "ship": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "cause": "separate_0_vs_1",
+   "n_torque_roots": 4,
+   "certified": false,
+   "sep_D": [],
+   "sep_schur": []
+  },
+  {
+   "beta": 3.1347916667,
+   "y": -0.0833333333,
+   "cert": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "ship": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "cause": "separate_0_vs_1",
+   "n_torque_roots": 4,
+   "certified": false,
+   "sep_D": [],
+   "sep_schur": []
+  },
+  {
+   "beta": 3.1347916667,
+   "y": 0.0833333333,
+   "cert": "coincident:trap@positive | coincident:trap@positive | fit:global",
+   "ship": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "cause": "separate_0_vs_2",
+   "n_torque_roots": 2,
+   "certified": false,
+   "sep_D": [],
+   "sep_schur": []
+  },
+  {
+   "beta": 3.1347916667,
+   "y": 0.25,
+   "cert": "coincident:trap@positive | coincident:trap@positive | fit:global",
+   "ship": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "cause": "separate_0_vs_2",
+   "n_torque_roots": 2,
+   "certified": false,
+   "sep_D": [
+    0.008218
+   ],
+   "sep_schur": [
+    "saddle"
+   ]
+  },
+  {
+   "beta": 3.1347916667,
+   "y": 0.4166666667,
+   "cert": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed",
+   "ship": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "cause": "separate_1_vs_2",
+   "n_torque_roots": 2,
+   "certified": false,
+   "sep_D": [
+    0.006253,
+    0.007306,
+    0.004908
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "spurious"
+   ]
+  },
+  {
+   "beta": 3.1347916667,
+   "y": 0.75,
+   "cert": "coincident:trap@positive | coincident:trap@positive | fit:global",
+   "ship": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "cause": "separate_0_vs_2",
+   "n_torque_roots": 2,
+   "certified": false,
+   "sep_D": [
+    0.004814
+   ],
+   "sep_schur": [
+    "saddle"
+   ]
+  },
+  {
+   "beta": 3.1347916667,
+   "y": 0.9166666667,
+   "cert": "coincident:trap@positive | coincident:trap@positive | fit:global",
+   "ship": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "cause": "separate_0_vs_2",
+   "n_torque_roots": 2,
+   "certified": false,
+   "sep_D": [],
+   "sep_schur": []
+  },
+  {
+   "beta": 3.1502083333,
+   "y": -0.9166666667,
+   "cert": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "ship": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "cause": "separate_0_vs_1",
+   "n_torque_roots": 4,
+   "certified": false,
+   "sep_D": [],
+   "sep_schur": []
+  },
+  {
+   "beta": 3.1502083333,
+   "y": -0.0833333333,
+   "cert": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "ship": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "cause": "separate_0_vs_1",
+   "n_torque_roots": 4,
+   "certified": false,
+   "sep_D": [
+    0.013406
+   ],
+   "sep_schur": [
+    "saddle"
+   ]
+  },
+  {
+   "beta": 3.1502083333,
+   "y": 0.0833333333,
+   "cert": "coincident:trap@positive | coincident:trap@positive | fit:global",
+   "ship": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "cause": "separate_0_vs_2",
+   "n_torque_roots": 2,
+   "certified": false,
+   "sep_D": [],
+   "sep_schur": []
+  },
+  {
+   "beta": 3.1502083333,
+   "y": 0.25,
+   "cert": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed",
+   "ship": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "cause": "separate_1_vs_2",
+   "n_torque_roots": 2,
+   "certified": false,
+   "sep_D": [
+    0.010414,
+    0.007126,
+    0.006101
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ]
+  },
+  {
+   "beta": 3.1502083333,
+   "y": 0.4166666667,
+   "cert": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed",
+   "ship": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "cause": "separate_1_vs_2",
+   "n_torque_roots": 2,
+   "certified": false,
+   "sep_D": [
+    0.009258,
+    0.007924,
+    0.005207
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "spurious"
+   ]
+  },
+  {
+   "beta": 3.1502083333,
+   "y": 0.5833333333,
+   "cert": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed",
+   "ship": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "cause": "separate_1_vs_2",
+   "n_torque_roots": 2,
+   "certified": false,
+   "sep_D": [
+    0.007924,
+    0.005207,
+    0.009258
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ]
+  },
+  {
+   "beta": 3.1502083333,
+   "y": 0.75,
+   "cert": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed",
+   "ship": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "cause": "separate_1_vs_2",
+   "n_torque_roots": 2,
+   "certified": false,
+   "sep_D": [
+    0.006101,
+    0.010414,
+    0.007126
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "spurious"
+   ]
+  },
+  {
+   "beta": 3.1502083333,
+   "y": 0.9166666667,
+   "cert": "coincident:trap@positive | coincident:trap@positive | fit:global",
+   "ship": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "cause": "separate_0_vs_2",
+   "n_torque_roots": 2,
+   "certified": false,
+   "sep_D": [
+    0.002943
+   ],
+   "sep_schur": [
+    "saddle"
+   ]
+  },
+  {
+   "beta": 3.165625,
+   "y": 0.9166666667,
+   "cert": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed",
+   "ship": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "cause": "separate_1_vs_2",
+   "n_torque_roots": 2,
+   "certified": false,
+   "sep_D": [
+    0.008228,
+    0.032353,
+    0.022456
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "spurious"
+   ]
+  }
+ ],
+ "points": [
+  {
+   "beta": 3.0577083333,
+   "y": -0.9166666667,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.03374749214594447,
+    0.18600913320590964,
+    3.0574116897020573,
+    5.785903190017274
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 1,
+   "sep_D": [
+    0.044922,
+    0.080556,
+    0.131849
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive"
+  },
+  {
+   "beta": 3.0577083333,
+   "y": -0.75,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.006246746891327151,
+    0.8127740952577682,
+    3.056760335743247,
+    5.267178150081171
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.166116
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.0577083333,
+   "y": -0.5833333333,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.003140842405923221,
+    1.3011406585554768,
+    3.0559166314888033,
+    4.859638752634589
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.26862,
+    2.383741,
+    1.944801
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.0577083333,
+   "y": -0.4166666667,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.0017917018111966818,
+    1.7565676747445231,
+    3.054567490894077,
+    4.481254887844998
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    2.383741,
+    1.944801,
+    0.26862
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.0577083333,
+   "y": -0.25,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.000947997556752886,
+    2.244934238042232,
+    3.051461586408673,
+    4.073715490398416
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.166116
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.0577083333,
+   "y": -0.0833333333,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.00029664359794253427,
+    2.87169920009409,
+    3.0239608411540555,
+    3.5549904504623124
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 1,
+   "sep_D": [
+    0.131849,
+    0.080556,
+    0.044922
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive"
+  },
+  {
+   "beta": 3.0577083333,
+   "y": 0.0833333333,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.070103648746084,
+    6.282892796831005
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.028967,
+    0.017054,
+    0.114021,
+    0.077567
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.0577083333,
+   "y": 0.25,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.062516020860451,
+    6.282278280718955
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.060095,
+    0.03721,
+    0.102631,
+    0.068392
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.0577083333,
+   "y": 0.4166666667,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.0604396987807783,
+    6.2815346066925075
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.078075,
+    0.049834,
+    0.091236,
+    0.059581
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.0577083333,
+   "y": 0.5833333333,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.059359033787079,
+    6.280453941698808
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.091236,
+    0.059581,
+    0.078075,
+    0.049834
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.0577083333,
+   "y": 0.75,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.058615359760631,
+    6.278377619619135
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.102631,
+    0.068392,
+    0.060095,
+    0.03721
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.0577083333,
+   "y": 0.9166666667,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.058000843648582,
+    6.270789991733502
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.114021,
+    0.077567,
+    0.028967,
+    0.017054
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.073125,
+   "y": -0.9166666667,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.018278096541782238,
+    0.22838629525422685,
+    3.072927559044888,
+    5.808570372419198
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 1,
+   "sep_D": [
+    0.0366,
+    0.066029,
+    0.107394
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive"
+  },
+  {
+   "beta": 3.073125,
+   "y": -0.75,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.004042008866648303,
+    0.8336100036220608,
+    3.072495883158212,
+    5.284112989009519
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.135396
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.073125,
+   "y": -0.5833333333,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.0020632610470573396,
+    1.312987082664827,
+    3.071940564121934,
+    4.870374514068201
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.219959,
+    2.393978,
+    1.923875
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.073125,
+   "y": -0.4166666667,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.0011844358780656486,
+    1.760137917335173,
+    3.0710617389529427,
+    4.485935793111385
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    2.393978,
+    1.923875,
+    0.219959
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.073125,
+   "y": -0.25,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.0006291168417881863,
+    2.239514996377939,
+    3.0690829911333517,
+    4.072197318170067
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.135396
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.073125,
+   "y": -0.0833333333,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.00019744095511179738,
+    2.8447387047457733,
+    3.054846903458218,
+    3.547739934760388
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 1,
+   "sep_D": [
+    0.107394,
+    0.066029,
+    0.0366
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive"
+  },
+  {
+   "beta": 3.073125,
+   "y": 0.0833333333,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.0817906111068822,
+    6.282990116122577
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.023593,
+    0.013986,
+    0.092835,
+    0.063484
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.073125,
+   "y": 0.25,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.0763928588189327,
+    6.282578482403115
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.048935,
+    0.030492,
+    0.083561,
+    0.055989
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.073125,
+   "y": 0.4166666667,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.0749661821952934,
+    6.2820775163372105
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.063571,
+    0.04082,
+    0.074284,
+    0.048789
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.073125,
+   "y": 0.5833333333,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.074232790842376,
+    6.281344124984293
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.074284,
+    0.048789,
+    0.063571,
+    0.04082
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.073125,
+   "y": 0.75,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.073731824776472,
+    6.279917448360654
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.083561,
+    0.055989,
+    0.048935,
+    0.030492
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.073125,
+   "y": 0.9166666667,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.073320191057009,
+    6.274519696072704
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.092835,
+    0.063484,
+    0.023593,
+    0.013986
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.0885416667,
+   "y": -0.9166666667,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.009474943558496218,
+    0.2640388677034155,
+    3.0884232495669512,
+    5.831826069243248
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 1,
+   "sep_D": [
+    0.028307,
+    0.051374,
+    0.083039
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive"
+  },
+  {
+   "beta": 3.0885416667,
+   "y": -0.75,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.0023600599746204003,
+    0.8539011997983706,
+    3.0881654441578372,
+    5.301333031593188
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.104755
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.0885416667,
+   "y": -0.5833333333,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.001221769339712316,
+    1.324692435941368,
+    3.087836026975665,
+    4.881198914991997
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.170837,
+    2.4016,
+    1.907567
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.0885416667,
+   "y": -0.4166666667,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.0007056397243349461,
+    1.7638492307586318,
+    3.087319897360288,
+    4.490528058887589
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    2.4016,
+    1.907567,
+    0.170837
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.0885416667,
+   "y": -0.25,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.00037622254216271517,
+    2.234640466901629,
+    3.0861816067253796,
+    4.070393942286398
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.104755
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.0885416667,
+   "y": -0.0833333333,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.0001184171330488082,
+    2.8245027989965847,
+    3.0790667231415036,
+    3.5399009046363386
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 1,
+   "sep_D": [
+    0.083039,
+    0.051374,
+    0.028307
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive"
+  },
+  {
+   "beta": 3.0885416667,
+   "y": 0.0833333333,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.0940208591220326,
+    6.283067937540371
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.018241,
+    0.010887,
+    0.071753,
+    0.049323
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.0885416667,
+   "y": 0.25,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.0905446270749404,
+    6.282819459453219
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.037826,
+    0.02372,
+    0.064585,
+    0.043511
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.0885416667,
+   "y": 0.4166666667,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.0896603431040583,
+    6.282515311399059
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.049136,
+    0.03174,
+    0.057416,
+    0.037925
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.0885416667,
+   "y": 0.5833333333,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.089211662480528,
+    6.282066630775528
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.057416,
+    0.037925,
+    0.049136,
+    0.03174
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.0885416667,
+   "y": 0.75,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.088907514426367,
+    6.281182346804646
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.064585,
+    0.043511,
+    0.037826,
+    0.02372
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.0885416667,
+   "y": 0.9166666667,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.088659036339216,
+    6.277706114757554
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.071753,
+    0.049323,
+    0.018241,
+    0.010887
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.1039583333,
+   "y": -0.9166666667,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.0042450509952519,
+    0.2960613723553913,
+    3.103898804711957,
+    5.855752026092293
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 1,
+   "sep_D": [
+    0.020044,
+    0.036594,
+    0.058786
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive"
+  },
+  {
+   "beta": 3.1039583333,
+   "y": -0.75,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.0011564693554796833,
+    0.8736936128556464,
+    3.1037697484813633,
+    5.318856202682793
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.074199
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.1039583333,
+   "y": -0.5833333333,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.0006066028206345654,
+    1.3362644773970254,
+    3.1036059311716153,
+    4.892116358618683
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.121363,
+    2.407014,
+    1.895571
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.1039583333,
+   "y": -0.4166666667,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.0003524021283846546,
+    1.7676938559029747,
+    3.1033517304793654,
+    4.495027281860903
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    2.407014,
+    1.895571,
+    0.121363
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.1039583333,
+   "y": -0.25,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.00018858481863676514,
+    2.2302647204443535,
+    3.1028018639445203,
+    4.068287437796793
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.074199
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.1039583333,
+   "y": -0.0833333333,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 4,
+   "torque_t": [
+    5.952858804279449e-05,
+    2.8078969609446087,
+    3.099713282304748,
+    3.5313916143872937
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 1,
+   "sep_D": [
+    0.058786,
+    0.036594,
+    0.020044
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive"
+  },
+  {
+   "beta": 3.1039583333,
+   "y": 0.0833333333,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.106874722119731,
+    6.283126152784199
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.012911,
+    0.007759,
+    0.050775,
+    0.035083
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.1039583333,
+   "y": 0.25,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.1049881059837214,
+    6.283000427510601
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.02677,
+    0.016892,
+    0.045703,
+    0.030957
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.1039583333,
+   "y": 0.4166666667,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.104528188471904,
+    6.282845627366403
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.034772,
+    0.022595,
+    0.04063,
+    0.02699
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.1039583333,
+   "y": 0.5833333333,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.1042980131131834,
+    6.282615452007683
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.04063,
+    0.02699,
+    0.034772,
+    0.022595
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.1039583333,
+   "y": 0.75,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.104143212968986,
+    6.282155534495865
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.045703,
+    0.030957,
+    0.02677,
+    0.016892
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.1039583333,
+   "y": 0.9166666667,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.104017487695388,
+    6.280268918359855
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.050775,
+    0.035083,
+    0.012911,
+    0.007759
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.119375,
+   "y": -0.9166666667,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.0013425298228130769,
+    0.32570122183685196,
+    3.1193542770080653,
+    5.8804529885577015
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 1,
+   "sep_D": [
+    0.011811,
+    0.02169,
+    0.034633
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive"
+  },
+  {
+   "beta": 3.119375,
+   "y": -0.75,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.00039288453264271506,
+    0.893027041131851,
+    3.1193095364674783,
+    5.336702311141686
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.043733
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.119375,
+   "y": -0.5833333333,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.00020862997847507635,
+    1.3477103883183559,
+    3.119253112314526,
+    4.903131552802894
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.071672,
+    2.410472,
+    1.887722
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.119375,
+   "y": -0.4166666667,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.00012188768547378725,
+    1.7716646116816441,
+    3.119166370021525,
+    4.499428754376692
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    2.410472,
+    1.887722,
+    0.071672
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.119375,
+   "y": -0.25,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    6.546353252183164e-05,
+    2.226347958868149,
+    3.1189821154673574,
+    4.0658579960379
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.043733
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.119375,
+   "y": -0.0833333333,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 4,
+   "torque_t": [
+    2.072299193482685e-05,
+    2.793673778163148,
+    3.118032470177187,
+    3.5221073186218854
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 1,
+   "sep_D": [
+    0.034633,
+    0.02169,
+    0.011811
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive"
+  },
+  {
+   "beta": 3.119375,
+   "y": 0.0833333333,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.1204555144491186,
+    6.283164661210051
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.007604,
+    0.004601,
+    0.029902,
+    0.020767
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.119375,
+   "y": 0.25,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.1197419221646023,
+    6.283120606163707
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.015766,
+    0.010011,
+    0.026914,
+    0.018329
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.119375,
+   "y": 0.4166666667,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.1195760767962977,
+    6.283066036761513
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.020478,
+    0.013386,
+    0.023927,
+    0.015984
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.119375,
+   "y": 0.5833333333,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.1194942704180737,
+    6.282984230383288
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.023927,
+    0.015984,
+    0.020478,
+    0.013386
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.119375,
+   "y": 0.75,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.11943970101588,
+    6.282818385014984
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.026914,
+    0.018329,
+    0.015766,
+    0.010011
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.119375,
+   "y": 0.9166666667,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.1193956459695356,
+    6.282104792730468
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.029902,
+    0.020767,
+    0.007604,
+    0.004601
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.129,
+   "y": -0.8,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.00015930828218607265,
+    0.7532143456083199,
+    3.128983556855095,
+    5.495863937428789
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.022831
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.129,
+   "y": -0.4,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    3.688755467493056e-05,
+    1.816781784706826,
+    3.128929748779059,
+    4.460705867750775
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.037334
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.129,
+   "y": 0.4,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.1290687177453727,
+    6.283148846834168
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 1,
+   "sep_D": [
+    0.011365,
+    0.013717,
+    0.009214
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "spurious"
+   ],
+   "certified": false,
+   "torque_undecided": 0,
+   "locator_failed": 1,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.129,
+   "y": 0.8,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.1290163577087653,
+    6.283033673450272
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.015728,
+    0.010808,
+    0.007844,
+    0.004944
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.131,
+   "y": -0.8,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.00011226596953498276,
+    0.7559728978664636,
+    3.130988369930585,
+    5.4985243230580805
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.0192
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.131,
+   "y": -0.4,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    2.607664935860571e-05,
+    1.8172210447134818,
+    3.1309503800198994,
+    4.461171208789957
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.0314
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.131,
+   "y": 0.4,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.1310487073096738,
+    6.283159484803831
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.009557,
+    0.00626,
+    0.011534,
+    0.007753
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.131,
+   "y": 0.8,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.1310115792171,
+    6.283077607582337
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 1,
+   "sep_D": [
+    0.013226,
+    0.009095,
+    0.006596
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": false,
+   "torque_undecided": 0,
+   "locator_failed": 1,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.133,
+   "y": -0.8,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    7.35765224736194e-05,
+    0.7587224570144281,
+    3.1329923502117767,
+    5.501192683395345
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.015571
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.133,
+   "y": -0.4,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    1.714328255300948e-05,
+    1.8176626376017717,
+    3.132967406477381,
+    4.461634380631448
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.025467
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.133,
+   "y": 0.4,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.1330321063750435,
+    6.283168299624359
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 1,
+   "sep_D": [
+    0.00775,
+    0.009354,
+    0.006292
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "spurious"
+   ],
+   "certified": false,
+   "torque_undecided": 0,
+   "locator_failed": 1,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.1347916667,
+   "y": -0.9166666667,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.00011567145581766603,
+    0.353611631522735,
+    3.134789727298716,
+    5.906067134566031
+   ],
+   "n_separated": 0,
+   "n_spurious_sep": 0,
+   "sep_D": [],
+   "sep_schur": [],
+   "certified": false,
+   "torque_undecided": 0,
+   "locator_failed": 3,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive"
+  },
+  {
+   "beta": 3.1347916667,
+   "y": -0.75,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    3.5920869137832303e-05,
+    0.9119362645180593,
+    3.1347855573400243,
+    5.354893347498099
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.013365
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.1347916667,
+   "y": -0.5833333333,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    1.9296287823059365e-05,
+    1.3590368266652266,
+    3.1347803317627094,
+    4.914249537329055
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.021922,
+    2.412117,
+    1.883934
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.1347916667,
+   "y": -0.4166666667,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    1.1334937290477603e-05,
+    1.7757548400347734,
+    3.134772370412177,
+    4.503727436550531
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    2.412117,
+    1.883934,
+    0.021922
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.1347916667,
+   "y": -0.25,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    6.109359975765393e-06,
+    2.2228554021819407,
+    3.134755745830862,
+    4.063083626381487
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.013365
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.1347916667,
+   "y": -0.0833333333,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    1.9394012841735876e-06,
+    2.781180035177265,
+    3.1346759952441823,
+    3.511909839313555
+   ],
+   "n_separated": 0,
+   "n_spurious_sep": 0,
+   "sep_D": [],
+   "sep_schur": [],
+   "certified": false,
+   "torque_undecided": 0,
+   "locator_failed": 3,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive"
+  },
+  {
+   "beta": 3.1347916667,
+   "y": 0.0833333333,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.1348999679835687,
+    6.283183369987961
+   ],
+   "n_separated": 0,
+   "n_spurious_sep": 0,
+   "sep_D": [],
+   "sep_schur": [],
+   "certified": false,
+   "torque_undecided": 0,
+   "locator_failed": 4,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.1347916667,
+   "y": 0.25,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.1348268443529155,
+    6.283179219693178
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.008218
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": false,
+   "torque_undecided": 0,
+   "locator_failed": 3,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.1347916667,
+   "y": 0.4166666667,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.134810746448276,
+    6.283174047307736
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 1,
+   "sep_D": [
+    0.006253,
+    0.007306,
+    0.004908
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "spurious"
+   ],
+   "certified": false,
+   "torque_undecided": 0,
+   "locator_failed": 1,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.1347916667,
+   "y": 0.5833333333,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.1348029265718504,
+    6.283166227431311
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.007306,
+    0.004908,
+    0.006253,
+    0.004112
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.1347916667,
+   "y": 0.75,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.1347977541864083,
+    6.283150129526671
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.004814
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": false,
+   "torque_undecided": 0,
+   "locator_failed": 3,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.1347916667,
+   "y": 0.9166666667,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.1347936038916253,
+    6.2830770058960175
+   ],
+   "n_separated": 0,
+   "n_spurious_sep": 0,
+   "sep_D": [],
+   "sep_schur": [],
+   "certified": false,
+   "torque_undecided": 0,
+   "locator_failed": 4,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.135,
+   "y": -0.8,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    4.313823492550815e-05,
+    0.7614631285782428,
+    3.1349954987099564,
+    5.5038691059273255
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.011944
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.1502083333,
+   "y": -0.9166666667,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.38018619674042536,
+    3.150211446214166,
+    5.932783549454499,
+    6.282997933766849
+   ],
+   "n_separated": 0,
+   "n_spurious_sep": 0,
+   "sep_D": [],
+   "sep_schur": [],
+   "certified": false,
+   "torque_undecided": 0,
+   "locator_failed": 3,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive"
+  },
+  {
+   "beta": 3.1502083333,
+   "y": -0.75,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.9304519081762214,
+    3.150218142596566,
+    5.37345384767847,
+    6.283127495408801
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.016934
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.1502083333,
+   "y": -0.5833333333,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    1.370249975789011,
+    3.1502265403850926,
+    4.9254757150366375,
+    6.283154292395699
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.027775,
+    2.412015,
+    1.884171
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.1502083333,
+   "y": -0.4166666667,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    1.7799583575109892,
+    3.1502393480838875,
+    4.507917925442949,
+    6.283167100094494
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    2.412015,
+    1.884171,
+    0.027775
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.1502083333,
+   "y": -0.25,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    2.2197564251237787,
+    3.150266145070785,
+    4.059939792801116,
+    6.283175497883021
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.016934
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.1502083333,
+   "y": -0.0833333333,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    2.7700221365595747,
+    3.1503957067127377,
+    3.5006100910250866,
+    6.283182194265421
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.013406
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": false,
+   "torque_undecided": 0,
+   "locator_failed": 2,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive"
+  },
+  {
+   "beta": 3.1502083333,
+   "y": 0.0833333333,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.1084218257615415e-06,
+    3.1500359619826592
+   ],
+   "n_separated": 0,
+   "n_spurious_sep": 0,
+   "sep_D": [],
+   "sep_schur": [],
+   "certified": false,
+   "torque_undecided": 0,
+   "locator_failed": 4,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.1502083333,
+   "y": 0.25,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    9.764826335821265e-06,
+    3.150152032726261
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 1,
+   "sep_D": [
+    0.010414,
+    0.007126,
+    0.006101
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": false,
+   "torque_undecided": 0,
+   "locator_failed": 1,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.1502083333,
+   "y": 0.4166666667,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    1.8054470981309275e-05,
+    3.150177758770227
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 1,
+   "sep_D": [
+    0.009258,
+    0.007924,
+    0.005207
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "spurious"
+   ],
+   "certified": false,
+   "torque_undecided": 0,
+   "locator_failed": 1,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.1502083333,
+   "y": 0.5833333333,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    3.057452977313977e-05,
+    3.150190278829019
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 1,
+   "sep_D": [
+    0.007924,
+    0.005207,
+    0.009258
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": false,
+   "torque_undecided": 0,
+   "locator_failed": 1,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.1502083333,
+   "y": 0.75,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    5.6300573738826305e-05,
+    3.150198568473664
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 1,
+   "sep_D": [
+    0.006101,
+    0.010414,
+    0.007126
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "spurious"
+   ],
+   "certified": false,
+   "torque_undecided": 0,
+   "locator_failed": 1,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.1502083333,
+   "y": 0.9166666667,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global",
+   "n_torque_roots": 2,
+   "torque_t": [
+    0.00017237131734076935,
+    3.1502052248781744
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.002943
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": false,
+   "torque_undecided": 0,
+   "locator_failed": 3,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.165625,
+   "y": -0.9166666667,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.4056842316101338,
+    3.1656492498496966,
+    5.960873615473281,
+    6.281597671418574
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 1,
+   "sep_D": [
+    0.037471,
+    0.023451,
+    0.012779
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive"
+  },
+  {
+   "beta": 3.165625,
+   "y": -0.75,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.9486011220027217,
+    3.165701630298652,
+    5.392411340272112,
+    6.282724261438654
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.047314
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.165625,
+   "y": -0.5833333333,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    1.381355587650166,
+    3.165767739470819,
+    4.93681588661871,
+    6.282940826441183
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.077528,
+    2.410161,
+    1.888434
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.165625,
+   "y": -0.4166666667,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    1.784269412349834,
+    3.1658694807384036,
+    4.511994420560876,
+    6.283042567708768
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    2.410161,
+    1.888434,
+    0.077528
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.165625,
+   "y": -0.25,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    2.217023877997278,
+    3.1660860457409328,
+    4.056398966907475,
+    6.283108676880935
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.047314
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.165625,
+   "y": -0.0833333333,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 4,
+   "torque_t": [
+    2.7599407683898662,
+    3.1672126357610124,
+    3.4879366917063064,
+    6.28316105732989
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 1,
+   "sep_D": [
+    0.012779,
+    0.023451,
+    0.037471
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive"
+  },
+  {
+   "beta": 3.165625,
+   "y": 0.0833333333,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    2.4152374375173462e-05,
+    3.164370209232177
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.032353,
+    0.022456,
+    0.008228,
+    0.004974
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.165625,
+   "y": 0.25,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    7.566528362691605e-05,
+    3.1651968241388944
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.029121,
+    0.019819,
+    0.017058,
+    0.010824
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.165625,
+   "y": 0.4166666667,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    0.0001394270344492672,
+    3.165390079397744
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.025889,
+    0.017284,
+    0.022157,
+    0.014473
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.165625,
+   "y": 0.5833333333,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    0.00023492060225608702,
+    3.165485572965551
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.022157,
+    0.014473,
+    0.025889,
+    0.017284
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.165625,
+   "y": 0.75,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    0.0004281758611058444,
+    3.1655493347163732
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.017058,
+    0.010824,
+    0.029121,
+    0.019819
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.165625,
+   "y": 0.9166666667,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    0.0012547907678230198,
+    3.1656008476256248
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 1,
+   "sep_D": [
+    0.008228,
+    0.032353,
+    0.022456
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "spurious"
+   ],
+   "certified": false,
+   "torque_undecided": 0,
+   "locator_failed": 1,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.1810416667,
+   "y": -0.9166666667,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.4302875635013836,
+    3.1811070831063852,
+    5.990752892685159,
+    6.2784621514139625
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 1,
+   "sep_D": [
+    0.061635,
+    0.03834,
+    0.021015
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive"
+  },
+  {
+   "beta": 3.1810416667,
+   "y": -0.75,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.9664081209119738,
+    3.1812489737599217,
+    5.411796901146547,
+    6.281910704636415
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.077791
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.1810416667,
+   "y": -0.5833333333,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    1.3923590206327032,
+    3.1814292215244473,
+    4.948276288961011,
+    6.282517742672838
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.127201,
+    2.406482,
+    1.896766
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.1810416667,
+   "y": -0.4166666667,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    1.7886826460672969,
+    3.1817092312067485,
+    4.515950684918576,
+    6.2827977523551395
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    2.406482,
+    1.896766,
+    0.127201
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.1810416667,
+   "y": -0.25,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    2.214633545788026,
+    3.182316269243171,
+    4.052430072733039,
+    6.282978000119665
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.077791
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.1810416667,
+   "y": -0.0833333333,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 4,
+   "torque_t": [
+    2.7507541031986165,
+    3.1857648224656243,
+    3.473474081194427,
+    6.283119890773201
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 1,
+   "sep_D": [
+    0.021015,
+    0.03834,
+    0.061635
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive"
+  },
+  {
+   "beta": 3.1810416667,
+   "y": 0.0833333333,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    6.498545899936879e-05,
+    3.177859104828928
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.053239,
+    0.036764,
+    0.013537,
+    0.008128
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.1810416667,
+   "y": 0.25,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    0.00020303982453809006,
+    3.179913076583764
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.047921,
+    0.032439,
+    0.028069,
+    0.017699
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.1810416667,
+   "y": 0.4166666667,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    0.0003729016573348298,
+    3.180416432637311
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.042602,
+    0.028281,
+    0.036459,
+    0.023675
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.1810416667,
+   "y": 0.5833333333,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    0.0006252340626888812,
+    3.180668765042665
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.036459,
+    0.023675,
+    0.042602,
+    0.028281
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.1810416667,
+   "y": 0.75,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    0.0011285901162357615,
+    3.180838626875462
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.028069,
+    0.017699,
+    0.047921,
+    0.032439
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.1810416667,
+   "y": 0.9166666667,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    0.0031825618710721666,
+    3.1809766812410007
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.013537,
+    0.008128,
+    0.053239,
+    0.036764
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.1964583333,
+   "y": -0.9166666667,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.4541297060146001,
+    3.196585005822057,
+    6.023120187149791,
+    6.272894076387325
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 1,
+   "sep_D": [
+    0.085901,
+    0.053106,
+    0.029282
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive"
+  },
+  {
+   "beta": 3.1964583333,
+   "y": -0.75,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.9838946211244378,
+    3.1968609211777994,
+    5.43164585189406,
+    6.280652904453702
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.108357
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.1964583333,
+   "y": -0.5833333333,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    1.4032652738852522,
+    3.197213756509425,
+    4.959863638965016,
+    6.281876421342775
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.17664,
+    2.400823,
+    1.909259
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.1964583333,
+   "y": -0.4166666667,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    1.7931930594147478,
+    3.1977672191368107,
+    4.519780001514571,
+    6.2824298839701616
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    2.400823,
+    1.909259,
+    0.17664
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.1964583333,
+   "y": -0.25,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    2.212563712175562,
+    3.198990736025885,
+    4.047997788585526,
+    6.282782719301787
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.108357
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.1964583333,
+   "y": -0.0833333333,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 4,
+   "torque_t": [
+    2.7423286272853997,
+    3.206749564092262,
+    3.456523453329795,
+    6.28305863465753
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 1,
+   "sep_D": [
+    0.029282,
+    0.053106,
+    0.085901
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive"
+  },
+  {
+   "beta": 3.1964583333,
+   "y": 0.0833333333,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    0.00012551391741820705,
+    3.1906347181029435
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.074229,
+    0.050994,
+    0.01887,
+    0.011253
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.1964583333,
+   "y": 0.25,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    0.00039111213612517346,
+    3.1943212892531347
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.066814,
+    0.044983,
+    0.039131,
+    0.02452
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.1964583333,
+   "y": 0.4166666667,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    0.0007159937849213263,
+    3.195263510508891
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.059397,
+    0.039207,
+    0.050832,
+    0.032812
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.1964583333,
+   "y": 0.5833333333,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    0.001194822791109275,
+    3.195742339515079
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.050832,
+    0.032812,
+    0.059397,
+    0.039207
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.1964583333,
+   "y": 0.75,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    0.0021370440468653005,
+    3.196067221163875
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.039131,
+    0.02452,
+    0.066814,
+    0.044983
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.1964583333,
+   "y": 0.9166666667,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    0.005823615197056695,
+    3.1963328193825817
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.01887,
+    0.011253,
+    0.074229,
+    0.050994
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.211875,
+   "y": -0.9166666667,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.47731225085828727,
+    3.212083069499688,
+    6.05933984563144,
+    6.263530625104843
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 1,
+   "sep_D": [
+    0.110267,
+    0.067746,
+    0.037578
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive"
+  },
+  {
+   "beta": 3.211875,
+   "y": -0.75,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    1.0010801953875759,
+    3.212538211737944,
+    5.45199864908278,
+    6.278911856258244
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.139008
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.211875,
+   "y": -0.5833333333,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    1.4140790180466836,
+    3.2131241888582163,
+    4.971585182966744,
+    6.281007659473007
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.225713,
+    2.392919,
+    1.926091
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.211875,
+   "y": -0.4166666667,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    1.7977959819533165,
+    3.21405264770658,
+    4.523475124212842,
+    6.28193611832137
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    2.392919,
+    1.926091,
+    0.225713
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.211875,
+   "y": -0.25,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    2.210794804612424,
+    3.2161484509213425,
+    4.043061658096806,
+    6.282522095441642
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.139008
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.211875,
+   "y": -0.0833333333,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 4,
+   "torque_t": [
+    2.7345627491417126,
+    3.231529682074744,
+    3.4357204615481467,
+    6.282977237679899
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 1,
+   "sep_D": [
+    0.037578,
+    0.067746,
+    0.110267
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive"
+  },
+  {
+   "beta": 3.211875,
+   "y": 0.0833333333,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    0.0002056361962869252,
+    3.202797211271353
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.095323,
+    0.065146,
+    0.024225,
+    0.014348
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.211875,
+   "y": 0.25,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    0.0006391013046642295,
+    3.208439857184924
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.085801,
+    0.057453,
+    0.050246,
+    0.031286
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.211875,
+   "y": 0.4166666667,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    0.00116628344607155,
+    3.209937628721122
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.076275,
+    0.050063,
+    0.065274,
+    0.041884
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.211875,
+   "y": 0.5833333333,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    0.0019373712788782159,
+    3.2107087165539285
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.065274,
+    0.041884,
+    0.076275,
+    0.050063
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.211875,
+   "y": 0.75,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    0.0034351428150759212,
+    3.2112358986953358
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.050246,
+    0.031286,
+    0.085801,
+    0.057453
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.211875,
+   "y": 0.9166666667,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    0.009077788728646619,
+    3.211669363803713
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.024225,
+    0.014348,
+    0.095323,
+    0.065146
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.2272916667,
+   "y": -0.9166666667,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 4,
+   "torque_t": [
+    0.49991472339774706,
+    3.227601316538085,
+    6.102961892666835,
+    6.246823314591279
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 1,
+   "sep_D": [
+    0.134734,
+    0.082258,
+    0.045903
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive"
+  },
+  {
+   "beta": 3.2272916667,
+   "y": -0.75,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    1.0179825639518925,
+    3.228281573891558,
+    5.472902031481108,
+    6.276642325862223
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.169737
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.2272916667,
+   "y": -0.5833333333,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    1.4248046221843156,
+    3.2291634387407853,
+    4.983448751948314,
+    6.279901614081373
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.274313,
+    2.382337,
+    1.94759
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.2272916667,
+   "y": -0.4166666667,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    1.8024870445156844,
+    3.230575359798214,
+    4.527028221931272,
+    6.281313535138801
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    2.382337,
+    1.94759,
+    0.274313
+   ],
+   "sep_schur": [
+    "saddle",
+    "saddle",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.2272916667,
+   "y": -0.25,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "n_torque_roots": 4,
+   "torque_t": [
+    2.2093091027481075,
+    3.2338346480173628,
+    4.037574942398479,
+    6.282195399988028
+   ],
+   "n_separated": 1,
+   "n_spurious_sep": 0,
+   "sep_D": [
+    0.169737
+   ],
+   "sep_schur": [
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global"
+  },
+  {
+   "beta": 3.2272916667,
+   "y": -0.0833333333,
+   "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+   "n_torque_roots": 4,
+   "torque_t": [
+    2.7273769433022528,
+    3.2636536592883076,
+    3.4075150812127517,
+    6.282875657341501
+   ],
+   "n_separated": 3,
+   "n_spurious_sep": 1,
+   "sep_D": [
+    0.045903,
+    0.082258,
+    0.134734
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive"
+  },
+  {
+   "beta": 3.2272916667,
+   "y": 0.0833333333,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    0.0003052431047793826,
+    3.2144246951429456
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.116522,
+    0.079219,
+    0.029601,
+    0.017413
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.2272916667,
+   "y": 0.25,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    0.000946222554291284,
+    3.222285360448003
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.104882,
+    0.069847,
+    0.061412,
+    0.037997
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.2272916667,
+   "y": 0.4166666667,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    0.0017214134230580968,
+    3.2244447546620836
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.093237,
+    0.060846,
+    0.079787,
+    0.050891
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.2272916667,
+   "y": 0.5833333333,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    0.002846912037916543,
+    3.225570253276942
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.079787,
+    0.050891,
+    0.093237,
+    0.060846
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.2272916667,
+   "y": 0.75,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    0.005006306251996976,
+    3.226345444145709
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.061412,
+    0.037997,
+    0.104882,
+    0.069847
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  },
+  {
+   "beta": 3.2272916667,
+   "y": 0.9166666667,
+   "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+   "n_torque_roots": 2,
+   "torque_t": [
+    0.012866971557054263,
+    3.226986423595221
+   ],
+   "n_separated": 4,
+   "n_spurious_sep": 2,
+   "sep_D": [
+    0.029601,
+    0.017413,
+    0.116522,
+    0.079219
+   ],
+   "sep_schur": [
+    "saddle",
+    "spurious",
+    "saddle",
+    "spurious"
+   ],
+   "certified": true,
+   "torque_undecided": 0,
+   "locator_failed": 0,
+   "shipped": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed"
+  }
+ ]
+}

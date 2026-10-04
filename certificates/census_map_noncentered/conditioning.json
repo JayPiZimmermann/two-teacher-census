@@ -1,0 +1,36 @@
+{
+ "beta": 1.22,
+ "delta": 0.15,
+ "precision_bits": 90,
+ "rows": [
+  {
+   "box_side": 0.1,
+   "boxes": 1827,
+   "excluded_by_Psi": 463,
+   "excluded_fraction": 0.2534209085933224
+  },
+  {
+   "box_side": 0.05,
+   "boxes": 7182,
+   "excluded_by_Psi": 3640,
+   "excluded_fraction": 0.50682261208577
+  },
+  {
+   "box_side": 0.025,
+   "boxes": 28728,
+   "excluded_by_Psi": 19237,
+   "excluded_fraction": 0.6696254525201893
+  }
+ ],
+ "finest": {
+  "box_side": 0.025,
+  "float_samples_per_box": 81,
+  "median_enclosure_over_true_range_Dsep": 3.6821868208393633,
+  "median_enclosure_over_true_range_dDsep_dth0": 17.8625362803866,
+  "ratio_sample_boxes": 4104,
+  "cells_with_float_sign_change": 929,
+  "cells_total": 28728,
+  "fraction_cells_with_sign_change": 0.03233778891673628
+ },
+ "seconds": 910.5736167430878
+}

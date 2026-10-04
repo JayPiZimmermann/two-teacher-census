@@ -1,0 +1,9 @@
+emitted     : cont_F4smoke.json
+grid        : beta 9 x y 3 = 27 teachers, 2 tracked families
+steps       : 57 certified, 3 parameter splits, 0 undecided
+verdicts    : {'CERT_SADDLE': 27, 'CERT_SPURIOUS': 30}
+disjoint    : True (worst separation 2.823510815330401)
+sheet guard : maxjump 0.35, worst step displacement 0.05
+wall clock  : 6.4 s  (112.2 ms per certified step)
+nodes       : 231 bits, 29 bytes packed
+EXIT 0

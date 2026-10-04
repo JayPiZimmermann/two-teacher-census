@@ -1,0 +1,3 @@
+# Declarations allowed to depend on sorryAx (one fully qualified name per line).
+# These are conjectures, documented as such in their docstrings.
+TwoTeacherCensus.plain_census_map_conjecture

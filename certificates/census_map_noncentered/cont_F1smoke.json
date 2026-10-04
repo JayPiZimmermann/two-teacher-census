@@ -1,0 +1,63 @@
+{
+ "NOT_CLAIMED": "This certifies fold-freeness ALONG THE TRACKED SHEETS at the grid teachers only.  It is NOT the `hfold` hypothesis of censusAngleMapJ_zeroCount_eq_witness, which quantifies over ALL zeros at ALL teachers of the face; continuation cannot exclude a zero that is not a continuation of a seeded family, nor the birth of a new pair, and the count bootstrap is circular until degenerate zeros are excluded independently.",
+ "bits_b64": "CAQAAAAAAAAAcRiMRiIiMRERiIiIAAAAAAAAAAiIiIiIiIiIiIiIiIiIiIA=",
+ "emit": {
+  "certified_steps": 84,
+  "disjoint": true,
+  "families_completed": 5,
+  "max_step_displacement": 0.10868428072212111,
+  "ms_per_step": 112.15462003435407,
+  "parameter_splits": 9,
+  "seconds": 9.420988082885742,
+  "undecided": 0,
+  "verdicts": {
+   "CERT_SADDLE": 32,
+   "CERT_SPURIOUS": 52
+  },
+  "worst_separation": 0.17893141142406402
+ },
+ "n_nodes": 345,
+ "object": "certified mass-carrying continuation of the census map's tracked zero families over a teacher rectangle",
+ "spec": {
+  "b0": 0.3,
+  "b1": 0.5,
+  "delta": 0.005,
+  "face": "F1 (smoke corner)",
+  "maxjump": 0.15,
+  "min_split": 64,
+  "nb": 4,
+  "newton_iters": 40,
+  "newton_tol_exp": 40,
+  "ny": 2,
+  "prec": 160,
+  "r0": 0.001,
+  "refine": 80,
+  "rmin": 1e-11,
+  "seeds": [
+   [
+    3.033032,
+    0.191329
+   ],
+   [
+    3.080304,
+    0.012398
+   ],
+   [
+    3.220976,
+    3.013292
+   ],
+   [
+    4.57948,
+    1.652807
+   ],
+   [
+    0.0,
+    0.3
+   ]
+  ],
+  "trust": 0.08,
+  "y0": 0.1,
+  "y1": 0.2
+ },
+ "tag": "F1smoke"
+}

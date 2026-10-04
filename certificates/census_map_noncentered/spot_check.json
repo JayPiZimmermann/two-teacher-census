@@ -1,0 +1,161 @@
+{
+ "intervals": {
+  "(0, beta*_1)": [
+   0.0,
+   2.225669630958718
+  ],
+  "(beta*_2, 2pi)": [
+   4.057515676220868,
+   6.283185307179586
+  ]
+ },
+ "interval_total_length": 4.451339261917436,
+ "rows": [
+  {
+   "centre": 0.01,
+   "certified_half_width": null,
+   "counts_Wtau_Wpot": null,
+   "tries": 18
+  },
+  {
+   "centre": 0.05,
+   "certified_half_width": 1.52587890625e-06,
+   "counts_Wtau_Wpot": [
+    2,
+    2
+   ],
+   "tries": 15
+  },
+  {
+   "centre": 0.1,
+   "certified_half_width": 1.220703125e-05,
+   "counts_Wtau_Wpot": [
+    2,
+    2
+   ],
+   "tries": 13
+  },
+  {
+   "centre": 0.3,
+   "certified_half_width": 0.00029296875,
+   "counts_Wtau_Wpot": [
+    2,
+    2
+   ],
+   "tries": 10
+  },
+  {
+   "centre": 0.6,
+   "certified_half_width": 0.001953125,
+   "counts_Wtau_Wpot": [
+    2,
+    2
+   ],
+   "tries": 8
+  },
+  {
+   "centre": 1.0,
+   "certified_half_width": 0.0078125,
+   "counts_Wtau_Wpot": [
+    2,
+    2
+   ],
+   "tries": 6
+  },
+  {
+   "centre": 1.5,
+   "certified_half_width": 0.03125,
+   "counts_Wtau_Wpot": [
+    2,
+    2
+   ],
+   "tries": 4
+  },
+  {
+   "centre": 2.0,
+   "certified_half_width": 0.056417407739679515,
+   "counts_Wtau_Wpot": [
+    2,
+    2
+   ],
+   "tries": 2
+  },
+  {
+   "centre": 2.2,
+   "certified_half_width": 0.00641740773967947,
+   "counts_Wtau_Wpot": [
+    2,
+    2
+   ],
+   "tries": 2
+  },
+  {
+   "centre": 4.1,
+   "certified_half_width": 0.021242161889565736,
+   "counts_Wtau_Wpot": [
+    2,
+    2
+   ],
+   "tries": 1
+  },
+  {
+   "centre": 4.6,
+   "certified_half_width": 0.0625,
+   "counts_Wtau_Wpot": [
+    2,
+    2
+   ],
+   "tries": 3
+  },
+  {
+   "centre": 5.0,
+   "certified_half_width": 0.0625,
+   "counts_Wtau_Wpot": [
+    2,
+    2
+   ],
+   "tries": 3
+  },
+  {
+   "centre": 5.6,
+   "certified_half_width": 0.0078125,
+   "counts_Wtau_Wpot": [
+    2,
+    2
+   ],
+   "tries": 6
+  },
+  {
+   "centre": 6.1,
+   "certified_half_width": 0.00017889190154256503,
+   "counts_Wtau_Wpot": [
+    2,
+    2
+   ],
+   "tries": 10
+  },
+  {
+   "centre": 6.24,
+   "certified_half_width": 1.3179109857051397e-06,
+   "counts_Wtau_Wpot": [
+    2,
+    2
+   ],
+   "tries": 15
+  },
+  {
+   "centre": 6.27,
+   "certified_half_width": 5.0297955244394906e-08,
+   "counts_Wtau_Wpot": [
+    2,
+    2
+   ],
+   "tries": 18
+  }
+ ],
+ "n_certified": 15,
+ "n_centres": 16,
+ "certified_measure": 0.516784128279129,
+ "fraction_of_intervals": 0.11609632469499118,
+ "seconds": 57.378896951675415
+}

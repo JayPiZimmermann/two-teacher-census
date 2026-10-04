@@ -1,0 +1,58 @@
+{
+ "NOT_CLAIMED": "This certifies fold-freeness ALONG THE TRACKED SHEETS at the grid teachers only.  It is NOT the `hfold` hypothesis of censusAngleMapJ_zeroCount_eq_witness, which quantifies over ALL zeros at ALL teachers of the face; continuation cannot exclude a zero that is not a continuation of a seeded family, nor the birth of a new pair, and the count bootstrap is circular until degenerate zeros are excluded independently.",
+ "bits_b64": "DAIBAIBAIBAIBgEAwCAYBAMAgGAQDAIBgEAwCAYBAMAgEAgEAwCAYBAMAgGAQDAIBgEAwCAYBAMAgEAgEAgEAgGAQDAIBgEAwCAYBAMAgEAgEAgEAgEAgEAgEAgEAgEAgEAgEAgEAgEAgEAgEAgEAgEAgEAgEAgAiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI",
+ "emit": {
+  "certified_steps": 285,
+  "clash": null,
+  "disjoint": true,
+  "families_completed": 2,
+  "max_step_displacement": 0.09970223030399862,
+  "ms_per_step": 117.44461143225955,
+  "parameter_splits": 129,
+  "seconds": 33.47171425819397,
+  "undecided": 0,
+  "verdicts": {
+   "CERT_SADDLE": 207,
+   "CERT_SPURIOUS": 78
+  },
+  "worst_separation": 1.1680770549469197,
+  "worst_where": {
+   "family_a": 0,
+   "family_b": 1,
+   "grid_i": 3,
+   "grid_j": 1
+  }
+ },
+ "n_nodes": 1269,
+ "object": "certified mass-carrying continuation of the census map's tracked zero families over a teacher rectangle",
+ "spec": {
+  "b0": 2.4,
+  "b1": 3.0,
+  "delta": 0.02,
+  "face": "F5a regional box (outside the sampled candidate-transition band)",
+  "maxjump": 0.1,
+  "min_split": 64,
+  "nb": 12,
+  "newton_iters": 40,
+  "newton_tol_exp": 40,
+  "ny": 5,
+  "prec": 160,
+  "r0": 0.001,
+  "refine": 80,
+  "rmin": 1e-11,
+  "seeds": [
+   [
+    4.776583,
+    1.843106
+   ],
+   [
+    0.0,
+    2.4
+   ]
+  ],
+  "trust": 0.04,
+  "y0": -0.4,
+  "y1": -0.15
+ },
+ "tag": "F5a"
+}

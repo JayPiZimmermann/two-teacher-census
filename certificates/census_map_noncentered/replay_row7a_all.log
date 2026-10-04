@@ -1,0 +1,7 @@
+smoke EXIT 0
+safesmoke EXIT 0
+scale0.0002 EXIT 0
+scale0.0005 EXIT 0
+scale0.001 EXIT 0
+scale0.002 EXIT 0
+EXIT 0

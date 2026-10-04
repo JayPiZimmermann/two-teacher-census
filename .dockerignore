@@ -1,0 +1,6 @@
+*
+!deploy/nginx.conf
+!web/index.html
+!web/explorer.js
+!web/census-map.js
+!web/vendor/

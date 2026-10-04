@@ -1,0 +1,16 @@
+{
+ "mixed_sign": true,
+ "nb": 96,
+ "ny": 64,
+ "dps": 60,
+ "stats": {
+  "teachers": 6144,
+  "candidates": 0,
+  "verified": 0,
+  "minima": 0,
+  "psd_boundary": 0,
+  "screened_near_coincident": 0,
+  "float_flips": 0
+ },
+ "hits": []
+}

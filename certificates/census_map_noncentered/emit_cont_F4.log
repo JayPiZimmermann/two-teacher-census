@@ -1,0 +1,9 @@
+emitted     : cont_F4.json
+grid        : beta 43 x y 17 = 731 teachers, 2 tracked families
+steps       : 1479 certified, 17 parameter splits, 0 undecided
+verdicts    : {'CERT_SADDLE': 731, 'CERT_SPURIOUS': 748}
+disjoint    : True (worst separation 1.5406240827413842)
+sheet guard : maxjump 0.35, worst step displacement 0.1622
+wall clock  : 122.8 s  (83.0 ms per certified step)
+nodes       : 5933 bits, 742 bytes packed
+EXIT 0

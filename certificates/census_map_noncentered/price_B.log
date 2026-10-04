@@ -1,0 +1,25 @@
+root beta=[0.75,0.76] y=[-0.4,-0.39] s=[0.137,6.42019] D=[0.02,3.19] budget 200000
+  nodes    15000  map    7477 schur      0 fit     0 undec 0  stack     47  depth  52  249s
+  nodes    25000  map   12480 schur      0 fit     0 undec 0  stack     41  depth  53  404s
+  nodes    35000  map   17479 schur      0 fit     0 undec 0  stack     43  depth  53  566s
+  nodes    40000  map   19977 schur      0 fit     0 undec 0  stack     47  depth  52  640s
+  nodes    45000  map   22477 schur      0 fit     0 undec 0  stack     47  depth  53  715s
+  nodes    50000  map   24980 schur      0 fit     0 undec 0  stack     41  depth  52  791s
+  nodes    55000  map   27478 schur      0 fit     0 undec 0  stack     45  depth  52  877s
+  nodes    60000  map   29979 schur      0 fit     0 undec 0  stack     43  depth  53  952s
+  nodes    65000  map   32480 schur      0 fit     0 undec 0  stack     41  depth  53  1033s
+  nodes    70000  map   34978 schur      0 fit     0 undec 0  stack     45  depth  52  1111s
+  nodes    75000  map   37480 schur      0 fit     0 undec 0  stack     41  depth  52  1190s
+  nodes    85000  map   42480 schur      0 fit     0 undec 0  stack     41  depth  53  1331s
+  nodes    95000  map   47479 schur      0 fit     0 undec 0  stack     43  depth  52  1482s
+  nodes   110000  map   54978 schur      0 fit     0 undec 0  stack     45  depth  53  1711s
+  nodes   130000  map   64977 schur      0 fit     0 undec 0  stack     47  depth  52  2048s
+  nodes   145000  map   72480 schur      0 fit     0 undec 0  stack     41  depth  52  2258s
+  nodes   155000  map   77477 schur      0 fit     0 undec 0  stack     47  depth  52  2397s
+  nodes   165000  map   82480 schur      0 fit     0 undec 0  stack     41  depth  53  2536s
+  nodes   170000  map   84977 schur      0 fit     0 undec 0  stack     47  depth  53  2605s
+  nodes   175000  map   87479 schur      0 fit     0 undec 0  stack     43  depth  53  2674s
+  nodes   180000  map   89980 schur      0 fit     0 undec 0  stack     41  depth  52  2743s
+  nodes   185000  map   92479 schur      0 fit     0 undec 0  stack     43  depth  53  2812s
+  nodes   195000  map   97478 schur      0 fit     0 undec 0  stack     45  depth  53  2950s
+EXIT 124

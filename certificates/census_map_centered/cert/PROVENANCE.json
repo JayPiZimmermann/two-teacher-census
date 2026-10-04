@@ -1,0 +1,35 @@
+{
+ "certificate": "depth-16 run started 2026-08-14, finished 2026-08-15 03:28",
+ "what": "Run parameters and content hashes of the certificate shipped in this directory. The shipped certificate.json predates the change that stamps the run parameters into the certificate itself (certify.py now writes them under the key \"run_parameters\"), so for this run they are recorded here instead. Nothing was injected into certificate.json after the fact.",
+ "max_depth_y": 16,
+ "log": "run_d16_shipped.log",
+ "sha256": {
+  "certificate.json": "7737a899aae6b4fa9263c5206395743d484649204903063b44d82425ec55422f",
+  "certificate_full.json.gz": "230e7f4a52ff3882bce17b04aa3c9271ce5e0be4568c8860f2d5b40e04040941"
+ },
+ "run_parameters": {
+  "MAX_DEPTH_Y": 16,
+  "MAX_DEPTH_COUNT": 45,
+  "Y_TOL": "1e-3",
+  "BETA_FLOOR": "1e-12",
+  "precision_bits": 200
+ },
+ "parameter_evidence": {
+  "MAX_DEPTH_Y": "16, not the code default 7: the run was launched with MAX_DEPTH_Y=16 in the environment; the console log run_d16_shipped.log is the log of that run.",
+  "Y_TOL": "1e-3, readable from the certificate itself: every wide-box reason string in certificate.json is \"y_enclosure_wider_than_0.001\".",
+  "MAX_DEPTH_COUNT": "45, the in-source constant; not settable from the environment.",
+  "BETA_FLOOR": "1e-12, the code default; the run did not override it."
+ },
+ "files": {
+  "certificate.json": "compact certificate, 976319 bytes, in version control",
+  "certificate_full.json.gz": "complete run, every certified and wide box, 105806097 bytes (~105 MB), deliberately NOT in version control; produced from the same run by compact.py's companion output and regenerable by certify.py",
+  "run_d16_shipped.log": "console log of this run, not in version control (gitignored)"
+ },
+ "git": {
+  "commit": "bd70260c",
+  "subject": "certificates: tighten centered curve enclosure",
+  "committed": "2026-08-15 03:40"
+ },
+ "generated_field_in_certificate": "2026-08-14",
+ "verify": "cd cert && sha256sum -c <<< \"$(python3 -c 'import json;p=json.load(open(\"PROVENANCE.json\"));[print(v+\"  \"+k) for k,v in p[\"sha256\"].items()]')\""
+}

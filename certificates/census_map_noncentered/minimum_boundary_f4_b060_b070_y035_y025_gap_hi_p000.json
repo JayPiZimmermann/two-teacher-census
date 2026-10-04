@@ -1,0 +1,1 @@
+{"spec":{"b0":0.6,"b1":0.7,"y0":-0.35,"y1":-0.25,"seam":0.137,"delta":0.001,"dmax":3.13,"face":"gap_hi","n_parts":64,"minw":1e-06,"coord":"absolute","row_mv_maxw":0.1,"kraw_maxw":0.1,"mv_maxw":0.05,"split":"widest"},"lo_idx":0,"hi_idx":64,"n_nodes":90,"bits_b64":"ZAAAAANHhwAAAAAA","stats":{"visited_nodes":90,"leaves":77,"seconds":1.377016544342041}}

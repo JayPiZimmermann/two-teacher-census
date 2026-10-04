@@ -1,0 +1,972 @@
+{
+  "format": "minimum-atlas-v1",
+  "scope": "census",
+  "strip": {
+    "seam": 0.137,
+    "delta": 0.001,
+    "dmax": 3.13
+  },
+  "target": {
+    "b0": 0.5,
+    "b1": 2.2,
+    "y0": -0.45,
+    "y1": -0.1
+  },
+  "witness": "minimum_witness_f4probe_census.json",
+  "base_box": "f4probe_census",
+  "boxes": [
+    {
+      "id": "f4_grid_bp060_bp070_ym045_ym035_census",
+      "b0": 0.6,
+      "b1": 0.7,
+      "y0": -0.45,
+      "y1": -0.35,
+      "regularity": "minimum_dfs_f4_grid_bp060_bp070_ym045_ym035_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp060_bp070_ym045_ym035_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp060_bp070_ym045_ym035_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp060_bp070_ym045_ym035_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp060_bp070_ym045_ym035_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp060_bp070_ym035_ym025_census",
+      "b0": 0.6,
+      "b1": 0.7,
+      "y0": -0.35,
+      "y1": -0.25,
+      "regularity": "minimum_dfs_f4_grid_bp060_bp070_ym035_ym025_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp060_bp070_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp060_bp070_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp060_bp070_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp060_bp070_ym035_ym025_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4probe_census",
+      "b0": 0.7,
+      "b1": 0.8,
+      "y0": -0.45,
+      "y1": -0.35,
+      "regularity": "minimum_dfs_f4probe_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4probe_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4probe_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4probe_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4probe_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp070_bp080_ym035_ym025_census",
+      "b0": 0.7,
+      "b1": 0.8,
+      "y0": -0.35,
+      "y1": -0.25,
+      "regularity": "minimum_dfs_f4_grid_bp070_bp080_ym035_ym025_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp070_bp080_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp070_bp080_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp070_bp080_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp070_bp080_ym035_ym025_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp080_bp090_ym045_ym035_census",
+      "b0": 0.8,
+      "b1": 0.9,
+      "y0": -0.45,
+      "y1": -0.35,
+      "regularity": "minimum_dfs_f4_grid_bp080_bp090_ym045_ym035_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp080_bp090_ym045_ym035_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp080_bp090_ym045_ym035_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp080_bp090_ym045_ym035_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp080_bp090_ym045_ym035_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp080_bp090_ym035_ym025_census",
+      "b0": 0.8,
+      "b1": 0.9,
+      "y0": -0.35,
+      "y1": -0.25,
+      "regularity": "minimum_dfs_f4_grid_bp080_bp090_ym035_ym025_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp080_bp090_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp080_bp090_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp080_bp090_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp080_bp090_ym035_ym025_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp050_bp060_ym045_ym035_census",
+      "b0": 0.5,
+      "b1": 0.6,
+      "y0": -0.45,
+      "y1": -0.35,
+      "regularity": "minimum_dfs_f4_grid_bp050_bp060_ym045_ym035_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp050_bp060_ym045_ym035_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp050_bp060_ym045_ym035_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp050_bp060_ym045_ym035_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp050_bp060_ym045_ym035_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp050_bp060_ym035_ym025_census",
+      "b0": 0.5,
+      "b1": 0.6,
+      "y0": -0.35,
+      "y1": -0.25,
+      "regularity": "minimum_dfs_f4_grid_bp050_bp060_ym035_ym025_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp050_bp060_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp050_bp060_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp050_bp060_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp050_bp060_ym035_ym025_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp060_bp070_ym025_ym015_census",
+      "b0": 0.6,
+      "b1": 0.7,
+      "y0": -0.25,
+      "y1": -0.15,
+      "regularity": "minimum_dfs_f4_grid_bp060_bp070_ym025_ym015_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp060_bp070_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp060_bp070_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp060_bp070_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp060_bp070_ym025_ym015_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp070_bp080_ym025_ym015_census",
+      "b0": 0.7,
+      "b1": 0.8,
+      "y0": -0.25,
+      "y1": -0.15,
+      "regularity": "minimum_dfs_f4_grid_bp070_bp080_ym025_ym015_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp070_bp080_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp070_bp080_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp070_bp080_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp070_bp080_ym025_ym015_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp080_bp090_ym025_ym015_census",
+      "b0": 0.8,
+      "b1": 0.9,
+      "y0": -0.25,
+      "y1": -0.15,
+      "regularity": "minimum_dfs_f4_grid_bp080_bp090_ym025_ym015_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp080_bp090_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp080_bp090_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp080_bp090_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp080_bp090_ym025_ym015_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp090_bp100_ym045_ym035_census",
+      "b0": 0.9,
+      "b1": 1.0,
+      "y0": -0.45,
+      "y1": -0.35,
+      "regularity": "minimum_dfs_f4_grid_bp090_bp100_ym045_ym035_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp090_bp100_ym045_ym035_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp090_bp100_ym045_ym035_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp090_bp100_ym045_ym035_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp090_bp100_ym045_ym035_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp090_bp100_ym035_ym025_census",
+      "b0": 0.9,
+      "b1": 1.0,
+      "y0": -0.35,
+      "y1": -0.25,
+      "regularity": "minimum_dfs_f4_grid_bp090_bp100_ym035_ym025_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp090_bp100_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp090_bp100_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp090_bp100_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp090_bp100_ym035_ym025_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp050_bp060_ym025_ym015_census",
+      "b0": 0.5,
+      "b1": 0.6,
+      "y0": -0.25,
+      "y1": -0.15,
+      "regularity": "minimum_dfs_f4_grid_bp050_bp060_ym025_ym015_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp050_bp060_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp050_bp060_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp050_bp060_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp050_bp060_ym025_ym015_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp060_bp070_ym015_ym010_census",
+      "b0": 0.6,
+      "b1": 0.7,
+      "y0": -0.15,
+      "y1": -0.1,
+      "regularity": "minimum_dfs_f4_grid_bp060_bp070_ym015_ym010_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp060_bp070_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp060_bp070_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp060_bp070_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp060_bp070_ym015_ym010_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp070_bp080_ym015_ym010_census",
+      "b0": 0.7,
+      "b1": 0.8,
+      "y0": -0.15,
+      "y1": -0.1,
+      "regularity": "minimum_dfs_f4_grid_bp070_bp080_ym015_ym010_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp070_bp080_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp070_bp080_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp070_bp080_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp070_bp080_ym015_ym010_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp080_bp090_ym015_ym010_census",
+      "b0": 0.8,
+      "b1": 0.9,
+      "y0": -0.15,
+      "y1": -0.1,
+      "regularity": "minimum_dfs_f4_grid_bp080_bp090_ym015_ym010_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp080_bp090_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp080_bp090_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp080_bp090_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp080_bp090_ym015_ym010_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp090_bp100_ym025_ym015_census",
+      "b0": 0.9,
+      "b1": 1.0,
+      "y0": -0.25,
+      "y1": -0.15,
+      "regularity": "minimum_dfs_f4_grid_bp090_bp100_ym025_ym015_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp090_bp100_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp090_bp100_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp090_bp100_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp090_bp100_ym025_ym015_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp100_bp110_ym045_ym035_census",
+      "b0": 1.0,
+      "b1": 1.1,
+      "y0": -0.45,
+      "y1": -0.35,
+      "regularity": "minimum_dfs_f4_grid_bp100_bp110_ym045_ym035_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp100_bp110_ym045_ym035_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp100_bp110_ym045_ym035_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp100_bp110_ym045_ym035_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp100_bp110_ym045_ym035_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp100_bp110_ym035_ym025_census",
+      "b0": 1.0,
+      "b1": 1.1,
+      "y0": -0.35,
+      "y1": -0.25,
+      "regularity": "minimum_dfs_f4_grid_bp100_bp110_ym035_ym025_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp100_bp110_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp100_bp110_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp100_bp110_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp100_bp110_ym035_ym025_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp050_bp060_ym015_ym010_census",
+      "b0": 0.5,
+      "b1": 0.6,
+      "y0": -0.15,
+      "y1": -0.1,
+      "regularity": "minimum_dfs_f4_grid_bp050_bp060_ym015_ym010_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp050_bp060_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp050_bp060_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp050_bp060_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp050_bp060_ym015_ym010_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp090_bp100_ym015_ym010_census",
+      "b0": 0.9,
+      "b1": 1.0,
+      "y0": -0.15,
+      "y1": -0.1,
+      "regularity": "minimum_dfs_f4_grid_bp090_bp100_ym015_ym010_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp090_bp100_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp090_bp100_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp090_bp100_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp090_bp100_ym015_ym010_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp100_bp110_ym025_ym015_census",
+      "b0": 1.0,
+      "b1": 1.1,
+      "y0": -0.25,
+      "y1": -0.15,
+      "regularity": "minimum_dfs_f4_grid_bp100_bp110_ym025_ym015_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp100_bp110_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp100_bp110_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp100_bp110_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp100_bp110_ym025_ym015_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp110_bp120_ym045_ym035_census",
+      "b0": 1.1,
+      "b1": 1.2,
+      "y0": -0.45,
+      "y1": -0.35,
+      "regularity": "minimum_dfs_f4_grid_bp110_bp120_ym045_ym035_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp110_bp120_ym045_ym035_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp110_bp120_ym045_ym035_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp110_bp120_ym045_ym035_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp110_bp120_ym045_ym035_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp110_bp120_ym035_ym025_census",
+      "b0": 1.1,
+      "b1": 1.2,
+      "y0": -0.35,
+      "y1": -0.25,
+      "regularity": "minimum_dfs_f4_grid_bp110_bp120_ym035_ym025_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp110_bp120_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp110_bp120_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp110_bp120_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp110_bp120_ym035_ym025_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp100_bp110_ym015_ym010_census",
+      "b0": 1.0,
+      "b1": 1.1,
+      "y0": -0.15,
+      "y1": -0.1,
+      "regularity": "minimum_dfs_f4_grid_bp100_bp110_ym015_ym010_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp100_bp110_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp100_bp110_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp100_bp110_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp100_bp110_ym015_ym010_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp110_bp120_ym025_ym015_census",
+      "b0": 1.1,
+      "b1": 1.2,
+      "y0": -0.25,
+      "y1": -0.15,
+      "regularity": "minimum_dfs_f4_grid_bp110_bp120_ym025_ym015_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp110_bp120_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp110_bp120_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp110_bp120_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp110_bp120_ym025_ym015_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp120_bp130_ym045_ym035_census",
+      "b0": 1.2,
+      "b1": 1.3,
+      "y0": -0.45,
+      "y1": -0.35,
+      "regularity": "minimum_dfs_f4_grid_bp120_bp130_ym045_ym035_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp120_bp130_ym045_ym035_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp120_bp130_ym045_ym035_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp120_bp130_ym045_ym035_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp120_bp130_ym045_ym035_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp120_bp130_ym035_ym025_census",
+      "b0": 1.2,
+      "b1": 1.3,
+      "y0": -0.35,
+      "y1": -0.25,
+      "regularity": "minimum_dfs_f4_grid_bp120_bp130_ym035_ym025_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp120_bp130_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp120_bp130_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp120_bp130_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp120_bp130_ym035_ym025_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp110_bp120_ym015_ym010_census",
+      "b0": 1.1,
+      "b1": 1.2,
+      "y0": -0.15,
+      "y1": -0.1,
+      "regularity": "minimum_dfs_f4_grid_bp110_bp120_ym015_ym010_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp110_bp120_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp110_bp120_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp110_bp120_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp110_bp120_ym015_ym010_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp120_bp130_ym025_ym015_census",
+      "b0": 1.2,
+      "b1": 1.3,
+      "y0": -0.25,
+      "y1": -0.15,
+      "regularity": "minimum_dfs_f4_grid_bp120_bp130_ym025_ym015_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp120_bp130_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp120_bp130_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp120_bp130_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp120_bp130_ym025_ym015_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp130_bp140_ym045_ym035_census",
+      "b0": 1.3,
+      "b1": 1.4,
+      "y0": -0.45,
+      "y1": -0.35,
+      "regularity": "minimum_dfs_f4_grid_bp130_bp140_ym045_ym035_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp130_bp140_ym045_ym035_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp130_bp140_ym045_ym035_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp130_bp140_ym045_ym035_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp130_bp140_ym045_ym035_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp130_bp140_ym035_ym025_census",
+      "b0": 1.3,
+      "b1": 1.4,
+      "y0": -0.35,
+      "y1": -0.25,
+      "regularity": "minimum_dfs_f4_grid_bp130_bp140_ym035_ym025_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp130_bp140_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp130_bp140_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp130_bp140_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp130_bp140_ym035_ym025_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp120_bp130_ym015_ym010_census",
+      "b0": 1.2,
+      "b1": 1.3,
+      "y0": -0.15,
+      "y1": -0.1,
+      "regularity": "minimum_dfs_f4_grid_bp120_bp130_ym015_ym010_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp120_bp130_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp120_bp130_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp120_bp130_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp120_bp130_ym015_ym010_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp130_bp140_ym025_ym015_census",
+      "b0": 1.3,
+      "b1": 1.4,
+      "y0": -0.25,
+      "y1": -0.15,
+      "regularity": "minimum_dfs_f4_grid_bp130_bp140_ym025_ym015_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp130_bp140_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp130_bp140_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp130_bp140_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp130_bp140_ym025_ym015_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp140_bp150_ym045_ym035_census",
+      "b0": 1.4,
+      "b1": 1.5,
+      "y0": -0.45,
+      "y1": -0.35,
+      "regularity": "minimum_dfs_f4_grid_bp140_bp150_ym045_ym035_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp140_bp150_ym045_ym035_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp140_bp150_ym045_ym035_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp140_bp150_ym045_ym035_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp140_bp150_ym045_ym035_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp140_bp150_ym035_ym025_census",
+      "b0": 1.4,
+      "b1": 1.5,
+      "y0": -0.35,
+      "y1": -0.25,
+      "regularity": "minimum_dfs_f4_grid_bp140_bp150_ym035_ym025_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp140_bp150_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp140_bp150_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp140_bp150_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp140_bp150_ym035_ym025_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp130_bp140_ym015_ym010_census",
+      "b0": 1.3,
+      "b1": 1.4,
+      "y0": -0.15,
+      "y1": -0.1,
+      "regularity": "minimum_dfs_f4_grid_bp130_bp140_ym015_ym010_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp130_bp140_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp130_bp140_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp130_bp140_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp130_bp140_ym015_ym010_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp140_bp150_ym025_ym015_census",
+      "b0": 1.4,
+      "b1": 1.5,
+      "y0": -0.25,
+      "y1": -0.15,
+      "regularity": "minimum_dfs_f4_grid_bp140_bp150_ym025_ym015_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp140_bp150_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp140_bp150_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp140_bp150_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp140_bp150_ym025_ym015_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp150_bp160_ym045_ym035_census",
+      "b0": 1.5,
+      "b1": 1.6,
+      "y0": -0.45,
+      "y1": -0.35,
+      "regularity": "minimum_dfs_f4_grid_bp150_bp160_ym045_ym035_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp150_bp160_ym045_ym035_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp150_bp160_ym045_ym035_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp150_bp160_ym045_ym035_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp150_bp160_ym045_ym035_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp150_bp160_ym035_ym025_census",
+      "b0": 1.5,
+      "b1": 1.6,
+      "y0": -0.35,
+      "y1": -0.25,
+      "regularity": "minimum_dfs_f4_grid_bp150_bp160_ym035_ym025_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp150_bp160_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp150_bp160_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp150_bp160_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp150_bp160_ym035_ym025_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp140_bp150_ym015_ym010_census",
+      "b0": 1.4,
+      "b1": 1.5,
+      "y0": -0.15,
+      "y1": -0.1,
+      "regularity": "minimum_dfs_f4_grid_bp140_bp150_ym015_ym010_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp140_bp150_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp140_bp150_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp140_bp150_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp140_bp150_ym015_ym010_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp150_bp160_ym025_ym015_census",
+      "b0": 1.5,
+      "b1": 1.6,
+      "y0": -0.25,
+      "y1": -0.15,
+      "regularity": "minimum_dfs_f4_grid_bp150_bp160_ym025_ym015_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp150_bp160_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp150_bp160_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp150_bp160_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp150_bp160_ym025_ym015_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp160_bp170_ym045_ym035_census",
+      "b0": 1.6,
+      "b1": 1.7,
+      "y0": -0.45,
+      "y1": -0.35,
+      "regularity": "minimum_dfs_f4_grid_bp160_bp170_ym045_ym035_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp160_bp170_ym045_ym035_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp160_bp170_ym045_ym035_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp160_bp170_ym045_ym035_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp160_bp170_ym045_ym035_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp160_bp170_ym035_ym025_census",
+      "b0": 1.6,
+      "b1": 1.7,
+      "y0": -0.35,
+      "y1": -0.25,
+      "regularity": "minimum_dfs_f4_grid_bp160_bp170_ym035_ym025_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp160_bp170_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp160_bp170_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp160_bp170_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp160_bp170_ym035_ym025_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp150_bp160_ym015_ym010_census",
+      "b0": 1.5,
+      "b1": 1.6,
+      "y0": -0.15,
+      "y1": -0.1,
+      "regularity": "minimum_dfs_f4_grid_bp150_bp160_ym015_ym010_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp150_bp160_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp150_bp160_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp150_bp160_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp150_bp160_ym015_ym010_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp160_bp170_ym025_ym015_census",
+      "b0": 1.6,
+      "b1": 1.7,
+      "y0": -0.25,
+      "y1": -0.15,
+      "regularity": "minimum_dfs_f4_grid_bp160_bp170_ym025_ym015_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp160_bp170_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp160_bp170_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp160_bp170_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp160_bp170_ym025_ym015_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp170_bp180_ym045_ym035_census",
+      "b0": 1.7,
+      "b1": 1.8,
+      "y0": -0.45,
+      "y1": -0.35,
+      "regularity": "minimum_dfs_f4_grid_bp170_bp180_ym045_ym035_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp170_bp180_ym045_ym035_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp170_bp180_ym045_ym035_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp170_bp180_ym045_ym035_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp170_bp180_ym045_ym035_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp170_bp180_ym035_ym025_census",
+      "b0": 1.7,
+      "b1": 1.8,
+      "y0": -0.35,
+      "y1": -0.25,
+      "regularity": "minimum_dfs_f4_grid_bp170_bp180_ym035_ym025_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp170_bp180_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp170_bp180_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp170_bp180_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp170_bp180_ym035_ym025_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp160_bp170_ym015_ym010_census",
+      "b0": 1.6,
+      "b1": 1.7,
+      "y0": -0.15,
+      "y1": -0.1,
+      "regularity": "minimum_dfs_f4_grid_bp160_bp170_ym015_ym010_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp160_bp170_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp160_bp170_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp160_bp170_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp160_bp170_ym015_ym010_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp170_bp180_ym025_ym015_census",
+      "b0": 1.7,
+      "b1": 1.8,
+      "y0": -0.25,
+      "y1": -0.15,
+      "regularity": "minimum_dfs_f4_grid_bp170_bp180_ym025_ym015_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp170_bp180_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp170_bp180_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp170_bp180_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp170_bp180_ym025_ym015_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp180_bp190_ym045_ym035_census",
+      "b0": 1.8,
+      "b1": 1.9,
+      "y0": -0.45,
+      "y1": -0.35,
+      "regularity": "minimum_dfs_f4_grid_bp180_bp190_ym045_ym035_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp180_bp190_ym045_ym035_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp180_bp190_ym045_ym035_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp180_bp190_ym045_ym035_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp180_bp190_ym045_ym035_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp180_bp190_ym035_ym025_census",
+      "b0": 1.8,
+      "b1": 1.9,
+      "y0": -0.35,
+      "y1": -0.25,
+      "regularity": "minimum_dfs_f4_grid_bp180_bp190_ym035_ym025_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp180_bp190_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp180_bp190_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp180_bp190_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp180_bp190_ym035_ym025_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp170_bp180_ym015_ym010_census",
+      "b0": 1.7,
+      "b1": 1.8,
+      "y0": -0.15,
+      "y1": -0.1,
+      "regularity": "minimum_dfs_f4_grid_bp170_bp180_ym015_ym010_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp170_bp180_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp170_bp180_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp170_bp180_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp170_bp180_ym015_ym010_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp180_bp190_ym025_ym015_census",
+      "b0": 1.8,
+      "b1": 1.9,
+      "y0": -0.25,
+      "y1": -0.15,
+      "regularity": "minimum_dfs_f4_grid_bp180_bp190_ym025_ym015_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp180_bp190_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp180_bp190_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp180_bp190_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp180_bp190_ym025_ym015_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp190_bp200_ym045_ym035_census",
+      "b0": 1.9,
+      "b1": 2.0,
+      "y0": -0.45,
+      "y1": -0.35,
+      "regularity": "minimum_dfs_f4_grid_bp190_bp200_ym045_ym035_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp190_bp200_ym045_ym035_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp190_bp200_ym045_ym035_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp190_bp200_ym045_ym035_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp190_bp200_ym045_ym035_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp190_bp200_ym035_ym025_census",
+      "b0": 1.9,
+      "b1": 2.0,
+      "y0": -0.35,
+      "y1": -0.25,
+      "regularity": "minimum_dfs_f4_grid_bp190_bp200_ym035_ym025_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp190_bp200_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp190_bp200_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp190_bp200_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp190_bp200_ym035_ym025_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp180_bp190_ym015_ym010_census",
+      "b0": 1.8,
+      "b1": 1.9,
+      "y0": -0.15,
+      "y1": -0.1,
+      "regularity": "minimum_dfs_f4_grid_bp180_bp190_ym015_ym010_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp180_bp190_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp180_bp190_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp180_bp190_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp180_bp190_ym015_ym010_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp190_bp200_ym025_ym015_census",
+      "b0": 1.9,
+      "b1": 2.0,
+      "y0": -0.25,
+      "y1": -0.15,
+      "regularity": "minimum_dfs_f4_grid_bp190_bp200_ym025_ym015_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp190_bp200_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp190_bp200_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp190_bp200_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp190_bp200_ym025_ym015_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp200_bp210_ym045_ym035_census",
+      "b0": 2.0,
+      "b1": 2.1,
+      "y0": -0.45,
+      "y1": -0.35,
+      "regularity": "minimum_dfs_f4_grid_bp200_bp210_ym045_ym035_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp200_bp210_ym045_ym035_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp200_bp210_ym045_ym035_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp200_bp210_ym045_ym035_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp200_bp210_ym045_ym035_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp200_bp210_ym035_ym025_census",
+      "b0": 2.0,
+      "b1": 2.1,
+      "y0": -0.35,
+      "y1": -0.25,
+      "regularity": "minimum_dfs_f4_grid_bp200_bp210_ym035_ym025_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp200_bp210_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp200_bp210_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp200_bp210_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp200_bp210_ym035_ym025_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp190_bp200_ym015_ym010_census",
+      "b0": 1.9,
+      "b1": 2.0,
+      "y0": -0.15,
+      "y1": -0.1,
+      "regularity": "minimum_dfs_f4_grid_bp190_bp200_ym015_ym010_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp190_bp200_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp190_bp200_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp190_bp200_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp190_bp200_ym015_ym010_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp200_bp210_ym025_ym015_census",
+      "b0": 2.0,
+      "b1": 2.1,
+      "y0": -0.25,
+      "y1": -0.15,
+      "regularity": "minimum_dfs_f4_grid_bp200_bp210_ym025_ym015_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp200_bp210_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp200_bp210_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp200_bp210_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp200_bp210_ym025_ym015_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp210_bp220_ym045_ym035_census",
+      "b0": 2.1,
+      "b1": 2.2,
+      "y0": -0.45,
+      "y1": -0.35,
+      "regularity": "minimum_dfs_f4_grid_bp210_bp220_ym045_ym035_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp210_bp220_ym045_ym035_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp210_bp220_ym045_ym035_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp210_bp220_ym045_ym035_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp210_bp220_ym045_ym035_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp210_bp220_ym035_ym025_census",
+      "b0": 2.1,
+      "b1": 2.2,
+      "y0": -0.35,
+      "y1": -0.25,
+      "regularity": "minimum_dfs_f4_grid_bp210_bp220_ym035_ym025_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp210_bp220_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp210_bp220_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp210_bp220_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp210_bp220_ym035_ym025_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp200_bp210_ym015_ym010_census",
+      "b0": 2.0,
+      "b1": 2.1,
+      "y0": -0.15,
+      "y1": -0.1,
+      "regularity": "minimum_dfs_f4_grid_bp200_bp210_ym015_ym010_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp200_bp210_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp200_bp210_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp200_bp210_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp200_bp210_ym015_ym010_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp210_bp220_ym025_ym015_census",
+      "b0": 2.1,
+      "b1": 2.2,
+      "y0": -0.25,
+      "y1": -0.15,
+      "regularity": "minimum_dfs_f4_grid_bp210_bp220_ym025_ym015_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp210_bp220_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp210_bp220_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp210_bp220_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp210_bp220_ym025_ym015_census_seam_lo_p000.json"
+      }
+    },
+    {
+      "id": "f4_grid_bp210_bp220_ym015_ym010_census",
+      "b0": 2.1,
+      "b1": 2.2,
+      "y0": -0.15,
+      "y1": -0.1,
+      "regularity": "minimum_dfs_f4_grid_bp210_bp220_ym015_ym010_census_merged.json",
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp210_bp220_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp210_bp220_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp210_bp220_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp210_bp220_ym015_ym010_census_seam_lo_p000.json"
+      }
+    }
+  ],
+  "zero_count": 2
+}

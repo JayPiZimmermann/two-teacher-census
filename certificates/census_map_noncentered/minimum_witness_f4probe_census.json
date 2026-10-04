@@ -1,0 +1,9 @@
+{
+  "format": "minimum-witness-v1",
+  "scope": "census",
+  "teacher": {"beta": 0.75, "y": -0.4},
+  "strip": {"seam": 0.137, "delta": 0.001, "dmax": 3.13},
+  "collar": "minimum_dfs_f4witness_collar_p000.json",
+  "enumeration": "ivcert_C_F4_0p75_m0p4.bits.json",
+  "expected_zeros": 2
+}

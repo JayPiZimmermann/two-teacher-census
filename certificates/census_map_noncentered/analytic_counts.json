@@ -1,0 +1,77 @@
+{
+ "object": "analytic closure of the coincident-stratum root counts",
+ "checks": {
+  "sympy": {
+   "S_in_(u,sigma)_chart": true,
+   "h_derivative_numerator": true,
+   "product_formula": true,
+   "F_at_midpoint": true,
+   "superadditivity_identity": true,
+   "L_piece_fhat_form": true,
+   "L_piece_ghat_form": true
+  },
+  "S1_cos28_negative": true,
+  "corner_covers": true,
+  "corner_margin_constant": 0.559181201340651,
+  "Q_interval": {
+   "region": "0 <= sigma <= min(u, 1.171), 0 <= u <= pi/2",
+   "boxes": 15,
+   "min_certified_lower_bound": 0.06582519718924791
+  },
+  "gprime": {
+   "cos_1.4_positive": true,
+   "pi_half_sin_1.4_positive": true
+  },
+  "float_sanity": [
+   {
+    "beta": 0.05,
+    "float_interior_sign_changes_on_L": 0,
+    "analytic": 0,
+    "agree": true
+   },
+   {
+    "beta": 0.5,
+    "float_interior_sign_changes_on_L": 0,
+    "analytic": 0,
+    "agree": true
+   },
+   {
+    "beta": 1.0,
+    "float_interior_sign_changes_on_L": 0,
+    "analytic": 0,
+    "agree": true
+   },
+   {
+    "beta": 2.0,
+    "float_interior_sign_changes_on_L": 0,
+    "analytic": 0,
+    "agree": true
+   },
+   {
+    "beta": 2.3,
+    "float_interior_sign_changes_on_L": 2,
+    "analytic": 2,
+    "agree": true
+   },
+   {
+    "beta": 2.8,
+    "float_interior_sign_changes_on_L": 2,
+    "analytic": 2,
+    "agree": true
+   },
+   {
+    "beta": 3.1,
+    "float_interior_sign_changes_on_L": 2,
+    "analytic": 2,
+    "agree": true
+   }
+  ]
+ },
+ "verdict": {
+  "Wpot_total": "2 for every beta in (0, 2pi) \\ {pi}",
+  "Wtau_total": "2 on (0, beta*_1) u (beta*_2, 2pi); 3 at beta*_1, beta*_2 (one interior double root); 4 on (beta*_1, pi) u (pi, beta*_2)",
+  "scope": "every beta; the columns beta = 0 and beta = pi are the exact degenerate cases (all determinants identically zero at 0; common zero set = lattice {0, pi} at pi)",
+  "supersedes": "the adaptive beta coverings (309/305 boxes) and the incomplete outer-interval runs; no beta collar remains on the coincident stratum"
+ },
+ "seconds": 3.837233543395996
+}

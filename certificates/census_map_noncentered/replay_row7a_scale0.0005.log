@@ -1,0 +1,7 @@
+certificate : row7a_scale0.0005.json
+spec        : beta=[0.75,0.7505] y=[-0.0201,-0.0196] gap=[1.4,1.5] seam=0.137 minw=1e-09
+root box    : regenerated from the spec, s=[0.137000,6.420185] D=[1.4,1.5]
+bits        : 2219 claimed, 2219 consumed (the stored count is the BIT count: one bit per internal node, three per leaf)
+leaves      : 555 ; map 326 ; safe 229 ; FAILED 0 ; undecided 0
+coverage    : leaf volume 1.570796326795e-07 against root volume 1.570796326795e-07
+CERTIFICATE VALID AND COMPLETE: every leaf recomputes, none undecided, so on this teacher rectangle and this gap band the census angle map has no zero at which the mass-free type-boundary function vanishes, and both teacher torques are alive at every zero -- i.e. CensusSchurExclusionOffFitOn and CensusTorqueAliveOffFitOn hold there.

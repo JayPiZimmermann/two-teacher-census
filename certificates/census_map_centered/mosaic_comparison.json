@@ -1,0 +1,327 @@
+{
+ "potential_lens_pinch": {
+  "mosaic_cell_height_dy": 0.0006510416666666666,
+  "mosaic_cell_width_dbeta": 0.0005113269292952137,
+  "rows": [
+   {
+    "column": 0.5,
+    "beta": 0.00025566346464760684,
+    "lens_y_width": 7.187675559302047e-05,
+    "cells": 0.11040269659087945,
+    "branch_y": [
+     "0.49996406162220348976",
+     "0.50003593837779651024"
+    ]
+   },
+   {
+    "column": 1.5,
+    "beta": 0.0007669903939428206,
+    "lens_y_width": 0.0002156302459126156,
+    "cells": 0.3312080577217776,
+    "branch_y": [
+     "0.49989218487704369221",
+     "0.50010781512295630779"
+    ]
+   },
+   {
+    "column": 2.5,
+    "beta": 0.0012783173232380342,
+    "lens_y_width": 0.00035938367363288603,
+    "cells": 0.5520133227001129,
+    "branch_y": [
+     "0.49982030816318355699",
+     "0.50017969183681644301"
+    ]
+   },
+   {
+    "column": 4.5,
+    "beta": 0.0023009711818284618,
+    "lens_y_width": 0.0006468901743441588,
+    "cells": 0.993623307792628,
+    "branch_y": [
+     "0.49967655491282792062",
+     "0.50032344508717207938"
+    ]
+   },
+   {
+    "column": 8.5,
+    "beta": 0.004346278899009316,
+    "lens_y_width": 0.0012219005883356573,
+    "cells": 1.8768393036835695,
+    "branch_y": [
+     "0.49938904970583217141",
+     "0.50061095029416782859"
+    ]
+   },
+   {
+    "column": 16.5,
+    "beta": 0.008436894333371026,
+    "lens_y_width": 0.0023719017186287447,
+    "cells": 3.643241039813752,
+    "branch_y": [
+     "0.4988140491406856276",
+     "0.5011859508593143724"
+    ]
+   },
+   {
+    "column": 64.5,
+    "beta": 0.032980586939541284,
+    "lens_y_width": 0.009270235417831108,
+    "cells": 14.239081601788582,
+    "branch_y": [
+     "0.49536488229108444548",
+     "0.50463511770891555452"
+    ]
+   },
+   {
+    "column": 256.5,
+    "beta": 0.13115535736422232,
+    "lens_y_width": 0.03675563660318625,
+    "cells": 56.45665782249409,
+    "branch_y": [
+     "0.48162218169840687297",
+     "0.51837781830159312703"
+    ]
+   },
+   {
+    "column": 1024.5,
+    "beta": 0.5238544390629464,
+    "lens_y_width": 0.14002662166459048,
+    "cells": 215.080890876811,
+    "branch_y": [
+     "0.42998668916770476465",
+     "0.57001331083229523535"
+    ]
+   },
+   {
+    "column": 3072.5,
+    "beta": 1.5710519902595441,
+    "lens_y_width": 0.2781858441185636,
+    "cells": 427.2934565661137,
+    "branch_y": [
+     "0.36090707794071819969",
+     "0.63909292205928180031"
+    ]
+   }
+  ],
+  "conclusion": "the two potential-curve branches are distinct for every beta in (0, pi) and pinch only AT beta = 0 and beta = pi; the historical mosaic coalesced samples from the two outer POS face bands because at its first columns the lens was thinner than one cell. This is a finite-grid observation, not a connected-component claim."
+ },
+ "sel_eps_band": {
+  "SEL_EPS": 1e-07,
+  "rows": [
+   {
+    "beta": 0.0005,
+    "band_above_y0": null,
+    "band_below_y1": null
+   },
+   {
+    "beta": 0.001,
+    "band_above_y0": null,
+    "band_below_y1": 0.08658195536802604
+   },
+   {
+    "beta": 0.002,
+    "band_above_y0": null,
+    "band_below_y1": 0.024060445521142837
+   },
+   {
+    "beta": 0.005,
+    "band_above_y0": null,
+    "band_below_y1": 0.0039750665562194865
+   },
+   {
+    "beta": 0.01,
+    "band_above_y0": null,
+    "band_below_y1": 0.0009984488308589778
+   },
+   {
+    "beta": 0.02,
+    "band_above_y0": null,
+    "band_below_y1": 0.0002499185599116327
+   },
+   {
+    "beta": 0.05,
+    "band_above_y0": null,
+    "band_below_y1": 4.001416196586227e-05
+   },
+   {
+    "beta": 0.1,
+    "band_above_y0": null,
+    "band_below_y1": 1.0016529922607376e-05
+   },
+   {
+    "beta": 0.3,
+    "band_above_y0": null,
+    "band_below_y1": 1.127952605317617e-06
+   },
+   {
+    "beta": 0.8,
+    "band_above_y0": null,
+    "band_below_y1": 1.742509503355194e-07
+   },
+   {
+    "beta": 1.4,
+    "band_above_y0": null,
+    "band_below_y1": 7.24832209808568e-08
+   },
+   {
+    "beta": 2.4,
+    "band_above_y0": null,
+    "band_below_y1": 1.9963322217542157e-07
+   },
+   {
+    "beta": 3,
+    "band_above_y0": null,
+    "band_below_y1": 5.004576494327395e-06
+   },
+   {
+    "beta": 3.1,
+    "band_above_y0": null,
+    "band_below_y1": 5.781660480974615e-05
+   },
+   {
+    "beta": 3.13,
+    "band_above_y0": null,
+    "band_below_y1": 0.0007432532790396795
+   },
+   {
+    "beta": 3.139,
+    "band_above_y0": null,
+    "band_below_y1": 0.014538334823283483
+   },
+   {
+    "beta": 3.1406,
+    "band_above_y0": null,
+    "band_below_y1": 0.08769404029271555
+   },
+   {
+    "beta": 3.1411,
+    "band_above_y0": null,
+    "band_below_y1": null
+   }
+  ],
+  "mosaic_cell_height_dy": 0.0006510416666666666
+ },
+ "mosaic_pieces": [
+  {
+   "key": "coincident:trap@mixed | fit:global",
+   "cells": 9375346,
+   "beta_range": [
+    0,
+    3.141592653589793
+   ],
+   "y_range": [
+    -1,
+    0
+   ],
+   "rep_beta": 0.3924446126937834,
+   "rep_y": -0.500326,
+   "loops": 2
+  },
+  {
+   "key": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+   "cells": 61838,
+   "beta_range": [
+    1.4398966328953218,
+    1.7016960206944713
+   ],
+   "y_range": [
+    -0.6315104166666667,
+    -0.36848958333333337
+   ],
+   "rep_beta": 1.5705418577899557,
+   "rep_y": -0.500326,
+   "loops": 1
+  },
+  {
+   "key": "fit:global",
+   "cells": 514,
+   "beta_range": [
+    0,
+    0.016362461737446838
+   ],
+   "y_range": [
+    0,
+    0.08333333333333326
+   ],
+   "rep_beta": 0.0022996458224277287,
+   "rep_y": 0.002930000000000099,
+   "loops": 1
+  },
+  {
+   "key": "coincident:trap@positive | fit:global",
+   "cells": 7760724,
+   "beta_range": [
+    0,
+    3.141592653589793
+   ],
+   "y_range": [
+    0,
+    1
+   ],
+   "rep_beta": 0.18586604616433294,
+   "rep_y": 0.23665399999999992,
+   "loops": 2
+  },
+  {
+   "key": "fit:global",
+   "cells": 514,
+   "beta_range": [
+    3.125230191852346,
+    3.141592653589793
+   ],
+   "y_range": [
+    0,
+    0.08333333333333326
+   ],
+   "rep_beta": 3.138268848562295,
+   "rep_y": 0.002930000000000099,
+   "loops": 1
+  },
+  {
+   "key": "coincident:trap@positive | coincident:trap@positive | fit:global",
+   "cells": 1674404,
+   "beta_range": [
+    0.0025566346464760688,
+    3.139036018943317
+   ],
+   "y_range": [
+    0.36067708333333326,
+    0.6393229166666667
+   ],
+   "rep_beta": 1.5347465510949536,
+   "rep_y": 0.49967399999999995,
+   "loops": 1
+  },
+  {
+   "key": "fit:global",
+   "cells": 514,
+   "beta_range": [
+    0,
+    0.016362461737446838
+   ],
+   "y_range": [
+    0.9166666666666667,
+    1
+   ],
+   "rep_beta": 0.0022996458224277287,
+   "rep_y": 0.995118,
+   "loops": 1
+  },
+  {
+   "key": "fit:global",
+   "cells": 514,
+   "beta_range": [
+    3.125230191852346,
+    3.141592653589793
+   ],
+   "y_range": [
+    0.9166666666666667,
+    1
+   ],
+   "rep_beta": 3.1392930077673658,
+   "rep_y": 0.995118,
+   "loops": 1
+  }
+ ]
+}

@@ -1,0 +1,119 @@
+{
+  "format": "minimum-atlas-v1",
+  "strip": {"seam": 0.137, "delta": 0.001, "dmax": 3.13},
+  "selected_count": 1,
+  "witness": "minimum_witness_f4probe.json",
+  "base_box": "f4probe",
+  "boxes": [
+    {
+      "id": "f4probe",
+      "b0": 0.7, "b1": 0.8, "y0": -0.45, "y1": -0.35,
+      "regularity": "minimum_dfs_f4probe_p000.json",
+      "boundaries": {
+        "seam_lo": "minimum_boundary_f4probe_seam_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4probe_seam_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4probe_gap_lo_p000.json",
+        "gap_hi": "minimum_boundary_f4probe_gap_hi_p000.json"
+      }
+    },
+    {
+      "id": "f4_y055_y045",
+      "b0": 0.7, "b1": 0.8, "y0": -0.55, "y1": -0.45,
+      "regularity": "minimum_dfs_f4_y055_y045_p000.json",
+      "boundaries": {
+        "seam_lo": "minimum_boundary_f4_y055_y045_seam_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_y055_y045_seam_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_y055_y045_gap_lo_p000.json",
+        "gap_hi": "minimum_boundary_f4_y055_y045_gap_hi_p000.json"
+      }
+    },
+    {
+      "id": "f4_y065_y055",
+      "b0": 0.7, "b1": 0.8, "y0": -0.65, "y1": -0.55,
+      "regularity": "minimum_dfs_f4_y065_y055_p000.json",
+      "boundaries": {
+        "seam_lo": "minimum_boundary_f4_y065_y055_seam_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_y065_y055_seam_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_y065_y055_gap_lo_p000.json",
+        "gap_hi": "minimum_boundary_f4_y065_y055_gap_hi_p000.json"
+      }
+    },
+    {
+      "id": "f4_y075_y065",
+      "b0": 0.7, "b1": 0.8, "y0": -0.75, "y1": -0.65,
+      "regularity": "minimum_dfs_f4_y075_y065_p000.json",
+      "boundaries": {
+        "seam_lo": "minimum_boundary_f4_y075_y065_seam_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_y075_y065_seam_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_y075_y065_gap_lo_p000.json",
+        "gap_hi": "minimum_boundary_f4_y075_y065_gap_hi_p000.json"
+      }
+    },
+    {
+      "id": "f4_b080_b090_y065_y055",
+      "b0": 0.8, "b1": 0.9, "y0": -0.65, "y1": -0.55,
+      "regularity": "minimum_dfs_f4_b080_b090_y065_y055_p000.json",
+      "boundaries": {
+        "seam_lo": "minimum_boundary_f4_b080_b090_y065_y055_seam_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_b080_b090_y065_y055_seam_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_b080_b090_y065_y055_gap_lo_p000.json",
+        "gap_hi": "minimum_boundary_f4_b080_b090_y065_y055_gap_hi_p000.json"
+      }
+    },
+    {
+      "id": "f4_b080_b090_y055_y045",
+      "b0": 0.8, "b1": 0.9, "y0": -0.55, "y1": -0.45,
+      "regularity": "minimum_dfs_f4_b080_b090_y055_y045_p000.json",
+      "boundaries": {
+        "seam_lo": "minimum_boundary_f4_b080_b090_y055_y045_seam_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_b080_b090_y055_y045_seam_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_b080_b090_y055_y045_gap_lo_p000.json",
+        "gap_hi": "minimum_boundary_f4_b080_b090_y055_y045_gap_hi_p000.json"
+      }
+    },
+    {
+      "id": "f4_b080_b090_y045_y035",
+      "b0": 0.8, "b1": 0.9, "y0": -0.45, "y1": -0.35,
+      "regularity": "minimum_dfs_f4_b080_b090_y045_y035_p000.json",
+      "boundaries": {
+        "seam_lo": "minimum_boundary_f4_b080_b090_y045_y035_seam_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_b080_b090_y045_y035_seam_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_b080_b090_y045_y035_gap_lo_p000.json",
+        "gap_hi": "minimum_boundary_f4_b080_b090_y045_y035_gap_hi_p000.json"
+      }
+    },
+    {
+      "id": "f4_b090_b100_y045_y035",
+      "b0": 0.9, "b1": 1.0, "y0": -0.45, "y1": -0.35,
+      "regularity": "minimum_dfs_f4_b090_b100_y045_y035_p000.json",
+      "boundaries": {
+        "seam_lo": "minimum_boundary_f4_b090_b100_y045_y035_seam_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_b090_b100_y045_y035_seam_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_b090_b100_y045_y035_gap_lo_p000.json",
+        "gap_hi": "minimum_boundary_f4_b090_b100_y045_y035_gap_hi_p000.json"
+      }
+    },
+    {
+      "id": "f4_b100_b110_y045_y035",
+      "b0": 1.0, "b1": 1.1, "y0": -0.45, "y1": -0.35,
+      "regularity": "minimum_dfs_f4_b100_b110_y045_y035_p000.json",
+      "boundaries": {
+        "seam_lo": "minimum_boundary_f4_b100_b110_y045_y035_seam_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_b100_b110_y045_y035_seam_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_b100_b110_y045_y035_gap_lo_p000.json",
+        "gap_hi": "minimum_boundary_f4_b100_b110_y045_y035_gap_hi_p000.json"
+      }
+    },
+    {
+      "id": "f4_b110_b120_y045_y035",
+      "b0": 1.1, "b1": 1.2, "y0": -0.45, "y1": -0.35,
+      "regularity": "minimum_dfs_f4_b110_b120_y045_y035_p000.json",
+      "boundaries": {
+        "seam_lo": "minimum_boundary_f4_b110_b120_y045_y035_seam_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_b110_b120_y045_y035_seam_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_b110_b120_y045_y035_gap_lo_p000.json",
+        "gap_hi": "minimum_boundary_f4_b110_b120_y045_y035_gap_hi_p000.json"
+      }
+    }
+  ]
+}

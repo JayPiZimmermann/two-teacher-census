@@ -1,0 +1,1034 @@
+{
+  "failed": {
+    "0.7,0.8,-0.55,-0.45": "command failed (1): /usr/bin/python3 /home/jzimmermann/code/Skip-Connections-Avoid-Spurious-Local-Minima/certificates/census_map_noncentered/minimum_boundary_dfs.py 0.7 0.8 -0.55 -0.45 0.001 3.13 gap_hi f4_grid_bp070_bp080_ym055_ym045_census 64 0 64 500000 1e-6 census\nunresolved boundary box (0.7, 0.7000007629394531, -0.5301101684570312, -0.5301094055175781, 0.36986472512192703, 0.3698654741359836, 3.13, 3.13)",
+    "0.8,0.9,-0.55,-0.45": "command failed (1): /usr/bin/python3 /home/jzimmermann/code/Skip-Connections-Avoid-Spurious-Local-Minima/certificates/census_map_noncentered/minimum_boundary_dfs.py 0.8 0.9 -0.55 -0.45 0.001 3.13 gap_hi f4_grid_bp080_bp090_ym055_ym045_census 64 0 64 500000 1e-6 census\nunresolved boundary box (0.8, 0.8000007629394532, -0.5247329711914063, -0.5247322082519532, 0.4194194951055764, 0.41942024411963297, 3.13, 3.13)"
+  },
+  "format": "minimum-atlas-sweep-v1",
+  "passed": {
+    "0.5,0.6,-0.15,-0.1": {
+      "b0": 0.5,
+      "b1": 0.6,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp050_bp060_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp050_bp060_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp050_bp060_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp050_bp060_ym015_ym010_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp050_bp060_ym015_ym010_census",
+      "regularity": "minimum_dfs_f4_grid_bp050_bp060_ym015_ym010_census_merged.json",
+      "seconds": 26657.44061255455,
+      "y0": -0.15,
+      "y1": -0.1
+    },
+    "0.5,0.6,-0.25,-0.15": {
+      "b0": 0.5,
+      "b1": 0.6,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp050_bp060_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp050_bp060_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp050_bp060_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp050_bp060_ym025_ym015_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp050_bp060_ym025_ym015_census",
+      "regularity": "minimum_dfs_f4_grid_bp050_bp060_ym025_ym015_census_merged.json",
+      "seconds": 29576.684237718582,
+      "y0": -0.25,
+      "y1": -0.15
+    },
+    "0.5,0.6,-0.35,-0.25": {
+      "b0": 0.5,
+      "b1": 0.6,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp050_bp060_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp050_bp060_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp050_bp060_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp050_bp060_ym035_ym025_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp050_bp060_ym035_ym025_census",
+      "regularity": "minimum_dfs_f4_grid_bp050_bp060_ym035_ym025_census_merged.json",
+      "seconds": 8636.108105659485,
+      "y0": -0.35,
+      "y1": -0.25
+    },
+    "0.5,0.6,-0.45,-0.35": {
+      "b0": 0.5,
+      "b1": 0.6,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp050_bp060_ym045_ym035_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp050_bp060_ym045_ym035_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp050_bp060_ym045_ym035_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp050_bp060_ym045_ym035_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp050_bp060_ym045_ym035_census",
+      "regularity": "minimum_dfs_f4_grid_bp050_bp060_ym045_ym035_census_merged.json",
+      "seconds": 7136.324079751968,
+      "y0": -0.45,
+      "y1": -0.35
+    },
+    "0.6,0.7,-0.15,-0.1": {
+      "b0": 0.6,
+      "b1": 0.7,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp060_bp070_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp060_bp070_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp060_bp070_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp060_bp070_ym015_ym010_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp060_bp070_ym015_ym010_census",
+      "regularity": "minimum_dfs_f4_grid_bp060_bp070_ym015_ym010_census_merged.json",
+      "seconds": 14055.208601474762,
+      "y0": -0.15,
+      "y1": -0.1
+    },
+    "0.6,0.7,-0.25,-0.15": {
+      "b0": 0.6,
+      "b1": 0.7,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp060_bp070_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp060_bp070_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp060_bp070_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp060_bp070_ym025_ym015_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp060_bp070_ym025_ym015_census",
+      "regularity": "minimum_dfs_f4_grid_bp060_bp070_ym025_ym015_census_merged.json",
+      "seconds": 10155.335962295532,
+      "y0": -0.25,
+      "y1": -0.15
+    },
+    "0.6,0.7,-0.35,-0.25": {
+      "b0": 0.6,
+      "b1": 0.7,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp060_bp070_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp060_bp070_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp060_bp070_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp060_bp070_ym035_ym025_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp060_bp070_ym035_ym025_census",
+      "regularity": "minimum_dfs_f4_grid_bp060_bp070_ym035_ym025_census_merged.json",
+      "seconds": 4380.610109090805,
+      "y0": -0.35,
+      "y1": -0.25
+    },
+    "0.6,0.7,-0.45,-0.35": {
+      "b0": 0.6,
+      "b1": 0.7,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp060_bp070_ym045_ym035_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp060_bp070_ym045_ym035_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp060_bp070_ym045_ym035_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp060_bp070_ym045_ym035_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp060_bp070_ym045_ym035_census",
+      "regularity": "minimum_dfs_f4_grid_bp060_bp070_ym045_ym035_census_merged.json",
+      "seconds": 4843.650035381317,
+      "y0": -0.45,
+      "y1": -0.35
+    },
+    "0.7,0.8,-0.15,-0.1": {
+      "b0": 0.7,
+      "b1": 0.8,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp070_bp080_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp070_bp080_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp070_bp080_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp070_bp080_ym015_ym010_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp070_bp080_ym015_ym010_census",
+      "regularity": "minimum_dfs_f4_grid_bp070_bp080_ym015_ym010_census_merged.json",
+      "seconds": 30775.856293916702,
+      "y0": -0.15,
+      "y1": -0.1
+    },
+    "0.7,0.8,-0.25,-0.15": {
+      "b0": 0.7,
+      "b1": 0.8,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp070_bp080_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp070_bp080_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp070_bp080_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp070_bp080_ym025_ym015_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp070_bp080_ym025_ym015_census",
+      "regularity": "minimum_dfs_f4_grid_bp070_bp080_ym025_ym015_census_merged.json",
+      "seconds": 21896.193343400955,
+      "y0": -0.25,
+      "y1": -0.15
+    },
+    "0.7,0.8,-0.35,-0.25": {
+      "b0": 0.7,
+      "b1": 0.8,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp070_bp080_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp070_bp080_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp070_bp080_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp070_bp080_ym035_ym025_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp070_bp080_ym035_ym025_census",
+      "regularity": "minimum_dfs_f4_grid_bp070_bp080_ym035_ym025_census_merged.json",
+      "seconds": 4061.379963159561,
+      "y0": -0.35,
+      "y1": -0.25
+    },
+    "0.7,0.8,-0.45,-0.35": {
+      "b0": 0.7,
+      "b1": 0.8,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4probe_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4probe_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4probe_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4probe_census_seam_lo_p000.json"
+      },
+      "id": "f4probe_census",
+      "regularity": "minimum_dfs_f4probe_census_merged.json",
+      "seconds": 4141.693516254425,
+      "y0": -0.45,
+      "y1": -0.35
+    },
+    "0.8,0.9,-0.15,-0.1": {
+      "b0": 0.8,
+      "b1": 0.9,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp080_bp090_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp080_bp090_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp080_bp090_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp080_bp090_ym015_ym010_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp080_bp090_ym015_ym010_census",
+      "regularity": "minimum_dfs_f4_grid_bp080_bp090_ym015_ym010_census_merged.json",
+      "seconds": 16317.04392170906,
+      "y0": -0.15,
+      "y1": -0.1
+    },
+    "0.8,0.9,-0.25,-0.15": {
+      "b0": 0.8,
+      "b1": 0.9,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp080_bp090_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp080_bp090_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp080_bp090_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp080_bp090_ym025_ym015_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp080_bp090_ym025_ym015_census",
+      "regularity": "minimum_dfs_f4_grid_bp080_bp090_ym025_ym015_census_merged.json",
+      "seconds": 9042.037032842636,
+      "y0": -0.25,
+      "y1": -0.15
+    },
+    "0.8,0.9,-0.35,-0.25": {
+      "b0": 0.8,
+      "b1": 0.9,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp080_bp090_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp080_bp090_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp080_bp090_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp080_bp090_ym035_ym025_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp080_bp090_ym035_ym025_census",
+      "regularity": "minimum_dfs_f4_grid_bp080_bp090_ym035_ym025_census_merged.json",
+      "seconds": 15655.749424219131,
+      "y0": -0.35,
+      "y1": -0.25
+    },
+    "0.8,0.9,-0.45,-0.35": {
+      "b0": 0.8,
+      "b1": 0.9,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp080_bp090_ym045_ym035_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp080_bp090_ym045_ym035_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp080_bp090_ym045_ym035_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp080_bp090_ym045_ym035_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp080_bp090_ym045_ym035_census",
+      "regularity": "minimum_dfs_f4_grid_bp080_bp090_ym045_ym035_census_merged.json",
+      "seconds": 9467.306013584137,
+      "y0": -0.45,
+      "y1": -0.35
+    },
+    "0.9,1.0,-0.15,-0.1": {
+      "b0": 0.9,
+      "b1": 1.0,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp090_bp100_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp090_bp100_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp090_bp100_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp090_bp100_ym015_ym010_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp090_bp100_ym015_ym010_census",
+      "regularity": "minimum_dfs_f4_grid_bp090_bp100_ym015_ym010_census_merged.json",
+      "seconds": 45874.60259437561,
+      "y0": -0.15,
+      "y1": -0.1
+    },
+    "0.9,1.0,-0.25,-0.15": {
+      "b0": 0.9,
+      "b1": 1.0,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp090_bp100_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp090_bp100_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp090_bp100_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp090_bp100_ym025_ym015_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp090_bp100_ym025_ym015_census",
+      "regularity": "minimum_dfs_f4_grid_bp090_bp100_ym025_ym015_census_merged.json",
+      "seconds": 9569.604460954666,
+      "y0": -0.25,
+      "y1": -0.15
+    },
+    "0.9,1.0,-0.35,-0.25": {
+      "b0": 0.9,
+      "b1": 1.0,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp090_bp100_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp090_bp100_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp090_bp100_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp090_bp100_ym035_ym025_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp090_bp100_ym035_ym025_census",
+      "regularity": "minimum_dfs_f4_grid_bp090_bp100_ym035_ym025_census_merged.json",
+      "seconds": 3040.1611285209656,
+      "y0": -0.35,
+      "y1": -0.25
+    },
+    "0.9,1.0,-0.45,-0.35": {
+      "b0": 0.9,
+      "b1": 1.0,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp090_bp100_ym045_ym035_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp090_bp100_ym045_ym035_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp090_bp100_ym045_ym035_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp090_bp100_ym045_ym035_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp090_bp100_ym045_ym035_census",
+      "regularity": "minimum_dfs_f4_grid_bp090_bp100_ym045_ym035_census_merged.json",
+      "seconds": 429.41006112098694,
+      "y0": -0.45,
+      "y1": -0.35
+    },
+    "1.0,1.1,-0.15,-0.1": {
+      "b0": 1.0,
+      "b1": 1.1,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp100_bp110_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp100_bp110_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp100_bp110_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp100_bp110_ym015_ym010_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp100_bp110_ym015_ym010_census",
+      "regularity": "minimum_dfs_f4_grid_bp100_bp110_ym015_ym010_census_merged.json",
+      "seconds": 30858.14339017868,
+      "y0": -0.15,
+      "y1": -0.1
+    },
+    "1.0,1.1,-0.25,-0.15": {
+      "b0": 1.0,
+      "b1": 1.1,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp100_bp110_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp100_bp110_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp100_bp110_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp100_bp110_ym025_ym015_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp100_bp110_ym025_ym015_census",
+      "regularity": "minimum_dfs_f4_grid_bp100_bp110_ym025_ym015_census_merged.json",
+      "seconds": 7761.7330865859985,
+      "y0": -0.25,
+      "y1": -0.15
+    },
+    "1.0,1.1,-0.35,-0.25": {
+      "b0": 1.0,
+      "b1": 1.1,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp100_bp110_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp100_bp110_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp100_bp110_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp100_bp110_ym035_ym025_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp100_bp110_ym035_ym025_census",
+      "regularity": "minimum_dfs_f4_grid_bp100_bp110_ym035_ym025_census_merged.json",
+      "seconds": 1441.6044430732727,
+      "y0": -0.35,
+      "y1": -0.25
+    },
+    "1.0,1.1,-0.45,-0.35": {
+      "b0": 1.0,
+      "b1": 1.1,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp100_bp110_ym045_ym035_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp100_bp110_ym045_ym035_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp100_bp110_ym045_ym035_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp100_bp110_ym045_ym035_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp100_bp110_ym045_ym035_census",
+      "regularity": "minimum_dfs_f4_grid_bp100_bp110_ym045_ym035_census_merged.json",
+      "seconds": 843.6288633346558,
+      "y0": -0.45,
+      "y1": -0.35
+    },
+    "1.1,1.2,-0.15,-0.1": {
+      "b0": 1.1,
+      "b1": 1.2,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp110_bp120_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp110_bp120_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp110_bp120_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp110_bp120_ym015_ym010_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp110_bp120_ym015_ym010_census",
+      "regularity": "minimum_dfs_f4_grid_bp110_bp120_ym015_ym010_census_merged.json",
+      "seconds": 22902.40465092659,
+      "y0": -0.15,
+      "y1": -0.1
+    },
+    "1.1,1.2,-0.25,-0.15": {
+      "b0": 1.1,
+      "b1": 1.2,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp110_bp120_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp110_bp120_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp110_bp120_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp110_bp120_ym025_ym015_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp110_bp120_ym025_ym015_census",
+      "regularity": "minimum_dfs_f4_grid_bp110_bp120_ym025_ym015_census_merged.json",
+      "seconds": 4906.537038087845,
+      "y0": -0.25,
+      "y1": -0.15
+    },
+    "1.1,1.2,-0.35,-0.25": {
+      "b0": 1.1,
+      "b1": 1.2,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp110_bp120_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp110_bp120_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp110_bp120_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp110_bp120_ym035_ym025_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp110_bp120_ym035_ym025_census",
+      "regularity": "minimum_dfs_f4_grid_bp110_bp120_ym035_ym025_census_merged.json",
+      "seconds": 1419.2183799743652,
+      "y0": -0.35,
+      "y1": -0.25
+    },
+    "1.1,1.2,-0.45,-0.35": {
+      "b0": 1.1,
+      "b1": 1.2,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp110_bp120_ym045_ym035_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp110_bp120_ym045_ym035_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp110_bp120_ym045_ym035_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp110_bp120_ym045_ym035_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp110_bp120_ym045_ym035_census",
+      "regularity": "minimum_dfs_f4_grid_bp110_bp120_ym045_ym035_census_merged.json",
+      "seconds": 712.7836046218872,
+      "y0": -0.45,
+      "y1": -0.35
+    },
+    "1.2,1.3,-0.15,-0.1": {
+      "b0": 1.2,
+      "b1": 1.3,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp120_bp130_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp120_bp130_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp120_bp130_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp120_bp130_ym015_ym010_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp120_bp130_ym015_ym010_census",
+      "regularity": "minimum_dfs_f4_grid_bp120_bp130_ym015_ym010_census_merged.json",
+      "seconds": 16573.518169164658,
+      "y0": -0.15,
+      "y1": -0.1
+    },
+    "1.2,1.3,-0.25,-0.15": {
+      "b0": 1.2,
+      "b1": 1.3,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp120_bp130_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp120_bp130_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp120_bp130_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp120_bp130_ym025_ym015_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp120_bp130_ym025_ym015_census",
+      "regularity": "minimum_dfs_f4_grid_bp120_bp130_ym025_ym015_census_merged.json",
+      "seconds": 3866.3114619255066,
+      "y0": -0.25,
+      "y1": -0.15
+    },
+    "1.2,1.3,-0.35,-0.25": {
+      "b0": 1.2,
+      "b1": 1.3,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp120_bp130_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp120_bp130_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp120_bp130_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp120_bp130_ym035_ym025_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp120_bp130_ym035_ym025_census",
+      "regularity": "minimum_dfs_f4_grid_bp120_bp130_ym035_ym025_census_merged.json",
+      "seconds": 1014.8395574092865,
+      "y0": -0.35,
+      "y1": -0.25
+    },
+    "1.2,1.3,-0.45,-0.35": {
+      "b0": 1.2,
+      "b1": 1.3,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp120_bp130_ym045_ym035_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp120_bp130_ym045_ym035_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp120_bp130_ym045_ym035_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp120_bp130_ym045_ym035_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp120_bp130_ym045_ym035_census",
+      "regularity": "minimum_dfs_f4_grid_bp120_bp130_ym045_ym035_census_merged.json",
+      "seconds": 388.44389271736145,
+      "y0": -0.45,
+      "y1": -0.35
+    },
+    "1.3,1.4,-0.15,-0.1": {
+      "b0": 1.3,
+      "b1": 1.4,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp130_bp140_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp130_bp140_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp130_bp140_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp130_bp140_ym015_ym010_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp130_bp140_ym015_ym010_census",
+      "regularity": "minimum_dfs_f4_grid_bp130_bp140_ym015_ym010_census_merged.json",
+      "seconds": 12479.457723855972,
+      "y0": -0.15,
+      "y1": -0.1
+    },
+    "1.3,1.4,-0.25,-0.15": {
+      "b0": 1.3,
+      "b1": 1.4,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp130_bp140_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp130_bp140_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp130_bp140_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp130_bp140_ym025_ym015_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp130_bp140_ym025_ym015_census",
+      "regularity": "minimum_dfs_f4_grid_bp130_bp140_ym025_ym015_census_merged.json",
+      "seconds": 2795.4552702903748,
+      "y0": -0.25,
+      "y1": -0.15
+    },
+    "1.3,1.4,-0.35,-0.25": {
+      "b0": 1.3,
+      "b1": 1.4,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp130_bp140_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp130_bp140_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp130_bp140_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp130_bp140_ym035_ym025_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp130_bp140_ym035_ym025_census",
+      "regularity": "minimum_dfs_f4_grid_bp130_bp140_ym035_ym025_census_merged.json",
+      "seconds": 745.2545502185822,
+      "y0": -0.35,
+      "y1": -0.25
+    },
+    "1.3,1.4,-0.45,-0.35": {
+      "b0": 1.3,
+      "b1": 1.4,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp130_bp140_ym045_ym035_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp130_bp140_ym045_ym035_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp130_bp140_ym045_ym035_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp130_bp140_ym045_ym035_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp130_bp140_ym045_ym035_census",
+      "regularity": "minimum_dfs_f4_grid_bp130_bp140_ym045_ym035_census_merged.json",
+      "seconds": 370.3297975063324,
+      "y0": -0.45,
+      "y1": -0.35
+    },
+    "1.4,1.5,-0.15,-0.1": {
+      "b0": 1.4,
+      "b1": 1.5,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp140_bp150_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp140_bp150_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp140_bp150_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp140_bp150_ym015_ym010_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp140_bp150_ym015_ym010_census",
+      "regularity": "minimum_dfs_f4_grid_bp140_bp150_ym015_ym010_census_merged.json",
+      "seconds": 9911.607444524765,
+      "y0": -0.15,
+      "y1": -0.1
+    },
+    "1.4,1.5,-0.25,-0.15": {
+      "b0": 1.4,
+      "b1": 1.5,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp140_bp150_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp140_bp150_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp140_bp150_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp140_bp150_ym025_ym015_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp140_bp150_ym025_ym015_census",
+      "regularity": "minimum_dfs_f4_grid_bp140_bp150_ym025_ym015_census_merged.json",
+      "seconds": 2444.209356069565,
+      "y0": -0.25,
+      "y1": -0.15
+    },
+    "1.4,1.5,-0.35,-0.25": {
+      "b0": 1.4,
+      "b1": 1.5,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp140_bp150_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp140_bp150_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp140_bp150_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp140_bp150_ym035_ym025_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp140_bp150_ym035_ym025_census",
+      "regularity": "minimum_dfs_f4_grid_bp140_bp150_ym035_ym025_census_merged.json",
+      "seconds": 522.603643655777,
+      "y0": -0.35,
+      "y1": -0.25
+    },
+    "1.4,1.5,-0.45,-0.35": {
+      "b0": 1.4,
+      "b1": 1.5,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp140_bp150_ym045_ym035_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp140_bp150_ym045_ym035_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp140_bp150_ym045_ym035_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp140_bp150_ym045_ym035_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp140_bp150_ym045_ym035_census",
+      "regularity": "minimum_dfs_f4_grid_bp140_bp150_ym045_ym035_census_merged.json",
+      "seconds": 260.5465884208679,
+      "y0": -0.45,
+      "y1": -0.35
+    },
+    "1.5,1.6,-0.15,-0.1": {
+      "b0": 1.5,
+      "b1": 1.6,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp150_bp160_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp150_bp160_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp150_bp160_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp150_bp160_ym015_ym010_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp150_bp160_ym015_ym010_census",
+      "regularity": "minimum_dfs_f4_grid_bp150_bp160_ym015_ym010_census_merged.json",
+      "seconds": 8794.305224895477,
+      "y0": -0.15,
+      "y1": -0.1
+    },
+    "1.5,1.6,-0.25,-0.15": {
+      "b0": 1.5,
+      "b1": 1.6,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp150_bp160_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp150_bp160_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp150_bp160_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp150_bp160_ym025_ym015_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp150_bp160_ym025_ym015_census",
+      "regularity": "minimum_dfs_f4_grid_bp150_bp160_ym025_ym015_census_merged.json",
+      "seconds": 2078.748686313629,
+      "y0": -0.25,
+      "y1": -0.15
+    },
+    "1.5,1.6,-0.35,-0.25": {
+      "b0": 1.5,
+      "b1": 1.6,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp150_bp160_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp150_bp160_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp150_bp160_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp150_bp160_ym035_ym025_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp150_bp160_ym035_ym025_census",
+      "regularity": "minimum_dfs_f4_grid_bp150_bp160_ym035_ym025_census_merged.json",
+      "seconds": 542.7050256729126,
+      "y0": -0.35,
+      "y1": -0.25
+    },
+    "1.5,1.6,-0.45,-0.35": {
+      "b0": 1.5,
+      "b1": 1.6,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp150_bp160_ym045_ym035_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp150_bp160_ym045_ym035_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp150_bp160_ym045_ym035_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp150_bp160_ym045_ym035_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp150_bp160_ym045_ym035_census",
+      "regularity": "minimum_dfs_f4_grid_bp150_bp160_ym045_ym035_census_merged.json",
+      "seconds": 291.56081557273865,
+      "y0": -0.45,
+      "y1": -0.35
+    },
+    "1.6,1.7,-0.15,-0.1": {
+      "b0": 1.6,
+      "b1": 1.7,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp160_bp170_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp160_bp170_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp160_bp170_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp160_bp170_ym015_ym010_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp160_bp170_ym015_ym010_census",
+      "regularity": "minimum_dfs_f4_grid_bp160_bp170_ym015_ym010_census_merged.json",
+      "seconds": 9148.108647108078,
+      "y0": -0.15,
+      "y1": -0.1
+    },
+    "1.6,1.7,-0.25,-0.15": {
+      "b0": 1.6,
+      "b1": 1.7,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp160_bp170_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp160_bp170_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp160_bp170_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp160_bp170_ym025_ym015_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp160_bp170_ym025_ym015_census",
+      "regularity": "minimum_dfs_f4_grid_bp160_bp170_ym025_ym015_census_merged.json",
+      "seconds": 1679.107249736786,
+      "y0": -0.25,
+      "y1": -0.15
+    },
+    "1.6,1.7,-0.35,-0.25": {
+      "b0": 1.6,
+      "b1": 1.7,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp160_bp170_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp160_bp170_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp160_bp170_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp160_bp170_ym035_ym025_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp160_bp170_ym035_ym025_census",
+      "regularity": "minimum_dfs_f4_grid_bp160_bp170_ym035_ym025_census_merged.json",
+      "seconds": 406.6339235305786,
+      "y0": -0.35,
+      "y1": -0.25
+    },
+    "1.6,1.7,-0.45,-0.35": {
+      "b0": 1.6,
+      "b1": 1.7,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp160_bp170_ym045_ym035_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp160_bp170_ym045_ym035_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp160_bp170_ym045_ym035_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp160_bp170_ym045_ym035_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp160_bp170_ym045_ym035_census",
+      "regularity": "minimum_dfs_f4_grid_bp160_bp170_ym045_ym035_census_merged.json",
+      "seconds": 164.3045597076416,
+      "y0": -0.45,
+      "y1": -0.35
+    },
+    "1.7,1.8,-0.15,-0.1": {
+      "b0": 1.7,
+      "b1": 1.8,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp170_bp180_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp170_bp180_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp170_bp180_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp170_bp180_ym015_ym010_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp170_bp180_ym015_ym010_census",
+      "regularity": "minimum_dfs_f4_grid_bp170_bp180_ym015_ym010_census_merged.json",
+      "seconds": 8219.181842565536,
+      "y0": -0.15,
+      "y1": -0.1
+    },
+    "1.7,1.8,-0.25,-0.15": {
+      "b0": 1.7,
+      "b1": 1.8,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp170_bp180_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp170_bp180_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp170_bp180_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp170_bp180_ym025_ym015_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp170_bp180_ym025_ym015_census",
+      "regularity": "minimum_dfs_f4_grid_bp170_bp180_ym025_ym015_census_merged.json",
+      "seconds": 2119.1085336208344,
+      "y0": -0.25,
+      "y1": -0.15
+    },
+    "1.7,1.8,-0.35,-0.25": {
+      "b0": 1.7,
+      "b1": 1.8,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp170_bp180_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp170_bp180_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp170_bp180_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp170_bp180_ym035_ym025_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp170_bp180_ym035_ym025_census",
+      "regularity": "minimum_dfs_f4_grid_bp170_bp180_ym035_ym025_census_merged.json",
+      "seconds": 422.13270139694214,
+      "y0": -0.35,
+      "y1": -0.25
+    },
+    "1.7,1.8,-0.45,-0.35": {
+      "b0": 1.7,
+      "b1": 1.8,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp170_bp180_ym045_ym035_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp170_bp180_ym045_ym035_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp170_bp180_ym045_ym035_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp170_bp180_ym045_ym035_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp170_bp180_ym045_ym035_census",
+      "regularity": "minimum_dfs_f4_grid_bp170_bp180_ym045_ym035_census_merged.json",
+      "seconds": 207.5463891029358,
+      "y0": -0.45,
+      "y1": -0.35
+    },
+    "1.8,1.9,-0.15,-0.1": {
+      "b0": 1.8,
+      "b1": 1.9,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp180_bp190_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp180_bp190_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp180_bp190_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp180_bp190_ym015_ym010_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp180_bp190_ym015_ym010_census",
+      "regularity": "minimum_dfs_f4_grid_bp180_bp190_ym015_ym010_census_merged.json",
+      "seconds": 7832.842433452606,
+      "y0": -0.15,
+      "y1": -0.1
+    },
+    "1.8,1.9,-0.25,-0.15": {
+      "b0": 1.8,
+      "b1": 1.9,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp180_bp190_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp180_bp190_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp180_bp190_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp180_bp190_ym025_ym015_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp180_bp190_ym025_ym015_census",
+      "regularity": "minimum_dfs_f4_grid_bp180_bp190_ym025_ym015_census_merged.json",
+      "seconds": 1998.5819313526154,
+      "y0": -0.25,
+      "y1": -0.15
+    },
+    "1.8,1.9,-0.35,-0.25": {
+      "b0": 1.8,
+      "b1": 1.9,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp180_bp190_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp180_bp190_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp180_bp190_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp180_bp190_ym035_ym025_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp180_bp190_ym035_ym025_census",
+      "regularity": "minimum_dfs_f4_grid_bp180_bp190_ym035_ym025_census_merged.json",
+      "seconds": 481.23966002464294,
+      "y0": -0.35,
+      "y1": -0.25
+    },
+    "1.8,1.9,-0.45,-0.35": {
+      "b0": 1.8,
+      "b1": 1.9,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp180_bp190_ym045_ym035_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp180_bp190_ym045_ym035_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp180_bp190_ym045_ym035_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp180_bp190_ym045_ym035_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp180_bp190_ym045_ym035_census",
+      "regularity": "minimum_dfs_f4_grid_bp180_bp190_ym045_ym035_census_merged.json",
+      "seconds": 208.20848393440247,
+      "y0": -0.45,
+      "y1": -0.35
+    },
+    "1.9,2.0,-0.15,-0.1": {
+      "b0": 1.9,
+      "b1": 2.0,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp190_bp200_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp190_bp200_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp190_bp200_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp190_bp200_ym015_ym010_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp190_bp200_ym015_ym010_census",
+      "regularity": "minimum_dfs_f4_grid_bp190_bp200_ym015_ym010_census_merged.json",
+      "seconds": 7370.364521980286,
+      "y0": -0.15,
+      "y1": -0.1
+    },
+    "1.9,2.0,-0.25,-0.15": {
+      "b0": 1.9,
+      "b1": 2.0,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp190_bp200_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp190_bp200_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp190_bp200_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp190_bp200_ym025_ym015_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp190_bp200_ym025_ym015_census",
+      "regularity": "minimum_dfs_f4_grid_bp190_bp200_ym025_ym015_census_merged.json",
+      "seconds": 2150.1967067718506,
+      "y0": -0.25,
+      "y1": -0.15
+    },
+    "1.9,2.0,-0.35,-0.25": {
+      "b0": 1.9,
+      "b1": 2.0,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp190_bp200_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp190_bp200_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp190_bp200_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp190_bp200_ym035_ym025_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp190_bp200_ym035_ym025_census",
+      "regularity": "minimum_dfs_f4_grid_bp190_bp200_ym035_ym025_census_merged.json",
+      "seconds": 511.65614461898804,
+      "y0": -0.35,
+      "y1": -0.25
+    },
+    "1.9,2.0,-0.45,-0.35": {
+      "b0": 1.9,
+      "b1": 2.0,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp190_bp200_ym045_ym035_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp190_bp200_ym045_ym035_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp190_bp200_ym045_ym035_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp190_bp200_ym045_ym035_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp190_bp200_ym045_ym035_census",
+      "regularity": "minimum_dfs_f4_grid_bp190_bp200_ym045_ym035_census_merged.json",
+      "seconds": 268.79805040359497,
+      "y0": -0.45,
+      "y1": -0.35
+    },
+    "2.0,2.1,-0.15,-0.1": {
+      "b0": 2.0,
+      "b1": 2.1,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp200_bp210_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp200_bp210_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp200_bp210_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp200_bp210_ym015_ym010_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp200_bp210_ym015_ym010_census",
+      "regularity": "minimum_dfs_f4_grid_bp200_bp210_ym015_ym010_census_merged.json",
+      "seconds": 1632.7237977981567,
+      "y0": -0.15,
+      "y1": -0.1
+    },
+    "2.0,2.1,-0.25,-0.15": {
+      "b0": 2.0,
+      "b1": 2.1,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp200_bp210_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp200_bp210_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp200_bp210_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp200_bp210_ym025_ym015_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp200_bp210_ym025_ym015_census",
+      "regularity": "minimum_dfs_f4_grid_bp200_bp210_ym025_ym015_census_merged.json",
+      "seconds": 2459.526631832123,
+      "y0": -0.25,
+      "y1": -0.15
+    },
+    "2.0,2.1,-0.35,-0.25": {
+      "b0": 2.0,
+      "b1": 2.1,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp200_bp210_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp200_bp210_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp200_bp210_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp200_bp210_ym035_ym025_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp200_bp210_ym035_ym025_census",
+      "regularity": "minimum_dfs_f4_grid_bp200_bp210_ym035_ym025_census_merged.json",
+      "seconds": 578.9888434410095,
+      "y0": -0.35,
+      "y1": -0.25
+    },
+    "2.0,2.1,-0.45,-0.35": {
+      "b0": 2.0,
+      "b1": 2.1,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp200_bp210_ym045_ym035_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp200_bp210_ym045_ym035_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp200_bp210_ym045_ym035_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp200_bp210_ym045_ym035_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp200_bp210_ym045_ym035_census",
+      "regularity": "minimum_dfs_f4_grid_bp200_bp210_ym045_ym035_census_merged.json",
+      "seconds": 256.4750909805298,
+      "y0": -0.45,
+      "y1": -0.35
+    },
+    "2.1,2.2,-0.15,-0.1": {
+      "b0": 2.1,
+      "b1": 2.2,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp210_bp220_ym015_ym010_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp210_bp220_ym015_ym010_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp210_bp220_ym015_ym010_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp210_bp220_ym015_ym010_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp210_bp220_ym015_ym010_census",
+      "regularity": "minimum_dfs_f4_grid_bp210_bp220_ym015_ym010_census_merged.json",
+      "seconds": 1507.9386239051819,
+      "y0": -0.15,
+      "y1": -0.1
+    },
+    "2.1,2.2,-0.25,-0.15": {
+      "b0": 2.1,
+      "b1": 2.2,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp210_bp220_ym025_ym015_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp210_bp220_ym025_ym015_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp210_bp220_ym025_ym015_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp210_bp220_ym025_ym015_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp210_bp220_ym025_ym015_census",
+      "regularity": "minimum_dfs_f4_grid_bp210_bp220_ym025_ym015_census_merged.json",
+      "seconds": 332.79785895347595,
+      "y0": -0.25,
+      "y1": -0.15
+    },
+    "2.1,2.2,-0.35,-0.25": {
+      "b0": 2.1,
+      "b1": 2.2,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp210_bp220_ym035_ym025_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp210_bp220_ym035_ym025_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp210_bp220_ym035_ym025_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp210_bp220_ym035_ym025_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp210_bp220_ym035_ym025_census",
+      "regularity": "minimum_dfs_f4_grid_bp210_bp220_ym035_ym025_census_merged.json",
+      "seconds": 568.9559400081635,
+      "y0": -0.35,
+      "y1": -0.25
+    },
+    "2.1,2.2,-0.45,-0.35": {
+      "b0": 2.1,
+      "b1": 2.2,
+      "boundaries": {
+        "gap_hi": "minimum_boundary_f4_grid_bp210_bp220_ym045_ym035_census_gap_hi_p000.json",
+        "gap_lo": "minimum_boundary_f4_grid_bp210_bp220_ym045_ym035_census_gap_lo_p000.json",
+        "seam_hi": "minimum_boundary_f4_grid_bp210_bp220_ym045_ym035_census_seam_hi_p000.json",
+        "seam_lo": "minimum_boundary_f4_grid_bp210_bp220_ym045_ym035_census_seam_lo_p000.json"
+      },
+      "id": "f4_grid_bp210_bp220_ym045_ym035_census",
+      "regularity": "minimum_dfs_f4_grid_bp210_bp220_ym045_ym035_census_merged.json",
+      "seconds": 289.81329226493835,
+      "y0": -0.45,
+      "y1": -0.35
+    }
+  },
+  "strip": {
+    "delta": 0.001,
+    "dmax": 3.13,
+    "seam": 0.137
+  }
+}

@@ -1,0 +1,199 @@
+{
+ "object": "locator seed-density doubling probe at the seven face representatives: N = 160 vs N = 320 angular seeds (geometric D grid from 1e-4 in both)",
+ "points": [
+  {
+   "beta": 0.75,
+   "y": 0.4,
+   "N160_vs_N320": {
+    "160": {
+     "n_separated": 4,
+     "D": [
+      1.826063,
+      0.58057,
+      2.424925,
+      1.072995
+     ],
+     "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+     "certified": true
+    },
+    "320": {
+     "n_separated": 4,
+     "D": [
+      1.826063,
+      0.58057,
+      2.424925,
+      1.072995
+     ],
+     "census": "coincident:trap@positive | coincident:trap@positive | fit:global | separate:trap@mixed | separate:trap@mixed",
+     "certified": true
+    }
+   },
+   "same_families": true,
+   "same_census": true
+  },
+  {
+   "beta": 0.75,
+   "y": -0.02,
+   "N160_vs_N320": {
+    "160": {
+     "n_separated": 3,
+     "D": [
+      2.883071,
+      1.45296,
+      0.201876
+     ],
+     "census": "coincident:trap@mixed | fit:global | separate:trap@positive",
+     "certified": true
+    },
+    "320": {
+     "n_separated": 3,
+     "D": [
+      2.883071,
+      1.45296,
+      0.201876
+     ],
+     "census": "coincident:trap@mixed | fit:global | separate:trap@positive",
+     "certified": true
+    }
+   },
+   "same_families": true,
+   "same_census": true
+  },
+  {
+   "beta": 3.1,
+   "y": -0.06,
+   "N160_vs_N320": {
+    "160": {
+     "n_separated": 3,
+     "D": [
+      0.063285,
+      0.040934,
+      0.015795
+     ],
+     "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+     "certified": true
+    },
+    "320": {
+     "n_separated": 3,
+     "D": [
+      0.063285,
+      0.040934,
+      0.015795
+     ],
+     "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+     "certified": true
+    }
+   },
+   "same_families": true,
+   "same_census": true
+  },
+  {
+   "beta": 0.75,
+   "y": -0.4,
+   "N160_vs_N320": {
+    "160": {
+     "n_separated": 1,
+     "D": [
+      3.097423
+     ],
+     "census": "coincident:trap@mixed | fit:global",
+     "certified": true
+    },
+    "320": {
+     "n_separated": 1,
+     "D": [
+      3.097423
+     ],
+     "census": "coincident:trap@mixed | fit:global",
+     "certified": true
+    }
+   },
+   "same_families": true,
+   "same_census": true
+  },
+  {
+   "beta": 2.6,
+   "y": -0.5,
+   "N160_vs_N320": {
+    "160": {
+     "n_separated": 3,
+     "D": [
+      3.141593,
+      1.883569,
+      1.883569
+     ],
+     "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+     "certified": true
+    },
+    "320": {
+     "n_separated": 3,
+     "D": [
+      3.141593,
+      1.883569,
+      1.883569
+     ],
+     "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global",
+     "certified": true
+    }
+   },
+   "same_families": true,
+   "same_census": true
+  },
+  {
+   "beta": 0.75,
+   "y": -0.98,
+   "N160_vs_N320": {
+    "160": {
+     "n_separated": 3,
+     "D": [
+      0.201876,
+      1.45296,
+      2.883071
+     ],
+     "census": "coincident:trap@mixed | fit:global | separate:trap@positive",
+     "certified": true
+    },
+    "320": {
+     "n_separated": 3,
+     "D": [
+      0.201876,
+      1.45296,
+      2.883071
+     ],
+     "census": "coincident:trap@mixed | fit:global | separate:trap@positive",
+     "certified": true
+    }
+   },
+   "same_families": true,
+   "same_census": true
+  },
+  {
+   "beta": 3.1,
+   "y": -0.94,
+   "N160_vs_N320": {
+    "160": {
+     "n_separated": 3,
+     "D": [
+      0.015795,
+      0.040934,
+      0.063285
+     ],
+     "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+     "certified": true
+    },
+    "320": {
+     "n_separated": 3,
+     "D": [
+      0.015795,
+      0.040934,
+      0.063285
+     ],
+     "census": "coincident:trap@mixed | coincident:trap@mixed | fit:global | separate:trap@positive",
+     "certified": true
+    }
+   },
+   "same_families": true,
+   "same_census": true
+  }
+ ]
+}

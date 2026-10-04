@@ -1,0 +1,13 @@
+certificate : ivcert_C_F1_0p75_0p4.bits.json
+teacher     : beta=0.75 y=0.4
+root cells  : 253 (regenerated from the spec)
+leaves      : 254893 claimed, 254893 verified, 0 FAILED, 0 undecided
+boundary    : 6 solution-bearing leaves (fold and 2pi duplicates NOT merged), min distance from an enclosure to the four rectangle faces = 1.370000e-01
+families    : 5 classes from 6 enclosures (1 certified merges); disjointness certified: True; exact-fit classes: 1; SEPARATED FAMILIES: 4
+   th1=1.850500977 th0=3.676564069 D=1.826063093  schur=saddle     exact_fit=False
+   th1=2.109107388 th0=2.689677207 D=0.580569819  schur=spurious   exact_fit=False
+   th1=3.332819253 th0=5.757744689 D=2.424925436  schur=saddle     exact_fit=False
+   th1=4.569887794 th0=5.642882296 D=1.072994502  schur=spurious   exact_fit=False
+   th1=6.283185307 th0=7.033185307 D=0.750000000  schur=spurious   exact_fit=True
+CERTIFICATE VALID AND COMPLETE: every leaf verified, none undecided, so the enclosed families are ALL of them.
+EXIT 0

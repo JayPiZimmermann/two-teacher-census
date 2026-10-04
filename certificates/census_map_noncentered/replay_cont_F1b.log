@@ -1,0 +1,17 @@
+certificate : cont_F1b.json
+rectangle   : beta=[2.6,3] step 0.05 ; y=[0.1,0.9] step 0.05 (regenerated from the spec)
+grid        : 9 x 17 = 153 teachers, 5 tracked families
+nodes       : 50330 claimed, 50330 consumed
+leaves      : 10219 re-derived and matching, 0 FAILED, 0 undecided
+splits      : 9454 parameter bisections replayed
+verdicts    : {'CERT_SADDLE': 5399, 'CERT_SPURIOUS': 4820}
+disjoint    : YES, worst separation 0.02386 (families 0,1 at grid teacher (8, 0))
+family 0    : unordered gap in [0.056510, 0.779964] over the grid; above the certificate's own gap floor delta = 0.005
+family 1    : unordered gap in [0.032654, 0.452341] over the grid; above the certificate's own gap floor delta = 0.005
+family 2    : unordered gap in [0.056510, 0.779964] over the grid; above the certificate's own gap floor delta = 0.005
+family 3    : unordered gap in [0.032654, 0.452341] over the grid; above the certificate's own gap floor delta = 0.005
+family 4    : unordered gap in [2.600000, 3.000000] over the grid; above the certificate's own gap floor delta = 0.005
+replay      : 1077.5 s (105.4 ms per re-derived step)
+VALID AND COMPLETE: at every one of the 153 grid teachers, each of the 5 tracked families has exactly one zero of the census angle map in its certified enclosure, the enclosures are pairwise disjoint, and `separatedAngleJacDetJ` is nonzero there.
+NOT the schema's `hfold`: fold-freeness is certified ALONG THE TRACKED SHEETS at the grid teachers only.  Zeros that are not continuations of a seeded family, and births between grid teachers, are NOT excluded here.
+EXIT 0

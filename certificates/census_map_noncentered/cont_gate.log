@@ -1,0 +1,6 @@
+samples                                        : 200
+(1) det_theta vs central differences of E       : 3.26e-49
+(2) det_theta + separatedAngleJacDetJ (tree)    : 3.398e-88
+(3) tree closed forms vs their own equations    : 1.029e-49
+GATE PASSED (finite-difference tolerance 1e-18, exact-identity tolerance 1e-40)
+EXIT 0

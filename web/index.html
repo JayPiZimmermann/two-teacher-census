@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The two-teacher census — planar ReLU population landscapes with two students</title>
+<meta name="description" content="Interactive, theorem-driven map of every critical point of the centered and plain-ReLU population loss for a planar teacher–student network with two neurons each, with the complete classification theorems and their Lean formalization.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='13' fill='none' stroke='%23176b52' stroke-width='2'/><line x1='16' y1='16' x2='27' y2='9' stroke='%23c82d43' stroke-width='2.5'/><line x1='16' y1='16' x2='7' y2='6' stroke='%232166ac' stroke-width='2.5'/></svg>">
+<link rel="stylesheet" href="vendor/katex/katex.min.css">
+<style>
+  /* ---- theme (shared with the project website so the plots read the same) ---- */
+  :root {
+    --ink: #1a1a1a; --muted: #5c5c5c; --rule: #c9c6ba; --paper: #fbfaf7;
+    --positive: #c82d43; --negative: #2166ac; --accent: #176b52;
+    --control-bg: #f3f1ea; --fail-rule: #b07a4e; --bar: rgba(251,250,247,.92);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #e5e3da; --muted: #a9a79d; --rule: #46443d; --paper: #171613;
+      --positive: #ff6b7d; --negative: #6aa5e8; --accent: #69b89d;
+      --control-bg: #24231e; --fail-rule: #a8794f; --bar: rgba(23,22,19,.92);
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font: 15px/1.5 "Source Serif 4", Georgia, "Times New Roman", serif;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ---- top bar ---- */
+  .bar {
+    position: sticky; top: 0; z-index: 20; height: 46px;
+    display: flex; align-items: center; gap: 1.4rem; padding: 0 1rem;
+    background: var(--bar); backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  .bar .brand { font-weight: 650; letter-spacing: .01em; white-space: nowrap; }
+  .bar .brand small { font-weight: 400; color: var(--muted); margin-left: .6rem; }
+  .bar nav { display: flex; gap: .2rem; margin-left: auto; overflow-x: auto; }
+  .bar nav a { color: var(--muted); font-size: .86rem; padding: .3rem .6rem; border-radius: 5px; white-space: nowrap; }
+  .bar nav a:hover { color: var(--ink); background: var(--control-bg); text-decoration: none; }
+  @media (max-width: 760px) { .bar .brand small { display: none; } }
+
+  /* ---- explorer: one viewport ---- */
+  #explorer { padding: .6rem .9rem 1.2rem; }
+  #interactive-landscape .landscape-explorer-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    grid-template-rows: auto auto auto;
+    gap: .6rem 1rem; align-items: start;
+  }
+  #interactive-landscape .lx-top { grid-column: 1 / -1; }
+  #interactive-landscape .lx-model {
+    display: flex; align-items: center; justify-content: center; gap: .8rem; flex-wrap: wrap; margin-bottom: .5rem;
+  }
+  #interactive-landscape .lx-model button, #interactive-landscape .lx-model select {
+    height: 1.9rem; padding-block: 0; font: inherit; font-size: .88rem; color: var(--ink);
+    background: var(--paper); border: 1px solid var(--rule); border-radius: 5px; padding-inline: .5rem;
+  }
+  #interactive-landscape .lx-model button { cursor: pointer; }
+  #interactive-landscape .lx-model button:hover { border-color: var(--accent); }
+  #interactive-landscape .lx-sliders {
+    display: grid; grid-template-columns: repeat(2, max-content); justify-content: center; gap: .1rem 2rem;
+  }
+  .controls { display: block; margin: 0; }
+  .ctrl-group {
+    border: 1px solid var(--rule); border-radius: 6px; padding: .5rem .8rem .35rem;
+    background: var(--control-bg); width: 100%;
+  }
+  .ctrl-row { display: flex; align-items: center; gap: .6rem; margin: .18rem 0; font-size: .86rem; }
+  .ctrl-row label { width: 6.5em; flex: 0 0 auto; }
+  .ctrl-row input[type="range"] { width: 15rem; flex: 0 0 auto; accent-color: var(--accent); }
+  .ctrl-row .val { width: 6.2em; flex: 0 0 auto; text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+  @media (max-width: 760px) {
+    #interactive-landscape .lx-sliders { grid-template-columns: 1fr; }
+    .ctrl-row input[type="range"] { width: auto; flex: 1 1 auto; }
+  }
+
+  /* Both panels fill their grid cell; the drawings scale with the viewport
+     but keep their aspect, so the two line up at any window size. */
+  #interactive-landscape .lx-left, #interactive-landscape .lx-right { min-width: 0; min-height: 0; display: flex; flex-direction: column; gap: .3rem; }
+  #interactive-landscape .lx-view {
+    height: clamp(260px, 46vh, 560px); background: var(--paper); position: relative;
+    overflow: hidden; display: flex; align-items: center; justify-content: center;
+  }
+  #interactive-landscape .lx-view > svg { width: 100%; height: 100%; max-height: 100%; }
+  #interactive-landscape svg.canvas { border: 1px solid var(--rule); border-radius: 6px; background: var(--paper); cursor: grab; touch-action: none; }
+  #interactive-landscape svg.canvas.dragging { cursor: grabbing; }
+  #interactive-landscape svg.lx-zoomable { touch-action: none; cursor: grab; }
+  #interactive-landscape svg.lx-zoomable:active { cursor: grabbing; }
+  #interactive-landscape svg.lx-mapcanvas { border: 1px solid var(--rule); border-radius: 6px; background: var(--paper); display: block; }
+  #interactive-landscape .lx-subtitle { margin: 0; text-align: center; font-size: .82rem; color: var(--muted); }
+  #interactive-landscape .lx-moment { margin: .2rem 0 0; font-size: .78rem; line-height: 1.4; }
+  #interactive-landscape .lx-piece { cursor: pointer; }
+  #interactive-landscape .lx-piece:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+  /* Twelve DISTINCT region colours, one per census; lifted variants for the picked census. */
+  #interactive-landscape {
+    --lx-c0:  #ffd166; --lx-c1:  #f4a259; --lx-c2:  #ef6f6c; --lx-c3:  #d64550;
+    --lx-c4:  #c77dbb; --lx-c5:  #9a7fd1; --lx-c6:  #6a8ede; --lx-c7:  #4bb3d4;
+    --lx-c8:  #48c9b0; --lx-c9:  #67c27a; --lx-c10: #b5cc5a; --lx-c11: #c7b299;
+    --lx-l0:  #fff3d2; --lx-l1:  #fde3cc; --lx-l2:  #fbd6d5; --lx-l3:  #f6cbcf;
+    --lx-l4:  #f2dcee; --lx-l5:  #e5ddf7; --lx-l6:  #d8e3fb; --lx-l7:  #d2edf7;
+    --lx-l8:  #d1f2ea; --lx-l9:  #d8f0dd; --lx-l10: #ecf3cf; --lx-l11: #f0e7dc;
+  }
+  @media (prefers-color-scheme: dark) {
+    #interactive-landscape {
+      --lx-c0:  #6b551f; --lx-c1:  #6d4726; --lx-c2:  #6d3330; --lx-c3:  #5d2027;
+      --lx-c4:  #58304f; --lx-c5:  #423463; --lx-c6:  #2c3d63; --lx-c7:  #1e4d5c;
+      --lx-c8:  #1c5348; --lx-c9:  #275434; --lx-c10: #4a5424; --lx-c11: #4f4438;
+      --lx-l0:  #b99339; --lx-l1:  #b87b42; --lx-l2:  #b85a54; --lx-l3:  #a03a44;
+      --lx-l4:  #97538a; --lx-l5:  #7059a8; --lx-l6:  #4c6aab; --lx-l7:  #35849c;
+      --lx-l8:  #308e7c; --lx-l9:  #44915b; --lx-l10: #7f9040; --lx-l11: #877661;
+    }
+  }
+  .legend { display: grid; grid-template-columns: 1fr; gap: .05rem; margin: .3rem 0 0; font-size: .78rem; line-height: 1.45; color: var(--muted); }
+  .legend span { display: inline-flex; align-items: baseline; gap: .4em; }
+  .legend span svg { flex: 0 0 auto; align-self: center; }
+  .legend .sw { display: inline-block; width: .85em; height: .85em; vertical-align: -.1em; margin-right: .25em; }
+  #interactive-landscape .legend span.lx-here { color: var(--ink); font-weight: 600; }
+  #interactive-landscape .legend span.lx-legend-pick { cursor: pointer; }
+  #interactive-landscape .legend span.lx-legend-pick:hover { color: var(--ink); }
+  #interactive-landscape .legend span.lx-picked { color: var(--ink); font-weight: 600; }
+  #interactive-landscape .legend span.lx-legend-pick:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+
+  /* The classification table: every row is one critical family. */
+  #interactive-landscape .lx-bottom { grid-column: 1 / -1; display: flex; justify-content: center; min-height: 0; }
+  #interactive-landscape .lx-tablecol { min-width: 0; max-width: 100%; width: 100%; }
+  .wrap-table { overflow-x: auto; }
+  table.critlist { width: 100%; border-collapse: collapse; font-size: .84rem; table-layout: auto; }
+  table.critlist th, table.critlist td { border-bottom: 1px solid var(--rule); padding: .25rem .5rem; text-align: left; white-space: nowrap; vertical-align: top; }
+  table.critlist th { border-bottom: 2px solid var(--ink); font-weight: 700; }
+  table.critlist th:first-child, table.critlist td:first-child { min-width: 8.5rem; }
+  table.critlist tbody tr:hover { background: var(--control-bg); cursor: pointer; }
+  table.critlist tbody tr.is-selected { background: var(--control-bg); }
+  table.critlist tbody tr.is-selected td:first-child { border-left: 3px solid var(--accent); }
+  table.critlist tbody tr:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+  .classification-selector { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .7rem; color: var(--muted); }
+  .label-globalmin, .label-min { color: var(--accent); font-weight: 700; }
+  .label-saddle { color: var(--fail-rule); font-weight: 700; }
+  .label-notcrit { color: var(--muted); font-weight: 700; }
+  .label-max { color: var(--positive); font-weight: 700; }
+  .small { font-size: .85em; color: var(--muted); }
+  @media (max-width: 1000px) {
+    #interactive-landscape .landscape-explorer-layout { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto auto auto; }
+    #interactive-landscape .lx-view { height: min(70vw, 420px); }
+    #interactive-landscape .lx-bottom { grid-column: 1; }
+    table.critlist th, table.critlist td { white-space: normal; }
+  }
+
+  /* ---- prose sections ---- */
+  .prose { max-width: 58rem; margin: 0 auto; padding: 3rem 1.2rem 4rem; }
+  .prose h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 .3rem; }
+  .prose h2 { font-size: 1.35rem; margin: 2.6rem 0 .8rem; padding-bottom: .3rem; border-bottom: 1px solid var(--rule); }
+  .prose h3 { font-size: 1.05rem; margin: 1.6rem 0 .5rem; }
+  .prose p, .prose li { max-width: 46rem; }
+  .prose .lede { color: var(--muted); font-size: 1.02rem; }
+  .thm {
+    border-left: 3px solid var(--accent); background: var(--control-bg);
+    padding: .8rem 1.1rem .5rem; margin: 1.2rem 0; border-radius: 0 6px 6px 0;
+  }
+  .thm > .head { font-weight: 700; margin-bottom: .3rem; }
+  .thm > .head .lab { color: var(--muted); font-weight: 400; margin-left: .4em; }
+  .thm p { margin: .5rem 0; }
+  .thm table { width: 100%; border-collapse: collapse; font-size: .9rem; margin: .6rem 0 .3rem; }
+  .thm th, .thm td { border-bottom: 1px solid var(--rule); padding: .3rem .5rem; text-align: left; vertical-align: top; }
+  .thm th { border-bottom: 2px solid var(--ink); font-weight: 700; }
+  .thm td small, .thm th small { display: block; color: var(--muted); font-size: .85em; }
+  .lean {
+    display: flex; flex-wrap: wrap; gap: .4rem .9rem; margin: .7rem 0 .2rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .8rem;
+  }
+  .lean a { border: 1px solid var(--rule); border-radius: 4px; padding: .1rem .45rem; background: var(--paper); }
+  .lean a::before { content: "Lean "; color: var(--muted); font-family: system-ui, sans-serif; }
+  .lean a.long::before { content: "full proof "; }
+  .lean a.cert::before { content: "certificate "; }
+  .note { border-left: 3px solid var(--fail-rule); padding: .4rem 1rem; margin: 1rem 0; color: var(--muted); font-size: .92rem; }
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: .7rem 0; overflow-x: auto; overflow-y: hidden; }
+  footer { border-top: 1px solid var(--rule); color: var(--muted); font-size: .85rem; padding: 1.2rem; text-align: center; }
+  footer a { color: var(--muted); text-decoration: underline; text-decoration-color: var(--rule); }
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="brand">The two-teacher census<small>every critical point of a planar two-student ReLU landscape</small></div>
+  <nav aria-label="Page">
+    <a href="#explorer">Explorer</a>
+    <a href="#theorems">Theorems</a>
+    <a href="#lean">Lean</a>
+    <a href="#certificates">Certificates</a>
+    <a href="https://arxiv.org/abs/2610.01728">Paper</a>
+    <a href="https://github.com/JayPiZimmermann/two-teacher-census">GitHub</a>
+  </nav>
+</header>
+
+<main id="explorer">
+<section id="interactive-landscape" aria-label="The exact two-student classification">
+<div class="landscape-explorer-layout">
+  <div class="lx-top">
+    <div class="controls teacher-row landscape-controls">
+      <div class="ctrl-group teacher-params lx-controls">
+        <div class="lx-model">
+          <label for="ex-regime">loss model</label>
+          <select id="ex-regime" aria-label="loss model">
+            <option value="centered">centered (abs)</option>
+            <option value="noncentered">plain-ReLU</option>
+          </select>
+          <span id="ex-trap-row" hidden><button type="button" id="ex-trap">load example positive-weight trap</button></span>
+        </div>
+        <div class="lx-sliders">
+          <div class="ctrl-row"><label for="t-beta0">angle β₀</label><input type="range" id="t-beta0" min="0" max="2" step="0.01" value="0.00"><output class="val" id="t-beta0-val" for="t-beta0"></output></div>
+          <div class="ctrl-row"><label for="t-beta1">angle β₁</label><input type="range" id="t-beta1" min="0" max="2" step="0.01" value="0.31"><output class="val" id="t-beta1-val" for="t-beta1"></output></div>
+          <div class="ctrl-row"><label for="t-s0">mass s₀</label><input type="range" id="t-s0" min="-2.4" max="2.4" step="0.0025" value="1"><output class="val" id="t-s0-val" for="t-s0"></output></div>
+          <div class="ctrl-row"><label for="t-s1">mass s₁</label><input type="range" id="t-s1" min="-2.4" max="2.4" step="0.0025" value="1"><output class="val" id="t-s1-val" for="t-s1"></output></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="lx-left">
+    <div class="lx-view" id="ex-canvas-view">
+      <svg class="canvas" id="ex-canvas" width="380" height="380" viewBox="-255 -255 510 510" role="img" aria-label="The teacher atoms in blue and the selected critical family's students in red, each drawn as an arrow whose length is the size of its mass on a fixed scale, dashed with a hollow head when the mass is negative; in the centered model each arrow is drawn both ways, because a centered direction is an unoriented line. The teacher atoms can be dragged."></svg>
+    </div>
+    <p class="lx-subtitle">The teacher and the selected family — drag a teacher, scroll to zoom, double-click to reset</p>
+    <p class="legend" id="ex-legend"></p>
+    <p class="small lx-moment" id="ex-moment-note" aria-live="polite"></p>
+  </div>
+  <div class="lx-right">
+    <div class="lx-view" id="ex-map-view">
+      <svg class="lx-mapcanvas" id="ex-map" width="620" height="330" viewBox="0 0 620 330" role="img" aria-label="A map of the teacher gap against the teacher mass ratio, shaded by which census of critical families occurs. The gap axis covers half a period, because reflecting the gap leaves the census unchanged. Each region carries a dot marking one example teacher in it; clicking the region loads that example. The regions of the current teacher's census are outlined. Degenerate strata that are single lines are drawn as thick lines, and a ring marks the current teacher. The vertical axis is compressed so that a mass ratio of plus or minus infinity is the top and bottom edge."></svg>
+    </div>
+    <p class="lx-subtitle">Where the census changes: the gap against the teacher mass ratio — click a region to load a teacher from it</p>
+    <p class="legend" id="ex-map-legend"></p>
+  </div>
+  <div class="lx-bottom">
+    <div class="lx-tablecol">
+      <div class="wrap-table landscape-classification-scroll" tabindex="0" aria-label="Computed critical-point branches with student angles, masses, and proved or undecided type labels">
+        <table class="critlist" id="ex-crit-table">
+          <thead><tr>
+            <th scope="col">classification</th>
+            <th scope="col">angles θ₀, θ₁</th>
+            <th scope="col">masses c₀, c₁</th>
+            <th scope="col">type status</th>
+          </tr></thead>
+          <tbody id="ex-crit-body"></tbody>
+        </table>
+      </div>
+      <p class="small" id="ex-trap-note" aria-live="polite"></p>
+    </div>
+  </div>
+</div>
+</section>
+</main>
+
+<article class="prose" id="theorems">
+  <h1>What the explorer shows</h1>
+  <p class="lede">A planar teacher network with two ReLU neurons, a student network with two, and the Gaussian population loss between them. Every row of the table above is a <em>family</em> of critical points of that loss, with its exact type — global minimum, spurious local minimum, or saddle — read off a theorem, not a numerical Hessian. The map colours each teacher by its <em>census</em>: which minima it has. Below are the statements; the proofs are Lean code.</p>
+
+  <h2 id="setting">Setting</h2>
+  <p>Directions on the unit circle are written as angles. The teacher has directions \(\beta_0,\beta_1\) and signed masses \(s_0,s_1\); the student has directions \(\theta_0,\theta_1\) and signed masses \(c_0,c_1\). Two activations are compared, the <strong>plain</strong> ReLU \(\sigma_R(z)=\max(z,0)\) and the <strong>centered</strong> feature \(\sigma_C(z)=\tfrac12\lvert z\rvert\), the latter being what a learned linear skip connection turns the ReLU into (see the <a href="https://arxiv.org/abs/2610.01728">paper</a>). For \(q\in\{C,R\}\) the population loss over a standard Gaussian input is a kernel sum,
+  \[
+    2\pi\,\mathscr L_q(c,\theta)=\tfrac{\kappa_q}{2}\bigl(c_0^2+c_1^2\bigr)+c_0c_1\,\Phi_q(\theta_0-\theta_1)-c_0P_q(\theta_0)-c_1P_q(\theta_1)+\tfrac{E_q}{2},
+  \]
+  with the angular kernels \(\Phi_C(t)=(\tfrac\pi2-t)\cos t+\sin t\) and \(\Phi_R(t)=(\pi-t)\cos t+\sin t\) on \(0\le t\le\pi\), extended evenly with periods \(\pi\) and \(2\pi\); the diagonal values \(\kappa_C=\pi/2\), \(\kappa_R=\pi\); the <em>teacher potential</em> \(P_q(t)=s_0\Phi_q(t-\beta_0)+s_1\Phi_q(t-\beta_1)\) and its angular derivative \(A_q=-P_q'\); and a constant teacher self-energy \(E_q\). Write \(W(t)=s_0\lvert\sin(t-\beta_0)\rvert+s_1\lvert\sin(t-\beta_1)\rvert\) and \(\tau_q=P_q-2W\). Both losses are \(C^2\), and
+  \[
+    \mathscr L_R=\mathscr L_C+\tfrac18\lVert u-v\rVert^2,\qquad u=\sum_i c_i(\cos\theta_i,\sin\theta_i),\quad v=\sum_j s_j(\cos\beta_j,\sin\beta_j):
+  \]
+  the plain loss is the centered loss plus a penalty on the first moments. A <em>critical point</em> is a zero of all four partial derivatives; a <em>topological saddle</em> is a critical point that is neither a local minimum nor a local maximum.</p>
+  <p>Translating all angles and, for the centered kernel, shifting any single angle by \(\pi\), are exact isometries, so the teacher is reduced to directions \((0,\widehat\beta)\) with gap \(\widehat\beta\in[0,\pi)\) (centered) or \(\widehat\beta\in[0,\pi]\) (plain). A student is <em>dead</em> if its mass vanishes, the two students are <em>colliding</em> if \(\theta_0\equiv\theta_1\), <em>separated</em> otherwise. For separated students the two mass equations have the positive determinant \(\Delta_q=\kappa_q^2-\Phi_q(D)^2\), \(D=\theta_0-\theta_1\), and Cramer's rule gives
+  \[
+    c_0=\frac{\kappa_qP_q(\theta_0)-\Phi_q(D)P_q(\theta_1)}{\Delta_q},\qquad c_1=\frac{\kappa_qP_q(\theta_1)-\Phi_q(D)P_q(\theta_0)}{\Delta_q}.\tag{M}
+  \]
+  The <strong>census</strong> of a teacher is the multiset of its minima, each tagged by family kind (fit / colliding / separated) and, for a spurious minimum, by whether both student masses are positive or of mixed sign. Saddles are not part of the census.</p>
+
+  <h2 id="classification">The complete classifications</h2>
+
+  <div class="thm" id="thm-centered">
+    <div class="head">Theorem 1<span class="lab">(complete centered two-student classification)</span></div>
+    <p>Let \(\beta,s,c,\theta:\{0,1\}\to\mathbb R\) be arbitrary. The tuple is a critical point of \(\mathscr L_C\) <strong>if and only if</strong>, after the canonical reduction, it lies in one of the families below; it then has exactly the stated type. Directions are read in \(\mathbb R/\pi\mathbb Z\).</p>
+    <p><em>Degenerate teacher</em> (the two directions merge into one effective line at \(a\) with mass \(\sigma\), or both masses vanish):</p>
+    <table>
+      <tr><th>family</th><th>student data</th><th>type</th></tr>
+      <tr><td>zero measure <small>\(\sigma=0\)</small></td><td>\(c_0=c_1=0\), angles free; or \(\theta_0\equiv\theta_1\) and \(c_0+c_1=0\)</td><td>global</td></tr>
+      <tr><td>exact <small>\(\sigma\ne0\)</small></td><td>each student dead or at \(a\); \(c_0+c_1=\sigma\)</td><td>global</td></tr>
+      <tr><td>perpendicular <small>\(\sigma\ne0\)</small></td><td>\(\theta_0\equiv\theta_1\equiv a+\tfrac\pi2\), \(c_0+c_1=\tfrac{2\sigma}{\pi}\), split free</td><td>saddle</td></tr>
+    </table>
+    <p><em>Genuine same-sign teacher</em> (\(0<\widehat\beta<\pi\), \(s_0s_1>0\)):</p>
+    <table>
+      <tr><th>family <small>exists iff</small></th><th>student data</th><th>type</th></tr>
+      <tr><td>exact fit <small>always</small></td><td>\((\theta_0,\theta_1)\equiv(0,\widehat\beta)\), \((c_0,c_1)=(s_0,s_1)\), or swapped</td><td>global</td></tr>
+      <tr><td>collision line <small>at each root \(t\) of \(A_C\)</small></td><td>\(\theta_0\equiv\theta_1\equiv t\), \(c_0+c_1=\tfrac{2P_C(t)}{\pi}\), split free</td><td>spurious minimum iff \(P_C(t)\,\tau_C(t)>0\) and \(c_0c_1<0\), or \(\tau_C(t)=0\), \(W'(t)=0\) and \(c_0c_1<0\); else saddle</td></tr>
+      <tr><td>quarter pair <small>\(s_0=s_1\), \(\widehat\beta\ne\tfrac\pi2\)</small></td><td>\(\{\theta_0,\theta_1\}\equiv\{\tfrac{\widehat\beta}{2},\tfrac{\widehat\beta}{2}+\tfrac\pi2\}\), masses by (M)</td><td>saddle</td></tr>
+      <tr><td>orthogonal diagonal <small>\(s_0=s_1\), \(\widehat\beta=\tfrac\pi2\)</small></td><td>\(\{\theta_0,\theta_1\}\equiv\{\tfrac\pi4,-\tfrac\pi4\}\), \(c_0=c_1=\tfrac{\sqrt2\,s_0(\pi+4)}{2(\pi+2)}\)</td><td>saddle</td></tr>
+      <tr><td>separated beam <small>\(s_0\ne s_1\), at each root of the beam equation</small></td><td>\(\theta_0\equiv\widehat\beta+b\), \(\theta_1\equiv\widehat\beta-a\) with \(a\in(0,\widehat\beta)\), \(b\in(0,\pi-\widehat\beta)\) solving \(\frac{\rho(\widehat\beta-a,\pi-\widehat\beta-b)}{\rho(a,b)}=\frac{s_1}{s_0}\), \(\rho(a,b)=\frac{a\sin b+b\sin a}{a+b+\sin(a+b)}\), together with the phase-matching row; masses by (M)</td><td>saddle</td></tr>
+    </table>
+    <p><em>Genuine mixed-sign teacher</em> (\(0<\widehat\beta<\pi\), \(s_0s_1<0\)): every critical point with two live separated students is the exact fit.</p>
+    <table>
+      <tr><th>family <small>exists iff</small></th><th>student data</th><th>type</th></tr>
+      <tr><td>exact fit <small>always</small></td><td>as above</td><td>global</td></tr>
+      <tr><td>collision line <small>at each root \(t\) of \(A_C\)</small></td><td>\(\theta_0\equiv\theta_1\equiv t\), \(c_0,c_1\ne0\), \(c_0+c_1=\tfrac{2P_C(t)}{\pi}\)</td><td>spurious minimum iff \(\tau_C(t)P_C(t)>0\) and \(W(t)\,c_0c_1\,\tau_C(t)<0\), or the flat selector holds; else saddle</td></tr>
+      <tr><td>one student dead <small>root \(t\) of \(A_C\) with \(P_C(t)\ne0\)</small></td><td>live mass \(\tfrac{2P_C(t)}{\pi}\); dead angle \(x\) solves \(\tfrac{2P_C(t)}{\pi}\Phi_C(x-t)=P_C(x)\)</td><td>saddle</td></tr>
+      <tr><td>both students dead <small>\(P_C\) has zeros</small></td><td>\(c_0=c_1=0\), each \(\theta_i\) a zero of \(P_C\)</td><td>saddle</td></tr>
+    </table>
+    <div class="lean">
+      <a href="https://github.com/JayPiZimmermann/two-teacher-census/blob/main/TwoTeacherCensus/Classification.lean">TwoTeacherCensus/Classification.lean</a>
+      <a class="long" href="https://github.com/JayPiZimmermann/Skip-Connections-Avoid-Spurious-Local-Minima/blob/main/LeanFormalization/Main/TwoStudentClassification.lean">centered_two_student_full_classification</a>
+    </div>
+  </div>
+
+  <div class="thm" id="thm-plain">
+    <div class="head">Theorem 2<span class="lab">(complete plain-ReLU two-student classification)</span></div>
+    <p>Let \(\beta,s,c,\theta\) be arbitrary. The tuple is a critical point of \(\mathscr L_R\) <strong>if and only if</strong>, after the canonical reduction, it lies in one of the families below; it then has exactly the stated type. Directions are read in \(\mathbb R/2\pi\mathbb Z\).</p>
+    <p><em>Degenerate teacher</em> (\(\widehat\beta=0\), or one raw mass zero; effective mass \(\sigma\) on the ray at \(a\)):</p>
+    <table>
+      <tr><th>family</th><th>student data</th><th>type</th></tr>
+      <tr><td>zero measure</td><td>\(c_0=c_1=0\), angles free; or \(\theta_0\equiv\theta_1\) and \(c_0+c_1=0\)</td><td>global</td></tr>
+      <tr><td>exact <small>\(\sigma\ne0\)</small></td><td>each student dead or at \(a\); \(c_0+c_1=\sigma\)</td><td>global</td></tr>
+      <tr><td>antipodal cancellation <small>\(\sigma\ne0\)</small></td><td>\(\theta_0\equiv\theta_1\equiv a+\pi\), \(c_0+c_1=0\)</td><td>saddle</td></tr>
+    </table>
+    <p><em>Antipodal teacher</em> (\(\widehat\beta=\pi\), \(s_0,s_1\ne0\)):</p>
+    <table>
+      <tr><th>family <small>exists iff</small></th><th>student data</th><th>type</th></tr>
+      <tr><td>colliding, interior root <small>\(t_\pm\) of \(A_R\) in \((0,\pi)\cup(\pi,2\pi)\)</small></td><td>\(\theta_0\equiv\theta_1\equiv t_\pm\), \(c_0+c_1=\tfrac{P_R(t_\pm)}{\pi}\), split free</td><td>saddle</td></tr>
+      <tr><td>colliding, endpoint \(0\) <small>always</small></td><td>\(\theta_0\equiv\theta_1\equiv0\), \(c_0+c_1=s_0\), split free</td><td>spurious minimum iff the endpoint cusp cubic is positive at \(\mu=s_0\); else saddle</td></tr>
+      <tr><td>colliding, endpoint \(\pi\) <small>always</small></td><td>\(\theta_0\equiv\theta_1\equiv\pi\), \(c_0+c_1=s_1\), split free</td><td>mirror of the previous row with \(\mu=s_1\)</td></tr>
+      <tr><td>opposite exact <small>always</small></td><td>\((\theta_0,\theta_1)\equiv(0,\pi)\), \((c_0,c_1)=(s_0,s_1)\), or swapped</td><td>global</td></tr>
+      <tr><td>opposite perpendicular <small>\(s_0=s_1=:s\)</small></td><td>\(\{\theta_0,\theta_1\}\equiv\{\tfrac\pi2,\tfrac{3\pi}2\}\), \(c_0=c_1=\tfrac{2s}{\pi}\)</td><td>saddle</td></tr>
+      <tr><td>one student dead <small>root \(t\) of \(A_R\) with \(P_R(t)\ne0\)</small></td><td>live mass \(\tfrac{P_R(t)}{\pi}\); dead angle \(x\) solves \(\tfrac{P_R(t)}{\pi}\Phi_R(x-t)=P_R(x)\)</td><td>saddle</td></tr>
+      <tr><td>both students dead <small>\(P_R\) has zeros</small></td><td>\(c_0=c_1=0\), both \(\theta_i\) zeros of \(P_R\)</td><td>saddle</td></tr>
+      <tr><td>separated midpoint pair <small>root of the midpoint equation</small></td><td>\(c_0=c_1\), \(\theta_{0,1}=\varphi\pm\tfrac E2\) with \(\varphi\equiv0\) or \(\varphi\equiv\pi\)</td><td>saddle</td></tr>
+    </table>
+    <p><em>Genuine teacher</em> (\(0<\widehat\beta<\pi\), \(s_0,s_1\ne0\)). Separated live families solve the balance system obtained by equating (M) with the second mass formula \(c_1=A_R(\theta_0)/H_R(D)\), \(c_0=-A_R(\theta_1)/H_R(D)\), where \(H_R=-\Phi_R'\).</p>
+    <table>
+      <tr><th>family <small>exists iff</small></th><th>student data</th><th>type</th></tr>
+      <tr><td>collision ray <small>at each root \(t\) of \(A_R\)</small></td><td>\(\theta_0\equiv\theta_1\equiv t\), \(c_0,c_1\ne0\), \(c_0+c_1=\tfrac{P_R(t)}{\pi}\)</td><td>spurious minimum iff \(\tau_R(t)P_R(t)>0\) and \(W(t)\,c_0c_1\,\tau_R(t)<0\), or \(\tau_R(t)=0\), \(W'(t)=0\) and \(c_0c_1<0\); else saddle</td></tr>
+      <tr><td>opposite bisector <small>\(s_0=s_1\)</small></td><td>\(\theta_0\equiv\tfrac{\widehat\beta}{2}\pmod\pi\), \(\theta_1=\theta_0+\pi\), \(c_i=\tfrac{P_R(\theta_i)}{\pi}\)</td><td>saddle</td></tr>
+      <tr><td>one student dead <small>root \(t\) of \(A_R\) with \(P_R(t)\ne0\)</small></td><td>live mass \(\tfrac{P_R(t)}{\pi}\); dead angle as above</td><td>saddle</td></tr>
+      <tr><td>both students dead <small>\(P_R\) has zeros</small></td><td>\(c_0=c_1=0\), both \(\theta_i\) zeros of \(P_R\)</td><td>saddle</td></tr>
+      <tr><td>separated, exact <small>always</small></td><td>\((\theta_0,\theta_1)\equiv(0,\widehat\beta)\) with \(u=v\), masses \((s_0,s_1)\), or swapped</td><td>global</td></tr>
+      <tr><td>separated, real corner <small>a student on a teacher ray</small></td><td>balance system; the corner forces the exact fit</td><td>global</td></tr>
+      <tr><td>separated, ghost corner <small>a student opposite a teacher ray</small></td><td>balance system</td><td>saddle</td></tr>
+      <tr><td>separated, smooth, \(T\succ0\)</td><td>balance system, masses by (M); \(T\) is the reduced \(2\times2\) angular Hessian (Schur complement of the mass block)</td><td>spurious minimum</td></tr>
+      <tr><td>separated, smooth, \(T\not\succeq0\)</td><td>same data</td><td>saddle</td></tr>
+      <tr><td>separated, smooth, rank one <small>\(T\succeq0\), \(\det T=0\)</small></td><td>same data</td><td>decided by the reduced one-dimensional germ: minimum if it is flat or a strict maximum, saddle otherwise</td></tr>
+    </table>
+    <div class="lean">
+      <a href="https://github.com/JayPiZimmermann/two-teacher-census/blob/main/TwoTeacherCensus/Classification.lean">TwoTeacherCensus/Classification.lean</a>
+      <a class="long" href="https://github.com/JayPiZimmermann/Skip-Connections-Avoid-Spurious-Local-Minima/blob/main/LeanFormalization/Main/TwoStudentClassification.lean">noncentered_two_student_full_classification</a>
+    </div>
+  </div>
+
+  <p>In both theorems the critical points are therefore always global minima, spurious local minima, or topological saddles — no local maxima and no degenerate types escape the three labels — and the two classifications intersect, on live students, exactly in the centered families whose first moments match, \(u=v\).</p>
+
+  <h2 id="map">The census map</h2>
+  <p>The map plots the gap \(\widehat\beta\) horizontally and the compressed mass ratio vertically — \(y=s_1/s_0\) folded so that \(y=\pm1\) is the seam \(\lvert s_0\rvert=\lvert s_1\rvert\) and \(y=0\) the one-teacher line — and colours a teacher by its census. The census can change only where a family is born, dies, or changes type, and for the colliding families those loci are <em>mass-free</em>: they are the zero sets of three Wronskian-type determinants in the gap and the direction alone.</p>
+
+  <div class="thm" id="thm-map-centered">
+    <div class="head">Theorem 3<span class="lab">(the centered census map, exactly)</span></div>
+    <p>The boundary set of the centered census consists of nine curves: the two branches of the <em>torque lens</em> (present for \(\beta\in[\beta^*_1,\beta^*_2]\), where \(\tan(\beta/2)=\pi/2-\beta/2\) and \(\beta^*_2=\pi-\beta^*_1\)), the two branches of the <em>potential curve</em> (spanning \(0<\beta<\pi\), with \(y\in(\gamma,1-\gamma)\), \(\gamma=\tfrac2\pi\arctan\tfrac2\pi\)), the lines \(y=0\) and \(y=\pm1\), and the columns \(\beta\in\{0,\tfrac\pi2,\pi\}\). On the map — a cylinder, \(y\) being a circle of circumference \(2\) — these cut exactly ten faces, and the census is constant on each:</p>
+    <table>
+      <tr><th>face</th><th>region</th><th>angular roots</th><th>census</th></tr>
+      <tr><td>\(F_1\), \(F_4\)</td><td>\(y<0\), outside the lens (\(\beta\lessgtr\pi/2\))</td><td>2</td><td>fit + one mixed-sign colliding minimum</td></tr>
+      <tr><td>\(F_2\), \(F_3\)</td><td>inside the lens</td><td>4</td><td>fit + two mixed-sign colliding minima</td></tr>
+      <tr><td>\(F_5\), \(F_8\)</td><td>\(y>0\), below the potential curve</td><td>2</td><td>fit + one positive colliding minimum</td></tr>
+      <tr><td>\(F_6\), \(F_9\)</td><td>between its branches</td><td>2</td><td>fit + two positive colliding minima</td></tr>
+      <tr><td>\(F_7\), \(F_{10}\)</td><td>above it</td><td>2</td><td>fit + one positive colliding minimum</td></tr>
+    </table>
+    <p>Four distinct census values occur. Merging the five face pairs separated only by the measure-zero column \(\beta=\pi/2\) leaves exactly <strong>five</strong> regions of positive area, and these five regions carrying these four values are the entire centered map. In particular a centered teacher with masses of opposite sign never has a positive-mass spurious minimum, and no separated family is ever a minimum.</p>
+    <div class="lean">
+      <a href="https://github.com/JayPiZimmermann/two-teacher-census/blob/main/TwoTeacherCensus/CensusMap.lean">TwoTeacherCensus/CensusMap.lean</a>
+      <a class="cert" href="https://github.com/JayPiZimmermann/two-teacher-census/tree/main/certificates/census_map_centered">census_map_centered/</a>
+    </div>
+  </div>
+
+  <div class="thm" id="thm-map-plain">
+    <div class="head">Theorem 4<span class="lab">(plain-ReLU root counts, for every gap) and the plain map</span></div>
+    <p>For \(\beta\in(0,\pi)\) (the mirror \(\beta\mapsto2\pi-\beta\) is an exact symmetry) the potential determinant has no interior roots — the plain model has no analogue of the centered potential curve — and the torque determinant has interior roots only on the arc \(t\in(0,\beta)\): none for \(\beta<\beta^*_R\), a double root at the midpoint for \(\beta=\beta^*_R\), and one on each side of it for \(\beta>\beta^*_R\), where \(\beta^*_R=2u^*\) with \(\tan u^*=\pi-u^*\). Hence the colliding part of the plain census is exactly determined for every teacher.</p>
+    <p>Unlike the centered model, plain-ReLU <em>separated</em> families can be minima (Theorem 2), so the plain map has a second set of boundaries that is not mass-free. The drawn plain map is the finite-grid rendering of Theorem 2 at depth 8; its seven labelled faces are backed by interval-certified witnesses, by exhaustive branch-and-bound enumerations at 22 named teachers, and by Krawczyk-certified continuation on nine rectangles (30,278 certified steps) — but a global face arrangement for the plain map is <strong>not</strong> a theorem. The ledger <a href="https://github.com/JayPiZimmermann/two-teacher-census/blob/main/certificates/COMPLETENESS.md">COMPLETENESS.md</a> states, claim by claim, what is proved, what is certified, and on which domain.</p>
+    <div class="lean">
+      <a href="https://github.com/JayPiZimmermann/two-teacher-census/blob/main/TwoTeacherCensus/CensusMap.lean">TwoTeacherCensus/CensusMap.lean</a>
+      <a class="cert" href="https://github.com/JayPiZimmermann/two-teacher-census/tree/main/certificates/census_map_noncentered">census_map_noncentered/</a>
+    </div>
+  </div>
+
+  <h2 id="lean">The Lean formalization</h2>
+  <p>Two formal developments exist. The <a href="https://github.com/JayPiZimmermann/Skip-Connections-Avoid-Spurious-Local-Minima/tree/main/LeanFormalization">original proof</a> grew with the research and spans several hundred modules; its public endpoints <code>centered_two_student_full_classification</code> and <code>noncentered_two_student_full_classification</code> are hypothesis-free: every configuration \((\beta,s,c,\theta)\) is covered. The repository behind this page, <a href="https://github.com/JayPiZimmermann/two-teacher-census">two-teacher-census</a>, carries a <em>short, self-contained</em> re-proof on the vocabulary of the <a href="https://github.com/JayPiZimmermann/Removing-spurious-minima-for-planar-features-by-skip-connections">paper's Lean development</a>: the same statements, a few files, no dependency on the research tree. Its status — which lemmas are proved and which are still open — is recorded in that repository's <code>PROOF_PLAN.md</code> and build certificate.</p>
+  <p>The explorer itself is theorem data: each table row is a constructor of the Lean classification, its angles and masses are evaluated from the row's closed forms (scalar roots are bracketed and bisected; they never decide criticality or type), and the map asset <code>census-map.js</code> is generated by driving the very same JavaScript through a headless shim, so the picture cannot drift from the table it claims to show.</p>
+
+  <h2 id="certificates">Certificates</h2>
+  <p>Where a computation rather than a proof script is the natural instrument — root enclosures, face witnesses, exhaustive enumerations — the repository ships interval-arithmetic certificates (200-bit enclosures, directed rounding) together with the scripts that regenerate and re-check them. The centered map is certified complete: 10 faces, 4 census values, 5 positive-area pieces, in exact agreement with the shipped map. The plain map's certified scope is listed in the completeness ledger.</p>
+
+  <h2 id="about">About</h2>
+  <p>This census is part of the project behind <a href="https://arxiv.org/abs/2610.01728"><em>Removing spurious minima for planar features by skip connections</em></a> (Zimmermann, Grillo, Balakin, Loho, 2026), where the classification serves as the laboratory for the paper's general-width theorems; it is not itself part of the paper. Page and code by <a href="https://jakob-zimmermann.fly.dev">Jakob Paul Zimmermann</a>.</p>
+</article>
+
+<footer>
+  <a href="https://github.com/JayPiZimmermann/two-teacher-census">Source</a> ·
+  <a href="https://arxiv.org/abs/2610.01728">Paper</a> ·
+  static page, no tracking
+</footer>
+
+<script>
+  // Deep links: ?model=plain or ?model=centered preselects the loss model
+  // before explorer.js initialises (it reads the select once at start-up).
+  (function () {
+    var m = new URLSearchParams(location.search).get("model");
+    if (!m) return;
+    var sel = document.getElementById("ex-regime");
+    if (/^(plain|relu|noncentered)$/i.test(m)) sel.value = "noncentered";
+    else if (/^centered$/i.test(m)) sel.value = "centered";
+  })();
+</script>
+<script src="explorer.js" defer></script>
+<script defer src="vendor/katex/katex.min.js"></script>
+<script defer src="vendor/katex/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.getElementById('theorems'), {delimiters: [{left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}], throwOnError: false});"></script>
+</body>
+</html>

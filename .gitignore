@@ -1,0 +1,13 @@
+.lake/
+*.olean
+*.ilean
+*.trace
+*.olean.hash
+*.ilean.hash
+__pycache__/
+cluster/log/
+cluster/last_build.log
+cluster/AxiomSweep.lean
+BUILD_CERTIFICATE.txt
+node_modules/
+.shots/
