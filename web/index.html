@@ -170,6 +170,11 @@
     table.critlist th, table.critlist td { white-space: normal; }
   }
 
+  /* ---- intro ---- */
+  .intro { max-width: var(--page); margin: 0 auto; padding: 1rem 2rem 0; }
+  .intro p { margin: 0; font-size: .98rem; line-height: 1.55; }
+  @media (max-width: 640px) { .intro { padding-inline: 1rem; } }
+
   /* ---- primer: four slots, one visible at a time, fixed height ---- */
   .primer { max-width: var(--page); margin: 0 auto; padding: .9rem 2rem 0; }
   .primer .tabs { display: flex; gap: .3rem; }
@@ -246,6 +251,7 @@
       </select>
     </label>
     <nav aria-label="Page">
+      <a href="#intro">Intro</a>
       <a href="#primer">Primer</a>
       <a href="#explorer">Explorer</a>
       <a href="#tutorial">How to read</a>
@@ -255,6 +261,10 @@
   </div>
   <p class="bar-sub">Explore every critical point of the Gaussian population loss landscape with a two hidden neuron student and teacher network.</p>
 </header>
+
+<section class="intro" id="intro">
+  <p>Understanding loss landscapes is central to explaining neural-network training, yet their structure remains only partially understood even in simple models. In the project <em>Learning Polytopes</em>, which led to the paper <a href="https://arxiv.org/abs/2610.01728">Removing spurious minima for planar features by skip connections</a>, we studied the smallest interesting case of teacher–student training: networks with two hidden neurons on planar Gaussian input. Even this case turned out to be surprisingly rich — but with agentic proof search we found closed formulas for <em>all</em> critical points for <em>any</em> teacher, and we mapped the sets of teacher parameters on which the types of local minima agree, the <em>census</em>. Below is an interactive presentation of that result. Play with it: set the teacher by drag and drop, and study every critical point it admits.</p>
+</section>
 
 <section class="primer" id="primer" aria-label="Primer">
   <div class="tabs" role="tablist">
