@@ -185,13 +185,14 @@
   }
   .primer .tabs button[aria-selected="true"] { background: var(--control-bg); color: var(--ink); font-weight: 600; }
   .primer .slot {
-    display: grid; grid-template-columns: 330px minmax(0, 1fr); gap: 1rem; align-items: start;
-    height: 16.5rem; overflow: hidden; border: 1px solid var(--rule); border-radius: 0 6px 6px 6px;
+    display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: 1rem; align-items: start;
+    height: 15.5rem; overflow: hidden; border: 1px solid var(--rule); border-radius: 0 6px 6px 6px;
     background: var(--control-bg); padding: .6rem .9rem;
   }
   .primer .slot[hidden] { display: none; }
   .primer .slot-text { grid-template-columns: minmax(0, 1fr); }
-  .primer .fig svg { width: 330px; height: auto; display: block; }
+  .primer .fig { align-self: center; }
+  .primer .fig svg { width: 340px; height: auto; display: block; }
   .primer .txt { font-size: .84rem; line-height: 1.45; }
   .primer .txt p { margin: 0 0 .4rem; }
   .primer .katex-display { margin: .25rem 0; }
@@ -259,59 +260,53 @@
 
 <section class="primer" id="primer" aria-label="Primer">
   <div class="tabs" role="tablist">
-    <button role="tab" aria-selected="true" data-tab="net">1 · Networks and loss</button>
-    <button role="tab" data-tab="crit">2 · Critical points</button>
+    <button role="tab" aria-selected="true" data-tab="net">1 · Networks</button>
+    <button role="tab" data-tab="crit">2 · Loss and critical points</button>
     <button role="tab" data-tab="census">3 · Census</button>
   </div>
   <div class="slot" data-slot="net">
-    <div class="fig"><svg viewBox="0 0 330 150" aria-label="Plain and skip network diagrams">
-  <defs><marker id="ah" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0L6,3L0,6Z" fill="var(--muted)"/></marker></defs>
+    <div class="fig"><svg viewBox="0 0 340 200" aria-label="Plain and skip network diagrams: two inputs, two ReLU neurons, one output; the skip network adds a direct linear edge b">
   <g font-size="9.5" fill="var(--muted)" text-anchor="middle">
-    <!-- plain -->
-    <text x="78" y="12" font-weight="600" fill="var(--ink)">plain network</text>
-    <g stroke="var(--rule)" stroke-width="1.1">
-      <line x1="38" y1="52" x2="78" y2="42"/><line x1="38" y1="52" x2="78" y2="102"/>
-      <line x1="38" y1="92" x2="78" y2="42"/><line x1="38" y1="92" x2="78" y2="102"/>
-      <line x1="78" y1="42" x2="122" y2="72"/><line x1="78" y1="102" x2="122" y2="72"/>
+    <text x="88" y="18" font-weight="600" fill="var(--ink)" font-size="11">plain network</text>
+    <g stroke="var(--rule)" stroke-width="1.3">
+      <line x1="28" y1="62" x2="92" y2="62"/><line x1="28" y1="142" x2="92" y2="142"/>
+      <line x1="28" y1="62" x2="92" y2="142"/><line x1="28" y1="142" x2="92" y2="62"/>
+      <line x1="92" y1="62" x2="148" y2="102"/><line x1="92" y1="142" x2="148" y2="102"/>
     </g>
-    <circle cx="38" cy="52" r="7" fill="var(--paper)" stroke="var(--ink)"/><circle cx="38" cy="92" r="7" fill="var(--paper)" stroke="var(--ink)"/>
-    <circle cx="78" cy="42" r="8" fill="var(--negative)" fill-opacity=".15" stroke="var(--negative)"/><circle cx="78" cy="102" r="8" fill="var(--negative)" fill-opacity=".15" stroke="var(--negative)"/>
-    <circle cx="122" cy="72" r="7" fill="var(--paper)" stroke="var(--ink)"/>
-    <text x="38" y="55" font-size="7" fill="var(--ink)">x₁</text><text x="38" y="95" font-size="7" fill="var(--ink)">x₂</text>
-    <text x="78" y="45" font-size="7" fill="var(--ink)">σ</text><text x="78" y="105" font-size="7" fill="var(--ink)">σ</text>
-    <text x="122" y="75" font-size="7" fill="var(--ink)">Σ</text>
-    <text x="54" y="38">w₀</text><text x="54" y="112">w₁</text>
-    <text x="104" y="50">s₀</text><text x="104" y="100">s₁</text>
-    <text x="38" y="128" font-size="9">x ∼ 𝒩(0, I₂)</text>
-    <text x="78" y="144" font-size="9">σ = ReLU</text>
-    <!-- skip -->
-    <text x="248" y="12" font-weight="600" fill="var(--ink)">skip network</text>
-    <g stroke="var(--rule)" stroke-width="1.1">
-      <line x1="208" y1="52" x2="248" y2="42"/><line x1="208" y1="52" x2="248" y2="102"/>
-      <line x1="208" y1="92" x2="248" y2="42"/><line x1="208" y1="92" x2="248" y2="102"/>
-      <line x1="248" y1="42" x2="292" y2="72"/><line x1="248" y1="102" x2="292" y2="72"/>
+    <circle cx="28" cy="62" r="9" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.2"/><circle cx="28" cy="142" r="9" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.2"/>
+    <text x="28" y="65.5" font-size="9" fill="var(--ink)">x₁</text><text x="28" y="145.5" font-size="9" fill="var(--ink)">x₂</text>
+    <circle cx="92" cy="62" r="11" fill="var(--negative)"/><circle cx="92" cy="142" r="11" fill="var(--negative)"/>
+    <polyline points="85,66 92,66 98,57" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="85,146 92,146 98,137" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="148" cy="102" r="9" fill="var(--ink)"/><text x="148" y="105.5" font-size="9" fill="var(--paper)">Σ</text>
+    <text x="60" y="56" font-size="10">w₀</text><text x="60" y="157" font-size="10">w₁</text>
+    <text x="126" y="78" font-size="10">s₀</text><text x="126" y="134" font-size="10">s₁</text>
+    <text x="28" y="176" font-size="9">x ∼ 𝒩(0, I₂)</text>
+    <text x="258" y="18" font-weight="600" fill="var(--ink)" font-size="11">skip network</text>
+    <g stroke="var(--rule)" stroke-width="1.3">
+      <line x1="198" y1="62" x2="262" y2="62"/><line x1="198" y1="142" x2="262" y2="142"/>
+      <line x1="198" y1="62" x2="262" y2="142"/><line x1="198" y1="142" x2="262" y2="62"/>
+      <line x1="262" y1="62" x2="318" y2="102"/><line x1="262" y1="142" x2="318" y2="102"/>
     </g>
-    <path d="M208,52 C240,22 272,22 292,66" fill="none" stroke="var(--accent)" stroke-width="1.3"/>
-    <path d="M208,92 C240,124 272,124 292,78" fill="none" stroke="var(--accent)" stroke-width="1.3"/>
-    <circle cx="208" cy="52" r="7" fill="var(--paper)" stroke="var(--ink)"/><circle cx="208" cy="92" r="7" fill="var(--paper)" stroke="var(--ink)"/>
-    <circle cx="248" cy="42" r="8" fill="var(--negative)" fill-opacity=".15" stroke="var(--negative)"/><circle cx="248" cy="102" r="8" fill="var(--negative)" fill-opacity=".15" stroke="var(--negative)"/>
-    <circle cx="292" cy="72" r="7" fill="var(--paper)" stroke="var(--ink)"/>
-    <text x="208" y="55" font-size="7" fill="var(--ink)">x₁</text><text x="208" y="95" font-size="7" fill="var(--ink)">x₂</text>
-    <text x="248" y="45" font-size="7" fill="var(--ink)">σ</text><text x="248" y="105" font-size="7" fill="var(--ink)">σ</text>
-    <text x="292" y="75" font-size="7" fill="var(--ink)">Σ</text>
-    <text x="224" y="38">w₀</text><text x="224" y="112">w₁</text>
-    <text x="274" y="50">s₀</text><text x="274" y="100">s₁</text>
-    <text x="262" y="30" fill="var(--accent)">b</text><text x="262" y="124" fill="var(--accent)">b</text>
-    <text x="208" y="128" font-size="9">x ∼ 𝒩(0, I₂)</text>
-    <text x="248" y="144" font-size="9">σ = ReLU, plus ⟨b, x⟩</text>
+    <path d="M198,62 C228,12 308,12 318,94" fill="none" stroke="var(--accent)" stroke-width="1.5"/>
+    <path d="M198,142 C228,192 308,192 318,110" fill="none" stroke="var(--accent)" stroke-width="1.5"/>
+    <text x="300" y="40" fill="var(--accent)" font-size="10">b</text><text x="300" y="170" fill="var(--accent)" font-size="10">b</text>
+    <circle cx="198" cy="62" r="9" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.2"/><circle cx="198" cy="142" r="9" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.2"/>
+    <text x="198" y="65.5" font-size="9" fill="var(--ink)">x₁</text><text x="198" y="145.5" font-size="9" fill="var(--ink)">x₂</text>
+    <circle cx="262" cy="62" r="11" fill="var(--negative)"/><circle cx="262" cy="142" r="11" fill="var(--negative)"/>
+    <polyline points="255,66 262,66 268,57" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="255,146 262,146 268,137" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="318" cy="102" r="9" fill="var(--ink)"/><text x="318" y="105.5" font-size="9" fill="var(--paper)">Σ</text>
+    <text x="230" y="56" font-size="10">w₀</text><text x="230" y="157" font-size="10">w₁</text>
+    <text x="296" y="78" font-size="10">s₀</text><text x="296" y="134" font-size="10">s₁</text>
+    <text x="198" y="176" font-size="9">x ∼ 𝒩(0, I₂)</text>
   </g>
 </svg></div>
     <div class="txt">
       <p>Both networks read a planar Gaussian input \(x\sim\mathcal N(0,I_2)\) through <em>two hidden neurons</em>. Teacher \((s,\beta)\) and student \((c,\theta)\) have the same shape,
-      \[f_{s,\beta}(x)=\sum_{i=0}^{1} s_i\,\sigma(\langle w_i,x\rangle)\;[\,+\langle b,x\rangle\,],\qquad w_i=(\cos\beta_i,\sin\beta_i),\]
-      with \(\sigma=\mathrm{ReLU}\). The second-layer weight \(s_i\in\mathbb R\) is the <b>mass</b> of neuron \(i\) — <em>positive or negative</em>, both signs are admitted throughout — and the <b>generator</b> of the neuron is the second-layer scalar times the first-layer vector, \(g_i=s_i w_i\): a vector of length \(\lvert s_i\rvert\) in direction \(\beta_i\). <b>Plain network:</b> the formula without the bracket. <b>Skip network:</b> with the learned linear skip \(\langle b,x\rangle\); minimising over \(b\) first replaces each ReLU by its even part \(\sigma_C(z)=\mathrm{ReLU}(z)-\tfrac12 z=\tfrac12\lvert z\rvert\), so a neuron responds identically to \(x\) and \(-x\): its direction matters only up to sign, the critical points do not depend on that sign, and the explorer therefore draws a skip-network generator as a segment through the origin, centered at it.</p>
-      <p><b>Scaling symmetry.</b> ReLU is positively homogeneous, \(\sigma(\lambda z)=\lambda\sigma(z)\) for \(\lambda>0\), so \((s_i,w_i)\mapsto(s_i/\lambda,\lambda w_i)\) changes neither the generator nor the network function, so the critical points of the full parametrisation are those of the (mass, direction) parametrisation used here. <b>Population loss.</b> The teacher is fixed and the student is scored by the mean squared difference of the outputs,
-      \(\mathscr L(c,\theta)=\tfrac12\,\mathbb E_{x\sim\mathcal N(0,I_2)}\bigl(f_{c,\theta}(x)-f_{s,\beta}(x)\bigr)^2\).</p>
+      \[f_{s,\beta}(x)=\sum_{i=0}^{1} s_i\,\mathrm{ReLU}(\langle w_i,x\rangle)\;[\,+\langle b,x\rangle\,],\qquad w_i=(\cos\beta_i,\sin\beta_i),\]
+      with \(\mathrm{ReLU}(z)=\max(z,0)\). The second-layer weight \(s_i\in\mathbb R\) is the <b>mass</b> of neuron \(i\) — <em>positive or negative</em>, both signs are admitted throughout — and the <b>generator</b> of the neuron is the second-layer scalar times the first-layer vector, \(g_i=s_i w_i\): a vector of length \(\lvert s_i\rvert\) in direction \(\beta_i\). <b>Plain network:</b> the formula without the bracket. <b>Skip network:</b> with the learned linear skip \(\langle b,x\rangle\); minimising over \(b\) first replaces each ReLU by its even part \(\mathrm{ReLU}(z)-\tfrac12 z=\tfrac12\lvert z\rvert\), so a neuron responds identically to \(x\) and \(-x\): its direction matters only up to sign, the critical points do not depend on that sign, and the explorer therefore draws a skip-network generator as a segment through the origin, centered at it.</p>
+      <p><b>Scaling symmetry.</b> ReLU is positively homogeneous, \(\mathrm{ReLU}(\lambda z)=\lambda\,\mathrm{ReLU}(z)\) for \(\lambda>0\), so \((s_i,w_i)\mapsto(s_i/\lambda,\lambda w_i)\) changes neither the generator nor the network function, so the critical points of the full parametrisation are those of the (mass, direction) parametrisation used here.</p>
     </div>
   </div>
   <div class="slot" data-slot="crit" hidden>
@@ -333,7 +328,7 @@
   </g>
 </svg></div>
     <div class="txt">
-      <p>A student \((c,\theta)\in\mathbb R^2\times\mathbb R^2\) is a <b>critical point</b> if \(\nabla\mathscr L(c,\theta)=0\). A critical point is a <b>local minimum</b> if \(\mathscr L\ge\mathscr L(c,\theta)\) on a neighbourhood — <em>strict</em> if the inequality is strict away from the point, <em>flat</em> otherwise; a <b>local maximum</b> if \(\mathscr L\le\mathscr L(c,\theta)\) on a neighbourhood; a <b>saddle</b> if it is neither. The <b>global minimum</b> is a critical point at which \(\mathscr L\) attains its smallest value; in this setting it always exists and the value is \(0\), because the student can copy the teacher. A <b>spurious minimum</b> is a local minimum that is not global: this is what can trap gradient descent.</p>
+      <p><b>Population loss.</b> The teacher is fixed and the student is scored by the mean squared difference of the outputs over the Gaussian input, \(\mathscr L(c,\theta)=\tfrac12\,\mathbb E_{x\sim\mathcal N(0,I_2)}\bigl(f_{c,\theta}(x)-f_{s,\beta}(x)\bigr)^2\). A student \((c,\theta)\in\mathbb R^2\times\mathbb R^2\) is a <b>critical point</b> if \(\nabla\mathscr L(c,\theta)=0\). A critical point is a <b>local minimum</b> if \(\mathscr L\ge\mathscr L(c,\theta)\) on a neighbourhood — <em>strict</em> if the inequality is strict away from the point, <em>flat</em> otherwise; a <b>local maximum</b> if \(\mathscr L\le\mathscr L(c,\theta)\) on a neighbourhood; a <b>saddle</b> if it is neither. The <b>global minimum</b> is a critical point at which \(\mathscr L\) attains its smallest value; in this setting it always exists and the value is \(0\), because the student can copy the teacher. A <b>spurious minimum</b> is a local minimum that is not global: this is what can trap gradient descent.</p>
       <p>Each spurious minimum gets a <b>type</b>: <em>collided</em> (co) if the two students share a direction, \(\theta_0\equiv\theta_1\), <em>separated</em> (sep) otherwise; with <em>same-sign</em> (+) or <em>opposite-sign</em> (±) masses \(c_0c_1\gtrless0\). The classification gives, for every teacher, the complete list of critical points in closed form and the type of each; the table of the explorer lists them.</p>
     </div>
   </div>
