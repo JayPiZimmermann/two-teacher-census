@@ -698,12 +698,33 @@
         // different censuses whose examples happen to land close together must
         // both keep their dot, or a region loses the only way to reach it.
         var drawnDots = [];
-        function dotIsNew(x, y, census) {
+        // The map is drawn folded onto half a period, so a region's two
+        // mirror halves (and a piece's reflected twin) land on one another.
+        // One dot per VISIBLE region: a dot is skipped when a dot of the same
+        // census already sits at the same height on a folded x-range that
+        // overlaps this piece's.
+        function foldedRange(piece) {
+          if (piece._fx) return piece._fx;
+          var lo = Infinity, hi = -Infinity, nx = built.nx || 6144;
+          (piece.loops || []).forEach(function (loop) {
+            loop.forEach(function (q) {
+              var u = Math.min(q[0], nx - q[0]) / (nx / 2);
+              if (u < lo) lo = u;
+              if (u > hi) hi = u;
+            });
+          });
+          piece._fx = [lo, hi];
+          return piece._fx;
+        }
+        function dotIsNew(x, y, census, piece) {
+          var r = foldedRange(piece);
           for (var k = 0; k < drawnDots.length; k += 1) {
             var d = drawnDots[k];
-            if (d[2] === census && Math.abs(d[0] - x) < 7 && Math.abs(d[1] - y) < 7) return false;
+            if (d[2] !== census || Math.abs(d[1] - y) >= 7) continue;
+            var o = Math.min(r[1], d[3][1]) - Math.max(r[0], d[3][0]);
+            if (o > 0.5 * Math.min(r[1] - r[0], d[3][1] - d[3][0])) return false;
           }
-          drawnDots.push([x, y, census]);
+          drawnDots.push([x, y, census, r]);
           return true;
         }
         built.pieces.forEach(function (piece) {
@@ -718,11 +739,16 @@
             loop.forEach(function (q) { if (q[0] < minGx) minGx = q[0]; });
           });
           if (minGx >= nx / 2) return;
-          var d = piece.loops.map(function (loop) {
-            return loop.map(function (q, k) {
-              return (k ? "L" : "M") + X(q[0]).toFixed(2) + "," + Y(q[1]).toFixed(2);
-            }).join(" ") + " Z";
-          }).join(" ");
+          // The outline path depends on the frame only, not on zoom or the
+          // teacher, so it is built once per piece and cached on the asset.
+          if (!piece._d) {
+            piece._d = piece.loops.map(function (loop) {
+              return loop.map(function (q, k) {
+                return (k ? "L" : "M") + X(q[0]).toFixed(2) + "," + Y(q[1]).toFixed(2);
+              }).join(" ") + " Z";
+            }).join(" ");
+          }
+          var d = piece._d;
           // Highlight by LIFTING the picked census towards white with its own
           // solid token.  Outlining it and dimming the rest produced the
           // boundary artifacts: a piece overlaps its mirror twin, so a
@@ -756,7 +782,7 @@
           // and a folded one shows the mirror bar on the ring.
           var dx = Math.min(piece.at[0], 1 - piece.at[0]);
           var ex = F.dx + F.dw * 2 * dx, ey = F.dy + F.dh * (1 - piece.at[1]);
-          if (!dotIsNew(ex, ey, piece.id)) return;   // the twin already marked it
+          if (!dotIsNew(ex, ey, piece.id, piece)) return;   // the twin already marked it
           svg.appendChild(svgEl("circle", {cx: ex, cy: ey, r: 3 * ms,
             fill: "var(--ink)", "fill-opacity": 0.72, stroke: "var(--paper)",
             "stroke-width": 1, "vector-effect": "non-scaling-stroke",
@@ -2397,10 +2423,26 @@
         render();
       });
     });
+    // Each network type opens on its own teacher network: a plain one with a
+    // separated saddle and three collided families, a skip one inside the
+    // two-positive-trap lens.  Values are (beta0, beta1 in units of pi, s0, s1).
+    var DEFAULT_TEACHER = {
+      noncentered: ["0.000", "0.800", "1.4000", "1.2000"],
+      centered: ["0.000", "0.480", "1.6000", "-1.2000"]
+    };
+    function applyDefaultTeacher(model) {
+      var d = DEFAULT_TEACHER[model];
+      if (!d) return;
+      ["t-beta0", "t-beta1", "t-s0", "t-s1"].forEach(function (id, k) {
+        var el = document.getElementById(id);
+        if (el) el.value = d[k];
+      });
+    }
     document.getElementById("ex-regime").addEventListener("change", function () {
       releaseTrap();
       selection = null;
       applyRegimeToControls();
+      applyDefaultTeacher(modelName());
       render();
     });
     // Opt-in hook for precompute_census_map.js, which needs the very same
@@ -2476,6 +2518,12 @@
       drawFigure(lastDraw.model, lastDraw.T, lastDraw.chosen);
       drawMap(lastDraw.model, lastDraw.T);
     }
+    var pendingRedraw = false;
+    function redrawPanel(svgId) {
+      if (!lastDraw) return;
+      if (svgId === "ex-map") drawMap(lastDraw.model, lastDraw.T);
+      else drawFigure(lastDraw.model, lastDraw.T, lastDraw.chosen);
+    }
 
     // ZOOM AND PAN.  Both panels zoom by shrinking the SVG's own viewBox about
     // the pointer, so the drawing keeps its pixel size and the page never
@@ -2513,7 +2561,16 @@
         // cached classification.  This never re-solves anything -- `redrawOnly`
         // reuses the rows `render` already computed.
         markScale[svgId === "ex-map" ? "map" : "canvas"] = v.w / boxW;
-        redrawOnly();
+        // The viewBox change is instant; the marker redraw is coalesced to one
+        // per animation frame and limited to the zoomed panel, so a burst of
+        // wheel events does not rebuild the whole map for each tick.
+        if (!pendingRedraw) {
+          pendingRedraw = true;
+          (window.requestAnimationFrame || function (f) { setTimeout(f, 16); })(function () {
+            pendingRedraw = false;
+            redrawPanel(svgId);
+          });
+        }
       }
       function at(event) {                       // pointer, in the svg's own units
         var r = node.getBoundingClientRect();
@@ -2599,6 +2656,7 @@
     }());
 
     applyRegimeToControls();
+    if (typeof globalThis === "undefined" || !globalThis.__censusExport) applyDefaultTeacher(modelName());
     render();
   }
 
