@@ -186,10 +186,11 @@
   .primer .tabs button[aria-selected="true"] { background: var(--control-bg); color: var(--ink); font-weight: 600; }
   .primer .slot {
     display: grid; grid-template-columns: 330px minmax(0, 1fr); gap: 1rem; align-items: start;
-    height: 13rem; overflow: hidden; border: 1px solid var(--rule); border-radius: 0 6px 6px 6px;
+    height: 16.5rem; overflow: hidden; border: 1px solid var(--rule); border-radius: 0 6px 6px 6px;
     background: var(--control-bg); padding: .6rem .9rem;
   }
   .primer .slot[hidden] { display: none; }
+  .primer .slot-text { grid-template-columns: minmax(0, 1fr); }
   .primer .fig svg { width: 330px; height: auto; display: block; }
   .primer .txt { font-size: .84rem; line-height: 1.45; }
   .primer .txt p { margin: 0 0 .4rem; }
@@ -253,15 +254,14 @@
 </header>
 
 <section class="intro" id="intro">
-  <p>Understanding loss landscapes is central to explaining neural-network training, yet their structure remains only partially understood even in simple models. In the project <em>Learning Polytopes</em>, which led to the paper <a href="https://arxiv.org/abs/2610.01728">Removing spurious minima for planar features by skip connections</a>, we studied the smallest interesting case of teacher–student training: networks with two hidden neurons on planar Gaussian input. Even this case turned out to be surprisingly rich — but with agentic proof search we found closed formulas for <em>all</em> critical points for <em>any</em> teacher, and we mapped the sets of teacher parameters on which the types of local minima agree, the <em>census</em>. Below is an interactive presentation of that result. You can drag and drop the teacher parameters and study every critical point the resulting landscape admits.</p>
+  <p>Understanding loss landscapes is central to explaining neural-network training, yet their structure remains only partially understood even in simple models. In the project <em>Learning Polytopes</em>, which led to the paper <a href="https://arxiv.org/abs/2610.01728">Removing spurious minima for planar features by skip connections</a>, we started by studying the smallest interesting case of teacher–student training: networks with two hidden neurons on planar Gaussian input. Even this case turned out to be surprisingly rich — but with agentic proof search we found closed formulas for <em>all</em> critical points for <em>any</em> teacher, and we mapped the sets of teacher parameters on which the types of local minima agree, the <em>census</em>. Below is an interactive presentation of that result. You can drag and drop the teacher parameters and study every critical point the resulting landscape admits.</p>
 </section>
 
 <section class="primer" id="primer" aria-label="Primer">
   <div class="tabs" role="tablist">
-    <button role="tab" aria-selected="true" data-tab="net">1 · Networks</button>
-    <button role="tab" data-tab="loss">2 · Population loss</button>
-    <button role="tab" data-tab="crit">3 · Critical points</button>
-    <button role="tab" data-tab="census">4 · Census</button>
+    <button role="tab" aria-selected="true" data-tab="net">1 · Networks and loss</button>
+    <button role="tab" data-tab="crit">2 · Critical points</button>
+    <button role="tab" data-tab="census">3 · Census</button>
   </div>
   <div class="slot" data-slot="net">
     <div class="fig"><svg viewBox="0 0 330 150" aria-label="Plain and skip network diagrams">
@@ -307,87 +307,40 @@
   </g>
 </svg></div>
     <div class="txt">
-      <p>Both networks read a planar Gaussian input \(x\sim\mathcal N(0,I_2)\) through <em>two hidden neurons</em>. Teacher \((s,\beta)\) and student \((c,\theta)\) have the same shape:
-      \[f_{s,\beta}(x)=\sum_{i=0}^{1} s_i\,\sigma(\langle w_i,x\rangle)\;[\,+\langle b,x\rangle\,],\qquad w_i=(\cos\beta_i,\sin\beta_i).\]
-      <b>Plain network:</b> \(\sigma=\mathrm{ReLU}\), no skip. <b>Skip network:</b> the same plus a learned linear skip \(\langle b,x\rangle\); at the optimal \(b\) it computes the centered feature \(\sigma_C(z)=\tfrac12\lvert z\rvert\), so a direction becomes an unoriented line.</p>
-      <p><b>Generators.</b> The <em>generator</em> of neuron \(i\) is the second-layer scalar times the first-layer vector, \(g_i=s_i\,w_i\): a vector of length \(\lvert s_i\rvert\) (the <em>mass</em>) in direction \(\beta_i\). <b>Scaling symmetry.</b> ReLU is positively homogeneous, \(\sigma(\lambda z)=\lambda\sigma(z)\) for \(\lambda>0\), so \((s_i,w_i)\mapsto(s_i/\lambda,\lambda w_i)\) leaves \(g_i\) and the network function unchanged. The loss therefore depends on each neuron only through its generator, and the critical points of the full parametrisation are exactly those of the (mass, direction) parametrisation drawn in the explorer.</p>
-    </div>
-  </div>
-  <div class="slot" data-slot="loss" hidden>
-    <div class="fig"><svg viewBox="0 0 330 150" aria-label="Teacher and student outputs around the circle and their squared difference">
-  <g font-size="9.5" fill="var(--muted)" text-anchor="middle">
-    <line x1="20" y1="110" x2="320" y2="110" stroke="var(--rule)"/>
-    <line x1="20" y1="20" x2="20" y2="110" stroke="var(--rule)"/>
-    <path d="M20,80 C60,30 100,30 140,80 S220,130 260,80 S300,40 320,70" fill="none" stroke="var(--negative)" stroke-width="1.6"/>
-    <path d="M20,95 C60,55 100,45 140,70 S220,110 260,95 S300,55 320,60" fill="none" stroke="var(--positive)" stroke-width="1.6" stroke-dasharray="6 3"/>
-    <path d="M20,80 C60,30 100,30 140,80 S220,130 260,80 S300,40 320,70 L320,60 C300,55 300,55 260,95 S220,110 140,70 S60,55 20,95 Z" fill="var(--ink)" fill-opacity=".08"/>
-    <text x="20" y="124">0</text><text x="170" y="124">direction of x</text><text x="320" y="124">2π</text>
-    <text x="60" y="30" fill="var(--negative)">teacher output</text>
-    <text x="250" y="140" fill="var(--positive)">student output</text>
-    <text x="150" y="20" fill="var(--ink)">shaded: squared difference, averaged over x</text>
-  </g>
-</svg></div>
-    <div class="txt">
-      <p>The teacher is fixed; the student is scored by the <b>population loss</b>, the mean squared difference of the two network outputs over the Gaussian input:
-      \[\mathscr L(c,\theta)=\tfrac12\,\mathbb E_{x\sim\mathcal N(0,I_2)}\bigl(f_{c,\theta}(x)-f_{s,\beta}(x)\bigr)^2 .\]
-      Because both outputs are positively homogeneous in \(x\), the expectation depends only on the angles between generators, and Gaussian pair moments give the closed kernel form
-      \(2\pi\mathscr L=\tfrac\kappa2(c_0^2+c_1^2)+c_0c_1\,\Phi(\theta_0-\theta_1)-\sum_i c_i\,P(\theta_i)+\mathrm{const}\), with \(\Phi_R(t)=(\pi-t)\cos t+\sin t\) for the plain and \(\Phi_C(t)=(\tfrac\pi2-t)\cos t+\sin t\) for the skip network on \([0,\pi]\), and the teacher potential \(P(t)=\sum_j s_j\,\Phi(t-\beta_j)\).</p>
-      <p>The student can copy the teacher, so the minimum value of \(\mathscr L\) is \(0\): the question is whether gradient descent can find it, i.e. which <em>other</em> minima the landscape has.</p>
+      <p>Both networks read a planar Gaussian input \(x\sim\mathcal N(0,I_2)\) through <em>two hidden neurons</em>. Teacher \((s,\beta)\) and student \((c,\theta)\) have the same shape,
+      \[f_{s,\beta}(x)=\sum_{i=0}^{1} s_i\,\sigma(\langle w_i,x\rangle)\;[\,+\langle b,x\rangle\,],\qquad w_i=(\cos\beta_i,\sin\beta_i),\]
+      with \(\sigma=\mathrm{ReLU}\). The second-layer weight \(s_i\in\mathbb R\) is the <b>mass</b> of neuron \(i\) — <em>positive or negative</em>, both signs are admitted throughout — and the <b>generator</b> of the neuron is the second-layer scalar times the first-layer vector, \(g_i=s_i w_i\): a vector of length \(\lvert s_i\rvert\) in direction \(\beta_i\). <b>Plain network:</b> the formula without the bracket. <b>Skip network:</b> with the learned linear skip \(\langle b,x\rangle\); minimising over \(b\) first replaces each ReLU by its even part \(\sigma_C(z)=\mathrm{ReLU}(z)-\tfrac12 z=\tfrac12\lvert z\rvert\), so a neuron responds identically to \(x\) and \(-x\): its direction matters only up to sign, the critical points do not depend on that sign, and the explorer therefore draws a skip-network generator as a segment through the origin, centered at it.</p>
+      <p><b>Scaling symmetry.</b> ReLU is positively homogeneous, \(\sigma(\lambda z)=\lambda\sigma(z)\) for \(\lambda>0\), so \((s_i,w_i)\mapsto(s_i/\lambda,\lambda w_i)\) changes neither the generator nor the network function, so the critical points of the full parametrisation are those of the (mass, direction) parametrisation used here. <b>Population loss.</b> The teacher is fixed and the student is scored by the mean squared difference of the outputs,
+      \(\mathscr L(c,\theta)=\tfrac12\,\mathbb E_{x\sim\mathcal N(0,I_2)}\bigl(f_{c,\theta}(x)-f_{s,\beta}(x)\bigr)^2\).</p>
     </div>
   </div>
   <div class="slot" data-slot="crit" hidden>
-    <div class="fig"><svg viewBox="0 0 330 150" aria-label="Sketches of a strict local minimum, a flat local minimum, a saddle and the global minimum">
-  <g font-size="9.5" fill="var(--muted)" text-anchor="middle" stroke-linecap="round">
-    <g transform="translate(5,10)">
-      <path d="M5,20 C25,80 45,80 65,20" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
-      <circle cx="35" cy="65" r="2.6" fill="var(--accent)"/>
-      <text x="35" y="100">strict local min</text>
-    </g>
-    <g transform="translate(85,10)">
-      <path d="M5,20 C20,70 25,70 35,70 S50,70 65,20" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
-      <line x1="25" y1="70" x2="45" y2="70" stroke="var(--accent)" stroke-width="3"/>
-      <text x="35" y="100">flat local min</text>
-    </g>
-    <g transform="translate(165,10)">
-      <path d="M5,25 C25,60 45,60 65,25" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
-      <path d="M20,75 C30,45 40,45 50,75" fill="none" stroke="var(--ink)" stroke-width="1.6" stroke-dasharray="4 3"/>
-      <circle cx="35" cy="52" r="2.6" fill="var(--fail-rule)"/>
-      <text x="35" y="100">saddle</text>
-    </g>
-    <g transform="translate(245,10)">
-      <line x1="5" y1="80" x2="65" y2="80" stroke="var(--rule)"/>
-      <path d="M5,20 C25,80 45,80 65,20" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
-      <circle cx="35" cy="65" r="2.6" fill="var(--accent)"/>
-      <text x="70" y="83" font-size="8" text-anchor="end">𝓛 = 0</text>
-      <text x="35" y="100">global min</text>
-    </g>
+    <div class="fig"><svg viewBox="0 0 330 150" aria-label="One loss curve showing a strict local minimum, a saddle, a flat local minimum and the global minimum">
+  <g font-size="9" fill="var(--muted)" text-anchor="middle">
+    <line x1="6" y1="132" x2="326" y2="132" stroke="var(--rule)"/>
+    <text x="322" y="128" font-size="8" text-anchor="end">𝓛 = 0</text>
+    <path d="M8,25 C30,25 40,105 60,105 C80,105 90,55 105,55 C120,55 135,80 150,80 C165,80 175,110 190,110 L230,110 C250,110 255,60 270,60 C285,60 290,132 305,132 C318,132 322,110 326,100" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
+    <line x1="190" y1="110" x2="230" y2="110" stroke="var(--accent)" stroke-width="3.5"/>
+    <circle cx="60" cy="105" r="3" fill="var(--accent)"/>
+    <circle cx="150" cy="80" r="3" fill="var(--fail-rule)"/>
+    <circle cx="305" cy="132" r="3" fill="var(--accent)"/>
+    <text x="60" y="122">strict local min</text>
+    <text x="150" y="96" fill="var(--fail-rule)">saddle</text>
+    <text x="210" y="124">flat local min</text>
+    <text x="300" y="146">global min</text>
+    <text x="105" y="48">local max</text>
+    <text x="18" y="14" text-anchor="start">𝓛</text>
   </g>
 </svg></div>
     <div class="txt">
-      <p>A student \((c,\theta)\in\mathbb R^2\times\mathbb R^2\) is a <b>critical point</b> if \(\nabla\mathscr L(c,\theta)=0\). It is a <b>local minimum</b> if \(\mathscr L\ge\mathscr L(c,\theta)\) on a neighbourhood — <em>strict</em> if the inequality is strict away from the point, <em>flat</em> if a whole line of minima passes through it (here: both students on one direction, only the sum of their masses fixed). It is the <b>global minimum</b> if \(\mathscr L(c,\theta)=0\), the exact fit of the teacher; a <b>spurious minimum</b> if local but not global; a <b>saddle</b> if critical but neither a local minimum nor a local maximum.</p>
-      <p>Each spurious minimum gets a <b>type</b>: <em>collided</em> (co) if the two students share a direction, \(\theta_0\equiv\theta_1\), <em>separated</em> (sep) otherwise; with <em>same-sign</em> (+) or <em>opposite-sign</em> (±) masses \(c_0c_1\gtrless0\). The classification proves, for every teacher, the complete list of critical points and the type of each.</p>
+      <p>A student \((c,\theta)\in\mathbb R^2\times\mathbb R^2\) is a <b>critical point</b> if \(\nabla\mathscr L(c,\theta)=0\). A critical point is a <b>local minimum</b> if \(\mathscr L\ge\mathscr L(c,\theta)\) on a neighbourhood — <em>strict</em> if the inequality is strict away from the point, <em>flat</em> otherwise; a <b>local maximum</b> if \(\mathscr L\le\mathscr L(c,\theta)\) on a neighbourhood; a <b>saddle</b> if it is neither. The <b>global minimum</b> is a critical point at which \(\mathscr L\) attains its smallest value; in this setting it always exists and the value is \(0\), because the student can copy the teacher. A <b>spurious minimum</b> is a local minimum that is not global: this is what can trap gradient descent.</p>
+      <p>Each spurious minimum gets a <b>type</b>: <em>collided</em> (co) if the two students share a direction, \(\theta_0\equiv\theta_1\), <em>separated</em> (sep) otherwise; with <em>same-sign</em> (+) or <em>opposite-sign</em> (±) masses \(c_0c_1\gtrless0\). The classification gives, for every teacher, the complete list of critical points in closed form and the type of each; the table of the explorer lists them.</p>
     </div>
   </div>
-  <div class="slot" data-slot="census" hidden>
-    <div class="fig"><svg viewBox="0 0 330 150" aria-label="Schematic census map: the teacher plane coloured by which spurious minima occur">
-  <g font-size="9.5" fill="var(--muted)" text-anchor="middle">
-    <rect x="40" y="15" width="270" height="105" fill="#ffd166" stroke="var(--rule)"/>
-    <path d="M40,67 L310,67 L310,120 L40,120 Z" fill="#6a8ede"/>
-    <path d="M40,67 C120,50 200,45 310,40 L310,67 Z" fill="#ef6f6c"/>
-    <path d="M200,120 C230,90 280,90 310,120 Z" fill="#67c27a"/>
-    <line x1="40" y1="67" x2="310" y2="67" stroke="var(--ink)" stroke-opacity=".6" stroke-width="1.6"/>
-    <circle cx="150" cy="35" r="2.6" fill="var(--ink)" fill-opacity=".7"/><circle cx="120" cy="95" r="2.6" fill="var(--ink)" fill-opacity=".7"/><circle cx="265" cy="110" r="2.6" fill="var(--ink)" fill-opacity=".7"/>
-    <text x="150" y="30" fill="var(--ink)" font-size="8.5">M = {co⁺}</text>
-    <text x="120" y="90" fill="var(--ink)" font-size="8.5">M = {co±}</text>
-    <text x="260" y="98" fill="var(--ink)" font-size="8.5">M = {co±, sep⁺}</text>
-    <text x="175" y="134">teacher gap β̂</text>
-    <text x="22" y="70" transform="rotate(-90 22 70)">mass ratio y</text>
-    <text x="175" y="63" font-size="8" fill="var(--ink)">a one-dimensional census: a line of special teachers</text>
-  </g>
-</svg></div>
+  <div class="slot slot-text" data-slot="census" hidden>
     <div class="txt">
-      <p>For a teacher \((s,\beta)\) write \(\mathsf M(s,\beta)\) for the <b>multiset of types of its spurious minima</b>, e.g. \(\{\mathrm{co}^{\pm}\}\) or \(\{2\times\mathrm{co}^{+},\mathrm{sep}^{\pm}\}\); the exact fit is present for every teacher and not listed. A <b>census</b> is a set of teachers with the same \(\mathsf M\).</p>
-      <p>Rotating, reflecting, swapping and jointly rescaling the teacher's generators does not change \(\mathsf M\), so a teacher is a point of a plane: horizontal the <em>gap</em> \(\widehat\beta=\beta_1-\beta_0\) (half a period suffices), vertical the <em>mass ratio</em> \(y\), folded so that \(y=\pm1\) is \(\lvert s_0\rvert=\lvert s_1\rvert\) and \(y=0\) a vanishing mass. The <b>census map</b> colours this plane by \(\mathsf M\). Censuses can also be curves or single points: teachers with equal masses, a zero mass, or a right angle, whose landscape is special. Click any region to load one of its teachers and see its critical points in the table.</p>
+      <p>For a teacher \((s,\beta)\) write \(\mathsf M(s,\beta)\) for the <b>multiset of types of its spurious minima</b>, e.g. \(\{\mathrm{co}^{\pm}\}\) or \(\{2\times\mathrm{co}^{+},\mathrm{sep}^{\pm}\}\); the global minimum is present for every teacher and not listed. A <b>census</b> is a set of teachers with the same \(\mathsf M\).</p>
+      <p>Rotating, reflecting, swapping and jointly rescaling the teacher's generators does not change \(\mathsf M\), so a teacher is a point of a plane: horizontal the <em>gap</em> \(\widehat\beta=\beta_1-\beta_0\) (half a period suffices), vertical the <em>mass ratio</em> \(y\), folded so that \(y=\pm1\) is \(\lvert s_0\rvert=\lvert s_1\rvert\) and \(y=0\) a vanishing mass. The <b>census map</b> colours this plane by \(\mathsf M\). Censuses can also be curves or single points: teachers with equal masses, a zero mass, or a right angle, whose landscape is special. Click any region of the map to load one of its teachers and see its critical points in the table.</p>
     </div>
   </div>
 </section>
