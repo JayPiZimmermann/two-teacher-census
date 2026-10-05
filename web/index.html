@@ -308,7 +308,7 @@
     <div class="txt">
       <p>Both networks read a planar Gaussian input \(x\sim\mathcal N(0,I_2)\) through <em>two hidden neurons</em>. The teacher network with parameters \((s,\beta)\) and the student network with parameters \((c,\theta)\) have the same shape,
       \[f_{s,\beta}(x)=\sum_{i=0}^{1} s_i\,\mathrm{ReLU}(\langle w_i,x\rangle)\;[\,+\langle b,x\rangle\,],\qquad w_i=(\cos\beta_i,\sin\beta_i),\]
-      with \(\mathrm{ReLU}(z)=\max(z,0)\) and unit directions \(w_i\). For a neuron with general first-layer weight \(\tilde w_i\) and second-layer weight \(\tilde s_i\), the <b>generator</b> is \(g_i=\tilde s_i\,\tilde w_i\), and its <b>mass</b> is the second-layer weight times the norm of the first-layer weight, \(s_i=\tilde s_i\lVert\tilde w_i\rVert\) — <em>positive or negative</em> — with direction \(w_i=\tilde w_i/\lVert\tilde w_i\rVert\), so \(g_i=s_iw_i\). <b>Plain network:</b> the formula without the bracket. <b>Skip network:</b> with the learned linear skip \(\langle b,x\rangle\); minimising over \(b\) first replaces each ReLU by its even part \(\mathrm{ReLU}(z)-\tfrac12 z=\tfrac12\lvert z\rvert\), so a neuron responds identically to \(x\) and \(-x\): its direction matters only up to sign, the critical points do not depend on that sign, and the explorer therefore draws a skip-network generator as a segment through the origin, centered at it.</p>
+      with \(\mathrm{ReLU}(z)=\max(z,0)\) and unit directions \(w_i\). For a neuron with general first-layer weight \(\tilde w_i\) and second-layer weight \(\tilde s_i\), the <b>generator</b> is \(g_i=\tilde s_i\,\tilde w_i\), and its <b>mass</b> is the second-layer weight times the norm of the first-layer weight, \(s_i=\tilde s_i\lVert\tilde w_i\rVert\) — <em>positive or negative</em> — with direction \(w_i=\tilde w_i/\lVert\tilde w_i\rVert\), so \(g_i=s_iw_i\). <b>Plain network:</b> the formula without the bracket. <b>Skip network:</b> with the learned linear skip \(\langle b,x\rangle\). The skip makes the sign of a direction irrelevant (see the <a href="https://arxiv.org/abs/2610.01728">paper</a>), so the explorer draws a skip-network generator as a segment through the origin.</p>
       <p><b>Scaling symmetry.</b> ReLU is positively homogeneous, \(\mathrm{ReLU}(\lambda z)=\lambda\,\mathrm{ReLU}(z)\) for \(\lambda>0\), so \((\tilde s_i,\tilde w_i)\mapsto(\tilde s_i/\lambda,\lambda\tilde w_i)\) changes neither the generator nor the network function: the loss depends on a neuron only through its generator, and the critical points of the full parametrisation are those of the (mass, direction) parametrisation used here.</p>
     </div>
   </div>
@@ -434,7 +434,7 @@
     });
   });
 </script>
-<script src="explorer.js?v=13" defer></script>
+<script src="explorer.js?v=14" defer></script>
 <script defer src="vendor/katex/katex.min.js"></script>
 <script defer src="vendor/katex/contrib/auto-render.min.js"
   onload="['primer','about'].forEach(function (id) { renderMathInElement(document.getElementById(id), {delimiters: [{left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}], throwOnError: false}); });"></script>

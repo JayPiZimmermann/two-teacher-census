@@ -698,6 +698,34 @@
         // different censuses whose examples happen to land close together must
         // both keep their dot, or a region loses the only way to reach it.
         var drawnDots = [];
+        // The example dot of the region holding a network type's default
+        // teacher IS that teacher: the page opens with the ring on the dot.
+        if (!built._pinned) {
+          built._pinned = true;
+          var dflt = DEFAULT_TEACHER[model];
+          if (dflt) {
+            var db = mod((parseFloat(dflt[1]) - parseFloat(dflt[0])) * PI, F.per);
+            var dy = ratioCoord(parseFloat(dflt[2]), parseFloat(dflt[3]));
+            var px = F.X(mapFold(model, db).beta), py = F.Y(dy);
+            var hit = null;
+            built.pieces.forEach(function (piece) {
+              if (hit || !piece.big || !piece.loops) return;
+              piece.loops.forEach(function (loop) {
+                if (hit) return;
+                var inside = false;
+                for (var i = 0, j = loop.length - 1; i < loop.length; j = i++) {
+                  var xi = X(loop[i][0]), yi = Y(loop[i][1]), xj = X(loop[j][0]), yj = Y(loop[j][1]);
+                  if ((yi > py) !== (yj > py) && px < (xj - xi) * (py - yi) / (yj - yi) + xi) inside = !inside;
+                }
+                if (inside) hit = piece;
+              });
+            });
+            if (hit) {
+              hit.rep = [db, parseFloat(dflt[2]) / 2, parseFloat(dflt[3]) / 2];
+              hit.at = [db / F.per, (1 + dy) / 2];
+            }
+          }
+        }
         // The map is drawn folded onto half a period, so a region's two
         // mirror halves (and a piece's reflected twin) land on one another.
         // One dot per VISIBLE region: a dot is skipped when a dot of the same
