@@ -360,7 +360,7 @@
     <div class="lx-view" id="ex-map-view">
       <svg class="lx-mapcanvas" id="ex-map" width="620" height="330" viewBox="0 0 620 330" role="img" aria-label="A map of the teacher gap against the teacher mass ratio, shaded by which census of critical families occurs. The gap axis covers half a period, because reflecting the gap leaves the census unchanged. Each region carries a dot marking one example teacher in it; clicking the region loads that example. The regions of the current teacher's census are outlined. Degenerate strata that are single lines are drawn as thick lines, and a ring marks the current teacher. The vertical axis is compressed so that a mass ratio of plus or minus infinity is the top and bottom edge."></svg>
     </div>
-    <p class="lx-hint">the teacher gap against the teacher mass ratio — click a region to load a teacher network from it</p>
+    <p class="lx-hint">the teacher gap against the teacher mass ratio — click a region to load a teacher network from it; zero- and one-dimensional censuses are not plotted</p>
   </div>
   <div class="lx-under lx-left">
     <div class="controls teacher-row landscape-controls lx-top">
@@ -434,7 +434,7 @@
     });
   });
 </script>
-<script src="explorer.js?v=10" defer></script>
+<script src="explorer.js?v=11" defer></script>
 <script defer src="vendor/katex/katex.min.js"></script>
 <script defer src="vendor/katex/contrib/auto-render.min.js"
   onload="['primer','about'].forEach(function (id) { renderMathInElement(document.getElementById(id), {delimiters: [{left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}], throwOnError: false}); });"></script>

@@ -821,7 +821,7 @@
       // curve -- drawn exactly like the straight lines above (same colour,
       // same weight: the encoding is "this is a one-dimensional piece", not
       // which one), just traced as a polyline instead of drawn straight.
-      curveStrata(model).forEach(function (st) {
+      if (DRAW_STRATA) curveStrata(model).forEach(function (st) {
         var pts = st.curve;
         if (pts.length < 2) return;
         var d = pts.map(function (q, k) {
