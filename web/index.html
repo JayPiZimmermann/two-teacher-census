@@ -170,18 +170,31 @@
     table.critlist th, table.critlist td { white-space: normal; }
   }
 
-  /* ---- primer and tutorial ---- */
-  .primer {
-    max-width: var(--page); margin: 0 auto; padding: 1rem 2rem 0;
-    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .7rem;
+  /* ---- primer: four slots, one visible at a time, fixed height ---- */
+  .primer { max-width: var(--page); margin: 0 auto; padding: .9rem 2rem 0; }
+  .primer .tabs { display: flex; gap: .3rem; }
+  .primer .tabs button {
+    font: inherit; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: .84rem;
+    padding: .3rem .8rem; border: 1px solid var(--rule); border-bottom: none; border-radius: 6px 6px 0 0;
+    background: var(--paper); color: var(--muted); cursor: pointer;
   }
-  .primer .card { border: 1px solid var(--rule); border-radius: 6px; background: var(--control-bg); padding: .6rem .8rem .5rem; font-size: .86rem; line-height: 1.5; }
-  .primer h3 { margin: 0 0 .3rem; font-size: .9rem; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
-  .primer p { margin: 0; }
-  .primer .katex-display { margin: .35rem 0; }
+  .primer .tabs button[aria-selected="true"] { background: var(--control-bg); color: var(--ink); font-weight: 600; }
+  .primer .slot {
+    display: grid; grid-template-columns: 330px minmax(0, 1fr); gap: 1rem; align-items: start;
+    height: 13rem; overflow: hidden; border: 1px solid var(--rule); border-radius: 0 6px 6px 6px;
+    background: var(--control-bg); padding: .6rem .9rem;
+  }
+  .primer .slot[hidden] { display: none; }
+  .primer .fig svg { width: 330px; height: auto; display: block; }
+  .primer .txt { font-size: .84rem; line-height: 1.45; }
+  .primer .txt p { margin: 0 0 .4rem; }
+  .primer .katex-display { margin: .25rem 0; }
   .primer .katex { font-size: .98em; }
-  @media (max-width: 1100px) { .primer { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-  @media (max-width: 640px) { .primer { grid-template-columns: 1fr; padding-inline: 1rem; } }
+  @media (max-width: 900px) {
+    .primer .slot { grid-template-columns: 1fr; height: auto; }
+    .primer .fig svg { max-width: 330px; width: 100%; margin: 0 auto; }
+  }
+  @media (max-width: 640px) { .primer { padding-inline: 1rem; } }
   .tutorial { max-width: var(--page); margin: 0 auto; padding: 0 2rem 1rem; }
   .tutorial h2 { font-size: 1.2rem; margin: .4rem 0 .5rem; }
   .tutorial ol { margin: 0; padding-left: 1.3rem; font-size: .92rem; line-height: 1.55; }
@@ -236,34 +249,146 @@
       <a href="#primer">Primer</a>
       <a href="#explorer">Explorer</a>
       <a href="#tutorial">How to read</a>
-      <a href="#theorems">Theorems</a>
-      <a href="#lean">Lean</a>
-      <a href="#certificates">Certificates</a>
+      <a href="#about">About</a>
       <a href="https://arxiv.org/abs/2610.01728">Paper</a>
-      <a href="https://github.com/JayPiZimmermann/two-teacher-census">GitHub</a>
     </nav>
   </div>
   <p class="bar-sub">Explore every critical point of the Gaussian population loss landscape with a two hidden neuron student and teacher network.</p>
 </header>
 
 <section class="primer" id="primer" aria-label="Primer">
-  <div class="card">
-    <h3>1 · Two network types</h3>
-    <p>Input \(x\in\mathbb R^2\), standard Gaussian. Teacher and student are shallow networks with <em>two hidden neurons</em>, \(f_{s,\beta}(x)=\sum_{i=0}^{1}s_i\,\sigma(\langle w_i,x\rangle)\), \(w_i=(\cos\beta_i,\sin\beta_i)\): a neuron is a <em>generator</em> with direction \(\beta_i\) and signed <em>mass</em> \(s_i\). <b>Plain network:</b> \(\sigma=\mathrm{ReLU}\). <b>Skip network:</b> the same plus a learned linear skip \(\langle b,x\rangle\); at the optimal \(b\) this equals the centered feature \(\sigma_C(z)=\tfrac12\lvert z\rvert\), whose directions are unoriented lines (<a href="https://arxiv.org/abs/2610.01728">paper</a>, Lemma on skip–centering equivalence).</p>
+  <div class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-tab="net">1 · Networks</button>
+    <button role="tab" data-tab="loss">2 · Population loss</button>
+    <button role="tab" data-tab="crit">3 · Critical points</button>
+    <button role="tab" data-tab="census">4 · Census</button>
   </div>
-  <div class="card">
-    <h3>2 · Population loss</h3>
-    <p>For a fixed teacher \((s,\beta)\) the student \((c,\theta)\in\mathbb R^2\times\mathbb R^2\) is scored by
-    \[\mathscr L(c,\theta)=\tfrac12\,\mathbb E_{x\sim\mathcal N(0,I_2)}\bigl(f_{c,\theta}(x)-f_{s,\beta}(x)\bigr)^2 ,\]
-    which the Gaussian pair moments turn into the explicit kernel form \(2\pi\mathscr L=\tfrac{\kappa}{2}(c_0^2+c_1^2)+c_0c_1\Phi(\theta_0-\theta_1)-\sum_i c_iP(\theta_i)+\mathrm{const}\) with \(\Phi_C(t)=(\tfrac\pi2-t)\cos t+\sin t\), \(\Phi_R(t)=(\pi-t)\cos t+\sin t\) on \([0,\pi]\) and \(P(t)=\sum_j s_j\Phi(t-\beta_j)\). Zero loss is attainable: the student can copy the teacher.</p>
+  <div class="slot" data-slot="net">
+    <div class="fig"><svg viewBox="0 0 330 150" aria-label="Plain and skip network diagrams">
+  <defs><marker id="ah" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0L6,3L0,6Z" fill="var(--muted)"/></marker></defs>
+  <g font-size="9.5" fill="var(--muted)" text-anchor="middle">
+    <!-- plain -->
+    <text x="78" y="12" font-weight="600" fill="var(--ink)">plain network</text>
+    <g stroke="var(--rule)" stroke-width="1.1">
+      <line x1="38" y1="52" x2="78" y2="42"/><line x1="38" y1="52" x2="78" y2="102"/>
+      <line x1="38" y1="92" x2="78" y2="42"/><line x1="38" y1="92" x2="78" y2="102"/>
+      <line x1="78" y1="42" x2="122" y2="72"/><line x1="78" y1="102" x2="122" y2="72"/>
+    </g>
+    <circle cx="38" cy="52" r="7" fill="var(--paper)" stroke="var(--ink)"/><circle cx="38" cy="92" r="7" fill="var(--paper)" stroke="var(--ink)"/>
+    <circle cx="78" cy="42" r="8" fill="var(--negative)" fill-opacity=".15" stroke="var(--negative)"/><circle cx="78" cy="102" r="8" fill="var(--negative)" fill-opacity=".15" stroke="var(--negative)"/>
+    <circle cx="122" cy="72" r="7" fill="var(--paper)" stroke="var(--ink)"/>
+    <text x="38" y="55" font-size="7" fill="var(--ink)">x₁</text><text x="38" y="95" font-size="7" fill="var(--ink)">x₂</text>
+    <text x="78" y="45" font-size="7" fill="var(--ink)">σ</text><text x="78" y="105" font-size="7" fill="var(--ink)">σ</text>
+    <text x="122" y="75" font-size="7" fill="var(--ink)">Σ</text>
+    <text x="54" y="38">w₀</text><text x="54" y="112">w₁</text>
+    <text x="104" y="50">s₀</text><text x="104" y="100">s₁</text>
+    <text x="38" y="128" font-size="9">x ∼ 𝒩(0, I₂)</text>
+    <text x="78" y="144" font-size="9">σ = ReLU</text>
+    <!-- skip -->
+    <text x="248" y="12" font-weight="600" fill="var(--ink)">skip network</text>
+    <g stroke="var(--rule)" stroke-width="1.1">
+      <line x1="208" y1="52" x2="248" y2="42"/><line x1="208" y1="52" x2="248" y2="102"/>
+      <line x1="208" y1="92" x2="248" y2="42"/><line x1="208" y1="92" x2="248" y2="102"/>
+      <line x1="248" y1="42" x2="292" y2="72"/><line x1="248" y1="102" x2="292" y2="72"/>
+    </g>
+    <path d="M208,52 C240,22 272,22 292,66" fill="none" stroke="var(--accent)" stroke-width="1.3"/>
+    <path d="M208,92 C240,124 272,124 292,78" fill="none" stroke="var(--accent)" stroke-width="1.3"/>
+    <circle cx="208" cy="52" r="7" fill="var(--paper)" stroke="var(--ink)"/><circle cx="208" cy="92" r="7" fill="var(--paper)" stroke="var(--ink)"/>
+    <circle cx="248" cy="42" r="8" fill="var(--negative)" fill-opacity=".15" stroke="var(--negative)"/><circle cx="248" cy="102" r="8" fill="var(--negative)" fill-opacity=".15" stroke="var(--negative)"/>
+    <circle cx="292" cy="72" r="7" fill="var(--paper)" stroke="var(--ink)"/>
+    <text x="208" y="55" font-size="7" fill="var(--ink)">x₁</text><text x="208" y="95" font-size="7" fill="var(--ink)">x₂</text>
+    <text x="248" y="45" font-size="7" fill="var(--ink)">σ</text><text x="248" y="105" font-size="7" fill="var(--ink)">σ</text>
+    <text x="292" y="75" font-size="7" fill="var(--ink)">Σ</text>
+    <text x="224" y="38">w₀</text><text x="224" y="112">w₁</text>
+    <text x="274" y="50">s₀</text><text x="274" y="100">s₁</text>
+    <text x="262" y="30" fill="var(--accent)">b</text><text x="262" y="124" fill="var(--accent)">b</text>
+    <text x="208" y="128" font-size="9">x ∼ 𝒩(0, I₂)</text>
+    <text x="248" y="144" font-size="9">σ = ReLU, plus ⟨b, x⟩</text>
+  </g>
+</svg></div>
+    <div class="txt">
+      <p>Both networks read a planar Gaussian input \(x\sim\mathcal N(0,I_2)\) through <em>two hidden neurons</em>. Teacher \((s,\beta)\) and student \((c,\theta)\) have the same shape:
+      \[f_{s,\beta}(x)=\sum_{i=0}^{1} s_i\,\sigma(\langle w_i,x\rangle)\;[\,+\langle b,x\rangle\,],\qquad w_i=(\cos\beta_i,\sin\beta_i).\]
+      <b>Plain network:</b> \(\sigma=\mathrm{ReLU}\), no skip. <b>Skip network:</b> the same plus a learned linear skip \(\langle b,x\rangle\); at the optimal \(b\) it computes the centered feature \(\sigma_C(z)=\tfrac12\lvert z\rvert\), so a direction becomes an unoriented line.</p>
+      <p><b>Generators.</b> The <em>generator</em> of neuron \(i\) is the second-layer scalar times the first-layer vector, \(g_i=s_i\,w_i\): a vector of length \(\lvert s_i\rvert\) (the <em>mass</em>) in direction \(\beta_i\). <b>Scaling symmetry.</b> ReLU is positively homogeneous, \(\sigma(\lambda z)=\lambda\sigma(z)\) for \(\lambda>0\), so \((s_i,w_i)\mapsto(s_i/\lambda,\lambda w_i)\) leaves \(g_i\) and the network function unchanged. The loss therefore depends on each neuron only through its generator, and the critical points of the full parametrisation are exactly those of the (mass, direction) parametrisation drawn in the explorer.</p>
+    </div>
   </div>
-  <div class="card">
-    <h3>3 · Critical points and their types</h3>
-    <p>\((c,\theta)\) is <b>critical</b> if \(\nabla\mathscr L(c,\theta)=0\); a <b>local minimum</b> if \(\mathscr L\ge\mathscr L(c,\theta)\) on a neighbourhood; <b>global</b> if \(\mathscr L(c,\theta)=0\) (the exact fit); a <b>spurious minimum</b> if local but not global; a <b>saddle</b> if critical but neither a local minimum nor a local maximum. A minimum is <em>collided</em> (co) if \(\theta_0\equiv\theta_1\), <em>separated</em> (sep) otherwise, and has <em>same-sign</em> (+) or <em>opposite-sign</em> (±) masses \(c_0c_1\gtrless0\).</p>
+  <div class="slot" data-slot="loss" hidden>
+    <div class="fig"><svg viewBox="0 0 330 150" aria-label="Teacher and student outputs around the circle and their squared difference">
+  <g font-size="9.5" fill="var(--muted)" text-anchor="middle">
+    <line x1="20" y1="110" x2="320" y2="110" stroke="var(--rule)"/>
+    <line x1="20" y1="20" x2="20" y2="110" stroke="var(--rule)"/>
+    <path d="M20,80 C60,30 100,30 140,80 S220,130 260,80 S300,40 320,70" fill="none" stroke="var(--negative)" stroke-width="1.6"/>
+    <path d="M20,95 C60,55 100,45 140,70 S220,110 260,95 S300,55 320,60" fill="none" stroke="var(--positive)" stroke-width="1.6" stroke-dasharray="6 3"/>
+    <path d="M20,80 C60,30 100,30 140,80 S220,130 260,80 S300,40 320,70 L320,60 C300,55 300,55 260,95 S220,110 140,70 S60,55 20,95 Z" fill="var(--ink)" fill-opacity=".08"/>
+    <text x="20" y="124">0</text><text x="170" y="124">direction of x</text><text x="320" y="124">2π</text>
+    <text x="60" y="30" fill="var(--negative)">teacher output</text>
+    <text x="250" y="140" fill="var(--positive)">student output</text>
+    <text x="150" y="20" fill="var(--ink)">shaded: squared difference, averaged over x</text>
+  </g>
+</svg></div>
+    <div class="txt">
+      <p>The teacher is fixed; the student is scored by the <b>population loss</b>, the mean squared difference of the two network outputs over the Gaussian input:
+      \[\mathscr L(c,\theta)=\tfrac12\,\mathbb E_{x\sim\mathcal N(0,I_2)}\bigl(f_{c,\theta}(x)-f_{s,\beta}(x)\bigr)^2 .\]
+      Because both outputs are positively homogeneous in \(x\), the expectation depends only on the angles between generators, and Gaussian pair moments give the closed kernel form
+      \(2\pi\mathscr L=\tfrac\kappa2(c_0^2+c_1^2)+c_0c_1\,\Phi(\theta_0-\theta_1)-\sum_i c_i\,P(\theta_i)+\mathrm{const}\), with \(\Phi_R(t)=(\pi-t)\cos t+\sin t\) for the plain and \(\Phi_C(t)=(\tfrac\pi2-t)\cos t+\sin t\) for the skip network on \([0,\pi]\), and the teacher potential \(P(t)=\sum_j s_j\,\Phi(t-\beta_j)\).</p>
+      <p>The student can copy the teacher, so the minimum value of \(\mathscr L\) is \(0\): the question is whether gradient descent can find it, i.e. which <em>other</em> minima the landscape has.</p>
+    </div>
   </div>
-  <div class="card">
-    <h3>4 · The census</h3>
-    <p>For a teacher \((s,\beta)\) let \(\mathsf M(s,\beta)\) be the multiset of types of its spurious minima, e.g. \(\{\mathrm{co}^{\pm}\}\) or \(\{2\times\mathrm{co}^{+},\mathrm{sep}^{\pm}\}\). A <b>census</b> is a set of teachers with the same \(\mathsf M\). Rotation, reflection, swapping and scaling the teacher do not change \(\mathsf M\), so a teacher is a point of the plane with coordinates <em>gap</em> \(\widehat\beta=\beta_1-\beta_0\) and <em>mass ratio</em> \(y\) (folded so that \(y=\pm1\) means \(\lvert s_0\rvert=\lvert s_1\rvert\)). The map colours this plane by census; the table lists every critical point of the chosen teacher with its proved type.</p>
+  <div class="slot" data-slot="crit" hidden>
+    <div class="fig"><svg viewBox="0 0 330 150" aria-label="Sketches of a strict local minimum, a flat local minimum, a saddle and the global minimum">
+  <g font-size="9.5" fill="var(--muted)" text-anchor="middle" stroke-linecap="round">
+    <g transform="translate(5,10)">
+      <path d="M5,20 C25,80 45,80 65,20" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
+      <circle cx="35" cy="65" r="2.6" fill="var(--accent)"/>
+      <text x="35" y="100">strict local min</text>
+    </g>
+    <g transform="translate(85,10)">
+      <path d="M5,20 C20,70 25,70 35,70 S50,70 65,20" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
+      <line x1="25" y1="70" x2="45" y2="70" stroke="var(--accent)" stroke-width="3"/>
+      <text x="35" y="100">flat local min</text>
+    </g>
+    <g transform="translate(165,10)">
+      <path d="M5,25 C25,60 45,60 65,25" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
+      <path d="M20,75 C30,45 40,45 50,75" fill="none" stroke="var(--ink)" stroke-width="1.6" stroke-dasharray="4 3"/>
+      <circle cx="35" cy="52" r="2.6" fill="var(--fail-rule)"/>
+      <text x="35" y="100">saddle</text>
+    </g>
+    <g transform="translate(245,10)">
+      <line x1="5" y1="80" x2="65" y2="80" stroke="var(--rule)"/>
+      <path d="M5,20 C25,80 45,80 65,20" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
+      <circle cx="35" cy="65" r="2.6" fill="var(--accent)"/>
+      <text x="70" y="83" font-size="8" text-anchor="end">𝓛 = 0</text>
+      <text x="35" y="100">global min</text>
+    </g>
+  </g>
+</svg></div>
+    <div class="txt">
+      <p>A student \((c,\theta)\in\mathbb R^2\times\mathbb R^2\) is a <b>critical point</b> if \(\nabla\mathscr L(c,\theta)=0\). It is a <b>local minimum</b> if \(\mathscr L\ge\mathscr L(c,\theta)\) on a neighbourhood — <em>strict</em> if the inequality is strict away from the point, <em>flat</em> if a whole line of minima passes through it (here: both students on one direction, only the sum of their masses fixed). It is the <b>global minimum</b> if \(\mathscr L(c,\theta)=0\), the exact fit of the teacher; a <b>spurious minimum</b> if local but not global; a <b>saddle</b> if critical but neither a local minimum nor a local maximum.</p>
+      <p>Each spurious minimum gets a <b>type</b>: <em>collided</em> (co) if the two students share a direction, \(\theta_0\equiv\theta_1\), <em>separated</em> (sep) otherwise; with <em>same-sign</em> (+) or <em>opposite-sign</em> (±) masses \(c_0c_1\gtrless0\). The classification proves, for every teacher, the complete list of critical points and the type of each.</p>
+    </div>
+  </div>
+  <div class="slot" data-slot="census" hidden>
+    <div class="fig"><svg viewBox="0 0 330 150" aria-label="Schematic census map: the teacher plane coloured by which spurious minima occur">
+  <g font-size="9.5" fill="var(--muted)" text-anchor="middle">
+    <rect x="40" y="15" width="270" height="105" fill="#ffd166" stroke="var(--rule)"/>
+    <path d="M40,67 L310,67 L310,120 L40,120 Z" fill="#6a8ede"/>
+    <path d="M40,67 C120,50 200,45 310,40 L310,67 Z" fill="#ef6f6c"/>
+    <path d="M200,120 C230,90 280,90 310,120 Z" fill="#67c27a"/>
+    <line x1="40" y1="67" x2="310" y2="67" stroke="var(--ink)" stroke-opacity=".6" stroke-width="1.6"/>
+    <circle cx="150" cy="35" r="2.6" fill="var(--ink)" fill-opacity=".7"/><circle cx="120" cy="95" r="2.6" fill="var(--ink)" fill-opacity=".7"/><circle cx="265" cy="110" r="2.6" fill="var(--ink)" fill-opacity=".7"/>
+    <text x="150" y="30" fill="var(--ink)" font-size="8.5">M = {co⁺}</text>
+    <text x="120" y="90" fill="var(--ink)" font-size="8.5">M = {co±}</text>
+    <text x="260" y="98" fill="var(--ink)" font-size="8.5">M = {co±, sep⁺}</text>
+    <text x="175" y="134">teacher gap β̂</text>
+    <text x="22" y="70" transform="rotate(-90 22 70)">mass ratio y</text>
+    <text x="175" y="63" font-size="8" fill="var(--ink)">a one-dimensional census: a line of special teachers</text>
+  </g>
+</svg></div>
+    <div class="txt">
+      <p>For a teacher \((s,\beta)\) write \(\mathsf M(s,\beta)\) for the <b>multiset of types of its spurious minima</b>, e.g. \(\{\mathrm{co}^{\pm}\}\) or \(\{2\times\mathrm{co}^{+},\mathrm{sep}^{\pm}\}\); the exact fit is present for every teacher and not listed. A <b>census</b> is a set of teachers with the same \(\mathsf M\).</p>
+      <p>Rotating, reflecting, swapping and jointly rescaling the teacher's generators does not change \(\mathsf M\), so a teacher is a point of a plane: horizontal the <em>gap</em> \(\widehat\beta=\beta_1-\beta_0\) (half a period suffices), vertical the <em>mass ratio</em> \(y\), folded so that \(y=\pm1\) is \(\lvert s_0\rvert=\lvert s_1\rvert\) and \(y=0\) a vanishing mass. The <b>census map</b> colours this plane by \(\mathsf M\). Censuses can also be curves or single points: teachers with equal masses, a zero mass, or a right angle, whose landscape is special. Click any region to load one of its teachers and see its critical points in the table.</p>
+    </div>
   </div>
 </section>
 
@@ -320,155 +445,17 @@
   <ol>
     <li><b>Choose the network type</b> in the header. The skip network's census has five regions and only collided spurious minima; the plain network's has many more, including separated ones. The map's gap axis spans half a period because reflecting the gap leaves the census unchanged.</li>
     <li><b>Pick a teacher.</b> Drag a blue generator in the left plot (its length is the mass, its direction the angle), use the sliders, or click a region of the map to load a teacher from it. Thick lines and rings are one-dimensional and zero-dimensional censuses: degenerate teachers (equal masses, a zero mass, right angles) whose landscape is special.</li>
-    <li><b>Read the table.</b> Every row is one family of critical points of the loaded teacher — the exact fit, collided pairs, separated pairs, dead students — with the angles and masses computed from the row's closed form and the type taken from the classification theorem. Click a row to draw its students in red. A row with "split free" is a whole line of critical points: only the sum of the masses is fixed, and the type may differ along the line.</li>
+    <li><b>Read the table.</b> Every row is one family of critical points of the loaded teacher — the exact fit, collided pairs, separated pairs, dead students — with the angles and masses computed from the row's closed form and the type proved for that family. Click a row to draw its students in red. A row with "split free" is a whole line of critical points: only the sum of the masses is fixed, and the type may differ along the line.</li>
   </ol>
 </section>
 
-<article class="prose" id="theorems">
-  <h1>The theorems behind the map</h1>
-  <p class="lede">Every row of the table and every colour of the map is read off the two classification theorems below (statements only; the proofs are Lean code, linked under each theorem). The notation is the one of the <a href="#primer">primer</a>, made precise here.</p>
-
-  <h2 id="setting">Setting</h2>
-  <p>Directions on the unit circle are written as angles. The teacher has directions \(\beta_0,\beta_1\) and signed masses \(s_0,s_1\); the student has directions \(\theta_0,\theta_1\) and signed masses \(c_0,c_1\). Two activations are compared, the <strong>plain</strong> ReLU \(\sigma_R(z)=\max(z,0)\) and the <strong>centered</strong> feature \(\sigma_C(z)=\tfrac12\lvert z\rvert\), the latter being what a learned linear skip connection turns the ReLU into (see the <a href="https://arxiv.org/abs/2610.01728">paper</a>). For \(q\in\{C,R\}\) the population loss over a standard Gaussian input is a kernel sum,
-  \[
-    2\pi\,\mathscr L_q(c,\theta)=\tfrac{\kappa_q}{2}\bigl(c_0^2+c_1^2\bigr)+c_0c_1\,\Phi_q(\theta_0-\theta_1)-c_0P_q(\theta_0)-c_1P_q(\theta_1)+\tfrac{E_q}{2},
-  \]
-  with the angular kernels \(\Phi_C(t)=(\tfrac\pi2-t)\cos t+\sin t\) and \(\Phi_R(t)=(\pi-t)\cos t+\sin t\) on \(0\le t\le\pi\), extended evenly with periods \(\pi\) and \(2\pi\); the diagonal values \(\kappa_C=\pi/2\), \(\kappa_R=\pi\); the <em>teacher potential</em> \(P_q(t)=s_0\Phi_q(t-\beta_0)+s_1\Phi_q(t-\beta_1)\) and its angular derivative \(A_q=-P_q'\); and a constant teacher self-energy \(E_q\). Write \(W(t)=s_0\lvert\sin(t-\beta_0)\rvert+s_1\lvert\sin(t-\beta_1)\rvert\) and \(\tau_q=P_q-2W\). Both losses are \(C^2\), and
-  \[
-    \mathscr L_R=\mathscr L_C+\tfrac18\lVert u-v\rVert^2,\qquad u=\sum_i c_i(\cos\theta_i,\sin\theta_i),\quad v=\sum_j s_j(\cos\beta_j,\sin\beta_j):
-  \]
-  the plain loss is the centered loss plus a penalty on the first moments. A <em>critical point</em> is a zero of all four partial derivatives; a <em>topological saddle</em> is a critical point that is neither a local minimum nor a local maximum.</p>
-  <p>Translating all angles and, for the centered kernel, shifting any single angle by \(\pi\), are exact isometries, so the teacher is reduced to directions \((0,\widehat\beta)\) with gap \(\widehat\beta\in[0,\pi)\) (centered) or \(\widehat\beta\in[0,\pi]\) (plain). A student is <em>dead</em> if its mass vanishes, the two students are <em>colliding</em> if \(\theta_0\equiv\theta_1\), <em>separated</em> otherwise. For separated students the two mass equations have the positive determinant \(\Delta_q=\kappa_q^2-\Phi_q(D)^2\), \(D=\theta_0-\theta_1\), and Cramer's rule gives
-  \[
-    c_0=\frac{\kappa_qP_q(\theta_0)-\Phi_q(D)P_q(\theta_1)}{\Delta_q},\qquad c_1=\frac{\kappa_qP_q(\theta_1)-\Phi_q(D)P_q(\theta_0)}{\Delta_q}.\tag{M}
-  \]
-  The <strong>census</strong> of a teacher is the multiset of its minima, each tagged by family kind (fit / colliding / separated) and, for a spurious minimum, by whether both student masses are positive or of mixed sign. Saddles are not part of the census.</p>
-
-  <h2 id="classification">The complete classifications</h2>
-
-  <div class="thm" id="thm-centered">
-    <div class="head">Theorem 1<span class="lab">(complete centered two-student classification)</span></div>
-    <p>Let \(\beta,s,c,\theta:\{0,1\}\to\mathbb R\) be arbitrary. The tuple is a critical point of \(\mathscr L_C\) <strong>if and only if</strong>, after the canonical reduction, it lies in one of the families below; it then has exactly the stated type. Directions are read in \(\mathbb R/\pi\mathbb Z\).</p>
-    <p><em>Degenerate teacher</em> (the two directions merge into one effective line at \(a\) with mass \(\sigma\), or both masses vanish):</p>
-    <table>
-      <tr><th>family</th><th>student data</th><th>type</th></tr>
-      <tr><td>zero measure <small>\(\sigma=0\)</small></td><td>\(c_0=c_1=0\), angles free; or \(\theta_0\equiv\theta_1\) and \(c_0+c_1=0\)</td><td>global</td></tr>
-      <tr><td>exact <small>\(\sigma\ne0\)</small></td><td>each student dead or at \(a\); \(c_0+c_1=\sigma\)</td><td>global</td></tr>
-      <tr><td>perpendicular <small>\(\sigma\ne0\)</small></td><td>\(\theta_0\equiv\theta_1\equiv a+\tfrac\pi2\), \(c_0+c_1=\tfrac{2\sigma}{\pi}\), split free</td><td>saddle</td></tr>
-    </table>
-    <p><em>Genuine same-sign teacher</em> (\(0<\widehat\beta<\pi\), \(s_0s_1>0\)):</p>
-    <table>
-      <tr><th>family <small>exists iff</small></th><th>student data</th><th>type</th></tr>
-      <tr><td>exact fit <small>always</small></td><td>\((\theta_0,\theta_1)\equiv(0,\widehat\beta)\), \((c_0,c_1)=(s_0,s_1)\), or swapped</td><td>global</td></tr>
-      <tr><td>collision line <small>at each root \(t\) of \(A_C\)</small></td><td>\(\theta_0\equiv\theta_1\equiv t\), \(c_0+c_1=\tfrac{2P_C(t)}{\pi}\), split free</td><td>spurious minimum iff \(P_C(t)\,\tau_C(t)>0\) and \(c_0c_1<0\), or \(\tau_C(t)=0\), \(W'(t)=0\) and \(c_0c_1<0\); else saddle</td></tr>
-      <tr><td>quarter pair <small>\(s_0=s_1\), \(\widehat\beta\ne\tfrac\pi2\)</small></td><td>\(\{\theta_0,\theta_1\}\equiv\{\tfrac{\widehat\beta}{2},\tfrac{\widehat\beta}{2}+\tfrac\pi2\}\), masses by (M)</td><td>saddle</td></tr>
-      <tr><td>orthogonal diagonal <small>\(s_0=s_1\), \(\widehat\beta=\tfrac\pi2\)</small></td><td>\(\{\theta_0,\theta_1\}\equiv\{\tfrac\pi4,-\tfrac\pi4\}\), \(c_0=c_1=\tfrac{\sqrt2\,s_0(\pi+4)}{2(\pi+2)}\)</td><td>saddle</td></tr>
-      <tr><td>separated beam <small>\(s_0\ne s_1\), at each root of the beam equation</small></td><td>\(\theta_0\equiv\widehat\beta+b\), \(\theta_1\equiv\widehat\beta-a\) with \(a\in(0,\widehat\beta)\), \(b\in(0,\pi-\widehat\beta)\) solving \(\frac{\rho(\widehat\beta-a,\pi-\widehat\beta-b)}{\rho(a,b)}=\frac{s_1}{s_0}\), \(\rho(a,b)=\frac{a\sin b+b\sin a}{a+b+\sin(a+b)}\), together with the phase-matching row; masses by (M)</td><td>saddle</td></tr>
-    </table>
-    <p><em>Genuine mixed-sign teacher</em> (\(0<\widehat\beta<\pi\), \(s_0s_1<0\)): every critical point with two live separated students is the exact fit.</p>
-    <table>
-      <tr><th>family <small>exists iff</small></th><th>student data</th><th>type</th></tr>
-      <tr><td>exact fit <small>always</small></td><td>as above</td><td>global</td></tr>
-      <tr><td>collision line <small>at each root \(t\) of \(A_C\)</small></td><td>\(\theta_0\equiv\theta_1\equiv t\), \(c_0,c_1\ne0\), \(c_0+c_1=\tfrac{2P_C(t)}{\pi}\)</td><td>spurious minimum iff \(\tau_C(t)P_C(t)>0\) and \(W(t)\,c_0c_1\,\tau_C(t)<0\), or the flat selector holds; else saddle</td></tr>
-      <tr><td>one student dead <small>root \(t\) of \(A_C\) with \(P_C(t)\ne0\)</small></td><td>live mass \(\tfrac{2P_C(t)}{\pi}\); dead angle \(x\) solves \(\tfrac{2P_C(t)}{\pi}\Phi_C(x-t)=P_C(x)\)</td><td>saddle</td></tr>
-      <tr><td>both students dead <small>\(P_C\) has zeros</small></td><td>\(c_0=c_1=0\), each \(\theta_i\) a zero of \(P_C\)</td><td>saddle</td></tr>
-    </table>
-    <div class="lean">
-      <a href="https://github.com/JayPiZimmermann/two-teacher-census/blob/main/TwoTeacherCensus/Classification.lean">TwoTeacherCensus/Classification.lean</a>
-      <a class="long" href="https://github.com/JayPiZimmermann/Skip-Connections-Avoid-Spurious-Local-Minima/blob/main/LeanFormalization/Main/TwoStudentClassification.lean">centered_two_student_full_classification</a>
-    </div>
-  </div>
-
-  <div class="thm" id="thm-plain">
-    <div class="head">Theorem 2<span class="lab">(complete plain-ReLU two-student classification)</span></div>
-    <p>Let \(\beta,s,c,\theta\) be arbitrary. The tuple is a critical point of \(\mathscr L_R\) <strong>if and only if</strong>, after the canonical reduction, it lies in one of the families below; it then has exactly the stated type. Directions are read in \(\mathbb R/2\pi\mathbb Z\).</p>
-    <p><em>Degenerate teacher</em> (\(\widehat\beta=0\), or one raw mass zero; effective mass \(\sigma\) on the ray at \(a\)):</p>
-    <table>
-      <tr><th>family</th><th>student data</th><th>type</th></tr>
-      <tr><td>zero measure</td><td>\(c_0=c_1=0\), angles free; or \(\theta_0\equiv\theta_1\) and \(c_0+c_1=0\)</td><td>global</td></tr>
-      <tr><td>exact <small>\(\sigma\ne0\)</small></td><td>each student dead or at \(a\); \(c_0+c_1=\sigma\)</td><td>global</td></tr>
-      <tr><td>antipodal cancellation <small>\(\sigma\ne0\)</small></td><td>\(\theta_0\equiv\theta_1\equiv a+\pi\), \(c_0+c_1=0\)</td><td>saddle</td></tr>
-    </table>
-    <p><em>Antipodal teacher</em> (\(\widehat\beta=\pi\), \(s_0,s_1\ne0\)):</p>
-    <table>
-      <tr><th>family <small>exists iff</small></th><th>student data</th><th>type</th></tr>
-      <tr><td>colliding, interior root <small>\(t_\pm\) of \(A_R\) in \((0,\pi)\cup(\pi,2\pi)\)</small></td><td>\(\theta_0\equiv\theta_1\equiv t_\pm\), \(c_0+c_1=\tfrac{P_R(t_\pm)}{\pi}\), split free</td><td>saddle</td></tr>
-      <tr><td>colliding, endpoint \(0\) <small>always</small></td><td>\(\theta_0\equiv\theta_1\equiv0\), \(c_0+c_1=s_0\), split free</td><td>spurious minimum iff the endpoint cusp cubic is positive at \(\mu=s_0\); else saddle</td></tr>
-      <tr><td>colliding, endpoint \(\pi\) <small>always</small></td><td>\(\theta_0\equiv\theta_1\equiv\pi\), \(c_0+c_1=s_1\), split free</td><td>mirror of the previous row with \(\mu=s_1\)</td></tr>
-      <tr><td>opposite exact <small>always</small></td><td>\((\theta_0,\theta_1)\equiv(0,\pi)\), \((c_0,c_1)=(s_0,s_1)\), or swapped</td><td>global</td></tr>
-      <tr><td>opposite perpendicular <small>\(s_0=s_1=:s\)</small></td><td>\(\{\theta_0,\theta_1\}\equiv\{\tfrac\pi2,\tfrac{3\pi}2\}\), \(c_0=c_1=\tfrac{2s}{\pi}\)</td><td>saddle</td></tr>
-      <tr><td>one student dead <small>root \(t\) of \(A_R\) with \(P_R(t)\ne0\)</small></td><td>live mass \(\tfrac{P_R(t)}{\pi}\); dead angle \(x\) solves \(\tfrac{P_R(t)}{\pi}\Phi_R(x-t)=P_R(x)\)</td><td>saddle</td></tr>
-      <tr><td>both students dead <small>\(P_R\) has zeros</small></td><td>\(c_0=c_1=0\), both \(\theta_i\) zeros of \(P_R\)</td><td>saddle</td></tr>
-      <tr><td>separated midpoint pair <small>root of the midpoint equation</small></td><td>\(c_0=c_1\), \(\theta_{0,1}=\varphi\pm\tfrac E2\) with \(\varphi\equiv0\) or \(\varphi\equiv\pi\)</td><td>saddle</td></tr>
-    </table>
-    <p><em>Genuine teacher</em> (\(0<\widehat\beta<\pi\), \(s_0,s_1\ne0\)). Separated live families solve the balance system obtained by equating (M) with the second mass formula \(c_1=A_R(\theta_0)/H_R(D)\), \(c_0=-A_R(\theta_1)/H_R(D)\), where \(H_R=-\Phi_R'\).</p>
-    <table>
-      <tr><th>family <small>exists iff</small></th><th>student data</th><th>type</th></tr>
-      <tr><td>collision ray <small>at each root \(t\) of \(A_R\)</small></td><td>\(\theta_0\equiv\theta_1\equiv t\), \(c_0,c_1\ne0\), \(c_0+c_1=\tfrac{P_R(t)}{\pi}\)</td><td>spurious minimum iff \(\tau_R(t)P_R(t)>0\) and \(W(t)\,c_0c_1\,\tau_R(t)<0\), or \(\tau_R(t)=0\), \(W'(t)=0\) and \(c_0c_1<0\); else saddle</td></tr>
-      <tr><td>opposite bisector <small>\(s_0=s_1\)</small></td><td>\(\theta_0\equiv\tfrac{\widehat\beta}{2}\pmod\pi\), \(\theta_1=\theta_0+\pi\), \(c_i=\tfrac{P_R(\theta_i)}{\pi}\)</td><td>saddle</td></tr>
-      <tr><td>one student dead <small>root \(t\) of \(A_R\) with \(P_R(t)\ne0\)</small></td><td>live mass \(\tfrac{P_R(t)}{\pi}\); dead angle as above</td><td>saddle</td></tr>
-      <tr><td>both students dead <small>\(P_R\) has zeros</small></td><td>\(c_0=c_1=0\), both \(\theta_i\) zeros of \(P_R\)</td><td>saddle</td></tr>
-      <tr><td>separated, exact <small>always</small></td><td>\((\theta_0,\theta_1)\equiv(0,\widehat\beta)\) with \(u=v\), masses \((s_0,s_1)\), or swapped</td><td>global</td></tr>
-      <tr><td>separated, real corner <small>a student on a teacher ray</small></td><td>balance system; the corner forces the exact fit</td><td>global</td></tr>
-      <tr><td>separated, ghost corner <small>a student opposite a teacher ray</small></td><td>balance system</td><td>saddle</td></tr>
-      <tr><td>separated, smooth, \(T\succ0\)</td><td>balance system, masses by (M); \(T\) is the reduced \(2\times2\) angular Hessian (Schur complement of the mass block)</td><td>spurious minimum</td></tr>
-      <tr><td>separated, smooth, \(T\not\succeq0\)</td><td>same data</td><td>saddle</td></tr>
-      <tr><td>separated, smooth, rank one <small>\(T\succeq0\), \(\det T=0\)</small></td><td>same data</td><td>decided by the reduced one-dimensional germ: minimum if it is flat or a strict maximum, saddle otherwise</td></tr>
-    </table>
-    <div class="lean">
-      <a href="https://github.com/JayPiZimmermann/two-teacher-census/blob/main/TwoTeacherCensus/Classification.lean">TwoTeacherCensus/Classification.lean</a>
-      <a class="long" href="https://github.com/JayPiZimmermann/Skip-Connections-Avoid-Spurious-Local-Minima/blob/main/LeanFormalization/Main/TwoStudentClassification.lean">noncentered_two_student_full_classification</a>
-    </div>
-  </div>
-
-  <p>In both theorems the critical points are therefore always global minima, spurious local minima, or topological saddles — no local maxima and no degenerate types escape the three labels — and the two classifications intersect, on live students, exactly in the centered families whose first moments match, \(u=v\).</p>
-
-  <h2 id="map">The census map</h2>
-  <p>The map plots the gap \(\widehat\beta\) horizontally and the compressed mass ratio vertically — \(y=s_1/s_0\) folded so that \(y=\pm1\) is the seam \(\lvert s_0\rvert=\lvert s_1\rvert\) and \(y=0\) the one-teacher line — and colours a teacher by its census. The census can change only where a family is born, dies, or changes type, and for the colliding families those loci are <em>mass-free</em>: they are the zero sets of three Wronskian-type determinants in the gap and the direction alone.</p>
-
-  <div class="thm" id="thm-map-centered">
-    <div class="head">Theorem 3<span class="lab">(the centered census map, exactly)</span></div>
-    <p>The boundary set of the centered census consists of nine curves: the two branches of the <em>torque lens</em> (present for \(\beta\in[\beta^*_1,\beta^*_2]\), where \(\tan(\beta/2)=\pi/2-\beta/2\) and \(\beta^*_2=\pi-\beta^*_1\)), the two branches of the <em>potential curve</em> (spanning \(0<\beta<\pi\), with \(y\in(\gamma,1-\gamma)\), \(\gamma=\tfrac2\pi\arctan\tfrac2\pi\)), the lines \(y=0\) and \(y=\pm1\), and the columns \(\beta\in\{0,\tfrac\pi2,\pi\}\). On the map — a cylinder, \(y\) being a circle of circumference \(2\) — these cut exactly ten faces, and the census is constant on each:</p>
-    <table>
-      <tr><th>face</th><th>region</th><th>angular roots</th><th>census</th></tr>
-      <tr><td>\(F_1\), \(F_4\)</td><td>\(y<0\), outside the lens (\(\beta\lessgtr\pi/2\))</td><td>2</td><td>fit + one mixed-sign colliding minimum</td></tr>
-      <tr><td>\(F_2\), \(F_3\)</td><td>inside the lens</td><td>4</td><td>fit + two mixed-sign colliding minima</td></tr>
-      <tr><td>\(F_5\), \(F_8\)</td><td>\(y>0\), below the potential curve</td><td>2</td><td>fit + one positive colliding minimum</td></tr>
-      <tr><td>\(F_6\), \(F_9\)</td><td>between its branches</td><td>2</td><td>fit + two positive colliding minima</td></tr>
-      <tr><td>\(F_7\), \(F_{10}\)</td><td>above it</td><td>2</td><td>fit + one positive colliding minimum</td></tr>
-    </table>
-    <p>Four distinct census values occur. Merging the five face pairs separated only by the measure-zero column \(\beta=\pi/2\) leaves exactly <strong>five</strong> regions of positive area, and these five regions carrying these four values are the entire centered map. In particular a centered teacher with masses of opposite sign never has a positive-mass spurious minimum, and no separated family is ever a minimum.</p>
-    <div class="lean">
-      <a href="https://github.com/JayPiZimmermann/two-teacher-census/blob/main/TwoTeacherCensus/CensusMap.lean">TwoTeacherCensus/CensusMap.lean</a>
-      <a class="cert" href="https://github.com/JayPiZimmermann/two-teacher-census/tree/main/certificates/census_map_centered">census_map_centered/</a>
-    </div>
-  </div>
-
-  <div class="thm" id="thm-map-plain">
-    <div class="head">Theorem 4<span class="lab">(plain-ReLU root counts, for every gap) and the plain map</span></div>
-    <p>For \(\beta\in(0,\pi)\) (the mirror \(\beta\mapsto2\pi-\beta\) is an exact symmetry) the potential determinant has no interior roots — the plain model has no analogue of the centered potential curve — and the torque determinant has interior roots only on the arc \(t\in(0,\beta)\): none for \(\beta<\beta^*_R\), a double root at the midpoint for \(\beta=\beta^*_R\), and one on each side of it for \(\beta>\beta^*_R\), where \(\beta^*_R=2u^*\) with \(\tan u^*=\pi-u^*\). Hence the colliding part of the plain census is exactly determined for every teacher.</p>
-    <p>Unlike the centered model, plain-ReLU <em>separated</em> families can be minima (Theorem 2), so the plain map has a second set of boundaries that is not mass-free. The drawn plain map is the finite-grid rendering of Theorem 2 at depth 8; its seven labelled faces are backed by interval-certified witnesses, by exhaustive branch-and-bound enumerations at 22 named teachers, and by Krawczyk-certified continuation on nine rectangles (30,278 certified steps) — but a global face arrangement for the plain map is <strong>not</strong> a theorem. The ledger <a href="https://github.com/JayPiZimmermann/two-teacher-census/blob/main/certificates/COMPLETENESS.md">COMPLETENESS.md</a> states, claim by claim, what is proved, what is certified, and on which domain.</p>
-    <div class="lean">
-      <a href="https://github.com/JayPiZimmermann/two-teacher-census/blob/main/TwoTeacherCensus/CensusMap.lean">TwoTeacherCensus/CensusMap.lean</a>
-      <a class="cert" href="https://github.com/JayPiZimmermann/two-teacher-census/tree/main/certificates/census_map_noncentered">census_map_noncentered/</a>
-    </div>
-  </div>
-
-  <h2 id="lean">The Lean formalization</h2>
-  <p>Two formal developments exist. The <a href="https://github.com/JayPiZimmermann/Skip-Connections-Avoid-Spurious-Local-Minima/tree/main/LeanFormalization">original proof</a> grew with the research and spans several hundred modules; its public endpoints <code>centered_two_student_full_classification</code> and <code>noncentered_two_student_full_classification</code> are hypothesis-free: every configuration \((\beta,s,c,\theta)\) is covered. The repository behind this page, <a href="https://github.com/JayPiZimmermann/two-teacher-census">two-teacher-census</a>, carries a <em>short, self-contained</em> re-proof on the vocabulary of the <a href="https://github.com/JayPiZimmermann/Removing-spurious-minima-for-planar-features-by-skip-connections">paper's Lean development</a>: the same statements, a few files, no dependency on the research tree. Its status — which lemmas are proved and which are still open — is recorded in that repository's <code>PROOF_PLAN.md</code> and build certificate.</p>
-  <p>The explorer itself is theorem data: each table row is a constructor of the Lean classification, its angles and masses are evaluated from the row's closed forms (scalar roots are bracketed and bisected; they never decide criticality or type), and the map asset <code>census-map.js</code> is generated by driving the very same JavaScript through a headless shim, so the picture cannot drift from the table it claims to show.</p>
-
-  <h2 id="certificates">Certificates</h2>
-  <p>Where a computation rather than a proof script is the natural instrument — root enclosures, face witnesses, exhaustive enumerations — the repository ships interval-arithmetic certificates (200-bit enclosures, directed rounding) together with the scripts that regenerate and re-check them. The centered map is certified complete: 10 faces, 4 census values, 5 positive-area pieces, in exact agreement with the shipped map. The plain map's certified scope is listed in the completeness ledger.</p>
-
-  <h2 id="about">About</h2>
-  <p>This census is part of the project behind <a href="https://arxiv.org/abs/2610.01728"><em>Removing spurious minima for planar features by skip connections</em></a> (Zimmermann, Grillo, Balakin, Loho, 2026), where the classification serves as the laboratory for the paper's general-width theorems; it is not itself part of the paper. Page and code by <a href="https://jakob-zimmermann.fly.dev">Jakob Paul Zimmermann</a>.</p>
+<article class="prose" id="about">
+  <h2>About</h2>
+  <p>This census is part of the project behind <a href="https://arxiv.org/abs/2610.01728"><em>Removing spurious minima for planar features by skip connections</em></a> (Zimmermann, Grillo, Balakin, Loho, 2026), where the two-neuron classification serves as the laboratory for the paper's general-width results; it is not itself part of the paper. Every row of the table is a family of critical points with its proved type, evaluated from closed forms; nothing on this page is a numerical Hessian. Page by <a href="https://jakob-zimmermann.fly.dev">Jakob Paul Zimmermann</a>.</p>
 </article>
 
 <footer>
-  <a href="https://github.com/JayPiZimmermann/two-teacher-census">Source</a> ·
-  <a href="https://arxiv.org/abs/2610.01728">Paper</a> ·
-  static page, no tracking
+  <a href="https://arxiv.org/abs/2610.01728">Paper</a> · static page, no tracking
 </footer>
 
 <script>
@@ -482,9 +469,18 @@
     else if (/^centered$/i.test(m)) sel.value = "centered";
   })();
 </script>
-<script src="explorer.js?v=6" defer></script>
+<script>
+  // Primer tabs: one slot visible at a time.
+  document.querySelectorAll(".primer .tabs button").forEach(function (b) {
+    b.addEventListener("click", function () {
+      document.querySelectorAll(".primer .tabs button").forEach(function (o) { o.setAttribute("aria-selected", o === b ? "true" : "false"); });
+      document.querySelectorAll(".primer .slot").forEach(function (sl) { sl.hidden = sl.getAttribute("data-slot") !== b.getAttribute("data-tab"); });
+    });
+  });
+</script>
+<script src="explorer.js?v=7" defer></script>
 <script defer src="vendor/katex/katex.min.js"></script>
 <script defer src="vendor/katex/contrib/auto-render.min.js"
-  onload="['primer','theorems'].forEach(function (id) { renderMathInElement(document.getElementById(id), {delimiters: [{left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}], throwOnError: false}); });"></script>
+  onload="['primer','about'].forEach(function (id) { renderMathInElement(document.getElementById(id), {delimiters: [{left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}], throwOnError: false}); });"></script>
 </body>
 </html>
