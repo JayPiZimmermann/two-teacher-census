@@ -649,8 +649,7 @@
       }).join("") + "</span>" +
         "<span class=\"lx-row lx-note\">" +
         "<span><svg width=\"15\" height=\"11\" aria-hidden=\"true\"><circle cx=\"7.5\" cy=\"5.5\" r=\"2.6\" fill=\"var(--ink)\" fill-opacity=\"0.62\"/></svg>teacher network from each census</span>" +
-        "<span><svg width=\"15\" height=\"11\" aria-hidden=\"true\"><line x1=\"7.5\" y1=\"0\" x2=\"7.5\" y2=\"11\" stroke=\"var(--ink)\" stroke-opacity=\"0.6\" stroke-width=\"1.6\"/></svg>one-dimensional census</span>" +
-        "<span><svg width=\"15\" height=\"11\" aria-hidden=\"true\"><circle cx=\"7.5\" cy=\"5.5\" r=\"3.4\" fill=\"var(--paper)\" stroke=\"var(--ink)\" stroke-width=\"1.6\"/></svg>one-dimensional census crossing</span></span>";
+        "<span><svg width=\"15\" height=\"11\" aria-hidden=\"true\"><circle cx=\"7.5\" cy=\"5.5\" r=\"4\" fill=\"none\" stroke=\"var(--accent)\" stroke-width=\"1.6\"/></svg>the current teacher network</span></span>";
 
       // Clicking a legend entry picks that census: every region carrying it
       // lifts at once, and one example teacher is loaded.  That is the only way
@@ -791,7 +790,12 @@
         });
         svg.appendChild(node);
       }
-      lineStrata(model).forEach(function (st) {
+      // The degenerate teacher networks (coincident, orthogonal/antipodal, a
+      // vanishing mass) and the plain fold walls are strata of the critical-point
+      // classification, not census boundaries; for a readable map they are not
+      // drawn.  DRAW_STRATA keeps the code for the research site.
+      var DRAW_STRATA = false;
+      if (DRAW_STRATA) lineStrata(model).forEach(function (st) {
         if (st.kind === "v" && (st.at < -1e-9 || st.at > F.half + 1e-9)) return;
         var a = st.kind === "v"
           ? {x1: F.X(st.at), y1: F.dy, x2: F.X(st.at), y2: F.dy + F.dh}
@@ -842,7 +846,7 @@
       // The separated stratum's fold walls, drawn through the midpoints of
       // their certified per-beta brackets as one-dimensional strata like the
       // others; the bracket widths are documented in certificates/.
-      foldWallStrata(model).forEach(function (st) {
+      if (DRAW_STRATA) foldWallStrata(model).forEach(function (st) {
         var rows = st.rows.filter(function (r) { return r[0] <= F.half + 1e-6; });
         if (rows.length < 2) return;
         rows = rows.slice().sort(function (a, b) { return a[0] - b[0]; });
@@ -866,7 +870,7 @@
         hitTarget(svgEl("circle", {cx: sx3, cy: sy3, r: 11 * ms, fill: "transparent"}),
           rep2, "teacher on " + st.name);
       });
-      pointStrata(model).forEach(function (pt) {
+      if (DRAW_STRATA) pointStrata(model).forEach(function (pt) {
         var cx = F.X(pt.beta), cy = F.Y(pt.y);
         svg.appendChild(svgEl("circle", {cx: cx, cy: cy, r: 3.6 * ms, fill: "var(--paper)",
           stroke: "var(--ink)", "stroke-width": 1.6, "vector-effect": "non-scaling-stroke",
@@ -2364,18 +2368,17 @@
       var teacherDead = Math.abs(T.s0) < 1e-9 || Math.abs(T.s1) < 1e-9;
       var studentDead = !!(chosen && chosen.c && chosen.c.some(function (c) { return Math.abs(c) < 1e-9; }));
       var studentSplit = !!(chosen && chosen.split);
+      var extra = (teacherDead || studentDead ? "<span>" + ring + "zero mass generator</span>" : "") +
+        (studentSplit ? "<span><svg width=\"34\" height=\"10\" aria-hidden=\"true\"><line x1=\"1\" y1=\"5\" x2=\"33\" y2=\"5\" stroke=\"var(--positive)\" stroke-width=\"1.5\"/><circle cx=\"14\" cy=\"5\" r=\"4\" fill=\"var(--positive)\"/></svg>free split: masses sum to the dot</span>" : "");
       document.getElementById("ex-legend").innerHTML =
         "<span class=\"lx-row\"><b>teacher generators</b>" +
         "<span>" + sw("var(--negative)") + "positive mass</span>" +
         "<span>" + sw("var(--negative)", true) + "negative mass</span>" +
-        (teacherDead ? "<span>" + ring + "zero mass generator</span>" : "") +
         "<span>" + sw("var(--rule)", true) + "unit circle</span></span>" +
         "<span class=\"lx-row\"><b>student generators</b>" +
         "<span>" + sw("var(--positive)") + "positive mass</span>" +
-        "<span>" + sw("var(--positive)", true) + "negative mass</span>" +
-        (studentDead ? "<span>" + ring + "zero mass generator</span>" : "") +
-        (studentSplit ? "<span><svg width=\"34\" height=\"10\" aria-hidden=\"true\"><line x1=\"1\" y1=\"5\" x2=\"33\" y2=\"5\" stroke=\"var(--positive)\" stroke-width=\"1.5\"/><circle cx=\"14\" cy=\"5\" r=\"4\" fill=\"var(--positive)\"/></svg>arbitrary generator decomposition with masses summing up to the dot</span>" : "") +
-        "</span>";
+        "<span>" + sw("var(--positive)", true) + "negative mass</span></span>" +
+        (extra ? "<span class=\"lx-row\">" + extra + "</span>" : "");
 
       var trapNote = document.getElementById("ex-trap-note");
       if (trapNote) trapNote.textContent = trapArmed
