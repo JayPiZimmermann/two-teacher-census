@@ -2062,6 +2062,24 @@
         seen[tag] = true;
         return true;
       });
+      // The separated root finder re-finds the one-student-dead critical points
+      // as the c -> 0 limit of the separated balance system (one mass at the
+      // level of round-off, the other at the dead row's pinned mass).  Those are
+      // the dead rows already listed, not further critical points, and at
+      // c = 0 the second-order test is degenerate by construction; drop the
+      // duplicates rather than show them "undecided".
+      var dead = classification.rows.filter(function (r) { return r.family === "one student dead" && r.theta; });
+      function sameDir(a, b) { var d = mod(a - b, per); return d < 2e-3 || per - d < 2e-3; }
+      classification.rows = classification.rows.filter(function (r) {
+        if (r.family !== "separated pair" || !r.c || !r.theta) return true;
+        var small = Math.min(Math.abs(r.c[0]), Math.abs(r.c[1]));
+        var large = Math.max(Math.abs(r.c[0]), Math.abs(r.c[1]));
+        if (small > 1e-4 * Math.max(large, 1e-9)) return true;
+        return !dead.some(function (d) {
+          return (sameDir(r.theta[0], d.theta[0]) && sameDir(r.theta[1], d.theta[1])) ||
+                 (sameDir(r.theta[0], d.theta[1]) && sameDir(r.theta[1], d.theta[0]));
+        });
+      });
       classification.rows.forEach(function (r, i) {
         r.key = r.family + "#" + r.selector + "#" + (r.angleText || "") + "#" + i;
         r.row = i;
