@@ -200,12 +200,6 @@
     .primer .fig svg { max-width: 330px; width: 100%; margin: 0 auto; }
   }
   @media (max-width: 640px) { .primer { padding-inline: 1rem; } }
-  .tutorial { max-width: var(--page); margin: 0 auto; padding: 0 2rem 1rem; }
-  .tutorial h2 { font-size: 1.2rem; margin: .4rem 0 .5rem; }
-  .tutorial ol { margin: 0; padding-left: 1.3rem; font-size: .92rem; line-height: 1.55; }
-  .tutorial li { margin: .3rem 0; }
-  @media (max-width: 640px) { .tutorial { padding-inline: 1rem; } }
-
   /* ---- prose sections ---- */
   .prose { max-width: var(--page); margin: 0 auto; padding: 2.5rem 2rem 4rem; }
   .prose h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 .3rem; }
@@ -251,10 +245,6 @@
       </select>
     </label>
     <nav aria-label="Page">
-      <a href="#intro">Intro</a>
-      <a href="#primer">Primer</a>
-      <a href="#explorer">Explorer</a>
-      <a href="#tutorial">How to read</a>
       <a href="#about">About</a>
       <a href="https://arxiv.org/abs/2610.01728">Paper</a>
     </nav>
@@ -450,22 +440,13 @@
 </section>
 </main>
 
-<section class="tutorial" id="tutorial" aria-label="How to read the map">
-  <h2>How to read the map</h2>
-  <ol>
-    <li><b>Choose the network type</b> in the header. The skip network's census has five regions and only collided spurious minima; the plain network's has many more, including separated ones. The map's gap axis spans half a period because reflecting the gap leaves the census unchanged.</li>
-    <li><b>Pick a teacher.</b> Drag a blue generator in the left plot (its length is the mass, its direction the angle), use the sliders, or click a region of the map to load a teacher from it. Thick lines and rings are one-dimensional and zero-dimensional censuses: degenerate teachers (equal masses, a zero mass, right angles) whose landscape is special.</li>
-    <li><b>Read the table.</b> Every row is one family of critical points of the loaded teacher — the exact fit, collided pairs, separated pairs, dead students — with the angles and masses computed from the row's closed form and the type proved for that family. Click a row to draw its students in red. A row with "split free" is a whole line of critical points: only the sum of the masses is fixed, and the type may differ along the line.</li>
-  </ol>
-</section>
-
 <article class="prose" id="about">
   <h2>About</h2>
   <p>This census is part of the project behind <a href="https://arxiv.org/abs/2610.01728"><em>Removing spurious minima for planar features by skip connections</em></a> (Zimmermann, Grillo, Balakin, Loho, 2026), where the two-neuron classification serves as the laboratory for the paper's general-width results; it is not itself part of the paper. Every row of the table is a family of critical points with its proved type, evaluated from closed forms; nothing on this page is a numerical Hessian. Page by <a href="https://jakob-zimmermann.fly.dev">Jakob Paul Zimmermann</a>.</p>
 </article>
 
 <footer>
-  <a href="https://arxiv.org/abs/2610.01728">Paper</a> · static page, no tracking
+  <a href="https://arxiv.org/abs/2610.01728">Paper</a> · static page, no tracking · mathematics typeset with <a href="https://katex.org">KaTeX</a> (MIT)
 </footer>
 
 <script>
