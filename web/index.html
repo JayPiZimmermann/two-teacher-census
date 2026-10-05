@@ -313,7 +313,7 @@
     <div class="fig"><svg viewBox="0 0 330 150" aria-label="One loss curve showing a strict local minimum, a saddle, a flat local minimum and the global minimum">
   <g font-size="9" fill="var(--muted)" text-anchor="middle">
     <line x1="6" y1="132" x2="326" y2="132" stroke="var(--rule)"/>
-    <text x="322" y="128" font-size="8" text-anchor="end">𝓛 = 0</text>
+    <text x="10" y="128" font-size="8" text-anchor="start">𝓛 = 0</text>
     <path d="M8,25 C30,25 40,105 60,105 C80,105 90,55 105,55 C120,55 135,80 150,80 C165,80 175,110 190,110 L230,110 C250,110 255,60 270,60 C285,60 290,132 305,132 C318,132 322,110 326,100" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
     <line x1="190" y1="110" x2="230" y2="110" stroke="var(--accent)" stroke-width="3.5"/>
     <circle cx="60" cy="105" r="3" fill="var(--accent)"/>
@@ -328,7 +328,9 @@
   </g>
 </svg></div>
     <div class="txt">
-      <p><b>Population loss.</b> The teacher is fixed and the student is scored by the mean squared difference of the outputs over the Gaussian input, \(\mathscr L(c,\theta)=\tfrac12\,\mathbb E_{x\sim\mathcal N(0,I_2)}\bigl(f_{c,\theta}(x)-f_{s,\beta}(x)\bigr)^2\). A student \((c,\theta)\in\mathbb R^2\times\mathbb R^2\) is a <b>critical point</b> if \(\nabla\mathscr L(c,\theta)=0\). A critical point is a <b>local minimum</b> if \(\mathscr L\ge\mathscr L(c,\theta)\) on a neighbourhood — <em>strict</em> if the inequality is strict away from the point, <em>flat</em> otherwise; a <b>local maximum</b> if \(\mathscr L\le\mathscr L(c,\theta)\) on a neighbourhood; a <b>saddle</b> if it is neither. The <b>global minimum</b> is a critical point at which \(\mathscr L\) attains its smallest value; in this setting it always exists and the value is \(0\), because the student can copy the teacher. A <b>spurious minimum</b> is a local minimum that is not global: this is what can trap gradient descent.</p>
+      <p><b>Population loss.</b> The teacher is fixed and the student is scored by the mean squared difference of the outputs over the Gaussian input,
+      \[\mathscr L(c,\theta)=\tfrac12\,\mathbb E_{x\sim\mathcal N(0,I_2)}\bigl(f_{c,\theta}(x)-f_{s,\beta}(x)\bigr)^2 .\]
+      A student \((c,\theta)\in\mathbb R^2\times\mathbb R^2\) is a <b>critical point</b> if \(\nabla\mathscr L(c,\theta)=0\). A critical point is a <b>local minimum</b> if \(\mathscr L\ge\mathscr L(c,\theta)\) on a neighbourhood — <em>strict</em> if the inequality is strict away from the point, <em>flat</em> otherwise; a <b>local maximum</b> if \(\mathscr L\le\mathscr L(c,\theta)\) on a neighbourhood; a <b>saddle</b> if it is neither. The <b>global minimum</b> is a critical point at which \(\mathscr L\) attains its smallest value; in this setting it always exists and the value is \(0\), because the student can copy the teacher. A <b>spurious minimum</b> is a local minimum that is not global: this is what can trap gradient descent.</p>
       <p>Each spurious minimum gets a <b>type</b>: <em>collided</em> (co) if the two students share a direction, \(\theta_0\equiv\theta_1\), <em>separated</em> (sep) otherwise; with <em>same-sign</em> (+) or <em>opposite-sign</em> (±) masses \(c_0c_1\gtrless0\). The classification gives, for every teacher, the complete list of critical points in closed form and the type of each; the table of the explorer lists them.</p>
     </div>
   </div>
