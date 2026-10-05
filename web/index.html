@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The two-teacher census — planar ReLU population landscapes with two students</title>
+<title>The two-teacher census — population loss landscapes of two-neuron teacher and student networks</title>
 <meta name="description" content="Interactive, theorem-driven map of every critical point of the centered and plain-ReLU population loss for a planar teacher–student network with two neurons each, with the complete classification theorems and their Lean formalization.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='13' fill='none' stroke='%23176b52' stroke-width='2'/><line x1='16' y1='16' x2='27' y2='9' stroke='%23c82d43' stroke-width='2.5'/><line x1='16' y1='16' x2='7' y2='6' stroke='%232166ac' stroke-width='2.5'/></svg>">
 <link rel="stylesheet" href="vendor/katex/katex.min.css">
@@ -333,7 +333,7 @@
     <div class="txt">
       <p><b>Population loss.</b> The teacher network is fixed and the student network is scored by the mean squared difference of the outputs over the Gaussian input,
       \[\mathscr L(c,\theta)=\tfrac12\,\mathbb E_{x\sim\mathcal N(0,I_2)}\bigl(f_{c,\theta}(x)-f_{s,\beta}(x)\bigr)^2 .\]
-      A student \((c,\theta)\in\mathbb R^2\times\mathbb R^2\) is a <b>critical point</b> if \(\nabla\mathscr L(c,\theta)=0\). A critical point is a <b>local minimum</b> if \(\mathscr L\ge\mathscr L(c,\theta)\) on a neighbourhood — <em>strict</em> if the inequality is strict away from the point, <em>flat</em> otherwise; a <b>local maximum</b> if \(\mathscr L\le\mathscr L(c,\theta)\) on a neighbourhood; a <b>saddle</b> if it is neither. The <b>global minimum</b> is a critical point at which \(\mathscr L\) attains its smallest value; in this setting it always exists and the value is \(0\), because the student network can copy the teacher network. A <b>spurious minimum</b> is a local minimum that is not global: this is what can trap gradient descent.</p>
+      A student network with parameters \((c,\theta)\in\mathbb R^2\times\mathbb R^2\) is a <b>critical point</b> if \(\nabla\mathscr L(c,\theta)=0\). A critical point is a <b>local minimum</b> if \(\mathscr L\ge\mathscr L(c,\theta)\) on a neighbourhood — <em>strict</em> if the inequality is strict away from the point, <em>flat</em> otherwise; a <b>local maximum</b> if \(\mathscr L\le\mathscr L(c,\theta)\) on a neighbourhood; a <b>saddle</b> if it is neither. The <b>global minimum</b> is a critical point at which \(\mathscr L\) attains its smallest value; in this setting it always exists and the value is \(0\), because the student network can copy the teacher network. A <b>spurious minimum</b> is a local minimum that is not global: this is what can trap gradient descent.</p>
       <p>Each spurious minimum gets a <b>type</b>: <em>collided</em> (co) if the two student neurons share a direction, \(\theta_0\equiv\theta_1\), <em>separated</em> (sep) otherwise; with <em>same-sign</em> (+) or <em>opposite-sign</em> (±) masses \(c_0c_1\gtrless0\). The classification gives, for every teacher network, the complete list of critical points in closed form and the type of each; the table of the explorer lists them.</p>
     </div>
   </div>
@@ -346,19 +346,19 @@
 </section>
 
 <main id="explorer">
-<section id="interactive-landscape" aria-label="The exact two-student classification">
+<section id="interactive-landscape" aria-label="The exact classification for two-neuron student networks">
 <div class="landscape-explorer-layout">
   <div class="lx-box lx-left">
     <p class="legend" id="ex-legend"></p>
     <div class="lx-view" id="ex-canvas-view">
-      <svg class="canvas" id="ex-canvas" width="380" height="380" viewBox="-255 -255 510 510" role="img" aria-label="The teacher atoms in blue and the selected critical family's students in red, each drawn as an arrow whose length is the size of its mass on a fixed scale, dashed with a hollow head when the mass is negative; in the centered model each arrow is drawn both ways, because a centered direction is an unoriented line. The teacher atoms can be dragged."></svg>
+      <svg class="canvas" id="ex-canvas" width="380" height="380" viewBox="-255 -255 510 510" role="img" aria-label="The teacher network's generators in blue and the selected critical family's student-network generators in red, each drawn as an arrow whose length is its mass on a fixed scale, dashed with a hollow head when the mass is negative; for the skip network each arrow is drawn both ways, because its direction is an unoriented line. The teacher generators can be dragged."></svg>
     </div>
     <p class="lx-hint">drag the teacher generators, scroll to zoom, double-click to reset</p>
   </div>
   <div class="lx-box lx-right">
     <p class="legend" id="ex-map-legend"></p>
     <div class="lx-view" id="ex-map-view">
-      <svg class="lx-mapcanvas" id="ex-map" width="620" height="330" viewBox="0 0 620 330" role="img" aria-label="A map of the teacher gap against the teacher mass ratio, shaded by which census of critical families occurs. The gap axis covers half a period, because reflecting the gap leaves the census unchanged. Each region carries a dot marking one example teacher in it; clicking the region loads that example. The regions of the current teacher's census are outlined. Degenerate strata that are single lines are drawn as thick lines, and a ring marks the current teacher. The vertical axis is compressed so that a mass ratio of plus or minus infinity is the top and bottom edge."></svg>
+      <svg class="lx-mapcanvas" id="ex-map" width="620" height="330" viewBox="0 0 620 330" role="img" aria-label="A map of the teacher gap against the teacher mass ratio, shaded by which census of critical families occurs. The gap axis covers half a period, because reflecting the gap leaves the census unchanged. Each region carries a dot marking one example teacher network in it; clicking the region loads that example. A ring marks the current teacher network. The vertical axis is compressed so that a mass ratio of plus or minus infinity is the top and bottom edge."></svg>
     </div>
     <p class="lx-hint">the teacher gap against the teacher mass ratio — click a region to load a teacher network from it; zero- and one-dimensional censuses are not plotted</p>
   </div>
@@ -376,7 +376,7 @@
   </div>
   <div class="lx-bottom">
     <div class="lx-tablecol">
-      <div class="wrap-table landscape-classification-scroll" tabindex="0" aria-label="Computed critical-point branches with student angles, masses, and proved or undecided type labels">
+      <div class="wrap-table landscape-classification-scroll" tabindex="0" aria-label="Computed critical-point families of the student network with angles, masses, and proved type labels">
         <table class="critlist" id="ex-crit-table">
           <thead><tr>
             <th scope="col">classification</th>
