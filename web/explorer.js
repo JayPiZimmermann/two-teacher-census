@@ -1658,16 +1658,30 @@
       var T00 = massDet * A00 - K.kap * Hd * Hd * p.c0 * p.c0;
       var T11 = massDet * A11 - K.kap * Hd * Hd * p.c1 * p.c1;
       var T01 = massDet * A01 - Fd * Hd * Hd * p.c0 * p.c1;
-      var detT = T00 * T11 - T01 * T01;
       // The pivots are quadratic in the student masses and in the teacher's,
       // so their scale runs over orders of magnitude across the map: the sign
       // test is taken against the form's OWN size, never against a fixed
       // epsilon, which would be a band of nonzero width around every stratum
       // where the form degenerates.
-      var Tref = Math.max(Math.abs(T00), Math.abs(T11), Math.abs(T01), 1e-300);
-      if (T00 > SEP_REL * Tref && detT > SEP_REL * Tref * Tref) return "spurious local minimum";
-      if (T00 < -SEP_REL * Tref || T11 < -SEP_REL * Tref ||
-          detT < -SEP_REL * Tref * Tref) return "topological saddle";
+      //
+      // The two students need not share a scale either.  Near a degenerate
+      // teacher (an almost coincident pair, an almost vanishing mass) a
+      // separated family has one student of microscopic mass c0 sitting at an
+      // extremum of a residual that is itself tiny, and its pivot T00 is
+      // proportional to c0 while T11 is of order one: measured, T00/T11 of
+      // 1e-10 at a genuine family.  Definiteness is invariant under the
+      // congruence S = D T D with D = diag(|c0|^-1/2, |c1|^-1/2) (Sylvester),
+      // and S puts each pivot on its own student's scale, so the relative sign
+      // test below decides exactly what the unscaled one does -- without
+      // declaring a well-conditioned microscopic pivot undecided.
+      var d0 = 1 / Math.sqrt(Math.max(Math.abs(p.c0), 1e-300));
+      var d1 = 1 / Math.sqrt(Math.max(Math.abs(p.c1), 1e-300));
+      var S00 = T00 * d0 * d0, S11 = T11 * d1 * d1, S01 = T01 * d0 * d1;
+      var detS = S00 * S11 - S01 * S01;
+      var Sref = Math.max(Math.abs(S00), Math.abs(S11), Math.abs(S01), 1e-300);
+      if (S00 > SEP_REL * Sref && detS > SEP_REL * Sref * Sref) return "spurious local minimum";
+      if (S00 < -SEP_REL * Sref || S11 < -SEP_REL * Sref ||
+          detS < -SEP_REL * Sref * Sref) return "topological saddle";
       // Neither definite nor indefinite: the second variation is positive
       // SEMI-definite with a null direction, so quadratic order cannot decide
       // the type at all -- the verdict needs the cubic and is an OPEN residual
