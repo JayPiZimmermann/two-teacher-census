@@ -75,7 +75,11 @@
   .ctrl-row { display: flex; align-items: center; gap: .45rem; margin: .1rem 0; font-size: .78rem; }
   .ctrl-row label { width: 5.2em; flex: 0 0 auto; }
   .ctrl-row input[type="range"] { flex: 1 1 2rem; width: 2rem; min-width: 1.5rem; max-width: 9rem; accent-color: var(--accent); }
-  .ctrl-row .val { width: 4.6em; flex: 0 0 auto; text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .ctrl-row .val {
+    width: 5.6em; flex: 0 0 auto; text-align: right; color: var(--ink); font: inherit; font-size: .78rem;
+    font-variant-numeric: tabular-nums; background: var(--paper); border: 1px solid var(--rule); border-radius: 4px; padding: .05rem .25rem;
+  }
+  .ctrl-row .val:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
   @media (max-width: 760px) {
     #interactive-landscape .lx-sliders { grid-template-columns: 1fr; }
     .ctrl-row input[type="range"] { width: auto; flex: 1 1 auto; }
@@ -255,7 +259,7 @@
 </header>
 
 <section class="intro" id="intro">
-  <p>Understanding loss landscapes is central to explaining neural-network training, yet their structure remains only partially understood even in simple models. In the project <em>Learning Polytopes</em>, which led to the paper <a href="https://arxiv.org/abs/2610.01728">Removing spurious minima for planar features by skip connections</a>, we started by studying the smallest interesting case of teacher–student training: networks with two hidden neurons on planar Gaussian input. Even this case turned out to be surprisingly rich — but with agentic proof search we found closed formulas for <em>all</em> critical points for <em>any</em> teacher, and we mapped the sets of teacher parameters on which the types of local minima agree, the <em>census</em>. Below is an interactive presentation of that result. You can drag and drop the teacher parameters and study every critical point the resulting landscape admits.</p>
+  <p>Understanding loss landscapes is central to explaining neural-network training, yet their structure remains only partially understood even in simple models. In the project <em>Learning Polytopes</em>, which led to the paper <a href="https://arxiv.org/abs/2610.01728">Removing spurious minima for planar features by skip connections</a>, we started by studying the smallest interesting case of teacher–student training: teacher and student networks with two hidden neurons on planar Gaussian input. Even this case turned out to be surprisingly rich — but with agentic proof search we found closed formulas for <em>all</em> critical points for <em>any</em> teacher, and we mapped the sets of teacher-network parameters on which the types of local minima agree, the <em>census</em>. Below is an interactive presentation of that result. You can drag and drop the teacher network's parameters and study every critical point the resulting student landscape admits.</p>
 </section>
 
 <section class="primer" id="primer" aria-label="Primer">
@@ -301,7 +305,7 @@
   </g>
 </svg></div>
     <div class="txt">
-      <p>Both networks read a planar Gaussian input \(x\sim\mathcal N(0,I_2)\) through <em>two hidden neurons</em>. Teacher \((s,\beta)\) and student \((c,\theta)\) have the same shape,
+      <p>Both networks read a planar Gaussian input \(x\sim\mathcal N(0,I_2)\) through <em>two hidden neurons</em>. The teacher network with parameters \((s,\beta)\) and the student network with parameters \((c,\theta)\) have the same shape,
       \[f_{s,\beta}(x)=\sum_{i=0}^{1} s_i\,\mathrm{ReLU}(\langle w_i,x\rangle)\;[\,+\langle b,x\rangle\,],\qquad w_i=(\cos\beta_i,\sin\beta_i),\]
       with \(\mathrm{ReLU}(z)=\max(z,0)\). The second-layer weight \(s_i\in\mathbb R\) is the <b>mass</b> of neuron \(i\) — <em>positive or negative</em>, both signs are admitted throughout — and the <b>generator</b> of the neuron is the second-layer scalar times the first-layer vector, \(g_i=s_i w_i\): a vector of length \(\lvert s_i\rvert\) in direction \(\beta_i\). <b>Plain network:</b> the formula without the bracket. <b>Skip network:</b> with the learned linear skip \(\langle b,x\rangle\); minimising over \(b\) first replaces each ReLU by its even part \(\mathrm{ReLU}(z)-\tfrac12 z=\tfrac12\lvert z\rvert\), so a neuron responds identically to \(x\) and \(-x\): its direction matters only up to sign, the critical points do not depend on that sign, and the explorer therefore draws a skip-network generator as a segment through the origin, centered at it.</p>
       <p><b>Scaling symmetry.</b> ReLU is positively homogeneous, \(\mathrm{ReLU}(\lambda z)=\lambda\,\mathrm{ReLU}(z)\) for \(\lambda>0\), so \((s_i,w_i)\mapsto(s_i/\lambda,\lambda w_i)\) changes neither the generator nor the network function, so the critical points of the full parametrisation are those of the (mass, direction) parametrisation used here.</p>
@@ -326,16 +330,16 @@
   </g>
 </svg></div>
     <div class="txt">
-      <p><b>Population loss.</b> The teacher is fixed and the student is scored by the mean squared difference of the outputs over the Gaussian input,
+      <p><b>Population loss.</b> The teacher network is fixed and the student network is scored by the mean squared difference of the outputs over the Gaussian input,
       \[\mathscr L(c,\theta)=\tfrac12\,\mathbb E_{x\sim\mathcal N(0,I_2)}\bigl(f_{c,\theta}(x)-f_{s,\beta}(x)\bigr)^2 .\]
-      A student \((c,\theta)\in\mathbb R^2\times\mathbb R^2\) is a <b>critical point</b> if \(\nabla\mathscr L(c,\theta)=0\). A critical point is a <b>local minimum</b> if \(\mathscr L\ge\mathscr L(c,\theta)\) on a neighbourhood — <em>strict</em> if the inequality is strict away from the point, <em>flat</em> otherwise; a <b>local maximum</b> if \(\mathscr L\le\mathscr L(c,\theta)\) on a neighbourhood; a <b>saddle</b> if it is neither. The <b>global minimum</b> is a critical point at which \(\mathscr L\) attains its smallest value; in this setting it always exists and the value is \(0\), because the student can copy the teacher. A <b>spurious minimum</b> is a local minimum that is not global: this is what can trap gradient descent.</p>
-      <p>Each spurious minimum gets a <b>type</b>: <em>collided</em> (co) if the two students share a direction, \(\theta_0\equiv\theta_1\), <em>separated</em> (sep) otherwise; with <em>same-sign</em> (+) or <em>opposite-sign</em> (±) masses \(c_0c_1\gtrless0\). The classification gives, for every teacher, the complete list of critical points in closed form and the type of each; the table of the explorer lists them.</p>
+      A student \((c,\theta)\in\mathbb R^2\times\mathbb R^2\) is a <b>critical point</b> if \(\nabla\mathscr L(c,\theta)=0\). A critical point is a <b>local minimum</b> if \(\mathscr L\ge\mathscr L(c,\theta)\) on a neighbourhood — <em>strict</em> if the inequality is strict away from the point, <em>flat</em> otherwise; a <b>local maximum</b> if \(\mathscr L\le\mathscr L(c,\theta)\) on a neighbourhood; a <b>saddle</b> if it is neither. The <b>global minimum</b> is a critical point at which \(\mathscr L\) attains its smallest value; in this setting it always exists and the value is \(0\), because the student network can copy the teacher network. A <b>spurious minimum</b> is a local minimum that is not global: this is what can trap gradient descent.</p>
+      <p>Each spurious minimum gets a <b>type</b>: <em>collided</em> (co) if the two student neurons share a direction, \(\theta_0\equiv\theta_1\), <em>separated</em> (sep) otherwise; with <em>same-sign</em> (+) or <em>opposite-sign</em> (±) masses \(c_0c_1\gtrless0\). The classification gives, for every teacher network, the complete list of critical points in closed form and the type of each; the table of the explorer lists them.</p>
     </div>
   </div>
   <div class="slot slot-text" data-slot="census" hidden>
     <div class="txt">
-      <p>For a teacher \((s,\beta)\) write \(\mathsf M(s,\beta)\) for the <b>multiset of types of its spurious minima</b>, e.g. \(\{\mathrm{co}^{\pm}\}\) or \(\{2\times\mathrm{co}^{+},\mathrm{sep}^{\pm}\}\); the global minimum is present for every teacher and not listed. A <b>census</b> is a set of teachers with the same \(\mathsf M\).</p>
-      <p>Rotating, reflecting, swapping and jointly rescaling the teacher's generators does not change \(\mathsf M\), so a teacher is a point of a plane: horizontal the <em>gap</em> \(\widehat\beta=\beta_1-\beta_0\) (half a period suffices), vertical the <em>mass ratio</em> \(y\), folded so that \(y=\pm1\) is \(\lvert s_0\rvert=\lvert s_1\rvert\) and \(y=0\) a vanishing mass. The <b>census map</b> colours this plane by \(\mathsf M\). Censuses can also be curves or single points: teachers with equal masses, a zero mass, or a right angle, whose landscape is special. Click any region of the map to load one of its teachers and see its critical points in the table.</p>
+      <p>For a teacher network \((s,\beta)\) write \(\mathsf M(s,\beta)\) for the <b>multiset of types of its spurious minima</b>, e.g. \(\{\mathrm{co}^{\pm}\}\) or \(\{2\times\mathrm{co}^{+},\mathrm{sep}^{\pm}\}\); the global minimum is present for every teacher network and not listed. A <b>census</b> is a set of teacher networks with the same \(\mathsf M\).</p>
+      <p>Rotating, reflecting, swapping and jointly rescaling the teacher network's generators does not change \(\mathsf M\), so a teacher network is a point of a plane: horizontal the <em>gap</em> \(\widehat\beta=\beta_1-\beta_0\) (half a period suffices), vertical the <em>mass ratio</em> \(y\), folded so that \(y=\pm1\) is \(\lvert s_0\rvert=\lvert s_1\rvert\) and \(y=0\) a vanishing mass. The <b>census map</b> colours this plane by \(\mathsf M\). Censuses can also be curves or single points: teacher networks with equal masses, a zero mass, or a right angle, whose landscape is special. Click any region of the map to load one of its teacher networks and see the critical points of the student landscape in the table.</p>
     </div>
   </div>
 </section>
@@ -355,16 +359,16 @@
     <div class="lx-view" id="ex-map-view">
       <svg class="lx-mapcanvas" id="ex-map" width="620" height="330" viewBox="0 0 620 330" role="img" aria-label="A map of the teacher gap against the teacher mass ratio, shaded by which census of critical families occurs. The gap axis covers half a period, because reflecting the gap leaves the census unchanged. Each region carries a dot marking one example teacher in it; clicking the region loads that example. The regions of the current teacher's census are outlined. Degenerate strata that are single lines are drawn as thick lines, and a ring marks the current teacher. The vertical axis is compressed so that a mass ratio of plus or minus infinity is the top and bottom edge."></svg>
     </div>
-    <p class="lx-hint">the teacher gap against the teacher mass ratio — click a region to load a teacher from it</p>
+    <p class="lx-hint">the teacher gap against the teacher mass ratio — click a region to load a teacher network from it</p>
   </div>
   <div class="lx-under lx-left">
     <div class="controls teacher-row landscape-controls lx-top">
       <div class="ctrl-group teacher-params lx-controls">
         <div class="lx-sliders">
-          <div class="ctrl-row"><label for="t-beta0">angle β₀</label><input type="range" id="t-beta0" min="0" max="2" step="0.01" value="0.00"><output class="val" id="t-beta0-val" for="t-beta0"></output></div>
-          <div class="ctrl-row"><label for="t-beta1">angle β₁</label><input type="range" id="t-beta1" min="0" max="2" step="0.01" value="0.31"><output class="val" id="t-beta1-val" for="t-beta1"></output></div>
-          <div class="ctrl-row"><label for="t-s0">mass s₀</label><input type="range" id="t-s0" min="-2.4" max="2.4" step="0.0025" value="1"><output class="val" id="t-s0-val" for="t-s0"></output></div>
-          <div class="ctrl-row"><label for="t-s1">mass s₁</label><input type="range" id="t-s1" min="-2.4" max="2.4" step="0.0025" value="1"><output class="val" id="t-s1-val" for="t-s1"></output></div>
+          <div class="ctrl-row"><label for="t-beta0">angle β₀ /π</label><input type="range" id="t-beta0" min="0" max="2" step="any" value="0.00"><input type="number" class="val" id="t-beta0-val" data-for="t-beta0" min="0" max="2" step="0.001" aria-label="angle β₀ in units of π"></div>
+          <div class="ctrl-row"><label for="t-beta1">angle β₁ /π</label><input type="range" id="t-beta1" min="0" max="2" step="any" value="0.31"><input type="number" class="val" id="t-beta1-val" data-for="t-beta1" min="0" max="2" step="0.001" aria-label="angle β₁ in units of π"></div>
+          <div class="ctrl-row"><label for="t-s0">mass s₀</label><input type="range" id="t-s0" min="-2.4" max="2.4" step="any" value="1"><input type="number" class="val" id="t-s0-val" data-for="t-s0" min="-2.4" max="2.4" step="0.0001" aria-label="mass s₀"></div>
+          <div class="ctrl-row"><label for="t-s1">mass s₁</label><input type="range" id="t-s1" min="-2.4" max="2.4" step="any" value="1"><input type="number" class="val" id="t-s1-val" data-for="t-s1" min="-2.4" max="2.4" step="0.0001" aria-label="mass s₁"></div>
         </div>
       </div>
     </div>
@@ -417,7 +421,19 @@
     });
   });
 </script>
-<script src="explorer.js?v=7" defer></script>
+<script>
+  // Typed values: a number field writes its slider and triggers the same redraw.
+  document.querySelectorAll('input.val[data-for]').forEach(function (field) {
+    field.addEventListener("change", function () {
+      var slider = document.getElementById(field.getAttribute("data-for")), v = parseFloat(field.value);
+      if (!isFinite(v)) return;
+      v = Math.max(parseFloat(slider.min), Math.min(parseFloat(slider.max), v));
+      slider.value = String(v);
+      slider.dispatchEvent(new Event("input", {bubbles: true}));
+    });
+  });
+</script>
+<script src="explorer.js?v=8" defer></script>
 <script defer src="vendor/katex/katex.min.js"></script>
 <script defer src="vendor/katex/contrib/auto-render.min.js"
   onload="['primer','about'].forEach(function (id) { renderMathInElement(document.getElementById(id), {delimiters: [{left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}], throwOnError: false}); });"></script>

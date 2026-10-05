@@ -648,7 +648,7 @@
           describeType(key) + "</span></span>";
       }).join("") + "</span>" +
         "<span class=\"lx-row lx-note\">" +
-        "<span><svg width=\"15\" height=\"11\" aria-hidden=\"true\"><circle cx=\"7.5\" cy=\"5.5\" r=\"2.6\" fill=\"var(--ink)\" fill-opacity=\"0.62\"/></svg>teacher from each census</span>" +
+        "<span><svg width=\"15\" height=\"11\" aria-hidden=\"true\"><circle cx=\"7.5\" cy=\"5.5\" r=\"2.6\" fill=\"var(--ink)\" fill-opacity=\"0.62\"/></svg>teacher network from each census</span>" +
         "<span><svg width=\"15\" height=\"11\" aria-hidden=\"true\"><line x1=\"7.5\" y1=\"0\" x2=\"7.5\" y2=\"11\" stroke=\"var(--ink)\" stroke-opacity=\"0.6\" stroke-width=\"1.6\"/></svg>one-dimensional census</span>" +
         "<span><svg width=\"15\" height=\"11\" aria-hidden=\"true\"><circle cx=\"7.5\" cy=\"5.5\" r=\"3.4\" fill=\"var(--paper)\" stroke=\"var(--ink)\" stroke-width=\"1.6\"/></svg>one-dimensional census crossing</span></span>";
 
@@ -917,7 +917,7 @@
       // positive factor is an exact symmetry of the census: the torque is linear
       // in them, so the roots and their types are the same.
       b1 = Math.max(0, Math.min(parseFloat(slider.max), b1));
-      slider.value = (Math.round(b1 * 100) / 100).toFixed(2);
+      slider.value = b1.toFixed(6);       // the sliders accept any value, so the ring lands on the dot
       document.getElementById("t-s0").value = (rep[1] * 2).toFixed(5);
       document.getElementById("t-s1").value = (rep[2] * 2).toFixed(5);
       releaseTrap();
@@ -2223,12 +2223,19 @@
 
     function render() {
       var regime = currentRegime(), model = modelName(), T = readTeacher();
+      // The readouts are number fields (typing into one moves its slider) or,
+      // in the headless shim, plain elements; angles are shown in units of pi.
+      function showVal(id, text) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        if ("value" in el && el.tagName === "INPUT") { if (document.activeElement !== el) el.value = text; }
+        else el.textContent = text;
+      }
       ["t-beta0", "t-beta1"].forEach(function (id) {
-        document.getElementById(id + "-val").textContent =
-          parseFloat(document.getElementById(id).value).toFixed(2) + "π";
+        showVal(id + "-val", parseFloat(document.getElementById(id).value).toFixed(3));
       });
-      document.getElementById("t-s0-val").textContent = T.s0.toFixed(4);
-      document.getElementById("t-s1-val").textContent = T.s1.toFixed(4);
+      showVal("t-s0-val", T.s0.toFixed(4));
+      showVal("t-s1-val", T.s1.toFixed(4));
 
       var classification = buildRows(model, T);
       rows = classification.rows;
