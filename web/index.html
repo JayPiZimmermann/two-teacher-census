@@ -260,7 +260,7 @@
 </header>
 
 <section class="intro" id="intro">
-  <p>Understanding loss landscapes is central to explaining neural-network training, yet their structure remains only partially understood even in simple models. In the project <em>Learning Polytopes</em>, which led to the paper <a href="https://arxiv.org/abs/2610.01728">Removing spurious minima for planar features by skip connections</a>, we started by studying the smallest interesting case of teacher–student training: teacher and student networks with two hidden neurons on planar Gaussian input. Even this case turned out to be surprisingly rich — but with agentic proof search we found closed formulas for <em>all</em> critical points for <em>any</em> teacher, and we mapped the sets of teacher-network parameters on which the types of local minima agree, the <em>census</em>. Below is an interactive presentation of that result. You can drag and drop the teacher network's parameters and study every critical point the resulting student landscape admits.</p>
+  <p>Understanding loss landscapes is central to explaining neural-network training, yet their structure remains only partially understood even in simple models. In the project <em>Learning Polytopes</em>, which led to the paper <a href="https://arxiv.org/abs/2610.01728">Removing spurious minima for planar features by skip connections</a>, we started by studying the smallest interesting case of teacher–student training: teacher and student networks with two hidden neurons on planar Gaussian input. Even this case turned out to be surprisingly rich — but with agentic proof search we found closed formulas for <em>all</em> critical points for <em>any</em> teacher, and we mapped the sets of teacher-network parameters on which the types of local minima agree, the <em>census</em>. Below is an interactive presentation of that result. Choose the network type — plain or skip — in the drop-down of the page header; then drag and drop the teacher network's parameters and study every critical point the resulting student landscape admits.</p>
 </section>
 
 <section class="primer" id="primer" aria-label="Primer">
@@ -294,7 +294,7 @@
     </g>
     <path d="M198,62 C228,12 308,12 318,94" fill="none" stroke="var(--accent)" stroke-width="1.5"/>
     <path d="M198,142 C228,192 308,192 318,110" fill="none" stroke="var(--accent)" stroke-width="1.5"/>
-    <text x="300" y="40" fill="var(--accent)" font-size="10">b</text><text x="300" y="170" fill="var(--accent)" font-size="10">b</text>
+    <text x="300" y="40" fill="var(--accent)" font-size="10">b₁</text><text x="300" y="170" fill="var(--accent)" font-size="10">b₂</text>
     <circle cx="198" cy="62" r="9" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.2"/><circle cx="198" cy="142" r="9" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.2"/>
     <text x="198" y="65.5" font-size="9" fill="var(--ink)">x₁</text><text x="198" y="145.5" font-size="9" fill="var(--ink)">x₂</text>
     <circle cx="262" cy="62" r="11" fill="var(--negative)"/><circle cx="262" cy="142" r="11" fill="var(--negative)"/>
@@ -367,9 +367,9 @@
       <div class="ctrl-group teacher-params lx-controls">
         <div class="lx-sliders">
           <div class="ctrl-row"><label for="t-beta0">angle β₀ /π</label><input type="range" id="t-beta0" min="0" max="2" step="any" value="0.00"><input type="number" class="val" id="t-beta0-val" data-for="t-beta0" min="0" max="2" step="0.001" aria-label="angle β₀ in units of π"></div>
-          <div class="ctrl-row"><label for="t-beta1">angle β₁ /π</label><input type="range" id="t-beta1" min="0" max="2" step="any" value="0.62"><input type="number" class="val" id="t-beta1-val" data-for="t-beta1" min="0" max="2" step="0.001" aria-label="angle β₁ in units of π"></div>
-          <div class="ctrl-row"><label for="t-s0">mass s₀</label><input type="range" id="t-s0" min="-2.4" max="2.4" step="any" value="1.6"><input type="number" class="val" id="t-s0-val" data-for="t-s0" min="-2.4" max="2.4" step="0.0001" aria-label="mass s₀"></div>
-          <div class="ctrl-row"><label for="t-s1">mass s₁</label><input type="range" id="t-s1" min="-2.4" max="2.4" step="any" value="0.9"><input type="number" class="val" id="t-s1-val" data-for="t-s1" min="-2.4" max="2.4" step="0.0001" aria-label="mass s₁"></div>
+          <div class="ctrl-row"><label for="t-beta1">angle β₁ /π</label><input type="range" id="t-beta1" min="0" max="2" step="any" value="0.80"><input type="number" class="val" id="t-beta1-val" data-for="t-beta1" min="0" max="2" step="0.001" aria-label="angle β₁ in units of π"></div>
+          <div class="ctrl-row"><label for="t-s0">mass s₀</label><input type="range" id="t-s0" min="-2.4" max="2.4" step="any" value="1.4"><input type="number" class="val" id="t-s0-val" data-for="t-s0" min="-2.4" max="2.4" step="0.0001" aria-label="mass s₀"></div>
+          <div class="ctrl-row"><label for="t-s1">mass s₁</label><input type="range" id="t-s1" min="-2.4" max="2.4" step="any" value="1.2"><input type="number" class="val" id="t-s1-val" data-for="t-s1" min="-2.4" max="2.4" step="0.0001" aria-label="mass s₁"></div>
         </div>
       </div>
     </div>
@@ -395,7 +395,7 @@
 
 <article class="prose" id="about">
   <h2>About</h2>
-  <p>This census is part of the project behind <a href="https://arxiv.org/abs/2610.01728"><em>Removing spurious minima for planar features by skip connections</em></a> (Zimmermann, Grillo, Balakin, Loho, 2026), where the two-neuron classification serves as the laboratory for the paper's general-width results; it is not itself part of the paper. Every row of the table is a family of critical points with its proved type, evaluated from closed forms; nothing on this page is a numerical Hessian. The explorer, the map generator and the certificates are in the <a href="https://github.com/JayPiZimmermann/two-teacher-census">code repository</a>. Page by <a href="https://jakob-zimmermann.fly.dev">Jakob Paul Zimmermann</a>. Critique and proposals to make these interactive widgets more accessible and better are <a href="mailto:jakob.paul.zimmermann@campus.tu-berlin.de">welcome</a>.</p>
+  <p>This census is part of the project behind <a href="https://arxiv.org/abs/2610.01728"><em>Removing spurious minima for planar features by skip connections</em></a> (Zimmermann, Grillo, Balakin, Loho, 2026), where the two-neuron classification serves as the laboratory for the paper's general-width results; it is not itself part of the paper. Every row of the table is a family of critical points with its proved type, evaluated from closed forms; nothing on this page is a numerical Hessian. The explorer, the map generator and the certificates are in the <a href="https://github.com/JayPiZimmermann/two-teacher-census">code repository</a>. Page by <a href="https://jakob-zimmermann.fly.dev">Jakob Paul Zimmermann</a>. Critique and proposals to make these interactive widgets more accessible and better are welcome (<a href="mailto:jakob.paul.zimmermann@campus.tu-berlin.de">jakob.paul.zimmermann@campus.tu-berlin.de</a>).</p>
 </article>
 
 <footer>
