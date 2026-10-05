@@ -2019,6 +2019,14 @@
       if (byFamily && byFamily.length) return byFamily[0];
       var byType = selection && list.filter(function (r) { return r.type === selection.type; });
       if (byType && byType.length) return byType[0];
+      // First view: a separated saddle shows the most -- two students off
+      // the teacher directions -- so it is preferred before the exact fit.
+      if (!selection) {
+        var sep = list.filter(function (r) {
+          return shortFamily(r) === "separate" && !r.split && r.type && /saddle/.test(r.type);
+        });
+        if (sep.length) return sep[0];
+      }
       var global = list.filter(function (r) { return r.type === "global minimum"; });
       return global.length ? global[0] : list[0];
     }
