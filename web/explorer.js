@@ -2423,11 +2423,11 @@
         render();
       });
     });
-    // Each network type opens on its own teacher network: a plain one with a
-    // separated saddle and three collided families, a skip one inside the
-    // two-positive-trap lens.  Values are (beta0, beta1 in units of pi, s0, s1).
+    // Each network type opens on its own teacher network: a plain one with
+    // eight critical families (two collided and two separated spurious minima,
+    // three saddles, the fit), a skip one inside the two-positive-trap lens.  Values are (beta0, beta1 in units of pi, s0, s1).
     var DEFAULT_TEACHER = {
-      noncentered: ["0.000", "0.800", "1.4000", "1.2000"],
+      noncentered: ["0.500", "0.100", "1.0000", "-0.7000"],
       centered: ["0.000", "0.480", "1.6000", "-1.2000"]
     };
     function applyDefaultTeacher(model) {
